@@ -932,12 +932,164 @@ full_html = f"""<!DOCTYPE html>
   }}
   .top-btn:hover {{ transform: scale(1.1); }}
 
+  /* ── Mobile & Responsive Breakpoints ── */
+  @media (max-width: 1024px) {{
+    .sidebar-drawer {{
+      position: fixed;
+      top: 57px;
+      left: 0;
+      width: 290px;
+      height: calc(100vh - 57px);
+      z-index: 999;
+      transform: translateX(-100%);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+    }}
+    .sidebar-drawer.open {{
+      transform: translateX(0);
+    }}
+    .sidebar-toggle-btn {{
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+    }}
+    .sidebar-overlay {{
+      display: none;
+      position: fixed;
+      inset: 0;
+      top: 57px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 998;
+    }}
+    .sidebar-overlay.active {{
+      display: block;
+    }}
+    .container {{
+      padding: 0 20px;
+    }}
+  }}
+
   @media (max-width: 768px) {{
-    .hero {{ padding: 50px 20px 40px; }}
-    .nav {{ padding: 10px 16px; }}
-    .container {{ padding: 0 16px; }}
-    .content table {{ font-size: 0.78rem; }}
-    .content td, .content thead th {{ padding: 8px 10px; }}
+    .nav {{
+      padding: 10px 14px;
+      gap: 8px;
+    }}
+    .nav-brand {{
+      font-size: 0.85rem;
+      margin-right: 4px;
+    }}
+    .nav-brand .brand-name {{
+      display: none;
+    }}
+    .nav a {{
+      font-size: 11px;
+      padding: 5px 8px;
+    }}
+    .hero {{
+      padding: 44px 16px 36px;
+    }}
+    .hero p {{
+      font-size: 0.95rem;
+    }}
+    .hero-stats {{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }}
+    .stat {{
+      padding: 12px 14px;
+    }}
+    .stat-num {{
+      font-size: 1.4rem;
+    }}
+    .stat-label {{
+      font-size: 0.68rem;
+    }}
+    .creative-banner {{
+      padding: 20px 20px;
+      margin-top: 32px;
+    }}
+    .creative-banner p {{
+      font-size: 0.9rem;
+    }}
+    .toc-wrapper {{
+      margin-top: 32px;
+    }}
+    .toc-header {{
+      padding: 16px 20px;
+    }}
+    .toc-header-text h2 {{
+      font-size: 1.1rem;
+    }}
+    .toc-table thead th:nth-child(3),
+    .toc-table tbody td:nth-child(3) {{
+      display: none;
+    }}
+    .toc-td-num {{
+      padding: 12px 8px 12px 14px;
+      width: 44px;
+    }}
+    .toc-num-badge {{
+      width: 30px;
+      height: 30px;
+      font-size: 0.75rem;
+    }}
+    .toc-td-title {{
+      padding: 10px 10px;
+    }}
+    .toc-section-title {{
+      font-size: 0.88rem;
+    }}
+    .toc-section-desc {{
+      font-size: 0.73rem;
+    }}
+    .toc-td-link {{
+      padding: 10px 14px 10px 4px;
+    }}
+    .toc-go-btn {{
+      font-size: 0.72rem;
+      padding: 4px 10px;
+    }}
+
+    .content h2 {{
+      font-size: 1.3rem;
+      margin: 36px 0 16px;
+    }}
+    .content h3 {{
+      font-size: 1.05rem;
+    }}
+    .content table {{
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      font-size: 0.78rem;
+    }}
+    .content td, .content thead th {{
+      padding: 8px 12px;
+      white-space: normal;
+      min-width: 110px;
+    }}
+    .content pre {{
+      padding: 14px 16px;
+      font-size: 0.78rem;
+      border-radius: 8px;
+    }}
+    .switch-label {{
+      display: none;
+    }}
+    .theme-switch-btn {{
+      padding: 4px 5px;
+    }}
   }}
 </style>
 </head>
@@ -981,6 +1133,7 @@ full_html = f"""<!DOCTYPE html>
       {sidebar_nav_html}
     </nav>
   </aside>
+  <div id="sidebar-overlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
 
   <main class="main-content">
     <div class="container">
@@ -1052,8 +1205,24 @@ full_html = f"""<!DOCTYPE html>
   // Mobile Sidebar Toggle
   function toggleSidebar() {{
     const sb = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
     if (sb) sb.classList.toggle('open');
+    if (overlay) overlay.classList.toggle('active');
   }}
+
+  // Auto-close sidebar on mobile item click
+  document.querySelectorAll('.sidebar-item').forEach(item => {{
+    item.addEventListener('click', () => {{
+      if (window.innerWidth <= 1024) {{
+        const sb = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        if (sb && sb.classList.contains('open')) {{
+          sb.classList.remove('open');
+          if (overlay) overlay.classList.remove('active');
+        }}
+      }}
+    }});
+  }});
 
   // Sidebar Filter Search
   function filterSidebar() {{
