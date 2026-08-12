@@ -1137,10 +1137,9 @@ full_html = f"""<!DOCTYPE html>
 </body>
 </html>"""
 
-output_path = "ai_agency_blueprint.html"
-with open(output_path, "w") as f:
-    f.write(full_html)
-
-print(f"✅ Generated: {output_path}")
-print(f"   Size: {len(full_html):,} bytes")
+output_paths = ["index.html", "../index.html"]
+for p in output_paths:
+    with open(p, "w") as f:
+        f.write(full_html)
+    print(f"✅ Generated: {p} ({len(full_html):,} bytes)")
 
