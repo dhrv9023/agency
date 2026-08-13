@@ -1104,6 +1104,7 @@ full_html = f"""<!DOCTYPE html>
   <a href="#part1">📌 Part 1</a>
   <a href="#part2">🚀 Part 2</a>
   <a href="#part3">🛠 Part 3</a>
+  <a href="learning_roadmap.html" style="background: linear-gradient(135deg, rgba(16,185,129,0.18), rgba(245,158,11,0.15)); border: 1px solid var(--accent); color: var(--heading); font-weight: 700;">🎓 Learning Roadmap</a>
   <button id="theme-toggle" class="theme-switch-btn" aria-label="Toggle Theme">
     <span class="switch-track">
       <span class="switch-thumb" id="theme-thumb">🌙</span>
