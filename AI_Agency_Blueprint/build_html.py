@@ -1289,17 +1289,18 @@ full_html = f"""<!DOCTYPE html>
 
   document.querySelectorAll('h2[id]').forEach(h2 => observer.observe(h2));
 
-  // Scroll Reveal Animations
-  const revealTargets = document.querySelectorAll('.part-section, .creative-banner, .toc-wrapper, .content table, .content pre, .content blockquote');
+  // Scroll Reveal Animations for Cards/Tables
+  const revealTargets = document.querySelectorAll('.creative-banner, .toc-wrapper, .content table, .content pre, .content blockquote');
   revealTargets.forEach(el => el.classList.add('reveal'));
 
   const revealObserver = new IntersectionObserver(entries => {{
     entries.forEach(entry => {{
       if (entry.isIntersecting) {{
         entry.target.classList.add('active');
+        revealObserver.unobserve(entry.target);
       }}
     }});
-  }}, {{ threshold: 0.08 }});
+  }}, {{ threshold: 0.01, rootMargin: '50px 0px 50px 0px' }});
 
   revealTargets.forEach(el => revealObserver.observe(el));
 </script>
