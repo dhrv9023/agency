@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Studies & Architecture Breakdowns — AI Systems Agency</title>
+  <meta name="description" content="Explore documented pilot architectures, technical prototypes, and workflow interventions demonstrating measurable AI automation outcomes.">
+  <link rel="canonical" href="https://agency.ai/case-studies">
+  
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header" role="banner">
+    <div class="nav-wrapper">
+      <a href="index.html" class="site-logo-link" aria-label="Home">
+        <img src="assets/logo.svg" alt="Agency Logo" class="site-logo-img">
+      </a>
+      <nav class="main-nav-pill" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="solutions.html" class="nav-link">Solutions</a></li>
+          <li class="nav-item"><a href="industries.html" class="nav-link">Industries</a></li>
+          <li class="nav-item"><a href="case-studies.html" class="nav-link active">Case Studies</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+      <a href="contact.html" class="nav-action-pill">Start a Project</a>
+      <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Theme Mode" title="Toggle Theme Mode">
+        <i class="fa-solid fa-moon theme-icon-dark"></i>
+        <i class="fa-solid fa-sun theme-icon-light"></i>
+      </button>
+      <button class="mobile-burger-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+  <div class="mobile-menu-sheet" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="solutions.html" class="mobile-nav-link">Solutions</a></li>
+      <li><a href="industries.html" class="mobile-nav-link">Industries</a></li>
+      <li><a href="case-studies.html" class="mobile-nav-link">Case Studies</a></li>
+      <li><a href="process.html" class="mobile-nav-link">Process</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="pricing.html" class="mobile-nav-link">Pricing</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+    <div class="mobile-theme-switch-row">
+      <span style="font-family: var(--font-mono); font-size: 0.8125rem; color: #666; text-transform: uppercase;">Theme:</span>
+      <button id="mobile-theme-toggle-btn" class="mobile-theme-switch-btn">
+        <span id="mobile-theme-state">Dark</span> Mode
+        <i class="fa-solid fa-circle-half-stroke"></i>
+      </button>
+    </div>
+    <a href="contact.html" class="mobile-cta-btn">Start a Project</a>
+  </div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="reveal-on-scroll">
+          <span class="eyebrow">Technical Architecture Reports</span>
+          <h1 class="page-hero-title">Documented Case Studies</h1>
+          <p class="page-hero-desc">
+            Detailed 10-step technical breakdowns of our automated systems, pipeline designs, and measurable target outcomes. All simulated examples are transparently labeled.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Editorial Case Studies List -->
+    <section class="section">
+      <div class="container">
+        <!-- Case 01 -->
+        <div class="case-study-editorial-block reveal-on-scroll">
+          <div class="case-study-header-strip">
+            <span class="eyebrow" style="margin-bottom: 0;">PILOT ARCHITECTURE // CS-01</span>
+            <span class="text-muted" style="font-family: var(--font-mono); font-size: 0.8125rem;">TARGET BENCHMARK</span>
+          </div>
+          <h2 class="case-study-title">Autonomous Inbound Lead Qualification Engine</h2>
+          
+          <div class="case-study-split">
+            <div>
+              <p class="text-muted" style="font-size: 1.0625rem; line-height: 1.65; margin-bottom: 24px;">
+                How an automated inbound qualification system eliminated 85% of manual SDR triage time by routing inquiries through real-time enrichment, intent scoring, and automated calendar negotiation.
+              </p>
+              <a href="case-studies/lead-qualification.html" class="editorial-link">Read 10-Step Deep Dive &rarr;</a>
+
+              <div class="case-meta-list">
+                <div class="case-meta-item">
+                  <span class="case-meta-label">INDUSTRY</span>
+                  <span class="case-meta-value">B2B SaaS / Services</span>
+                </div>
+                <div class="case-meta-item">
+                  <span class="case-meta-label">INTEGRATIONS</span>
+                  <span class="case-meta-value">HubSpot / Apollo / SMTP</span>
+                </div>
+                <div class="case-meta-item">
+                  <span class="case-meta-label">PRIMARY OUTCOME</span>
+                  <span class="case-meta-value">&lt; 30s Response Latency</span>
+                </div>
+                <div class="case-meta-item">
+                  <span class="case-meta-label">SDR TIME SAVED</span>
+                  <span class="case-meta-value">85% Reduction</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="preview-diagram-box" style="margin-bottom: 0;">
+              <span class="text-muted" style="display: block; font-size: 0.6875rem; margin-bottom: 12px;">SYSTEM TOPOLOGY:</span>
+              <div style="line-height: 2;">
+                Inbound Lead Webhook<br>
+                &darr;<br>
+                Domain Entity Enrichment<br>
+                &darr;<br>
+                ICP Scoring Matrix Gating<br>
+                &darr;<br>
+                Personalized Response + Booking URL<br>
+                &darr;<br>
+                HubSpot CRM State Sync
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case 02 -->
+        <div class="case-study-editorial-block reveal-on-scroll">
+          <div class="case-study-header-strip">
+            <span class="eyebrow" style="margin-bottom: 0;">PROTOTYPE PIPELINE // CS-02</span>
+            <span class="text-muted" style="font-family: var(--font-mono); font-size: 0.8125rem;">TARGET BENCHMARK</span>
+          </div>
+          <h2 class="case-study-title">Automated Invoice Extraction & 3-Way Reconciliation</h2>
+          
+          <div class="case-study-split">
+            <div>
+              <p class="text-muted" style="font-size: 1.0625rem; line-height: 1.65; margin-bottom: 24px;">
+                End-to-end accounts payable automation extracting complex line items, checking tax calculations against purchasing orders, and posting to QuickBooks automatically.
+              </p>
+              <a href="case-studies/invoice-processing.html" class="editorial-link">Read 10-Step Deep Dive &rarr;</a>
+
+              <div class="case-meta-list">
+                <div class="case-meta-item">
+                  <span class="case-meta-label">INDUSTRY</span>
+                  <span class="case-meta-value">Distribution & Logistics</span>
+                </div>
+                <div class="case-meta-item">
+                  <span class="case-meta-label">INTEGRATIONS</span>
+                  <span class="case-meta-value">Vision AI / QuickBooks / S3</span>
+                </div>
+                <div class="case-meta-item">
+                  <span class="case-meta-label">EXTRACTION ACCURACY</span>
+                  <span class="case-meta-value">99.4% Precision</span>
+                </div>
+                <div class="case-meta-item">
+                  <span class="case-meta-label">SPEED</span>
+                  <span class="case-meta-value">12 Seconds / Invoice</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="preview-diagram-box" style="margin-bottom: 0;">
+              <span class="text-muted" style="display: block; font-size: 0.6875rem; margin-bottom: 12px;">SYSTEM TOPOLOGY:</span>
+              <div style="line-height: 2;">
+                Inbound Invoice PDF<br>
+                &darr;<br>
+                Multi-Modal OCR Table Extraction<br>
+                &darr;<br>
+                Deterministic Math Reconciliation<br>
+                &darr;<br>
+                3-Way PO Matching Query<br>
+                &darr;<br>
+                QuickBooks API Ledger Post
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case 03 -->
+        <div class="case-study-editorial-block reveal-on-scroll">
+          <div class="case-study-header-strip">
+            <span class="eyebrow" style="margin-bottom: 0;">INTERNAL DEMO // CS-03</span>
+            <span class="text-muted" style="font-family: var(--font-mono); font-size: 0.8125rem;">TARGET BENCHMARK</span>
+          </div>
+          <h2 class="case-study-title">Enterprise Grounded Knowledge Assistant (RAG)</h2>
+          
+          <div class="case-study-split">
+            <div>
+              <p class="text-muted" style="font-size: 1.0625rem; line-height: 1.65; margin-bottom: 24px;">
+                Unifying 5,000+ internal SOPs, Notion documents, and Google Drive PDFs into a role-permissioned, citation-backed conversational intelligence assistant.
+              </p>
+              <a href="case-studies/knowledge-assistant.html" class="editorial-link">Read 10-Step Deep Dive &rarr;</a>
+
+              <div class="case-meta-list">
+                <div class="case-meta-item">
+                  <span class="case-meta-label">INDUSTRY</span>
+                  <span class="case-meta-value">Enterprise Operations</span>
+                </div>
+                <div class="case-meta-item">
+                  <span class="case-meta-label">INTEGRATIONS</span>
+                  <span class="case-meta-value">Vector DB / Slack / Notion</span>
+                </div>
+                <div class="case-meta-item">
+                  <span class="case-meta-label">CITATION ACCURACY</span>
+                  <span class="case-meta-value">100% Grounded</span>
+                </div>
+                <div class="case-meta-item">
+                  <span class="case-meta-label">TIME SAVED</span>
+                  <span class="case-meta-value">4.2 Hrs / Employee / Wk</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="preview-diagram-box" style="margin-bottom: 0;">
+              <span class="text-muted" style="display: block; font-size: 0.6875rem; margin-bottom: 12px;">SYSTEM TOPOLOGY:</span>
+              <div style="line-height: 2;">
+                Employee Slack/Web Query<br>
+                &darr;<br>
+                Dense Vector + Lexical Search<br>
+                &darr;<br>
+                Cross-Encoder Re-Ranking<br>
+                &darr;<br>
+                Citation Verification Guard<br>
+                &darr;<br>
+                Synthesized Answer with Verifiable Link
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="editorial-conversion-banner reveal-on-scroll" style="margin-top: 80px;">
+          <span class="eyebrow">Proven Engineering</span>
+          <h2 class="editorial-conversion-title">Have a similar workflow you want to automate?</h2>
+          <p class="editorial-conversion-desc">
+            We review your current toolset and deliver a comprehensive architectural blueprint before writing code.
+          </p>
+          <div class="hero-cta-group" style="justify-content: flex-start; margin-bottom: 0;">
+            <a href="contact.html" class="btn btn-primary">Start a Project</a>
+            <a href="book.html" class="btn btn-secondary">Schedule Discovery Call</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-statement-massive">BUILD SYSTEMS THAT WORK WHILE YOU WORK.</div>
+      <div class="footer-nav-grid">
+        <div class="footer-brand-col">
+          <div class="footer-logo-row">
+            <img src="assets/logo.svg" alt="Agency Logo">
+            <span class="footer-brand-name">AGENCY // SYSTEMS</span>
+          </div>
+          <p class="footer-desc-text">Intelligence designed to evolve.<br>AI systems, automation and intelligent software for modern businesses.</p>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Case Studies</h4>
+          <ul class="footer-link-list">
+            <li class="footer-link-item"><a href="case-studies/lead-qualification.html">Lead Qualification</a></li>
+            <li class="footer-link-item"><a href="case-studies/invoice-processing.html">Invoice Processing</a></li>
+            <li class="footer-link-item"><a href="case-studies/knowledge-assistant.html">Knowledge Assistant</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Company</h4>
+          <ul class="footer-link-list">
+            <li class="footer-link-item"><a href="about.html">About Us</a></li>
+            <li class="footer-link-item"><a href="process.html">Our Process</a></li>
+            <li class="footer-link-item"><a href="pricing.html">Pricing</a></li>
+            <li class="footer-link-item"><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Direct Inquiry</h4>
+          <ul class="footer-link-list">
+            <li><a href="mailto:systems@agency.ai" style="color: #ffffff; font-family: var(--font-mono); font-size: 0.875rem;">systems@agency.ai</a></li>
+            <li style="margin-top: 16px;"><a href="book.html" class="btn btn-outline btn-sm">Schedule Session</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-strip">
+        <div>&copy; 2026 AI Systems & Automation Agency. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

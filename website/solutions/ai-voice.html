@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Voice Systems — Conversational Telephony & Audio Agents</title>
+  <meta name="description" content="Sub-500ms latency conversational voice agents for 24/7 inbound dispatch, qualification, appointment scheduling, and outbound customer outreach.">
+  <link rel="canonical" href="https://agency.ai/solutions/ai-voice">
+  
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/navigation.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/sections.css">
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="nav-wrapper">
+      <a href="../index.html" class="site-logo-link" aria-label="Home">
+        <img src="../assets/logo.svg" alt="Agency Logo" class="site-logo-img">
+      </a>
+      <nav class="main-nav-pill" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="../solutions.html" class="nav-link active">Solutions</a></li>
+          <li class="nav-item"><a href="../industries.html" class="nav-link">Industries</a></li>
+          <li class="nav-item"><a href="../case-studies.html" class="nav-link">Case Studies</a></li>
+          <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+      <a href="../contact.html" class="nav-action-pill">Start a Project</a>
+      <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Theme Mode" title="Toggle Theme Mode">
+        <i class="fa-solid fa-moon theme-icon-dark"></i>
+        <i class="fa-solid fa-sun theme-icon-light"></i>
+      </button>
+      <button class="mobile-burger-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+  <div class="mobile-menu-sheet" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <ul class="mobile-nav-list">
+      <li><a href="../index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="../solutions.html" class="mobile-nav-link">Solutions</a></li>
+      <li><a href="../industries.html" class="mobile-nav-link">Industries</a></li>
+      <li><a href="../case-studies.html" class="mobile-nav-link">Case Studies</a></li>
+      <li><a href="../process.html" class="mobile-nav-link">Process</a></li>
+      <li><a href="../about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="../pricing.html" class="mobile-nav-link">Pricing</a></li>
+      <li><a href="../contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+    <div class="mobile-theme-switch-row">
+      <span style="font-family: var(--font-mono); font-size: 0.8125rem; color: #666; text-transform: uppercase;">Theme:</span>
+      <button id="mobile-theme-toggle-btn" class="mobile-theme-switch-btn">
+        <span id="mobile-theme-state">Dark</span> Mode
+        <i class="fa-solid fa-circle-half-stroke"></i>
+      </button>
+    </div>
+    <a href="../contact.html" class="mobile-cta-btn">Start a Project</a>
+  </div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="reveal-on-scroll">
+          <span class="eyebrow">Solution 03 // Real-Time Audio</span>
+          <h1 class="page-hero-title">AI Voice Systems</h1>
+          <p class="page-hero-desc">
+            Ultra-low latency conversational telephony designed for inbound service triage, emergency dispatching, appointment booking, and automated phone outreach.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cs-deepdive-timeline">
+          <div class="cs-deepdive-row reveal-on-scroll">
+            <div class="cs-deepdive-meta">
+              <span>01 // TELEPHONY LATENCY</span>
+              <h2 class="cs-deepdive-title">Sub-500ms Turn-Taking</h2>
+            </div>
+            <div class="cs-deepdive-content">
+              Standard IVRs and early voice bots suffered from awkward pauses and robotic cadence. We engineer full-duplex WebRTC and SIP pipelines with real-time speech-to-speech models, natural interruption handling, and acoustic noise suppression.
+            </div>
+          </div>
+
+          <div class="cs-deepdive-row reveal-on-scroll">
+            <div class="cs-deepdive-meta">
+              <span>02 // ARCHITECTURE</span>
+              <h2 class="cs-deepdive-title">Integrated Telephony Pipeline</h2>
+            </div>
+            <div class="cs-deepdive-content">
+              Calls are streamed directly from PSTN/SIP trunks to neural speech processing units. Intent is recognized in real-time, querying database availability via function calls during the conversation and writing back transcripts directly to your CRM.
+              <div class="preview-diagram-box" style="margin-top: 20px;">
+                <span class="text-muted" style="display: block; font-size: 0.6875rem; margin-bottom: 8px;">VOICE STACK:</span>
+                Twilio / SIP Trunking &bull; WebRTC Audio Streaming &bull; Neural Turn Detection &bull; Real-time Tool Dispatch
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-deepdive-row reveal-on-scroll">
+            <div class="cs-deepdive-meta">
+              <span>03 // APPLICATIONS</span>
+              <h2 class="cs-deepdive-title">Voice Automation In Action</h2>
+            </div>
+            <div class="cs-deepdive-content">
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px;">
+                <li><strong>&bull; 24/7 Inbound Intake:</strong> Answers every call on ring one, collects key parameters, checks calendar availability, and confirms bookings.</li>
+                <li><strong>&bull; Service Dispatching:</strong> Evaluates emergency urgency for field services (HVAC, plumbing, logistics) and dispatches technicians autonomously.</li>
+                <li><strong>&bull; Warm Transfers:</strong> Seamlessly bridges callers to human specialists with a complete live summary displayed on the agent's screen.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="editorial-conversion-banner reveal-on-scroll" style="margin-top: 80px;">
+          <span class="eyebrow">Deploy Voice Systems</span>
+          <h2 class="editorial-conversion-title">Never miss another inbound customer call.</h2>
+          <p class="editorial-conversion-desc">Schedule a live demonstration of our low-latency conversational voice engine.</p>
+          <div class="hero-cta-group" style="justify-content: flex-start; margin-bottom: 0;">
+            <a href="../contact.html" class="btn btn-primary">Start a Project</a>
+            <a href="../book.html" class="btn btn-secondary">Schedule Discovery Call</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-statement-massive">BUILD SYSTEMS THAT WORK WHILE YOU WORK.</div>
+      <div class="footer-nav-grid">
+        <div class="footer-brand-col">
+          <div class="footer-logo-row"><img src="../assets/logo.svg" alt="Agency Logo"><span class="footer-brand-name">AGENCY // SYSTEMS</span></div>
+          <p class="footer-desc-text">Intelligence designed to evolve.<br>AI systems, automation and intelligent software for modern businesses.</p>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Solutions</h4>
+          <ul class="footer-link-list">
+            <li class="footer-link-item"><a href="ai-automation.html">AI Automation</a></li>
+            <li class="footer-link-item"><a href="ai-agents.html">AI Agents</a></li>
+            <li class="footer-link-item"><a href="ai-voice.html">AI Voice</a></li>
+            <li class="footer-link-item"><a href="ai-customer-support.html">Customer Support</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Company</h4>
+          <ul class="footer-link-list">
+            <li class="footer-link-item"><a href="../about.html">About Us</a></li>
+            <li class="footer-link-item"><a href="../process.html">Our Process</a></li>
+            <li class="footer-link-item"><a href="../case-studies.html">Case Studies</a></li>
+            <li class="footer-link-item"><a href="../pricing.html">Pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Direct Inquiry</h4>
+          <ul class="footer-link-list">
+            <li><a href="mailto:systems@agency.ai" style="color: #ffffff; font-family: var(--font-mono); font-size: 0.875rem;">systems@agency.ai</a></li>
+            <li style="margin-top: 16px;"><a href="../book.html" class="btn btn-outline btn-sm">Book Discovery Call</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-strip">
+        <div>&copy; 2026 AI Systems & Automation Agency. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

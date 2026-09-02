@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Discovery Session — AI Systems Agency</title>
+  <meta name="description" content="Schedule a 45-minute technical discovery call to explore your operational workflows, identify high-value automation opportunities, and evaluate technical feasibility.">
+  <link rel="canonical" href="https://agency.ai/book">
+  
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header" role="banner">
+    <div class="nav-wrapper">
+      <a href="index.html" class="site-logo-link" aria-label="Home">
+        <img src="assets/logo.svg" alt="Agency Logo" class="site-logo-img">
+      </a>
+      <nav class="main-nav-pill" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="solutions.html" class="nav-link">Solutions</a></li>
+          <li class="nav-item"><a href="industries.html" class="nav-link">Industries</a></li>
+          <li class="nav-item"><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+      <a href="contact.html" class="nav-action-pill">Start a Project</a>
+      <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Theme Mode" title="Toggle Theme Mode">
+        <i class="fa-solid fa-moon theme-icon-dark"></i>
+        <i class="fa-solid fa-sun theme-icon-light"></i>
+      </button>
+      <button class="mobile-burger-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+  <div class="mobile-menu-sheet" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="solutions.html" class="mobile-nav-link">Solutions</a></li>
+      <li><a href="industries.html" class="mobile-nav-link">Industries</a></li>
+      <li><a href="case-studies.html" class="mobile-nav-link">Case Studies</a></li>
+      <li><a href="process.html" class="mobile-nav-link">Process</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="pricing.html" class="mobile-nav-link">Pricing</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+    <div class="mobile-theme-switch-row">
+      <span style="font-family: var(--font-mono); font-size: 0.8125rem; color: #666; text-transform: uppercase;">Theme:</span>
+      <button id="mobile-theme-toggle-btn" class="mobile-theme-switch-btn">
+        <span id="mobile-theme-state">Dark</span> Mode
+        <i class="fa-solid fa-circle-half-stroke"></i>
+      </button>
+    </div>
+    <a href="contact.html" class="mobile-cta-btn">Start a Project</a>
+  </div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="reveal-on-scroll">
+          <span class="eyebrow">Technical Consultation</span>
+          <h1 class="page-hero-title">Let's find the highest-value opportunity first.</h1>
+          <p class="page-hero-desc">
+            A short 45-minute conversation to understand your workflow, identify bottlenecks, and determine whether an intelligent AI system makes strategic sense.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Editorial Scheduler (Non-Card Layout) -->
+    <section class="section">
+      <div class="container-narrow">
+        <div class="reveal-on-scroll">
+          <!-- Confirmation Alert -->
+          <div id="booking-confirmation-alert" style="display: none; padding: 48px 0; border-top: 1px solid var(--rule-color); border-bottom: 1px solid var(--rule-color); margin-bottom: 48px;">
+            <span class="eyebrow">SESSION CONFIRMED</span>
+            <h2 style="font-size: 2.2rem; color: #ffffff; margin-bottom: 12px;">Discovery Session Booked</h2>
+            <p class="text-muted" style="font-size: 1rem; line-height: 1.65; margin-bottom: 24px;">
+              A calendar invitation with Google Meet connection details has been prepared. We look forward to evaluating your workflow.
+            </p>
+            <a href="index.html" class="editorial-link">Return to Homepage &rarr;</a>
+          </div>
+
+          <form id="booking-details-form" class="editorial-form-wrapper">
+            <div style="margin-bottom: 32px; border-bottom: 1px solid var(--rule-color); padding-bottom: 20px;">
+              <span class="eyebrow" style="margin-bottom: 8px;">STEP 01</span>
+              <h2 style="font-size: 1.5rem; font-weight: 600; color: #ffffff; margin-bottom: 4px;">Select Date & Time Slot</h2>
+              <span class="text-muted" style="font-size: 0.8125rem; font-family: var(--font-mono);">Timezone: Automatically adjusted to your local browser clock</span>
+            </div>
+
+            <!-- Calendar Days -->
+            <div class="calendar-days-grid" role="group" aria-label="Available Days">
+              <button type="button" class="calendar-day-btn" data-date="Mon, Sep 1">
+                <span style="font-size: 0.75rem; color: var(--muted); display: block;">MON</span>
+                <strong>Sep 1</strong>
+              </button>
+              <button type="button" class="calendar-day-btn" data-date="Tue, Sep 2">
+                <span style="font-size: 0.75rem; color: var(--muted); display: block;">TUE</span>
+                <strong>Sep 2</strong>
+              </button>
+              <button type="button" class="calendar-day-btn" data-date="Wed, Sep 3">
+                <span style="font-size: 0.75rem; color: var(--muted); display: block;">WED</span>
+                <strong>Sep 3</strong>
+              </button>
+              <button type="button" class="calendar-day-btn" data-date="Thu, Sep 4">
+                <span style="font-size: 0.75rem; color: var(--muted); display: block;">THU</span>
+                <strong>Sep 4</strong>
+              </button>
+              <button type="button" class="calendar-day-btn" data-date="Fri, Sep 5">
+                <span style="font-size: 0.75rem; color: var(--muted); display: block;">FRI</span>
+                <strong>Sep 5</strong>
+              </button>
+              <button type="button" class="calendar-day-btn" data-date="Mon, Sep 8">
+                <span style="font-size: 0.75rem; color: var(--muted); display: block;">MON</span>
+                <strong>Sep 8</strong>
+              </button>
+              <button type="button" class="calendar-day-btn" data-date="Tue, Sep 9">
+                <span style="font-size: 0.75rem; color: var(--muted); display: block;">TUE</span>
+                <strong>Sep 9</strong>
+              </button>
+            </div>
+
+            <!-- Time Slots -->
+            <span class="text-muted" style="font-size: 0.8125rem; font-family: var(--font-mono); display: block; margin: 24px 0 8px;">Available Slots:</span>
+            <div class="time-slots-grid" role="group" aria-label="Available Time Slots">
+              <button type="button" class="time-slot-btn" data-time="09:00 AM">09:00 AM</button>
+              <button type="button" class="time-slot-btn" data-time="11:30 AM">11:30 AM</button>
+              <button type="button" class="time-slot-btn" data-time="02:00 PM">02:00 PM</button>
+              <button type="button" class="time-slot-btn" data-time="04:30 PM">04:30 PM</button>
+            </div>
+
+            <!-- Status Indicator -->
+            <div id="booking-selected-summary" style="margin: 28px 0; padding: 14px 0; border-top: 1px solid var(--rule-color); border-bottom: 1px solid var(--rule-color); font-family: var(--font-mono); font-size: 0.875rem; color: #ffffff;">
+              Please select a date and time slot above.
+            </div>
+
+            <!-- Attendee Details -->
+            <div style="margin: 32px 0 20px;">
+              <span class="eyebrow" style="margin-bottom: 8px;">STEP 02</span>
+              <h2 style="font-size: 1.5rem; font-weight: 600; color: #ffffff; margin-bottom: 24px;">Your Details</h2>
+            </div>
+
+            <div class="editorial-field-row">
+              <div class="editorial-field">
+                <label for="booking-name" class="editorial-label">Full Name *</label>
+                <input type="text" id="booking-name" class="editorial-input" placeholder="Jordan Miller" required>
+              </div>
+              <div class="editorial-field">
+                <label for="booking-email" class="editorial-label">Work Email *</label>
+                <input type="email" id="booking-email" class="editorial-input" placeholder="jordan@company.com" required>
+              </div>
+            </div>
+
+            <div class="editorial-field" style="margin-bottom: 40px;">
+              <label for="booking-notes" class="editorial-label">Primary Topic / Workflow of Interest</label>
+              <input type="text" id="booking-notes" class="editorial-input" placeholder="Automating our customer support triage & Zendesk write-backs">
+            </div>
+
+            <button type="submit" id="book-confirm-btn" class="btn btn-primary" style="width: 100%;" disabled>
+              Confirm 45-Min Discovery Session
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-statement-massive">BUILD SYSTEMS THAT WORK WHILE YOU WORK.</div>
+      <div class="footer-nav-grid">
+        <div class="footer-brand-col">
+          <div class="footer-logo-row">
+            <img src="assets/logo.svg" alt="Agency Logo">
+            <span class="footer-brand-name">AGENCY // SYSTEMS</span>
+          </div>
+          <p class="footer-desc-text">Intelligence designed to evolve.<br>AI systems, automation and intelligent software for modern businesses.</p>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Company</h4>
+          <ul class="footer-link-list">
+            <li class="footer-link-item"><a href="about.html">About Us</a></li>
+            <li class="footer-link-item"><a href="process.html">Our Process</a></li>
+            <li class="footer-link-item"><a href="case-studies.html">Case Studies</a></li>
+            <li class="footer-link-item"><a href="pricing.html">Pricing & Scope</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Solutions</h4>
+          <ul class="footer-link-list">
+            <li class="footer-link-item"><a href="solutions/ai-automation.html">AI Automation</a></li>
+            <li class="footer-link-item"><a href="solutions/ai-agents.html">AI Agents</a></li>
+            <li class="footer-link-item"><a href="solutions/ai-voice.html">AI Voice</a></li>
+            <li class="footer-link-item"><a href="solutions/ai-customer-support.html">Customer Support</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Direct Inquiry</h4>
+          <ul class="footer-link-list">
+            <li><a href="mailto:systems@agency.ai" style="color: #ffffff; font-family: var(--font-mono); font-size: 0.875rem;">systems@agency.ai</a></li>
+            <li style="margin-top: 16px;"><a href="contact.html" class="btn btn-outline btn-sm">Direct Form</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-strip">
+        <div>&copy; 2026 AI Systems & Automation Agency. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/interactive.js"></script>
+</body>
+</html>
