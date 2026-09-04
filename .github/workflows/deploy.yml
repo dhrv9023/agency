@@ -31,8 +31,8 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Serves the complete website directory (including admin.html and blueprint/)
-          path: './website'
+          # Serves the complete static website directory
+          path: '.'
 
       - name: Deploy to GitHub Pages
         id: deployment
