@@ -91,6 +91,32 @@ function initBookingScheduler() {
         return;
       }
 
+      // Record booked session in Admin CRM
+      try {
+        const stored = localStorage.getItem('agency_leads');
+        const leads = stored ? JSON.parse(stored) : [];
+        const clientName = document.getElementById('booking-name')?.value.trim() || 'Discovery Attendee';
+        const clientEmail = document.getElementById('booking-email')?.value.trim() || 'attendee@company.com';
+        const notes = document.getElementById('booking-notes')?.value.trim() || 'Discovery call scheduled.';
+
+        const newLead = {
+          id: 'lead_' + Date.now(),
+          name: clientName,
+          email: clientEmail,
+          company: 'Enterprise Discovery',
+          source: 'Discovery Session',
+          service: '45-Min Systems Discovery',
+          message: `Slot: ${selectedDay} at ${selectedTime}. Topic: ${notes}`,
+          budget: '$25k – $50k',
+          date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+          status: 'Discovery Booked'
+        };
+        leads.unshift(newLead);
+        localStorage.setItem('agency_leads', JSON.stringify(leads));
+      } catch (err) {
+        console.warn('Could not store booking lead:', err);
+      }
+
       if (confirmationAlert) {
         confirmationAlert.style.display = 'block';
         bookingForm.style.display = 'none';

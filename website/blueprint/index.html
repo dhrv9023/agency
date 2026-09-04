@@ -1,0 +1,2776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>🚀 AI Agency Business Blueprint</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    /* Dark Mode (Default) — Onyx & Cyber Emerald / Gold Amber */
+    --bg: #08090d;
+    --surface: #11121a;
+    --surface2: #181a26;
+    --border: #26293b;
+    --text: #f3f4f6;
+    --heading: #ffffff;
+    --muted: #9ca3af;
+    --subtle: #1f2130;
+
+    --accent: #10b981;
+    --accent-glow: rgba(16, 185, 129, 0.3);
+    --accent2: #f59e0b;
+    --accent3: #ec4899;
+    --warn: #f59e0b;
+    --danger: #ef4444;
+
+    --hero-bg: radial-gradient(ellipse at top, #1c1d2e 0%, #08090d 70%);
+    --hero-radial: radial-gradient(ellipse at center, rgba(16,185,129,0.18) 0%, transparent 60%);
+    --hero-tag-bg: rgba(16, 185, 129, 0.14);
+    --hero-tag-border: rgba(16, 185, 129, 0.4);
+    --hero-tag-text: #6ee7b7;
+    --hero-h1-gradient: linear-gradient(135deg, #ffffff 20%, #6ee7b7 60%, #fcd34d 100%);
+
+    --nav-bg: rgba(8, 9, 13, 0.92);
+    --banner-bg: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(245, 158, 11, 0.08));
+    --banner-border: rgba(16, 185, 129, 0.35);
+    --banner-title: #6ee7b7;
+
+    --toc-header-bg: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(245, 158, 11, 0.1));
+    --toc-badge-bg: #181a26;
+    --toc-badge-color: #6ee7b7;
+    --toc-row-hover: rgba(16, 185, 129, 0.1);
+
+    --table-header-bg: #181a26;
+    --table-header-color: #6ee7b7;
+    --table-row-even: rgba(255, 255, 255, 0.015);
+    --table-row-hover: rgba(16, 185, 129, 0.08);
+
+    --code-bg: #141622;
+    --code-color: #fcd34d;
+    --inline-code-bg: rgba(16, 185, 129, 0.15);
+    --inline-code-border: rgba(16, 185, 129, 0.3);
+    --inline-code-color: #6ee7b7;
+
+    --blockquote-bg: rgba(245, 158, 11, 0.08);
+    --blockquote-border: #f59e0b;
+    --blockquote-text: #e5e7eb;
+
+    --h3-color: #6ee7b7;
+    --p-color: #d1d5db;
+  }
+
+  html[data-theme="light"] {
+    /* Light Mode — Warm Champagne & Emerald / Amber */
+    --bg: #fcfbfa;
+    --surface: #ffffff;
+    --surface2: #f4f3f0;
+    --border: #e5e3dd;
+    --text: #27272a;
+    --heading: #09090b;
+    --muted: #71717a;
+    --subtle: #e5e3dd;
+
+    --accent: #059669;
+    --accent-glow: rgba(5, 150, 105, 0.15);
+    --accent2: #d97706;
+    --accent3: #db2777;
+    --warn: #d97706;
+    --danger: #dc2626;
+
+    --hero-bg: linear-gradient(135deg, #fef3c7, #ecfdf5, #fcfbfa);
+    --hero-radial: radial-gradient(ellipse at center, rgba(5,150,105,0.12) 0%, transparent 60%);
+    --hero-tag-bg: rgba(5, 150, 105, 0.1);
+    --hero-tag-border: rgba(5, 150, 105, 0.3);
+    --hero-tag-text: #047857;
+    --hero-h1-gradient: linear-gradient(135deg, #09090b 30%, #047857 70%, #b45309 100%);
+
+    --nav-bg: rgba(252, 251, 250, 0.94);
+    --banner-bg: linear-gradient(135deg, rgba(5, 150, 105, 0.08), rgba(217, 119, 6, 0.06));
+    --banner-border: rgba(5, 150, 105, 0.25);
+    --banner-title: #047857;
+
+    --toc-header-bg: linear-gradient(135deg, rgba(5, 150, 105, 0.12), rgba(217, 119, 6, 0.08));
+    --toc-badge-bg: #f4f3f0;
+    --toc-badge-color: #047857;
+    --toc-row-hover: rgba(5, 150, 105, 0.06);
+
+    --table-header-bg: #f4f3f0;
+    --table-header-color: #047857;
+    --table-row-even: rgba(244, 243, 240, 0.6);
+    --table-row-hover: rgba(5, 150, 105, 0.05);
+
+    --code-bg: #f4f3f0;
+    --code-color: #b45309;
+    --inline-code-bg: rgba(5, 150, 105, 0.08);
+    --inline-code-border: rgba(5, 150, 105, 0.25);
+    --inline-code-color: #047857;
+
+    --blockquote-bg: rgba(217, 119, 6, 0.06);
+    --blockquote-border: #d97706;
+    --blockquote-text: #27272a;
+
+    --h3-color: #047857;
+    --p-color: #27272a;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+  }
+
+  [id], h2, h3, section {
+    scroll-margin-top: 85px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* ── Keyframe Animations & Effects ── */
+  @keyframes pulseAura {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.08); }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  /* ── Scroll Reveal Animation ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: var(--hero-bg);
+    padding: 80px 40px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: var(--hero-radial);
+    pointer-events: none;
+    animation: pulseAura 8s ease-in-out infinite;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: var(--hero-tag-bg);
+    border: 1px solid var(--hero-tag-border);
+    color: var(--hero-tag-text);
+    padding: 4px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px var(--accent-glow);
+    transition: all 0.3s ease;
+  }
+  .hero-tag:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 0 25px var(--accent-glow);
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    background: var(--hero-h1-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+  }
+  .hero p {
+    color: var(--muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 32px;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 32px;
+  }
+  .stat {
+    text-align: center;
+    padding: 14px 28px;
+    border-radius: 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .stat:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px var(--accent-glow);
+    border-color: var(--accent);
+  }
+  .stat-num {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .stat-label {
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* ── Nav ── */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--nav-bg);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 40px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .nav a:hover {
+    background: var(--subtle);
+    color: var(--heading);
+  }
+
+  /* ── Nav Brand ── */
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 800;
+    font-size: 0.95rem;
+    color: var(--heading);
+    letter-spacing: 0.5px;
+    margin-right: 16px;
+  }
+  .brand-icon {
+    color: var(--accent);
+  }
+
+  .sidebar-toggle-btn {
+    display: none;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+
+  /* ── Premium Switch Theme Toggle ── */
+  .theme-switch-btn {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 4px 14px 4px 5px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    user-select: none;
+  }
+  .theme-switch-btn:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 16px var(--accent-glow);
+    transform: translateY(-1px);
+  }
+  .switch-track {
+    width: 42px;
+    height: 24px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    position: relative;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+  }
+  .switch-thumb {
+    width: 18px;
+    height: 18px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #ffffff;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.25s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  }
+  html[data-theme="light"] .switch-thumb {
+    transform: translateX(18px);
+    background: #d97706;
+  }
+  .switch-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--heading);
+    letter-spacing: 0.2px;
+  }
+
+  /* ── Full Workspace Layout ── */
+  .app-shell {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  .sidebar-drawer {
+    width: 300px;
+    flex-shrink: 0;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    position: sticky;
+    top: 57px;
+    height: calc(100vh - 57px);
+    overflow-y: auto;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    z-index: 90;
+  }
+
+  .sidebar-search-input {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .sidebar-search-input:focus {
+    border-color: var(--accent);
+  }
+
+  .sidebar-group {
+    margin-bottom: 16px;
+  }
+  .sidebar-group-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+    padding: 0 6px;
+  }
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.83rem;
+    font-weight: 500;
+    transition: all 0.15s ease;
+    margin-bottom: 2px;
+  }
+  .sidebar-item:hover, .sidebar-item.active {
+    background: var(--toc-row-hover);
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .sidebar-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--muted);
+    background: var(--surface2);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  .main-content {
+    flex: 1;
+    min-width: 0;
+    padding-bottom: 80px;
+  }
+
+  .container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* ── Creative Angle Banner ── */
+  .creative-banner {
+    background: var(--banner-bg);
+    border: 1px solid var(--banner-border);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin: 48px 0 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .creative-banner::before {
+    content: '💡';
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    font-size: 80px;
+    opacity: 0.06;
+  }
+  .creative-banner h3 {
+    color: var(--banner-title);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .creative-banner p {
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  .creative-banner strong {
+    color: var(--accent);
+  }
+
+  /* ── Table of Contents ── */
+  .toc-wrapper {
+    margin: 48px 0 0;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    background: var(--surface);
+  }
+  .toc-header {
+    background: var(--toc-header-bg);
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .toc-header-icon {
+    font-size: 1.8rem;
+  }
+  .toc-header-text h2 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--heading);
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  .toc-header-text h2::before { display: none; }
+  .toc-header-text p {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin: 3px 0 0;
+  }
+  .toc-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .toc-table thead th {
+    background: var(--table-header-bg);
+    color: var(--muted);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  .toc-row {
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    border-bottom: 1px solid var(--border);
+  }
+  .toc-row:last-child { border-bottom: none; }
+  .toc-row:hover {
+    background: var(--toc-row-hover);
+    transform: translateX(6px);
+  }
+  .toc-td-num {
+    padding: 16px 16px 16px 24px;
+    width: 60px;
+  }
+  .toc-num-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: var(--toc-badge-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--toc-badge-color);
+  }
+  .toc-td-title {
+    padding: 14px 20px;
+  }
+  .toc-section-title {
+    font-size: 0.97rem;
+    font-weight: 600;
+    color: var(--heading);
+    margin-bottom: 4px;
+  }
+  .toc-section-desc {
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .toc-td-part {
+    padding: 14px 16px;
+    white-space: nowrap;
+  }
+  .toc-part-pill {
+    display: inline-block;
+    background: var(--surface2);
+    border: 1px solid color-mix(in srgb, var(--pc) 40%, transparent);
+    color: var(--pc);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 999px;
+  }
+  .toc-td-link {
+    padding: 14px 24px 14px 8px;
+    white-space: nowrap;
+  }
+  .toc-go-btn {
+    display: inline-block;
+    background: var(--inline-code-bg);
+    border: 1px solid var(--inline-code-border);
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 7px;
+    text-decoration: none;
+    transition: all 0.18s;
+  }
+  .toc-go-btn:hover {
+    background: var(--accent);
+    color: #ffffff;
+  }
+
+  /* ── Part Sections ── */
+  .part-section {
+    padding: 64px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .part-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 999px;
+    margin-bottom: 8px;
+  }
+  .part-subtitle {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 40px;
+    font-weight: 500;
+  }
+
+  /* ── Content Styles ── */
+  .content h1 { display: none; }
+  .content h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 52px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .content h2::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 24px;
+    background: linear-gradient(to bottom, var(--accent), var(--accent2));
+    border-radius: 2px;
+  }
+  .content h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--h3-color);
+    margin: 32px 0 14px;
+  }
+  .content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent2);
+    margin: 24px 0 10px;
+  }
+  .content p {
+    margin-bottom: 16px;
+    color: var(--p-color);
+  }
+  .content strong { color: var(--heading); }
+  .content em { color: var(--muted); font-style: italic; }
+  .content hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 36px 0;
+  }
+
+  /* ── Tables ── */
+  .content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0 32px;
+    font-size: 0.88rem;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .content thead th {
+    background: var(--table-header-bg);
+    color: var(--table-header-color);
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  .content tbody tr {
+    transition: background 0.15s;
+  }
+  .content tbody tr:nth-child(even) {
+    background: var(--table-row-even);
+  }
+  .content tbody tr:hover {
+    background: var(--table-row-hover);
+  }
+  .content td {
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--p-color);
+    vertical-align: top;
+  }
+  .content td:first-child {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* ── Code blocks ── */
+  .content pre {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 16px 0 24px;
+    overflow-x: auto;
+  }
+  .content code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.83rem;
+    color: var(--code-color);
+    line-height: 1.6;
+  }
+  .content p code {
+    background: var(--inline-code-bg);
+    border: 1px solid var(--inline-code-border);
+    border-radius: 4px;
+    padding: 2px 6px;
+    color: var(--inline-code-color);
+    font-size: 0.82rem;
+  }
+
+  /* ── Blockquotes ── */
+  .content blockquote {
+    background: var(--blockquote-bg);
+    border-left: 3px solid var(--blockquote-border);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin: 20px 0;
+    color: var(--blockquote-text);
+    font-style: normal;
+  }
+  .content blockquote strong {
+    color: var(--accent2);
+  }
+  .content blockquote p { margin: 0; color: var(--blockquote-text); }
+
+  /* ── Lists ── */
+  .content ul, .content ol {
+    padding-left: 24px;
+    margin-bottom: 20px;
+  }
+  .content li {
+    color: #cbd5e1;
+    margin-bottom: 6px;
+    padding-left: 4px;
+  }
+  .content li input[type="checkbox"] {
+    accent-color: var(--accent);
+    width: 15px;
+    height: 15px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    text-align: center;
+    padding: 48px 24px;
+    color: var(--muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+  }
+  .footer strong {
+    color: #a78bfa;
+  }
+
+  /* ── Scroll to top ── */
+  .top-btn {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(124,58,237,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.2s;
+  }
+  .top-btn:hover { transform: scale(1.1); }
+
+  /* ── Mobile & Responsive Breakpoints ── */
+  @media (max-width: 1024px) {
+    .sidebar-drawer {
+      position: fixed;
+      top: 57px;
+      left: 0;
+      width: 290px;
+      height: calc(100vh - 57px);
+      z-index: 999;
+      transform: translateX(-100%);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+    }
+    .sidebar-drawer.open {
+      transform: translateX(0);
+    }
+    .sidebar-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .sidebar-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      top: 57px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 998;
+    }
+    .sidebar-overlay.active {
+      display: block;
+    }
+    .container {
+      padding: 0 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav {
+      padding: 10px 14px;
+      gap: 8px;
+    }
+    .nav-brand {
+      font-size: 0.85rem;
+      margin-right: 4px;
+    }
+    .nav-brand .brand-name {
+      display: none;
+    }
+    .nav a {
+      font-size: 11px;
+      padding: 5px 8px;
+    }
+    .hero {
+      padding: 44px 16px 36px;
+    }
+    .hero p {
+      font-size: 0.95rem;
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .stat {
+      padding: 12px 14px;
+    }
+    .stat-num {
+      font-size: 1.4rem;
+    }
+    .stat-label {
+      font-size: 0.68rem;
+    }
+    .creative-banner {
+      padding: 20px 20px;
+      margin-top: 32px;
+    }
+    .creative-banner p {
+      font-size: 0.9rem;
+    }
+    .toc-wrapper {
+      margin-top: 32px;
+    }
+    .toc-header {
+      padding: 16px 20px;
+    }
+    .toc-header-text h2 {
+      font-size: 1.1rem;
+    }
+    .toc-table thead th:nth-child(3),
+    .toc-table tbody td:nth-child(3) {
+      display: none;
+    }
+    .toc-td-num {
+      padding: 12px 8px 12px 14px;
+      width: 44px;
+    }
+    .toc-num-badge {
+      width: 30px;
+      height: 30px;
+      font-size: 0.75rem;
+    }
+    .toc-td-title {
+      padding: 10px 10px;
+    }
+    .toc-section-title {
+      font-size: 0.88rem;
+    }
+    .toc-section-desc {
+      font-size: 0.73rem;
+    }
+    .toc-td-link {
+      padding: 10px 14px 10px 4px;
+    }
+    .toc-go-btn {
+      font-size: 0.72rem;
+      padding: 4px 10px;
+    }
+
+    .content h2 {
+      font-size: 1.3rem;
+      margin: 36px 0 16px;
+    }
+    .content h3 {
+      font-size: 1.05rem;
+    }
+    .content table {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      font-size: 0.78rem;
+    }
+    .content td, .content thead th {
+      padding: 8px 12px;
+      white-space: normal;
+      min-width: 110px;
+    }
+    .content pre {
+      padding: 14px 16px;
+      font-size: 0.78rem;
+      border-radius: 8px;
+    }
+    .switch-label {
+      display: none;
+    }
+    .theme-switch-btn {
+      padding: 4px 5px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-brand">
+    <span class="brand-icon">⚡</span>
+    <span class="brand-name">AI AGENCY STUDIO</span>
+  </div>
+  <a href="../admin.html" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--text); border-radius: 6px; padding: 6px 12px; font-weight: 500; font-size: 0.8125rem; text-decoration: none;">← Ops Portal</a>
+  <button id="sidebar-toggle" class="sidebar-toggle-btn" onclick="toggleSidebar()">☰ Outline</button>
+  <a href="#part1">📌 Part 1</a>
+  <a href="#part2">🚀 Part 2</a>
+  <a href="#part3">🛠 Part 3</a>
+  <a href="learning_roadmap.html" style="background: linear-gradient(135deg, rgba(16,185,129,0.18), rgba(245,158,11,0.15)); border: 1px solid var(--accent); color: var(--heading); font-weight: 700;">🎓 Learning Roadmap</a>
+  <button id="theme-toggle" class="theme-switch-btn" aria-label="Toggle Theme">
+    <span class="switch-track">
+      <span class="switch-thumb" id="theme-thumb">🌙</span>
+    </span>
+    <span id="theme-text" class="switch-label">Dark Mode</span>
+  </button>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">Master Blueprint Studio</div>
+  <h1>🚀 AI Agency Business Blueprint</h1>
+  <p>A complete, numbers-backed playbook for building a profitable AI services agency — from zero to ₹10L+/month.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">10</div><div class="stat-label">Sections</div></div>
+    <div class="stat"><div class="stat-num">3</div><div class="stat-label">Parts</div></div>
+    <div class="stat"><div class="stat-num">90</div><div class="stat-label">Day Plan</div></div>
+    <div class="stat"><div class="stat-num">₹10L+</div><div class="stat-label">Revenue Target</div></div>
+  </div>
+</div>
+
+<div class="app-shell">
+  <aside class="sidebar-drawer" id="sidebar">
+    <div class="sidebar-search-box">
+      <input type="text" id="sidebar-search" class="sidebar-search-input" placeholder="🔍 Search sections..." onkeyup="filterSidebar()">
+    </div>
+    <nav class="sidebar-nav">
+      
+    <div class="sidebar-group">
+      <div class="sidebar-group-title">📌 Part 1: Positioning · Service Catalog · Business Model</div>
+      <div class="sidebar-group-items">
+        
+        <a href="#s1" class="sidebar-item" data-anchor="s1">
+          <span class="sidebar-num">01</span>
+          <span class="sidebar-title">Positioning & Niche Selection</span>
+        </a>
+        
+        <a href="#s2" class="sidebar-item" data-anchor="s2">
+          <span class="sidebar-num">02</span>
+          <span class="sidebar-title">Service Catalog</span>
+        </a>
+        
+        <a href="#s3" class="sidebar-item" data-anchor="s3">
+          <span class="sidebar-num">03</span>
+          <span class="sidebar-title">Business Model & Profit Maximization</span>
+        </a>
+        
+      </div>
+    </div>
+    
+    <div class="sidebar-group">
+      <div class="sidebar-group-title">🚀 Part 2: Bootstrapped Launch · India Acquisition · International</div>
+      <div class="sidebar-group-items">
+        
+        <a href="#s4" class="sidebar-item" data-anchor="s4">
+          <span class="sidebar-num">04</span>
+          <span class="sidebar-title">Bootstrapped Launch Plan</span>
+        </a>
+        
+        <a href="#s5" class="sidebar-item" data-anchor="s5">
+          <span class="sidebar-num">05</span>
+          <span class="sidebar-title">Client Acquisition: India</span>
+        </a>
+        
+        <a href="#s6" class="sidebar-item" data-anchor="s6">
+          <span class="sidebar-num">06</span>
+          <span class="sidebar-title">Client Acquisition: International</span>
+        </a>
+        
+      </div>
+    </div>
+    
+    <div class="sidebar-group">
+      <div class="sidebar-group-title">🛠 Part 3: Tech Stack · Team · Risks · Full Roadmap</div>
+      <div class="sidebar-group-items">
+        
+        <a href="#s7" class="sidebar-item" data-anchor="s7">
+          <span class="sidebar-num">07</span>
+          <span class="sidebar-title">Tools, Tech Stack & Skills</span>
+        </a>
+        
+        <a href="#s8" class="sidebar-item" data-anchor="s8">
+          <span class="sidebar-num">08</span>
+          <span class="sidebar-title">Team & Scaling</span>
+        </a>
+        
+        <a href="#s9" class="sidebar-item" data-anchor="s9">
+          <span class="sidebar-num">09</span>
+          <span class="sidebar-title">Risks & Differentiation</span>
+        </a>
+        
+        <a href="#s10" class="sidebar-item" data-anchor="s10">
+          <span class="sidebar-num">10</span>
+          <span class="sidebar-title">The Full Roadmap</span>
+        </a>
+        
+      </div>
+    </div>
+    
+    </nav>
+  </aside>
+  <div id="sidebar-overlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="creative-banner">
+        <h3>Your Creative Angle — Think Outside the Box</h3>
+        <p>You asked: <em>"can't we do something useful for everyone?"</em> — Yes. And that's the smartest play.<br/>
+        <strong>Don't niche by industry. Niche by problem.</strong><br/>
+        "We automate the 3 most painful universal business bottlenecks: lead follow-up, customer support, and internal reporting." Every business — clinic, SaaS, D2C brand, real estate firm — has these 3 problems. You solve them better than anyone. That's your moat.</p>
+      </div>
+
+      <div class="toc-wrapper">
+        <div class="toc-header">
+          <div class="toc-header-icon">📋</div>
+          <div class="toc-header-text">
+            <h2>Table of Contents</h2>
+            <p>10 sections · Click any row to jump directly to it</p>
+          </div>
+        </div>
+        <table class="toc-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Section</th>
+              <th>Part</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            
+    <tr class="toc-row" onclick="scrollToAnchor('s1')">
+      <td class="toc-td-num"><span class="toc-num-badge">01</span></td>
+      <td class="toc-td-title">
+        <div class="toc-section-title">Positioning & Niche Selection</div>
+        <div class="toc-section-desc">Why agencies fail, universal problem strategy, 10 niche combos, validation checklist</div>
+      </td>
+      <td class="toc-td-part"><span class="toc-part-pill" style="--pc:#10b981">📌 Part 1</span></td>
+      <td class="toc-td-link"><a href="#s1" class="toc-go-btn">Jump →</a></td>
+    </tr>
+    
+    <tr class="toc-row" onclick="scrollToAnchor('s2')">
+      <td class="toc-td-num"><span class="toc-num-badge">02</span></td>
+      <td class="toc-td-title">
+        <div class="toc-section-title">Service Catalog</div>
+        <div class="toc-section-desc">Entry / Mid / Advanced service tiers with pricing (India & Intl), emerging skills to build</div>
+      </td>
+      <td class="toc-td-part"><span class="toc-part-pill" style="--pc:#10b981">📌 Part 1</span></td>
+      <td class="toc-td-link"><a href="#s2" class="toc-go-btn">Jump →</a></td>
+    </tr>
+    
+    <tr class="toc-row" onclick="scrollToAnchor('s3')">
+      <td class="toc-td-num"><span class="toc-num-badge">03</span></td>
+      <td class="toc-td-title">
+        <div class="toc-section-title">Business Model & Profit Maximization</div>
+        <div class="toc-section-desc">Business model comparison, pricing packages, unit economics to hit ₹1L/₹5L/₹10L/mo</div>
+      </td>
+      <td class="toc-td-part"><span class="toc-part-pill" style="--pc:#10b981">📌 Part 1</span></td>
+      <td class="toc-td-link"><a href="#s3" class="toc-go-btn">Jump →</a></td>
+    </tr>
+    
+    <tr class="toc-row" onclick="scrollToAnchor('s4')">
+      <td class="toc-td-num"><span class="toc-num-badge">04</span></td>
+      <td class="toc-td-title">
+        <div class="toc-section-title">Bootstrapped Launch Plan</div>
+        <div class="toc-section-desc">What NOT to spend on, essential tools, week-by-week 90-day plan, credibility building</div>
+      </td>
+      <td class="toc-td-part"><span class="toc-part-pill" style="--pc:#f59e0b">🚀 Part 2</span></td>
+      <td class="toc-td-link"><a href="#s4" class="toc-go-btn">Jump →</a></td>
+    </tr>
+    
+    <tr class="toc-row" onclick="scrollToAnchor('s5')">
+      <td class="toc-td-num"><span class="toc-num-badge">05</span></td>
+      <td class="toc-td-title">
+        <div class="toc-section-title">Client Acquisition: India</div>
+        <div class="toc-section-desc">WhatsApp outreach scripts, LinkedIn tactics, FB groups, referral loops, negotiation reality</div>
+      </td>
+      <td class="toc-td-part"><span class="toc-part-pill" style="--pc:#f59e0b">🚀 Part 2</span></td>
+      <td class="toc-td-link"><a href="#s5" class="toc-go-btn">Jump →</a></td>
+    </tr>
+    
+    <tr class="toc-row" onclick="scrollToAnchor('s6')">
+      <td class="toc-td-num"><span class="toc-num-badge">06</span></td>
+      <td class="toc-td-title">
+        <div class="toc-section-title">Client Acquisition: International</div>
+        <div class="toc-section-desc">Upwork strategy, LinkedIn cold outreach, cold email templates, Twitter/X, trust gap fixes</div>
+      </td>
+      <td class="toc-td-part"><span class="toc-part-pill" style="--pc:#f59e0b">🚀 Part 2</span></td>
+      <td class="toc-td-link"><a href="#s6" class="toc-go-btn">Jump →</a></td>
+    </tr>
+    
+    <tr class="toc-row" onclick="scrollToAnchor('s7')">
+      <td class="toc-td-num"><span class="toc-num-badge">07</span></td>
+      <td class="toc-td-title">
+        <div class="toc-section-title">Tools, Tech Stack & Skills</div>
+        <div class="toc-section-desc">Must-learn tools (now vs later), non-technical skills, ops stack, legal MVS for India</div>
+      </td>
+      <td class="toc-td-part"><span class="toc-part-pill" style="--pc:#ec4899">🛠 Part 3</span></td>
+      <td class="toc-td-link"><a href="#s7" class="toc-go-btn">Jump →</a></td>
+    </tr>
+    
+    <tr class="toc-row" onclick="scrollToAnchor('s8')">
+      <td class="toc-td-num"><span class="toc-num-badge">08</span></td>
+      <td class="toc-td-title">
+        <div class="toc-section-title">Team & Scaling</div>
+        <div class="toc-section-desc">When to hire, first 3 hires in order, SOP framework, when to raise prices / drop clients</div>
+      </td>
+      <td class="toc-td-part"><span class="toc-part-pill" style="--pc:#ec4899">🛠 Part 3</span></td>
+      <td class="toc-td-link"><a href="#s8" class="toc-go-btn">Jump →</a></td>
+    </tr>
+    
+    <tr class="toc-row" onclick="scrollToAnchor('s9')">
+      <td class="toc-td-num"><span class="toc-num-badge">09</span></td>
+      <td class="toc-td-title">
+        <div class="toc-section-title">Risks & Differentiation</div>
+        <div class="toc-section-desc">Commoditization, client in-housing, API risk, regulatory — and how to build a real moat</div>
+      </td>
+      <td class="toc-td-part"><span class="toc-part-pill" style="--pc:#ec4899">🛠 Part 3</span></td>
+      <td class="toc-td-link"><a href="#s9" class="toc-go-btn">Jump →</a></td>
+    </tr>
+    
+    <tr class="toc-row" onclick="scrollToAnchor('s10')">
+      <td class="toc-td-num"><span class="toc-num-badge">10</span></td>
+      <td class="toc-td-title">
+        <div class="toc-section-title">The Full Roadmap</div>
+        <div class="toc-section-desc">90-day milestones, 6-month goals, 12-month targets, the Year 1→2→3 mental model</div>
+      </td>
+      <td class="toc-td-part"><span class="toc-part-pill" style="--pc:#ec4899">🛠 Part 3</span></td>
+      <td class="toc-td-link"><a href="#s10" class="toc-go-btn">Jump →</a></td>
+    </tr>
+    
+          </tbody>
+        </table>
+      </div>
+
+      
+    <section id="part1" class="part-section">
+      <div class="part-badge">📌 Part 1 of 3</div>
+      <div class="part-subtitle">Positioning · Service Catalog · Business Model</div>
+      <div class="content">
+        <h1>🚀 AI Agency Business Blueprint — Part 1 of 3</h1>
+<h3>Positioning · Service Catalog · Business Model</h3>
+<hr />
+<blockquote>
+<p><strong>Your Creative Angle:</strong> You asked — <em>"can't we do something useful for everyone?"</em><br />
+Yes. And that's actually the smartest play if done right. The key insight:<br />
+<strong>Don't niche by industry. Niche by problem.</strong><br />
+"We automate the 3 most painful, universal business bottlenecks: lead follow-up, customer support, and internal reporting." Every business — clinic, SaaS, D2C brand, real estate firm — has these 3 problems. You solve them better than anyone. That's your moat.</p>
+</blockquote>
+<hr />
+<h2 id="s1">Section 1 — Positioning &amp; Niche Selection</h2>
+<h3>Why Most AI Agencies Fail (Real Patterns)</h3>
+<table>
+<thead>
+<tr>
+<th>Failure Pattern</th>
+<th>What It Looks Like</th>
+<th>Why It Kills Them</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>"We do AI"</strong> positioning</td>
+<td>Website says "AI solutions for your business"</td>
+<td>Zero differentiation, compete on price, lose</td>
+</tr>
+<tr>
+<td><strong>Tool resellers</strong></td>
+<td>"We set up ChatGPT for your team"</td>
+<td>Clients figure it out themselves in 3 months</td>
+</tr>
+<tr>
+<td><strong>No delivery system</strong></td>
+<td>Sell first, figure out how to build later</td>
+<td>Scope creep, refunds, bad reviews</td>
+</tr>
+<tr>
+<td><strong>Chasing trends</strong></td>
+<td>Pivot to every new model/tool</td>
+<td>Never build deep expertise, no repeat clients</td>
+</tr>
+<tr>
+<td><strong>Underpricing to win</strong></td>
+<td>₹5K chatbots</td>
+<td>Attracts bad clients, unsustainable, devalues work</td>
+</tr>
+<tr>
+<td><strong>Solo + no SOPs</strong></td>
+<td>Founder does everything</td>
+<td>Burnout at 3-4 clients, growth ceiling hit</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>The "Universal Problem" Niche Strategy (Your Creative Angle)</h3>
+<p>Instead of vertical niches (healthcare AI, real estate AI), go <strong>horizontal</strong> around <strong>3 universally painful problems</strong>:</p>
+<pre><code>PAIN #1 → &quot;We lose leads because nobody follows up fast enough&quot;
+PAIN #2 → &quot;Customer support is eating our team alive&quot;
+PAIN #3 → &quot;I have no idea what's actually happening in my business&quot;
+</code></pre>
+<p>Your agency becomes: <strong>"We fix revenue leaks with AI automation"</strong></p>
+<p>This works for clinics, e-commerce, real estate, SaaS, coaching businesses, law firms — everyone. You build 3 deep productized solutions and sell them horizontally.</p>
+<hr />
+<h3>10 Specific Niche + Service Combos Worth Considering</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Niche</th>
+<th>Service</th>
+<th>Why Now</th>
+<th>India Price</th>
+<th>Intl Price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>D2C/E-commerce</td>
+<td>AI abandoned cart + WhatsApp re-engagement</td>
+<td>70%+ brands lose 60-70% carts</td>
+<td>₹25–60K setup + retainer</td>
+<td>$800–2,000</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Clinics/Hospitals</td>
+<td>AI appointment booking + follow-up bot</td>
+<td>Receptionists cost ₹15K+/mo, bot costs less</td>
+<td>₹30–80K</td>
+<td>$1,000–3,000</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Real Estate agencies</td>
+<td>AI lead qualifier + CRM auto-fill</td>
+<td>Agents waste 60% of time on cold leads</td>
+<td>₹20–50K</td>
+<td>$600–1,500</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Coaching/EdTech</td>
+<td>AI student onboarding + Q&amp;A assistant</td>
+<td>Massive EdTech boom, low tech adoption</td>
+<td>₹15–40K</td>
+<td>$500–1,200</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Recruitment firms</td>
+<td>AI resume screener + outreach personalizer</td>
+<td>Manual screening is brutal at scale</td>
+<td>₹30–70K</td>
+<td>$1,000–2,500</td>
+</tr>
+<tr>
+<td>6</td>
+<td>CA/Legal firms</td>
+<td>AI document summarizer + client intake bot</td>
+<td>High-value clients, serious pain, low AI adoption</td>
+<td>₹40–1L</td>
+<td>$1,500–4,000</td>
+</tr>
+<tr>
+<td>7</td>
+<td>SaaS companies</td>
+<td>AI onboarding flows + churn prediction alerts</td>
+<td>Every SaaS CEO is obsessed with churn</td>
+<td>$500–5K retainer</td>
+<td>$1,500–8,000</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Content/Media brands</td>
+<td>AI content repurposing pipeline</td>
+<td>1 video → 30 assets, saves 20+ hrs/week</td>
+<td>₹20–50K</td>
+<td>$600–2,000</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Manufacturing/Export</td>
+<td>AI vendor communication + order tracking bot</td>
+<td>Massive WhatsApp-based ops, zero automation</td>
+<td>₹40–80K</td>
+<td>$1,200–3,000</td>
+</tr>
+<tr>
+<td>10</td>
+<td>HR departments</td>
+<td>AI policy Q&amp;A bot + leave management assistant</td>
+<td>Every company above 50 employees needs this</td>
+<td>₹25–60K</td>
+<td>$800–2,000</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>How to Validate a Niche (Zero Budget, 2 Weeks)</h3>
+<ul>
+<li>[ ] <strong>Week 1:</strong> Post in 3 relevant Facebook/LinkedIn groups: <em>"Quick poll — what's your biggest time-waster in [industry]?"</em> — observe pain patterns</li>
+<li>[ ] <strong>Week 1:</strong> DM 20 business owners in that space. Ask: <em>"If I could automate X for you, how much is that worth monthly?"</em></li>
+<li>[ ] <strong>Week 2:</strong> Build a free prototype in 2-3 days using n8n/Make + ChatGPT API</li>
+<li>[ ] <strong>Week 2:</strong> Offer it free to 2 businesses in exchange for a recorded testimonial</li>
+<li>[ ] <strong>Signal to proceed:</strong> 3+ people say <em>"I'd pay ₹X for this"</em> unprompted</li>
+</ul>
+<hr />
+<h2 id="s2">Section 2 — Service Catalog</h2>
+<h3>Tiered Service Menu</h3>
+<h4>🟢 ENTRY TIER — Quick Wins (Complexity: Low, Time: 3–7 days)</h4>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>What It Is</th>
+<th>Target Client</th>
+<th>India Price</th>
+<th>Intl Price</th>
+<th>Delivery</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WhatsApp AI FAQ Bot</td>
+<td>Answers top 20 questions automatically</td>
+<td>Any SMB with WhatsApp</td>
+<td>₹8–20K</td>
+<td>$300–600</td>
+<td>3–5 days</td>
+</tr>
+<tr>
+<td>Lead Capture Form → CRM + Email Auto-responder</td>
+<td>AI-qualified form, auto-tagged in CRM</td>
+<td>Coaches, Agencies</td>
+<td>₹10–25K</td>
+<td>$400–800</td>
+<td>3–5 days</td>
+</tr>
+<tr>
+<td>AI Meeting Notes + Summary</td>
+<td>Records calls, extracts action items, sends recap</td>
+<td>Consultants, Agencies</td>
+<td>₹5–15K</td>
+<td>$200–500</td>
+<td>2–3 days</td>
+</tr>
+<tr>
+<td>Social Media Caption Generator</td>
+<td>Brand-trained content tool</td>
+<td>D2C, Influencers</td>
+<td>₹10–20K</td>
+<td>$300–700</td>
+<td>4–5 days</td>
+</tr>
+<tr>
+<td>AI Email Responder (Gmail/Outlook plugin)</td>
+<td>Drafts replies to common email types</td>
+<td>SMB owners</td>
+<td>₹12–25K</td>
+<td>$400–900</td>
+<td>5–7 days</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4>🟡 MID TIER — Core Solutions (Complexity: Medium, Time: 1–3 weeks)</h4>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>What It Is</th>
+<th>Target Client</th>
+<th>India Price</th>
+<th>Intl Price</th>
+<th>Delivery</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full AI Customer Support Agent</td>
+<td>Multi-channel bot (WhatsApp + Web + Email) with handoff</td>
+<td>E-commerce, SaaS</td>
+<td>₹40–1.2L</td>
+<td>$1,200–3,500</td>
+<td>2–3 weeks</td>
+</tr>
+<tr>
+<td>AI Sales Outreach System</td>
+<td>Personalized cold outreach at scale (LinkedIn/Email)</td>
+<td>B2B companies</td>
+<td>₹35–80K</td>
+<td>$1,000–2,500</td>
+<td>1–2 weeks</td>
+</tr>
+<tr>
+<td>RAG Knowledge Base Bot</td>
+<td>Bot trained on your docs, manuals, SOPs</td>
+<td>Any company</td>
+<td>₹50–1.5L</td>
+<td>$1,500–4,000</td>
+<td>2–3 weeks</td>
+</tr>
+<tr>
+<td>AI Report Dashboard</td>
+<td>Auto-pulls data → generates weekly business summary</td>
+<td>SMBs, Agencies</td>
+<td>₹40–90K</td>
+<td>$1,200–3,000</td>
+<td>2 weeks</td>
+</tr>
+<tr>
+<td>AI Appointment Booking System</td>
+<td>Full booking + reminder + rescheduling automation</td>
+<td>Clinics, Coaches</td>
+<td>₹30–70K</td>
+<td>$800–2,000</td>
+<td>1–2 weeks</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4>🔴 ADVANCED TIER — High-Value Retainers (Complexity: High, Time: 4–8+ weeks)</h4>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>What It Is</th>
+<th>Target Client</th>
+<th>India Price</th>
+<th>Intl Price</th>
+<th>Delivery</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>End-to-End AI Operations Audit + Build</td>
+<td>Map all ops → identify AI opportunities → build 3–5 automations</td>
+<td>Mid-size companies</td>
+<td>₹1.5–5L</td>
+<td>$4,000–12,000</td>
+<td>4–6 weeks</td>
+</tr>
+<tr>
+<td>Agentic Workflow System</td>
+<td>Multi-step autonomous agent (research → act → report)</td>
+<td>SaaS, Enterprises</td>
+<td>₹2–8L</td>
+<td>$5,000–20,000</td>
+<td>6–10 weeks</td>
+</tr>
+<tr>
+<td>Custom LLM Fine-tuning + Deployment</td>
+<td>Fine-tune open-source model on client data</td>
+<td>Tech cos, Large SMBs</td>
+<td>₹3–10L</td>
+<td>$8,000–30,000</td>
+<td>6–12 weeks</td>
+</tr>
+<tr>
+<td>Voice AI Agent (Inbound/Outbound calls)</td>
+<td>AI that picks up phone, qualifies leads, books appts</td>
+<td>Real estate, Clinics</td>
+<td>₹1–4L/mo retainer</td>
+<td>$2,000–8,000/mo</td>
+<td>4–6 weeks build</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Emerging Skills to Build NOW (Next 12–24 Months)</h3>
+<table>
+<thead>
+<tr>
+<th>Skill/Area</th>
+<th>Why It Matters</th>
+<th>How to Start</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Agentic workflows</strong> (LangGraph, CrewAI)</td>
+<td>Agents are replacing simple bots — massive value jump</td>
+<td>Build 1 personal project agent today</td>
+</tr>
+<tr>
+<td><strong>Voice AI</strong> (Vapi, Retell, ElevenLabs)</td>
+<td>Phone AI for clinics/sales is exploding, few can deliver</td>
+<td>Get Vapi free tier, build a demo</td>
+</tr>
+<tr>
+<td><strong>RAG systems</strong> (Pinecone, Weaviate, pgvector)</td>
+<td>Every company will want a "chat with our data" product</td>
+<td>Build a personal RAG on your own docs</td>
+</tr>
+<tr>
+<td><strong>n8n/Make mastery</strong></td>
+<td>Most client work is orchestration, not model training</td>
+<td>Do 3 end-to-end automation projects</td>
+</tr>
+<tr>
+<td><strong>MCP + tool-use</strong></td>
+<td>Next evolution of agent capability</td>
+<td>Follow Anthropic/OpenAI MCP announcements</td>
+</tr>
+<tr>
+<td><strong>Vertical fine-tuning</strong></td>
+<td>Specialized models = moat</td>
+<td>Start with open-source Llama/Mistral</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="s3">Section 3 — Business Model &amp; Profit Maximization</h2>
+<h3>Business Model Comparison</h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Margin</th>
+<th>Scalability</th>
+<th>Stability</th>
+<th>Best For Stage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project-based</td>
+<td>40–60%</td>
+<td>Low (time-capped)</td>
+<td>Low (feast/famine)</td>
+<td>First 0-3 months</td>
+</tr>
+<tr>
+<td>Productized service</td>
+<td>60–75%</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Months 3–9</td>
+</tr>
+<tr>
+<td><strong>Retainer</strong></td>
+<td><strong>65–80%</strong></td>
+<td><strong>High</strong></td>
+<td><strong>High</strong></td>
+<td><strong>Target from Month 3+</strong></td>
+</tr>
+<tr>
+<td>Hybrid (project → retainer)</td>
+<td>70%+</td>
+<td>High</td>
+<td>High</td>
+<td>Best long-term model</td>
+</tr>
+<tr>
+<td>SaaS on top of client work</td>
+<td>80–90%</td>
+<td>Very High</td>
+<td>Very High</td>
+<td>Year 2+</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Recommended Model:</strong> Start project-based to build cash → convert every client to a <strong>₹15–50K/month retainer</strong> by Month 3. The retainer is maintenance, new automation requests, model updates, and monitoring. This is the engine.</p>
+</blockquote>
+<hr />
+<h3>Pricing Structure (Real Packages)</h3>
+<h4>India Packages</h4>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>What's Included</th>
+<th>Price</th>
+<th>Monthly Retainer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Starter</strong></td>
+<td>1 WhatsApp bot + CRM integration</td>
+<td>₹20–35K</td>
+<td>₹8–12K/mo</td>
+</tr>
+<tr>
+<td><strong>Growth</strong></td>
+<td>Full support bot + lead system + reporting</td>
+<td>₹60–1.2L</td>
+<td>₹20–35K/mo</td>
+</tr>
+<tr>
+<td><strong>Scale</strong></td>
+<td>Custom multi-agent system + ongoing builds</td>
+<td>₹1.5–4L</td>
+<td>₹50–80K/mo</td>
+</tr>
+</tbody>
+</table>
+<h4>International Packages</h4>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>What's Included</th>
+<th>Price</th>
+<th>Monthly Retainer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Starter</strong></td>
+<td>1 workflow automation + 1 AI bot</td>
+<td>$600–1,200</td>
+<td>$300–500/mo</td>
+</tr>
+<tr>
+<td><strong>Growth</strong></td>
+<td>Multi-channel AI support + lead system</td>
+<td>$2,500–5,000</td>
+<td>$800–1,500/mo</td>
+</tr>
+<tr>
+<td><strong>Scale</strong></td>
+<td>Agentic system + voice AI + custom model</td>
+<td>$8,000–20,000</td>
+<td>$2,000–5,000/mo</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Revenue Targets — Unit Economics</h3>
+<h4>To Hit ₹1L/month:</h4>
+<ul>
+<li><strong>Option A:</strong> 4 Indian Growth retainers @ ₹25K/mo each</li>
+<li><strong>Option B:</strong> 1 international Growth retainer @ $1,200/mo (~₹1L) + 1 Indian Starter</li>
+<li><strong>Cost to deliver:</strong> ~₹20–30K (API costs, tools, contractor help) → <strong>net margin 70–80%</strong></li>
+</ul>
+<h4>To Hit ₹5L/month:</h4>
+<ul>
+<li>3 Indian Scale retainers + 2 international Growth retainers</li>
+<li>OR 2 international Scale retainers ($2,500/mo each = ~₹4.2L) + 2 Indian Growth</li>
+<li><strong>Team needed:</strong> 1 part-time developer/no-code specialist (₹15–25K/mo)</li>
+<li><strong>Net margin:</strong> ~60–65%</li>
+</ul>
+<h4>To Hit ₹10L/month:</h4>
+<ul>
+<li>3–4 international Scale retainers + 4–5 Indian clients</li>
+<li><strong>Team:</strong> 1 full-time ops person + 1 developer + 1 sales person</li>
+<li><strong>Net margin:</strong> ~50–60%</li>
+</ul>
+<hr />
+<h3>Common Profit Leaks to Avoid</h3>
+<ul>
+<li>[ ] <strong>Scope creep:</strong> Always define "what's NOT included" in writing before starting</li>
+<li>[ ] <strong>Underpriced support:</strong> Charge separately for support hours above 2hrs/week</li>
+<li>[ ] <strong>API costs not tracked:</strong> Add 15-20% buffer on all API cost estimates, bill overages</li>
+<li>[ ] <strong>Lifetime deals:</strong> Never offer them — you'll be supporting forever for free</li>
+<li>[ ] <strong>Spec work:</strong> Never build a prototype for free to "win" a project</li>
+<li>[ ] <strong>Slow retainer clients:</strong> Clients who use &lt;20% of retainer still renew; don't "fill" time for them</li>
+</ul>
+<hr />
+<p><em>→ Continue to </em><em>Part 2</em><em>: Bootstrapped Launch Plan · India Client Acquisition · International Client Acquisition</em></p>
+      </div>
+    </section>
+    
+    <section id="part2" class="part-section">
+      <div class="part-badge">🚀 Part 2 of 3</div>
+      <div class="part-subtitle">Bootstrapped Launch · India Acquisition · International</div>
+      <div class="content">
+        <h1>🚀 AI Agency Business Blueprint — Part 2 of 3</h1>
+<h3>Bootstrapped Launch · India Client Acquisition · International Client Acquisition</h3>
+<hr />
+<h2 id="s4">Section 4 — Bootstrapped Launch Plan</h2>
+<h3>What NOT to Spend Money On (Early Stage)</h3>
+<table>
+<thead>
+<tr>
+<th>❌ Don't Buy</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fancy website/branding</td>
+<td>LinkedIn profile + 1-page Notion site is enough for 6 months</td>
+</tr>
+<tr>
+<td>Paid ads</td>
+<td>You don't have product-market fit yet; ads burn cash</td>
+</tr>
+<tr>
+<td>Office space/co-working</td>
+<td>Work from home until ₹3L+/month</td>
+</tr>
+<tr>
+<td>Multiple SaaS subscriptions</td>
+<td>Start: n8n free, OpenAI pay-per-use, Notion free</td>
+</tr>
+<tr>
+<td>Courses/certifications</td>
+<td>YouTube + docs + building is faster and cheaper</td>
+</tr>
+<tr>
+<td>A logo designer</td>
+<td>Use Canva free tier</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Essential Tools (Minimal Spend, ~₹3–5K/month max)</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Cost</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>n8n (self-hosted)</td>
+<td>₹500–1,500/mo (VPS)</td>
+<td>Automation backbone</td>
+</tr>
+<tr>
+<td>OpenAI / Anthropic API</td>
+<td>Pay per use (~₹1–3K/mo)</td>
+<td>AI backbone</td>
+</tr>
+<tr>
+<td>Notion</td>
+<td>Free</td>
+<td>Docs, SOPs, client portals</td>
+</tr>
+<tr>
+<td>Stripe / Razorpay</td>
+<td>2% per transaction</td>
+<td>Payments</td>
+</tr>
+<tr>
+<td>Calendly</td>
+<td>Free</td>
+<td>Booking discovery calls</td>
+</tr>
+<tr>
+<td>LinkedIn Premium</td>
+<td>₹3K/mo (optional)</td>
+<td>Outreach (skip first 60 days)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>90-Day Week-by-Week Launch Plan</h3>
+<h4>🗓 WEEKS 1–2: Foundation</h4>
+<ul>
+<li>[ ] Define your 3-sentence positioning statement (use the universal problem angle from Part 1)</li>
+<li>[ ] Set up LinkedIn profile: headline = <em>"I help [businesses] automate [pain] using AI"</em></li>
+<li>[ ] Build your first demo product (pick ONE — WhatsApp FAQ bot or Lead Qualifier)</li>
+<li>[ ] Deploy it on your own "business" or a family/friend business</li>
+<li>[ ] Record a 2-min Loom video showing it in action</li>
+<li>[ ] Create a simple Notion page as your "website" with: what you do, 3 packages, how to book a call</li>
+</ul>
+<h4>🗓 WEEKS 3–4: First Outreach</h4>
+<ul>
+<li>[ ] Identify 50 target businesses (local + LinkedIn) in your chosen niche</li>
+<li>[ ] Send 10 personalized DMs/day (template below)</li>
+<li>[ ] Post 3 times on LinkedIn this week: 1 educational post, 1 demo video, 1 story post</li>
+<li>[ ] Join 3 WhatsApp/Telegram business groups in your city</li>
+<li>[ ] Offer 2 free pilots (capped at 5 days of work each) — get a testimonial in return</li>
+<li>[ ] Goal: 5+ discovery calls booked</li>
+</ul>
+<h4>🗓 WEEKS 5–8: First Revenue</h4>
+<ul>
+<li>[ ] Convert 1–2 pilots into paid projects (₹15–30K each)</li>
+<li>[ ] Deliver fast, over-communicate, document everything</li>
+<li>[ ] Ask for referrals at delivery: <em>"Who else in your network would benefit from this?"</em></li>
+<li>[ ] Post case study on LinkedIn (with client permission or anonymized)</li>
+<li>[ ] Start posting on Twitter/X daily (builder journey content — builds international trust)</li>
+<li>[ ] Goal: ₹30–60K first month revenue</li>
+</ul>
+<h4>🗓 WEEKS 9–12: Systematize &amp; Scale</h4>
+<ul>
+<li>[ ] Turn the 2 free pilots into paid retainers (even ₹8–12K/mo to start)</li>
+<li>[ ] Create an SOP document for every service you delivered</li>
+<li>[ ] Build your second demo product (one tier up from your first)</li>
+<li>[ ] Start cold emailing 20 international prospects/week (template below)</li>
+<li>[ ] Goal: 3 paying clients, ₹60–1.2L/month run rate</li>
+</ul>
+<hr />
+<h3>How to Build Credibility Before Case Studies</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Effort</th>
+<th>Trust Built</th>
+<th>Recommended?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Free pilot (2 clients, capped scope)</td>
+<td>Medium</td>
+<td>High</td>
+<td>✅ Best option early</td>
+</tr>
+<tr>
+<td>Build in public on Twitter/LinkedIn</td>
+<td>Low/daily</td>
+<td>Medium (accumulates)</td>
+<td>✅ Do from Day 1</td>
+</tr>
+<tr>
+<td>Personal project demos</td>
+<td>Low-Medium</td>
+<td>Medium</td>
+<td>✅ Always have a demo ready</td>
+</tr>
+<tr>
+<td>Spec work for imaginary brand</td>
+<td>Low</td>
+<td>Low</td>
+<td>⚠️ Only if no options</td>
+</tr>
+<tr>
+<td>Write educational threads</td>
+<td>Low</td>
+<td>High (long-term)</td>
+<td>✅ 2–3x/week</td>
+</tr>
+<tr>
+<td>Discounted pilot (50% off)</td>
+<td>Medium</td>
+<td>High</td>
+<td>✅ Better than free — signals seriousness</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="s5">Section 5 — Client Acquisition: India</h2>
+<h3>Channels That Actually Work for Indian SMBs</h3>
+<h4>🔵 Channel 1: WhatsApp Outreach (Highest ROI in India)</h4>
+<p>Indian business owners live on WhatsApp. Cold WhatsApp &gt; Cold Email in India.</p>
+<p><strong>Script Template:</strong></p>
+<pre><code>Hi [Name], saw your [clinic/store/brand] on [Instagram/Justdial/Google].
+
+Quick question — are you manually handling appointment reminders / customer 
+queries / follow-ups right now?
+
+I work with [similar businesses] to automate this with AI — most save 10–15 
+hours/week and see 20–30% more confirmed bookings.
+
+Would you be open to a 15-min call this week to see if it makes sense for you?
+
+[Your Name] | [Notion link]
+</code></pre>
+<blockquote>
+<p><strong>Tips:</strong> Use your personal number (not a new number — trust matters). Send max 20/day. Do NOT copy-paste identical messages — WhatsApp detects it.</p>
+</blockquote>
+<hr />
+<h4>🔵 Channel 2: Local LinkedIn Outreach</h4>
+<ul>
+<li>Search: <em>"Owner" + "Founder" + "[City]" + "[Industry]"</em></li>
+<li>Connect with personalized note (not: "I'd like to add you to my network")</li>
+<li>After connect, wait 2–3 days, then send value message (NOT a pitch)</li>
+</ul>
+<p><strong>Connection Note:</strong></p>
+<pre><code>Hi [Name] — following your [clinic/brand/agency] journey. I help [industry] 
+businesses automate [pain point]. Would love to connect with fellow builders in [City].
+</code></pre>
+<p><strong>Follow-Up (Day 3):</strong></p>
+<pre><code>[Name], shared a quick video of an AI appointment system I built for a similar 
+clinic last month — reduced no-shows by 35%. Happy to show you how it works 
+— no commitment at all.
+</code></pre>
+<hr />
+<h4>🔵 Channel 3: Industry Facebook Groups</h4>
+<p>Top groups to target:<br />
+- <em>"India Business Owners"</em> (500K+ members)<br />
+- City-specific entrepreneur groups: <em>"Delhi Entrepreneurs," "Mumbai Startups"</em><br />
+- Industry groups: <em>"Real Estate Professionals India," "D2C Founders India"</em></p>
+<p><strong>Tactic:</strong> Post value first (mini case study, tip, tool recommendation). After 2–4 posts, people DM you. DO NOT post "I offer AI services" — instant ban + zero response.</p>
+<hr />
+<h4>🔵 Channel 4: Local Networking &amp; Referral Loops</h4>
+<ul>
+<li>BNI chapters (₹15–30K/year membership) → one referral pays for it 5x</li>
+<li>NASSCOM/CII local events → enterprise leads</li>
+<li>CA referrals → CAs see every SMB's pain and love referring trusted vendors</li>
+<li>Offer CAs a 10% referral fee — they'll actively sell for you</li>
+</ul>
+<hr />
+<h3>India Pricing &amp; Negotiation Reality</h3>
+<table>
+<thead>
+<tr>
+<th>Fact</th>
+<th>What To Do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Indian clients will always negotiate</td>
+<td>Build 15–20% into your price anticipating it</td>
+</tr>
+<tr>
+<td>"Free sample" culture is strong</td>
+<td>Offer a <strong>paid discovery audit</strong> at ₹3–5K instead of free consultation</td>
+</tr>
+<tr>
+<td>Payment defaults happen</td>
+<td>Take 50% upfront — non-negotiable</td>
+</tr>
+<tr>
+<td>They refer heavily if happy</td>
+<td>Ask for referrals within 2 weeks of go-live</td>
+</tr>
+<tr>
+<td>They compare to cheaper freelancers</td>
+<td>Anchor on outcome (₹X saved/earned), not hours</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The GST Conversation:</strong> Register for GST once billing exceeds ₹20L/year. Before that, invoice without GST and mention you're under the threshold.</p>
+<hr />
+<h2 id="s6">Section 6 — Client Acquisition: International</h2>
+<h3>The India-Based Founder's Playbook for Global Clients</h3>
+<h4>🟠 Channel 1: Upwork (Best for First International Client)</h4>
+<p><strong>The Reality:</strong> Upwork is competitive but not dead. The secret is <strong>category specialization + a strong portfolio</strong>.</p>
+<ul>
+<li>Create a specialized profile (not "I do AI stuff") — pick one service</li>
+<li>First 10 proposals: <strong>Apply only to small jobs ($200–800)</strong> to build JSS quickly</li>
+<li>Write proposals that lead with <em>their problem</em>, not your skills</li>
+<li>Use the first paragraph to mirror their pain: <em>"You're losing time manually [X]..."</em></li>
+<li>Include a Loom video demo of a relevant project (2-min max)</li>
+<li><strong>Pricing:</strong> Start 20% below market, raise after 5-star reviews</li>
+</ul>
+<hr />
+<h4>🟠 Channel 2: LinkedIn Cold Outreach (Best for $1K+ Projects)</h4>
+<p><strong>Target:</strong> Founders/Ops Managers of 10–100 person US/EU companies</p>
+<p><strong>Search filters:</strong><br />
+- Title: "Founder," "COO," "Head of Operations," "VP Sales"<br />
+- Industry: SaaS, Marketing Agency, Real Estate, Healthcare<br />
+- Company size: 11–50, 51–200</p>
+<p><strong>Connection Message:</strong></p>
+<pre><code>Hi [Name] — noticed [Company] is scaling fast in [space]. I help [similar 
+companies] automate [pain] using AI — typically saves 10–20 hrs/week for 
+the ops team. Thought it might be relevant. Happy to share a quick demo 
+if useful — no strings attached.
+</code></pre>
+<p><strong>Volume target:</strong> 20 connects/day, 5 follow-up messages/day = 8–12 responses/week at scale</p>
+<hr />
+<h4>🟠 Channel 3: Cold Email at Scale</h4>
+<p><strong>Tools:</strong> Apollo.io (free tier), Instantly.ai (~$37/mo), Lemlist</p>
+<p><strong>Email Template:</strong></p>
+<pre><code>Subject: [Company] — quick AI idea for your [ops/support/sales team]
+
+Hi [First Name],
+
+Saw that [Company] is [doing X — specific observation from their website/LinkedIn].
+
+Most [industry] companies at your stage are still manually [pain point] — 
+which typically costs 15–20 hours/week in ops time.
+
+I built an AI system for [similar company] that automated this in 2 weeks. 
+They're now saving $3,000/month in ops costs.
+
+Would a 15-min call to walk you through it be worth your time?
+
+[Name]
+P.S. Happy to share the case study if useful.
+</code></pre>
+<p><strong>Metrics to expect:</strong> 3–5% reply rate, 1–2% meeting rate. At 100 emails/day → 3–5 meetings/week.</p>
+<hr />
+<h4>🟠 Channel 4: Twitter/X Authority Building</h4>
+<p>This is the <strong>highest ROI long-term channel</strong> for international clients but takes 3–6 months.</p>
+<p><strong>Posting formula (5 tweets/week):</strong><br />
+- 2x: Educational (how to use AI for X — short threads)<br />
+- 1x: Behind-the-scenes (what you built this week, Loom video)<br />
+- 1x: Opinion/hot take (controversial but informed)<br />
+- 1x: Case study (anonymized is fine: "helped a SaaS company cut support by 60%")</p>
+<p><strong>Engagement rule:</strong> Comment meaningfully on 10 posts/day from target accounts (founders, ops leaders, AI builders). Comments = inbound leads over time.</p>
+<hr />
+<h4>🟠 Channel 5: Agency Partnerships (Underrated)</h4>
+<ul>
+<li>Find US/EU marketing or web dev agencies (50–200 person) that don't offer AI services</li>
+<li>Pitch a <strong>white-label partnership</strong>: They sell AI to their clients, you deliver, they add margin</li>
+<li>They want to expand services without hiring. You want clients without marketing.</li>
+<li><strong>Revenue share:</strong> 20–30% to the referring agency, you keep 70–80%</li>
+<li>Find them: LinkedIn search <em>"Marketing Agency" + "Digital Agency"</em> in US cities</li>
+</ul>
+<hr />
+<h3>Handling the Trust Gap (India-Based, International Client)</h3>
+<table>
+<thead>
+<tr>
+<th>Concern</th>
+<th>Your Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>"Will you be available?"</em></td>
+<td>Show timezone overlap (IST covers EU mornings + US evenings)</td>
+</tr>
+<tr>
+<td><em>"Can I trust an Indian agency?"</em></td>
+<td>Never mention location first. Let work speak.</td>
+</tr>
+<tr>
+<td><em>"How do I pay you?"</em></td>
+<td>Wise / Stripe / PayPal — professional invoice in USD</td>
+</tr>
+<tr>
+<td><em>"What if it goes wrong?"</em></td>
+<td>Offer 30-day post-launch support in writing</td>
+</tr>
+<tr>
+<td><em>"Are you a freelancer or agency?"</em></td>
+<td>"We're a boutique AI automation studio" — never say solo</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Payment setup:</strong> Wise Business account (no setup fee, receives USD/EUR/GBP at real exchange rate). Better than PayPal's 4% fee.</p>
+<hr />
+<h3>International Pricing — Don't Undersell</h3>
+<p><strong>The fatal mistake:</strong> Charging Indian prices to international clients because you feel guilty.</p>
+<p><strong>The math:</strong> A US business owner pays their intern $15/hr. You're saving them 20 hrs/week = $300/week = $1,200/month value. Charging $500 for a setup project is <strong>not expensive to them</strong>.</p>
+<p><strong>Anchor to local equivalents:</strong><br />
+- A US marketing agency charges $150–250/hr<br />
+- A US developer charges $100–200/hr<br />
+- You at $50–80/hr effective rate is CHEAP to them — don't apologize for it</p>
+<p><strong>Rule:</strong> Your international price should be <strong>3–5x your Indian price</strong> for identical work.</p>
+<hr />
+<p><em>→ Continue to </em><em>Part 3</em><em>: Tools &amp; Tech Stack · Team &amp; Scaling · Risks &amp; Differentiation · Full Roadmap</em></p>
+      </div>
+    </section>
+    
+    <section id="part3" class="part-section">
+      <div class="part-badge">🛠 Part 3 of 3</div>
+      <div class="part-subtitle">Tech Stack · Team · Risks · Full Roadmap</div>
+      <div class="content">
+        <h1>🚀 AI Agency Business Blueprint — Part 3 of 3</h1>
+<h3>Tools &amp; Tech Stack · Team &amp; Scaling · Risks · Full Roadmap</h3>
+<hr />
+<h2 id="s7">Section 7 — Tools, Tech Stack &amp; Skills</h2>
+<h3>Core Technical Stack — Priority Order</h3>
+<h4>🔴 MUST LEARN NOW (First 30 Days)</h4>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>What It Does</th>
+<th>Learn Via</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>n8n</strong></td>
+<td>Visual automation builder — the backbone of 80% of your work</td>
+<td>n8n.io docs + YouTube</td>
+<td>Free (self-host)</td>
+</tr>
+<tr>
+<td><strong>OpenAI API</strong></td>
+<td>GPT-4o for text generation, classification, extraction</td>
+<td>platform.openai.com</td>
+<td>Pay-per-use</td>
+</tr>
+<tr>
+<td><strong>Anthropic API</strong></td>
+<td>Claude for long-context, complex reasoning tasks</td>
+<td>docs.anthropic.com</td>
+<td>Pay-per-use</td>
+</tr>
+<tr>
+<td><strong>WhatsApp Business API</strong></td>
+<td>Connect bots to WhatsApp (via 360dialog or Wati)</td>
+<td>Wati.io docs</td>
+<td>~$30/mo</td>
+</tr>
+<tr>
+<td><strong>Airtable / Notion</strong></td>
+<td>Client-facing data views + project management</td>
+<td>Built-in tutorials</td>
+<td>Free tier</td>
+</tr>
+<tr>
+<td><strong>Loom</strong></td>
+<td>Record demos and client walkthroughs</td>
+<td>Instant</td>
+<td>Free tier</td>
+</tr>
+</tbody>
+</table>
+<h4>🟡 LEARN IN MONTHS 1–3</h4>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>What It Does</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Make.com (formerly Integromat)</strong></td>
+<td>Alternative to n8n, preferred by some clients</td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Pinecone / Supabase pgvector</strong></td>
+<td>Vector store for RAG systems</td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>LangChain / LlamaIndex</strong></td>
+<td>RAG orchestration framework</td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Flowise / Voiceflow</strong></td>
+<td>No-code agent builders for client-facing demos</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>Retell AI / Vapi</strong></td>
+<td>Voice AI — phone agents for clinics/sales</td>
+<td>High (emerging)</td>
+</tr>
+<tr>
+<td><strong>Zapier</strong></td>
+<td>Some clients already use it; know it for handoffs</td>
+<td>Medium</td>
+</tr>
+</tbody>
+</table>
+<h4>🟢 BUILD TOWARD (Months 3–12)</h4>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Why It Matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LangGraph / CrewAI</strong></td>
+<td>Multi-agent orchestration — premium tier work</td>
+</tr>
+<tr>
+<td><strong>Mistral / Llama fine-tuning</strong></td>
+<td>Custom models = moat and premium pricing</td>
+</tr>
+<tr>
+<td><strong>Browserbase / Playwright</strong></td>
+<td>Web agent automation (scraping, form filling)</td>
+</tr>
+<tr>
+<td><strong>ElevenLabs</strong></td>
+<td>Premium voice synthesis for voice AI products</td>
+</tr>
+<tr>
+<td><strong>Docker + VPS deployment</strong></td>
+<td>Ship production-grade automations, not just demos</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Non-Technical Skills (Equally Important)</h3>
+<table>
+<thead>
+<tr>
+<th>Skill</th>
+<th>Why Critical</th>
+<th>How to Get Good Fast</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Discovery call technique</strong></td>
+<td>Wrong questions = wrong scope = cost overruns</td>
+<td>Practice with Loom role-plays; study SPIN Selling</td>
+</tr>
+<tr>
+<td><strong>Proposal writing</strong></td>
+<td>A good proposal closes without a follow-up call</td>
+<td>Study 10 winning Upwork proposals; use a template</td>
+</tr>
+<tr>
+<td><strong>Project scoping</strong></td>
+<td>Prevents scope creep that kills margins</td>
+<td>Always write "what's NOT included"</td>
+</tr>
+<tr>
+<td><strong>Client communication</strong></td>
+<td>Bad updates = churn; good updates = referrals</td>
+<td>Weekly 3-bullet update email every Friday</td>
+</tr>
+<tr>
+<td><strong>Objection handling</strong></td>
+<td>"It's too expensive," "we'll build it in-house"</td>
+<td>Have 3 responses ready for each common objection</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fastest way to improve sales skills:</strong> Do 2 discovery calls/week, record them, review them. You'll see patterns in 30 days.</p>
+<hr />
+<h3>Business Operations Stack</h3>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Tool</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Invoicing (India)</strong></td>
+<td>Zoho Invoice / Refrens</td>
+<td>GST-compliant, professional</td>
+</tr>
+<tr>
+<td><strong>Invoicing (International)</strong></td>
+<td>Stripe / Wise</td>
+<td>Accept USD/EUR/GBP</td>
+</tr>
+<tr>
+<td><strong>Contracts</strong></td>
+<td>Docusign / PandaDoc (free tier)</td>
+<td>Always have a signed SOW</td>
+</tr>
+<tr>
+<td><strong>CRM</strong></td>
+<td>Notion / HubSpot free</td>
+<td>Track all leads, follow-ups, pipeline</td>
+</tr>
+<tr>
+<td><strong>Project management</strong></td>
+<td>Notion / Linear</td>
+<td>Client-facing + internal</td>
+</tr>
+<tr>
+<td><strong>Communication</strong></td>
+<td>Slack (with clients) / WhatsApp</td>
+<td>Clients prefer WhatsApp in India</td>
+</tr>
+<tr>
+<td><strong>GST compliance</strong></td>
+<td>ClearTax or local CA</td>
+<td>Register at ₹20L threshold</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Legal Minimum Viable Setup (India-Based Agency)</h3>
+<ul>
+<li>[ ] Open a <strong>current account</strong> (not savings) — HDFC/ICICI/Kotak — for business transactions</li>
+<li>[ ] Register as a <strong>sole proprietor</strong> first (zero cost, immediate) — upgrade to LLP when billing &gt;₹15L/year</li>
+<li>[ ] Have a <strong>standard service agreement</strong> with 3 key clauses: IP ownership (client owns output), payment terms (50% upfront), scope definition</li>
+<li>[ ] For international: Use <strong>Wise Business</strong> to receive foreign payments compliantly (FEMA compliant)</li>
+<li>[ ] File ITR as professional income — track all expenses (API costs, tools, contractor payments) as deductibles</li>
+</ul>
+<hr />
+<h2 id="s8">Section 8 — Team &amp; Scaling</h2>
+<h3>When to Hire (Concrete Signals)</h3>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>What to Do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>You're turning down work due to capacity</td>
+<td>Hire a part-time contractor within 2 weeks</td>
+</tr>
+<tr>
+<td>You're spending &gt;30% time on delivery, not sales</td>
+<td>Hire a delivery contractor</td>
+</tr>
+<tr>
+<td>Same task being done 5+ times</td>
+<td>Build an SOP and delegate it</td>
+</tr>
+<tr>
+<td>Revenue consistent &gt;₹1.5L/month for 2 months</td>
+<td>First full hire</td>
+</tr>
+<tr>
+<td>Client complaints about response time</td>
+<td>Hire a client success person (can be part-time)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>First 3 Hires (In Order)</h3>
+<h4>Hire #1: No-Code / n8n Automation Specialist (Month 3–4)</h4>
+<ul>
+<li><strong>Where:</strong> Internshala, LinkedIn, Upwork India</li>
+<li><strong>Cost:</strong> ₹12–20K/month (fresher) or ₹2–5K per project (freelancer)</li>
+<li><strong>What they do:</strong> Deliver the builds you sell; you focus on sales + strategy</li>
+</ul>
+<h4>Hire #2: Sales/Outreach VA (Month 5–7)</h4>
+<ul>
+<li><strong>Where:</strong> Upwork, Fiverr, Bangalore/Delhi-based agencies</li>
+<li><strong>Cost:</strong> ₹8–15K/month</li>
+<li><strong>What they do:</strong> LinkedIn outreach, cold email follow-ups, appointment setting</li>
+</ul>
+<h4>Hire #3: Client Success / Project Manager (Month 8–10)</h4>
+<ul>
+<li><strong>Where:</strong> Internal promotion from VA or fresh hire</li>
+<li><strong>Cost:</strong> ₹15–25K/month</li>
+<li><strong>What they do:</strong> Owns client communication, weekly updates, renewals</li>
+</ul>
+<hr />
+<h3>Building SOPs (So You're Not the Bottleneck)</h3>
+<p>For every service you deliver, create a Notion SOP with:<br />
+1. <strong>Trigger</strong> — what starts this process?<br />
+2. <strong>Step-by-step checklist</strong> — exactly what gets done, in what order<br />
+3. <strong>Tools used</strong> — with login credentials (in 1Password, not the doc)<br />
+4. <strong>Quality check</strong> — what does "done" look like?<br />
+5. <strong>Client handoff template</strong> — the exact message/video sent to client</p>
+<blockquote>
+<p><strong>Rule:</strong> If you do something twice, document it. If you do it 5 times, delegate it.</p>
+</blockquote>
+<hr />
+<h3>When to Raise Prices &amp; Drop Bad Clients</h3>
+<p><strong>Raise prices when:</strong><br />
+- Demand for your time exceeds capacity for 2+ consecutive weeks<br />
+- You're winning &gt;60% of proposals you send<br />
+- A new client would displace a current one</p>
+<p><strong>Drop a client when:</strong><br />
+- They pay late &gt;2 consecutive months<br />
+- Scope creep is consistent despite clear contracts<br />
+- The stress-to-revenue ratio is too high (gut check: would you be relieved if they cancelled?)<br />
+- They take &gt;3x the time of similar-budget clients</p>
+<hr />
+<h2 id="s9">Section 9 — Risks &amp; Differentiation</h2>
+<h3>Biggest Risks &amp; How to Hedge</h3>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Reality Check</th>
+<th>Hedge Strategy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Commoditization</strong></td>
+<td>Basic bots are already a commodity</td>
+<td>Move up the value chain continuously — bots → agents → custom systems</td>
+</tr>
+<tr>
+<td><strong>Clients building in-house</strong></td>
+<td>Yes, after 12–18 months some will</td>
+<td>Position yourself as ongoing R&amp;D partner, not one-time builder</td>
+</tr>
+<tr>
+<td><strong>LLM API price volatility</strong></td>
+<td>GPT-4 pricing has shifted 5x in 2 years</td>
+<td>Always charge on value, not API cost; build margin buffer</td>
+</tr>
+<tr>
+<td><strong>New no-code tools making you irrelevant</strong></td>
+<td>Partially true for basic work</td>
+<td>Your moat is orchestration + business understanding, not tool usage</td>
+</tr>
+<tr>
+<td><strong>OpenAI / Anthropic pivoting</strong></td>
+<td>Real risk for tool-dependent builders</td>
+<td>Multi-model strategy: use best model per task, switch easily</td>
+</tr>
+<tr>
+<td><strong>Client concentration</strong></td>
+<td>1 client = 50%+ revenue is dangerous</td>
+<td>Never let 1 client be &gt;30% of revenue</td>
+</tr>
+<tr>
+<td><strong>Regulatory / AI compliance</strong></td>
+<td>GDPR, India's DPDP Act, sector regulations</td>
+<td>Always have data processing agreements; avoid storing client PII</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>Building a Real Moat (Not "Just Another AI Agency")</h3>
+<p>Most agencies have no moat. Here's how to build one:</p>
+<h4>Moat #1: Proprietary Templates &amp; Systems</h4>
+<p>Every project you deliver, extract the reusable components. After 20 projects, you have a library that lets you deliver in 3 days what competitors take 3 weeks for. Sell this speed as a premium.</p>
+<h4>Moat #2: Deep Domain Knowledge in 1–2 Sectors</h4>
+<p>Pick 1 sector (e.g., clinics OR real estate) and go so deep that you understand their ERP systems, their compliance, their sales cycle, their language. Clients feel this immediately — it builds trust no generalist can compete with.</p>
+<h4>Moat #3: Network of Trained Delivery People</h4>
+<p>By Month 9, you have 3–4 trained contractors who know your SOPs. A new competitor has none. Your capacity to take on projects is 4x theirs. This is a real operational moat.</p>
+<h4>Moat #4: Data and Case Studies</h4>
+<p>After 12 months, you have real performance data: <em>"Our clients average 32% more leads and 28% less support volume."</em> A new agency has nothing. Your results are your brand.</p>
+<h4>Moat #5: White-Label Partnerships (Recurring without selling)</h4>
+<p>Build relationships with 3–5 agencies that resell your services. This creates revenue that doesn't require you to sell at all.</p>
+<hr />
+<h2 id="s10">Section 10 — The Full Roadmap</h2>
+<h3>90-Day Milestones</h3>
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>Focus</th>
+<th>Revenue Target</th>
+<th>Key Deliverable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1–2</td>
+<td>Build + position</td>
+<td>₹0</td>
+<td>Demo product live + LinkedIn profile optimized</td>
+</tr>
+<tr>
+<td>3–4</td>
+<td>First outreach</td>
+<td>₹0</td>
+<td>5+ discovery calls booked</td>
+</tr>
+<tr>
+<td>5–6</td>
+<td>First paid project</td>
+<td>₹15–30K</td>
+<td>1 paying client delivered</td>
+</tr>
+<tr>
+<td>7–8</td>
+<td>First referral</td>
+<td>₹30–60K</td>
+<td>2nd client from referral + testimonial collected</td>
+</tr>
+<tr>
+<td>9–10</td>
+<td>First retainer</td>
+<td>₹50–80K</td>
+<td>1–2 clients on monthly retainer</td>
+</tr>
+<tr>
+<td>11–12</td>
+<td>First international</td>
+<td>₹80K–1.2L</td>
+<td>1 Upwork or LinkedIn international client signed</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>6-Month Milestones</h3>
+<table>
+<thead>
+<tr>
+<th>Month</th>
+<th>Focus</th>
+<th>Revenue Target</th>
+<th>Team</th>
+<th>Key Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>Productize</td>
+<td>₹1–1.5L</td>
+<td>Solo</td>
+<td>Convert project work into 2 packaged products</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Hire first</td>
+<td>₹1.5–2L</td>
+<td>+1 contractor</td>
+<td>Bring on n8n specialist; you move to sales</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Retainer majority</td>
+<td>₹2–3L</td>
+<td>Solo + 1</td>
+<td>60%+ revenue from recurring retainers</td>
+</tr>
+</tbody>
+</table>
+<p><strong>6-Month Goals:</strong><br />
+- [ ] 5–8 active clients<br />
+- [ ] 3–4 on retainer<br />
+- [ ] 1–2 international clients<br />
+- [ ] First case study published<br />
+- [ ] SOP library covering top 5 services</p>
+<hr />
+<h3>12-Month Milestones</h3>
+<table>
+<thead>
+<tr>
+<th>Month</th>
+<th>Revenue Target</th>
+<th>Team Size</th>
+<th>Focus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7–8</td>
+<td>₹3–4L</td>
+<td>2–3 people</td>
+<td>Raise prices 20–30% across the board</td>
+</tr>
+<tr>
+<td>9–10</td>
+<td>₹4–6L</td>
+<td>3–4 people</td>
+<td>Launch advanced tier (agentic systems, voice AI)</td>
+</tr>
+<tr>
+<td>11–12</td>
+<td>₹6–10L+</td>
+<td>4–5 people</td>
+<td>White-label partnerships + potential SaaS product v1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>12-Month Goals:</strong><br />
+- [ ] ₹6–10L/month revenue<br />
+- [ ] 12–18 active clients (mix of India + international)<br />
+- [ ] 1 white-label agency partner generating passive inbound<br />
+- [ ] Voice AI or agentic system delivered to at least 1 client<br />
+- [ ] Prototype of a SaaS product (based on most-repeated client need)<br />
+- [ ] Team of 3–4 (1 delivery, 1 VA, 1 part-time PM)<br />
+- [ ] NPS &gt; 8 from clients</p>
+<hr />
+<h3>The Big Picture Mental Model</h3>
+<pre><code>YEAR 1:  Services business   →  Survival + learning
+YEAR 2:  Productized agency  →  Scale + systems
+YEAR 3:  SaaS + white-label  →  Leverage + exit optionality
+</code></pre>
+<p>The SaaS on top of client work is the real play. After 12–18 months, you'll have built the same automation 20+ times for different clients. That's the product. You charge ₹499–4,999/month as a SaaS instead of ₹30K as a project. Same build, 100x revenue potential.</p>
+<hr />
+<h3>Final Reality Check</h3>
+<blockquote>
+<p><strong>Most people reading this won't act.</strong> They'll save this doc, feel motivated for 3 days, and go back to their routine.</p>
+<p>The founder who wins is the one who sends the first 10 WhatsApp messages TODAY — not after they finish learning n8n, not after their website is perfect, not after they feel ready.</p>
+<p>Your first client won't come from your portfolio. It will come from a conversation you start this week.</p>
+</blockquote>
+<hr />
+<p><em>← See </em><em>Part 1</em><em> for Positioning, Service Catalog, Business Model</em><br />
+<em>← See </em><em>Part 2</em><em> for Bootstrapped Launch, India &amp; International Client Acquisition</em></p>
+      </div>
+    </section>
+    
+    </div>
+
+    <div class="footer">
+      Built with ❤️ · <strong>AI Agency Business Blueprint Studio</strong> · All content is actionable, numbers-backed strategy.
+    </div>
+  </main>
+</div>
+
+<a href="#" class="top-btn" title="Back to top">↑</a>
+
+<script>
+  // Theme Toggle Logic
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('blueprint-theme', theme);
+    const thumb = document.getElementById('theme-thumb');
+    const text = document.getElementById('theme-text');
+    if (theme === 'light') {
+      if (thumb) thumb.textContent = '☀️';
+      if (text) text.textContent = 'Light Mode';
+    } else {
+      if (thumb) thumb.textContent = '🌙';
+      if (text) text.textContent = 'Dark Mode';
+    }
+  }
+
+  const savedTheme = localStorage.getItem('blueprint-theme') || 'dark';
+  setTheme(savedTheme);
+
+  document.getElementById('theme-toggle')?.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme') || 'dark';
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  });
+
+  // Mobile Sidebar Toggle
+  function toggleSidebar() {
+    const sb = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+    if (sb) sb.classList.toggle('open');
+    if (overlay) overlay.classList.toggle('active');
+  }
+
+  // Auto-close sidebar on mobile item click
+  document.querySelectorAll('.sidebar-item').forEach(item => {
+    item.addEventListener('click', () => {
+      if (window.innerWidth <= 1024) {
+        const sb = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        if (sb && sb.classList.contains('open')) {
+          sb.classList.remove('open');
+          if (overlay) overlay.classList.remove('active');
+        }
+      }
+    });
+  });
+
+  // Sidebar Filter Search
+  function filterSidebar() {
+    const query = document.getElementById('sidebar-search').value.toLowerCase();
+    document.querySelectorAll('.sidebar-item').forEach(item => {
+      const text = item.textContent.toLowerCase();
+      item.style.display = text.includes(query) ? 'flex' : 'none';
+    });
+  }
+
+  // Make checkboxes interactive
+  document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+    cb.removeAttribute('disabled');
+    const saved = localStorage.getItem(cb.parentElement.textContent.trim().slice(0,40));
+    if (saved === 'true') cb.checked = true;
+    cb.addEventListener('change', () => {
+      localStorage.setItem(cb.parentElement.textContent.trim().slice(0,40), cb.checked);
+    });
+  });
+
+  function scrollToAnchor(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const nav = document.querySelector('.nav');
+    const navHeight = nav ? nav.offsetHeight : 60;
+    const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - navHeight - 24;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
+
+  // Smooth scroll for all anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if (href && href.length > 1) {
+        e.preventDefault();
+        scrollToAnchor(href.substring(1));
+      } else if (href === '#') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Highlight Active Section in Sidebar on Scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        document.querySelectorAll('.sidebar-item').forEach(link => {
+          if (link.getAttribute('data-anchor') === id) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+    });
+  }, { rootMargin: '-10% 0px -70% 0px' });
+
+  document.querySelectorAll('h2[id]').forEach(h2 => observer.observe(h2));
+
+  // Scroll Reveal Animations for Cards/Tables
+  const revealTargets = document.querySelectorAll('.creative-banner, .toc-wrapper, .content table, .content pre, .content blockquote');
+  revealTargets.forEach(el => el.classList.add('reveal'));
+
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.01, rootMargin: '50px 0px 50px 0px' });
+
+  revealTargets.forEach(el => revealObserver.observe(el));
+</script>
+</body>
+</html>
