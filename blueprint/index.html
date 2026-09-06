@@ -976,7 +976,6 @@
     <span class="brand-icon">⚡</span>
     <span class="brand-name">AI AGENCY STUDIO</span>
   </div>
-  <a href="../admin.html" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--text); border-radius: 6px; padding: 6px 12px; font-weight: 500; font-size: 0.8125rem; text-decoration: none;">← Ops Portal</a>
   <button id="sidebar-toggle" class="sidebar-toggle-btn" onclick="toggleSidebar()">☰ Outline</button>
   <a href="#part1">📌 Part 1</a>
   <a href="#part2">🚀 Part 2</a>
@@ -1156,7 +1155,7 @@
       <td class="toc-td-num"><span class="toc-num-badge">05</span></td>
       <td class="toc-td-title">
         <div class="toc-section-title">Client Acquisition: India</div>
-        <div class="toc-section-desc">WhatsApp outreach scripts, LinkedIn tactics, FB groups, referral loops, negotiation reality</div>
+        <div class="toc-section-desc">Master AI lead generation prompt (real leads), WhatsApp outreach scripts, LinkedIn tactics, FB groups, referral loops</div>
       </td>
       <td class="toc-td-part"><span class="toc-part-pill" style="--pc:#f59e0b">🚀 Part 2</span></td>
       <td class="toc-td-link"><a href="#s5" class="toc-go-btn">Jump →</a></td>
@@ -1186,7 +1185,7 @@
       <td class="toc-td-num"><span class="toc-num-badge">08</span></td>
       <td class="toc-td-title">
         <div class="toc-section-title">Team & Scaling</div>
-        <div class="toc-section-desc">When to hire, first 3 hires in order, SOP framework, when to raise prices / drop clients</div>
+        <div class="toc-section-desc">Bhavya & Dhruv 2-person work division, AI-delegated roles, lean execution, when to hire, SOPs</div>
       </td>
       <td class="toc-td-part"><span class="toc-part-pill" style="--pc:#ec4899">🛠 Part 3</span></td>
       <td class="toc-td-link"><a href="#s8" class="toc-go-btn">Jump →</a></td>
@@ -1922,6 +1921,80 @@ PAIN #3 → &quot;I have no idea what's actually happening in my business&quot;
 </table>
 <hr />
 <h2 id="s5">Section 5 — Client Acquisition: India</h2>
+<h3>🎯 The Master AI Lead Extraction &amp; Verification Engine (Zero Mock Data)</h3>
+<blockquote>
+<p>[!IMPORTANT]<br />
+<strong>Zero Mock Data Guarantee:</strong> Standard LLMs will invent fictional businesses, fake emails, and dead phone numbers if prompted generically. This master prompt uses <strong>live-search OSINT triangulation</strong> (via Perplexity Pro, ChatGPT Plus/Team with Search, or Gemini Advanced with Google Search Grounding). It forces the AI to execute live web searches, verify physical existence, extract active public telephone lines for Bhavya's cold calls, identify verified decision-makers, and diagnose genuine operational vulnerabilities.</p>
+</blockquote>
+<hr />
+<h4>🧠 The Master Prompt (Copy &amp; Run in Any Search-Enabled AI)</h4>
+<pre><code class="language-markdown">You are an elite B2B Sales Intelligence Director and OSINT Lead Generation Engineer. 
+Your objective is to conduct real-time, live web research to discover, verify, and enrich [BATCH_COUNT] REAL, currently operating businesses matching the exact criteria below.
+
+==================================================
+TARGET CLIENT CONFIGURATION:
+- [TARGET_NICHE]: {{Insert Niche, e.g., Cosmetic Dental Clinics / Commercial HVAC Contractors / Boutique Family Law / D2C Fashion Brands}}
+- [TARGET_LOCATION]: {{Insert City, State, or Country, e.g., Mumbai, Maharashtra / Austin, Texas / Greater London, UK}}
+- [BUSINESS_CRITERIA]: {{e.g., Active physical office, 5-40 employees, minimum 4.0+ stars on Google Maps with 20+ reviews, active customer volume}}
+- [AGENCY_CORE_OFFER]: {{Insert Your Service, e.g., 24/7 AI Voice Phone Receptionist to capture missed calls &amp; book appointments automatically}}
+- [BATCH_COUNT]: {{e.g., 10 verified leads}}
+==================================================
+
+ANTI-HALLUCINATION &amp; LIVE VERIFICATION PROTOCOL (STRICT MANDATE):
+1. ZERO MOCK DATA: You are strictly forbidden from creating synthetic businesses, placeholder domains (e.g., example.com, testclinic.in), or fake contact details. Every single lead MUST be a legitimate, currently active business.
+2. LIVE URL &amp; LOCATION AUDIT: You must verify that the business has a live, accessible website (HTTP 200) and an active physical listing (Google Business Profile, Justdial, Yelp, or local corporate registrar).
+3. DECISION MAKER IDENTIFICATION: Identify the real Owner, Founder, Managing Director, Practice Head, or COO. Search their website 'About Us / Team' page or LinkedIn public index. If an individual cannot be verified, find the Clinic/Managing Director.
+4. DIRECT CONTACT TRIANGULATION:
+   - Provide the official public business phone number (for immediate outbound cold calling).
+   - Provide the official business email, contact inquiry URL, or corporate email domain pattern.
+   - Provide the direct LinkedIn URL for the business and decision-maker.
+5. OPERATIONAL FRICTION AUDIT: Inspect their digital touchpoints and identify an observable operational bottleneck (e.g., manual phone booking line, no after-hours response, missing live WhatsApp widget, slow inquiry turnaround, or ad spend without instant lead capture).
+6. BESPOKE 15-SECOND COLD CALL OPENER: Write a hyper-personalized, zero-fluff opening hook tailored for an outbound phone call that references an observable fact about their business.
+
+OUTPUT SPECIFICATION:
+Present the output in two clean formats:
+
+### FORMAT 1: Master Lead Verification Table (Markdown)
+Columns:
+| # | Company Name &amp; Live Website | City / Location | Public Business Phone | Decision Maker Name &amp; Title | LinkedIn Profile | Observed Operational Flaw (The Hook) | 15-Sec Phone Cold Call Hook (Bhavya) | 3-Sentence WhatsApp / Email Hook (Dhruv) |
+
+### FORMAT 2: Structured JSON (For Direct Import into n8n / Airtable CRM)
+Provide a valid JSON array containing objects with keys:
+`company_name`, `website_url`, `phone_number`, `decision_maker_name`, `decision_maker_title`, `linkedin_url`, `observed_flaw`, `cold_call_pitch`, `whatsapp_message`.
+
+EXECUTION STEP:
+Begin live search now. Formulate search queries targeting directories, Google Local results, and LinkedIn company listings in [TARGET_LOCATION]. Validate existence before outputting each record.
+</code></pre>
+<hr />
+<h4>🛠️ How Bhavya &amp; Dhruv Execute This in 30 Minutes Daily</h4>
+<ol>
+<li><strong>Step 1 — Generate Real Leads (Dhruv or Bhavya, 5 mins):</strong></li>
+<li>Open <strong>Perplexity Pro</strong> (switch to <em>Sonar Deep Research</em> or <em>Pro Search</em>) or <strong>ChatGPT with Search</strong>.</li>
+<li>Fill in the 5 placeholders (e.g., Niche: <code>Dermatology Clinics</code>, Location: <code>South Mumbai &amp; Bandra</code>, Offer: <code>AI WhatsApp &amp; Voice Appointment Booking System</code>).</li>
+<li>
+<p>Run the master prompt. You get 10–15 verified leads with real phone numbers and live URLs.</p>
+</li>
+<li>
+<p><strong>Step 2 — Push to Notion CRM (Automated or Manual, 2 mins):</strong></p>
+</li>
+<li>
+<p>Copy the JSON output directly into your agency Notion CRM or Airtable base.</p>
+</li>
+<li>
+<p><strong>Step 3 — Bhavya's Outbound Phone Sprint (Bhavya, 30–45 mins):</strong></p>
+</li>
+<li>Bhavya picks up the phone and dials the public business phone numbers from the table.</li>
+<li>Use the <strong>15-Second Phone Cold Call Hook</strong> provided in the table.</li>
+<li>
+<p><em>Goal:</em> 15 calls → 3 conversations with clinic managers/owners → 1 discovery demo booked.</p>
+</li>
+<li>
+<p><strong>Step 4 — Dhruv's Multi-Touch Follow-Up (Dhruv, 15 mins):</strong></p>
+</li>
+<li>For leads Bhavya couldn't reach on phone: Dhruv sends the personalized 3-sentence WhatsApp / LinkedIn note.</li>
+<li>Tag the lead in CRM as <code>Contacted - Call</code> or <code>Contacted - WhatsApp</code>.</li>
+</ol>
+<hr />
 <h3>Channels That Actually Work for Indian SMBs</h3>
 <h4>🔵 Channel 1: WhatsApp Outreach (Highest ROI in India)</h4>
 <p>Indian business owners live on WhatsApp. Cold WhatsApp &gt; Cold Email in India.</p>
@@ -2348,6 +2421,227 @@ P.S. Happy to share the case study if useful.
 </ul>
 <hr />
 <h2 id="s8">Section 8 — Team &amp; Scaling</h2>
+<h3>⚡ The 2-Person Co-Founder Division &amp; AI Delegation Framework</h3>
+<p>To scale the agency rapidly without overhead, all operations are cleanly divided between <strong>Bhavya</strong> and <strong>Dhruv</strong>, while administrative grunt work is 100% delegated to internal AI automations.</p>
+<blockquote>
+<p>[!IMPORTANT]<br />
+<strong>The Lean Execution Rule (Anti-Tutorial Hell):</strong> Neither Bhavya nor Dhruv will spend weeks watching tutorials. Learning is strictly capped at <strong>3–5 days per person</strong>, centered solely on building <strong>ONE reusable template</strong>. Once that template is built, all learning stops and 80% of daily time shifts directly to client acquisition and outbound sales.</p>
+</blockquote>
+<hr />
+<h3>👨‍💻 Bhavya's Domain &amp; Responsibilities</h3>
+<p>Bhavya acts as the <strong>Outbound Rainmaker &amp; Technical Backend Anchor</strong>. His focus is driving high-touch outbound conversions and owning the deep technical infrastructure that no-code tools cannot handle.</p>
+<ol>
+<li><strong>Outbound Cold Calling &amp; Phone Closing:</strong></li>
+<li>Owns the daily phone outreach sprint using the phone numbers extracted from the Master AI Lead Engine.</li>
+<li>Executes the 15-second pain hook, handles objection calls, and books live discovery meetings.</li>
+<li>Leads live demo calls and closes the client on a 50% upfront deposit.</li>
+<li><strong>Backend Engineering &amp; Custom Microservices:</strong></li>
+<li>Writes custom Python / FastAPI or Node.js microservices when client workflows require complex data processing exceeding n8n’s visual nodes.</li>
+<li>Implements custom authentication, webhook receivers, rate-limiting, and error fallback APIs.</li>
+<li><strong>Database Architecture &amp; Vector Stores:</strong></li>
+<li>Sets up and manages Supabase / PostgreSQL databases for client lead tracking, multi-tenant app state, and log retention.</li>
+<li>Configures vector embeddings databases (pgvector / Qdrant / Pinecone) for enterprise RAG deployments.</li>
+<li><strong>DevOps, Hosting &amp; Security:</strong></li>
+<li>Manages Hetzner VPS instances, Docker container deployments, reverse proxies (Caddy / Nginx), and SSL certificates.</li>
+<li>Manages API keys, environment variables, and client data isolation to ensure compliance and zero security leaks.</li>
+<li><strong>Technical Scoping &amp; Feasibility:</strong></li>
+<li>Evaluates incoming client requests during sales calls to ensure promises are technically feasible and profitable before signing.</li>
+<li><strong>Finance &amp; Payment Enforcement:</strong></li>
+<li>Owns the agency bank accounts, Razorpay / Stripe payment gateway setup, Wise foreign inward remittance, and invoicing.</li>
+<li>Strictly enforces payment terms: 50% deposit before work starts, 50% upon deployment before handover.</li>
+</ol>
+<h4>⏱️ Bhavya's Lean 4-Day Learning Fast-Track:</h4>
+<ul>
+<li><strong>Day 1 (Sales):</strong> Rehearse the 15-second cold call script and the 4 primary objection responses out loud for 2 hours.</li>
+<li><strong>Day 2–3 (Backend):</strong> Build ONE production-ready FastAPI boilerplate connected to Supabase with basic CRUD endpoints and Pydantic data validation.</li>
+<li><strong>Day 4 (DevOps):</strong> Deploy this FastAPI container on a $5/mo Hetzner VPS using Docker Compose and Caddy with automatic SSL.</li>
+<li><strong>STOP.</strong> No more studying. Start calling leads on Day 5.</li>
+</ul>
+<hr />
+<h3>🤖 Dhruv's Domain &amp; Responsibilities</h3>
+<p>Dhruv acts as the <strong>Automation Architect &amp; Inbound Authority Engine</strong>. His focus is creating visual AI workflows, designing conversational agents, and generating inbound pipeline via content.</p>
+<ol>
+<li><strong>n8n &amp; Workflow Automation Architecture:</strong></li>
+<li>Builds, connects, and tests the end-to-end visual workflows in n8n (or Make.com) connecting CRMs, email, Slack, and third-party APIs.</li>
+<li>Designs data transformation logic, webhook parsers, and conditional branching.</li>
+<li><strong>LLM Prompts &amp; AI Agent Engineering:</strong></li>
+<li>Authors system prompts, few-shot examples, JSON Schema definitions, and guardrails for client-facing AI bots.</li>
+<li>Implements function calling / tool-use logic allowing LLMs to trigger live database lookups or send emails.</li>
+<li><strong>Voice AI &amp; Chatbot Delivery:</strong></li>
+<li>Configures Voice AI phone receptionists (Vapi.ai / Retell AI + Twilio) and connects them to live calendar booking (Cal.com / Google Calendar).</li>
+<li>Builds custom web chatbots using Voiceflow or Botpress trained on client PDF knowledge bases.</li>
+<li><strong>Social Media &amp; Inbound Growth (Twitter/X + LinkedIn):</strong></li>
+<li>Owns the agency's public narrative and personal brand on Twitter/X and LinkedIn.</li>
+<li>Posts daily build-in-public content, screenshots of n8n workflows, short Loom demos, and educational AI threads.</li>
+<li>Manages inbound DMs, nurtures interested founders, and funnels them directly to booking calls.</li>
+<li><strong>Client Onboarding &amp; Intake Experience:</strong></li>
+<li>Builds and maintains the client onboarding portal (Tally form + Notion client workspace).</li>
+<li>Records personalized 2-minute Loom walkthrough videos for clients upon project delivery.</li>
+<li><strong>Quality Assurance &amp; Error Monitoring:</strong></li>
+<li>Runs rigorous test suites on all workflows before client handoff; configures n8n error-trigger workflows that ping an internal Telegram/Slack channel instantly if any client API fails.</li>
+</ol>
+<h4>⏱️ Dhruv's Lean 5-Day Learning Fast-Track:</h4>
+<ul>
+<li><strong>Day 1–2 (n8n):</strong> Build an n8n webhook workflow that catches a lead form, enriches it via an LLM node, and sends an alert to Telegram &amp; Google Sheets.</li>
+<li><strong>Day 3–4 (Voice/Chat AI):</strong> Build ONE demo appointment-booking voice agent in Vapi.ai connected to a test Google Calendar.</li>
+<li><strong>Day 5 (Social Content):</strong> Write and schedule 10 Twitter/X build-in-public posts showcasing the two demo systems.</li>
+<li><strong>STOP.</strong> No more studying. Start publishing and generating inbound interest on Day 6.</li>
+</ul>
+<hr />
+<h3>⚡ 100% AI-Automated Roles (Zero Founder Time)</h3>
+<p>To scale fast without hiring expensive employees early, the following 6 agency functions are completely automated using AI and internal workflows:</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>How It Is Automated by AI</th>
+<th>Founder Time Spent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lead Sourcing &amp; Verification</strong></td>
+<td>Master Prompt executed via Perplexity / n8n script; pushes verified leads directly to Notion CRM</td>
+<td>0 hrs (Run on schedule)</td>
+</tr>
+<tr>
+<td><strong>Cold Email Sending &amp; Warmup</strong></td>
+<td>Instantly.ai / Smartlead manages multi-inbox rotation, warmup, sequence delivery, and unsubscribe handling</td>
+<td>15 mins/week (Checking replies)</td>
+</tr>
+<tr>
+<td><strong>Sales Call Note-Taking</strong></td>
+<td>Fireflies.ai / Recall.ai attends every Google Meet/Zoom call, generates a 5-bullet summary, pain point list, and action checklist</td>
+<td>0 hrs</td>
+</tr>
+<tr>
+<td><strong>Proposal &amp; SOW Generation</strong></td>
+<td>n8n workflow takes Fireflies call transcript, feeds it to Claude 3.5 Sonnet, and outputs a formatted Google Docs proposal in 90 seconds</td>
+<td>5 mins (Quick review before send)</td>
+</tr>
+<tr>
+<td><strong>Weekly Client Status Reports</strong></td>
+<td>n8n scheduled workflow tallies weekly execution counts and uptime, drafting a Friday recap email to each active client</td>
+<td>0 hrs</td>
+</tr>
+<tr>
+<td><strong>Payment Chasing &amp; Receipts</strong></td>
+<td>Razorpay / Stripe webhooks trigger automated WhatsApp &amp; email payment reminders 48 hrs before invoice milestones</td>
+<td>0 hrs</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>📊 Bhavya vs. Dhruv vs. AI: Complete Accountability Matrix (RACI)</h3>
+<table>
+<thead>
+<tr>
+<th>Agency Area</th>
+<th>Primary Owner</th>
+<th>Secondary / Support</th>
+<th>Automated Tool</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lead Research &amp; List Building</strong></td>
+<td>⚡ AI Automated</td>
+<td>Dhruv</td>
+<td>Perplexity / Master Prompt / n8n</td>
+</tr>
+<tr>
+<td><strong>Outbound Phone Cold Calls</strong></td>
+<td><strong>Bhavya</strong></td>
+<td>Dhruv (Script review)</td>
+<td>Twilio / Phone</td>
+</tr>
+<tr>
+<td><strong>Cold WhatsApp Outreach</strong></td>
+<td><strong>Bhavya</strong></td>
+<td>Dhruv</td>
+<td>WhatsApp Web / Semi-automated</td>
+</tr>
+<tr>
+<td><strong>Twitter/X &amp; LinkedIn Content</strong></td>
+<td><strong>Dhruv</strong></td>
+<td>Bhavya (Tech review)</td>
+<td>Typefully / Hypefury</td>
+</tr>
+<tr>
+<td><strong>Discovery &amp; Demo Closing Calls</strong></td>
+<td><strong>Bhavya</strong></td>
+<td>Dhruv (Technical demo)</td>
+<td>Google Meet + Fireflies.ai</td>
+</tr>
+<tr>
+<td><strong>Deal Scoping &amp; Pricing</strong></td>
+<td><strong>Bhavya &amp; Dhruv</strong></td>
+<td>—</td>
+<td>Notion Pricing Matrix</td>
+</tr>
+<tr>
+<td><strong>Contract &amp; Proposal Drafting</strong></td>
+<td>⚡ AI Automated</td>
+<td>Bhavya</td>
+<td>Claude 3.5 Sonnet + n8n</td>
+</tr>
+<tr>
+<td><strong>n8n Workflow Builds</strong></td>
+<td><strong>Dhruv</strong></td>
+<td>Bhavya</td>
+<td>n8n / Make.com</td>
+</tr>
+<tr>
+<td><strong>Custom Backend &amp; APIs</strong></td>
+<td><strong>Bhavya</strong></td>
+<td>Dhruv</td>
+<td>FastAPI / Supabase / Hetzner</td>
+</tr>
+<tr>
+<td><strong>Voice AI &amp; Chatbots</strong></td>
+<td><strong>Dhruv</strong></td>
+<td>Bhavya (Twilio config)</td>
+<td>Vapi.ai / Voiceflow</td>
+</tr>
+<tr>
+<td><strong>DevOps &amp; Server Deployment</strong></td>
+<td><strong>Bhavya</strong></td>
+<td>Dhruv</td>
+<td>Docker / Caddy / Linux VPS</td>
+</tr>
+<tr>
+<td><strong>QA Testing &amp; Error Alerts</strong></td>
+<td><strong>Dhruv</strong></td>
+<td>Bhavya</td>
+<td>n8n Error Node + Telegram</td>
+</tr>
+<tr>
+<td><strong>Client Onboarding &amp; Loom</strong></td>
+<td><strong>Dhruv</strong></td>
+<td>Bhavya</td>
+<td>Loom / Notion / Tally</td>
+</tr>
+<tr>
+<td><strong>Invoicing &amp; Cash Collection</strong></td>
+<td><strong>Bhavya</strong></td>
+<td>⚡ AI Automated</td>
+<td>Razorpay / Stripe / Wise</td>
+</tr>
+<tr>
+<td><strong>Client Success &amp; Retainers</strong></td>
+<td><strong>Bhavya</strong></td>
+<td>Dhruv</td>
+<td>WhatsApp / Slack</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>⏱️ The Daily 15-Minute Co-Founder Sync</h3>
+<p>Every day at 9:30 AM IST, Bhavya and Dhruv run a strict 15-minute standup:<br />
+1. <strong>Bhavya (Sales &amp; Backend):</strong> <em>"How many dials did I make yesterday? How many discovery calls booked? Any backend blocker?"</em><br />
+2. <strong>Dhruv (Automation &amp; Inbound):</strong> <em>"What content went live? Any warm inbound DMs? Are the active client workflows running without errors?"</em><br />
+3. <strong>Daily Target Alignment:</strong> Settle the single priority for today (e.g., closing client X or shipping client Y's bot).</p>
+<hr />
 <h3>When to Hire (Concrete Signals)</h3>
 <table>
 <thead>

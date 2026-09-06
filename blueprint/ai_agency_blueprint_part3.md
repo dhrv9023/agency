@@ -81,6 +81,123 @@
 
 ## Section 8 — Team & Scaling
 
+### ⚡ The 2-Person Co-Founder Division & AI Delegation Framework
+
+To scale the agency rapidly without overhead, all operations are cleanly divided between **Bhavya** and **Dhruv**, while administrative grunt work is 100% delegated to internal AI automations.
+
+> [!IMPORTANT]
+> **The Lean Execution Rule (Anti-Tutorial Hell):** Neither Bhavya nor Dhruv will spend weeks watching tutorials. Learning is strictly capped at **3–5 days per person**, centered solely on building **ONE reusable template**. Once that template is built, all learning stops and 80% of daily time shifts directly to client acquisition and outbound sales.
+
+---
+
+### 👨‍💻 Bhavya's Domain & Responsibilities
+
+Bhavya acts as the **Outbound Rainmaker & Technical Backend Anchor**. His focus is driving high-touch outbound conversions and owning the deep technical infrastructure that no-code tools cannot handle.
+
+1. **Outbound Cold Calling & Phone Closing:**
+   - Owns the daily phone outreach sprint using the phone numbers extracted from the Master AI Lead Engine.
+   - Executes the 15-second pain hook, handles objection calls, and books live discovery meetings.
+   - Leads live demo calls and closes the client on a 50% upfront deposit.
+2. **Backend Engineering & Custom Microservices:**
+   - Writes custom Python / FastAPI or Node.js microservices when client workflows require complex data processing exceeding n8n’s visual nodes.
+   - Implements custom authentication, webhook receivers, rate-limiting, and error fallback APIs.
+3. **Database Architecture & Vector Stores:**
+   - Sets up and manages Supabase / PostgreSQL databases for client lead tracking, multi-tenant app state, and log retention.
+   - Configures vector embeddings databases (pgvector / Qdrant / Pinecone) for enterprise RAG deployments.
+4. **DevOps, Hosting & Security:**
+   - Manages Hetzner VPS instances, Docker container deployments, reverse proxies (Caddy / Nginx), and SSL certificates.
+   - Manages API keys, environment variables, and client data isolation to ensure compliance and zero security leaks.
+5. **Technical Scoping & Feasibility:**
+   - Evaluates incoming client requests during sales calls to ensure promises are technically feasible and profitable before signing.
+6. **Finance & Payment Enforcement:**
+   - Owns the agency bank accounts, Razorpay / Stripe payment gateway setup, Wise foreign inward remittance, and invoicing.
+   - Strictly enforces payment terms: 50% deposit before work starts, 50% upon deployment before handover.
+
+#### ⏱️ Bhavya's Lean 4-Day Learning Fast-Track:
+- **Day 1 (Sales):** Rehearse the 15-second cold call script and the 4 primary objection responses out loud for 2 hours.
+- **Day 2–3 (Backend):** Build ONE production-ready FastAPI boilerplate connected to Supabase with basic CRUD endpoints and Pydantic data validation.
+- **Day 4 (DevOps):** Deploy this FastAPI container on a $5/mo Hetzner VPS using Docker Compose and Caddy with automatic SSL.
+- **STOP.** No more studying. Start calling leads on Day 5.
+
+---
+
+### 🤖 Dhruv's Domain & Responsibilities
+
+Dhruv acts as the **Automation Architect & Inbound Authority Engine**. His focus is creating visual AI workflows, designing conversational agents, and generating inbound pipeline via content.
+
+1. **n8n & Workflow Automation Architecture:**
+   - Builds, connects, and tests the end-to-end visual workflows in n8n (or Make.com) connecting CRMs, email, Slack, and third-party APIs.
+   - Designs data transformation logic, webhook parsers, and conditional branching.
+2. **LLM Prompts & AI Agent Engineering:**
+   - Authors system prompts, few-shot examples, JSON Schema definitions, and guardrails for client-facing AI bots.
+   - Implements function calling / tool-use logic allowing LLMs to trigger live database lookups or send emails.
+3. **Voice AI & Chatbot Delivery:**
+   - Configures Voice AI phone receptionists (Vapi.ai / Retell AI + Twilio) and connects them to live calendar booking (Cal.com / Google Calendar).
+   - Builds custom web chatbots using Voiceflow or Botpress trained on client PDF knowledge bases.
+4. **Social Media & Inbound Growth (Twitter/X + LinkedIn):**
+   - Owns the agency's public narrative and personal brand on Twitter/X and LinkedIn.
+   - Posts daily build-in-public content, screenshots of n8n workflows, short Loom demos, and educational AI threads.
+   - Manages inbound DMs, nurtures interested founders, and funnels them directly to booking calls.
+5. **Client Onboarding & Intake Experience:**
+   - Builds and maintains the client onboarding portal (Tally form + Notion client workspace).
+   - Records personalized 2-minute Loom walkthrough videos for clients upon project delivery.
+6. **Quality Assurance & Error Monitoring:**
+   - Runs rigorous test suites on all workflows before client handoff; configures n8n error-trigger workflows that ping an internal Telegram/Slack channel instantly if any client API fails.
+
+#### ⏱️ Dhruv's Lean 5-Day Learning Fast-Track:
+- **Day 1–2 (n8n):** Build an n8n webhook workflow that catches a lead form, enriches it via an LLM node, and sends an alert to Telegram & Google Sheets.
+- **Day 3–4 (Voice/Chat AI):** Build ONE demo appointment-booking voice agent in Vapi.ai connected to a test Google Calendar.
+- **Day 5 (Social Content):** Write and schedule 10 Twitter/X build-in-public posts showcasing the two demo systems.
+- **STOP.** No more studying. Start publishing and generating inbound interest on Day 6.
+
+---
+
+### ⚡ 100% AI-Automated Roles (Zero Founder Time)
+
+To scale fast without hiring expensive employees early, the following 6 agency functions are completely automated using AI and internal workflows:
+
+| Function | How It Is Automated by AI | Founder Time Spent |
+|---|---|---|
+| **Lead Sourcing & Verification** | Master Prompt executed via Perplexity / n8n script; pushes verified leads directly to Notion CRM | 0 hrs (Run on schedule) |
+| **Cold Email Sending & Warmup** | Instantly.ai / Smartlead manages multi-inbox rotation, warmup, sequence delivery, and unsubscribe handling | 15 mins/week (Checking replies) |
+| **Sales Call Note-Taking** | Fireflies.ai / Recall.ai attends every Google Meet/Zoom call, generates a 5-bullet summary, pain point list, and action checklist | 0 hrs |
+| **Proposal & SOW Generation** | n8n workflow takes Fireflies call transcript, feeds it to Claude 3.5 Sonnet, and outputs a formatted Google Docs proposal in 90 seconds | 5 mins (Quick review before send) |
+| **Weekly Client Status Reports** | n8n scheduled workflow tallies weekly execution counts and uptime, drafting a Friday recap email to each active client | 0 hrs |
+| **Payment Chasing & Receipts** | Razorpay / Stripe webhooks trigger automated WhatsApp & email payment reminders 48 hrs before invoice milestones | 0 hrs |
+
+---
+
+### 📊 Bhavya vs. Dhruv vs. AI: Complete Accountability Matrix (RACI)
+
+| Agency Area | Primary Owner | Secondary / Support | Automated Tool |
+|---|---|---|---|
+| **Lead Research & List Building** | ⚡ AI Automated | Dhruv | Perplexity / Master Prompt / n8n |
+| **Outbound Phone Cold Calls** | **Bhavya** | Dhruv (Script review) | Twilio / Phone |
+| **Cold WhatsApp Outreach** | **Bhavya** | Dhruv | WhatsApp Web / Semi-automated |
+| **Twitter/X & LinkedIn Content** | **Dhruv** | Bhavya (Tech review) | Typefully / Hypefury |
+| **Discovery & Demo Closing Calls** | **Bhavya** | Dhruv (Technical demo) | Google Meet + Fireflies.ai |
+| **Deal Scoping & Pricing** | **Bhavya & Dhruv** | — | Notion Pricing Matrix |
+| **Contract & Proposal Drafting** | ⚡ AI Automated | Bhavya | Claude 3.5 Sonnet + n8n |
+| **n8n Workflow Builds** | **Dhruv** | Bhavya | n8n / Make.com |
+| **Custom Backend & APIs** | **Bhavya** | Dhruv | FastAPI / Supabase / Hetzner |
+| **Voice AI & Chatbots** | **Dhruv** | Bhavya (Twilio config) | Vapi.ai / Voiceflow |
+| **DevOps & Server Deployment** | **Bhavya** | Dhruv | Docker / Caddy / Linux VPS |
+| **QA Testing & Error Alerts** | **Dhruv** | Bhavya | n8n Error Node + Telegram |
+| **Client Onboarding & Loom** | **Dhruv** | Bhavya | Loom / Notion / Tally |
+| **Invoicing & Cash Collection** | **Bhavya** | ⚡ AI Automated | Razorpay / Stripe / Wise |
+| **Client Success & Retainers** | **Bhavya** | Dhruv | WhatsApp / Slack |
+
+---
+
+### ⏱️ The Daily 15-Minute Co-Founder Sync
+
+Every day at 9:30 AM IST, Bhavya and Dhruv run a strict 15-minute standup:
+1. **Bhavya (Sales & Backend):** *"How many dials did I make yesterday? How many discovery calls booked? Any backend blocker?"*
+2. **Dhruv (Automation & Inbound):** *"What content went live? Any warm inbound DMs? Are the active client workflows running without errors?"*
+3. **Daily Target Alignment:** Settle the single priority for today (e.g., closing client X or shipping client Y's bot).
+
+---
+
 ### When to Hire (Concrete Signals)
 
 | Signal | What to Do |

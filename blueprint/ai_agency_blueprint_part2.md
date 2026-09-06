@@ -85,6 +85,77 @@
 
 ## Section 5 — Client Acquisition: India
 
+### 🎯 The Master AI Lead Extraction & Verification Engine (Zero Mock Data)
+
+> [!IMPORTANT]
+> **Zero Mock Data Guarantee:** Standard LLMs will invent fictional businesses, fake emails, and dead phone numbers if prompted generically. This master prompt uses **live-search OSINT triangulation** (via Perplexity Pro, ChatGPT Plus/Team with Search, or Gemini Advanced with Google Search Grounding). It forces the AI to execute live web searches, verify physical existence, extract active public telephone lines for Bhavya's cold calls, identify verified decision-makers, and diagnose genuine operational vulnerabilities.
+
+---
+
+#### 🧠 The Master Prompt (Copy & Run in Any Search-Enabled AI)
+
+```markdown
+You are an elite B2B Sales Intelligence Director and OSINT Lead Generation Engineer. 
+Your objective is to conduct real-time, live web research to discover, verify, and enrich [BATCH_COUNT] REAL, currently operating businesses matching the exact criteria below.
+
+==================================================
+TARGET CLIENT CONFIGURATION:
+- [TARGET_NICHE]: {{Insert Niche, e.g., Cosmetic Dental Clinics / Commercial HVAC Contractors / Boutique Family Law / D2C Fashion Brands}}
+- [TARGET_LOCATION]: {{Insert City, State, or Country, e.g., Mumbai, Maharashtra / Austin, Texas / Greater London, UK}}
+- [BUSINESS_CRITERIA]: {{e.g., Active physical office, 5-40 employees, minimum 4.0+ stars on Google Maps with 20+ reviews, active customer volume}}
+- [AGENCY_CORE_OFFER]: {{Insert Your Service, e.g., 24/7 AI Voice Phone Receptionist to capture missed calls & book appointments automatically}}
+- [BATCH_COUNT]: {{e.g., 10 verified leads}}
+==================================================
+
+ANTI-HALLUCINATION & LIVE VERIFICATION PROTOCOL (STRICT MANDATE):
+1. ZERO MOCK DATA: You are strictly forbidden from creating synthetic businesses, placeholder domains (e.g., example.com, testclinic.in), or fake contact details. Every single lead MUST be a legitimate, currently active business.
+2. LIVE URL & LOCATION AUDIT: You must verify that the business has a live, accessible website (HTTP 200) and an active physical listing (Google Business Profile, Justdial, Yelp, or local corporate registrar).
+3. DECISION MAKER IDENTIFICATION: Identify the real Owner, Founder, Managing Director, Practice Head, or COO. Search their website 'About Us / Team' page or LinkedIn public index. If an individual cannot be verified, find the Clinic/Managing Director.
+4. DIRECT CONTACT TRIANGULATION:
+   - Provide the official public business phone number (for immediate outbound cold calling).
+   - Provide the official business email, contact inquiry URL, or corporate email domain pattern.
+   - Provide the direct LinkedIn URL for the business and decision-maker.
+5. OPERATIONAL FRICTION AUDIT: Inspect their digital touchpoints and identify an observable operational bottleneck (e.g., manual phone booking line, no after-hours response, missing live WhatsApp widget, slow inquiry turnaround, or ad spend without instant lead capture).
+6. BESPOKE 15-SECOND COLD CALL OPENER: Write a hyper-personalized, zero-fluff opening hook tailored for an outbound phone call that references an observable fact about their business.
+
+OUTPUT SPECIFICATION:
+Present the output in two clean formats:
+
+### FORMAT 1: Master Lead Verification Table (Markdown)
+Columns:
+| # | Company Name & Live Website | City / Location | Public Business Phone | Decision Maker Name & Title | LinkedIn Profile | Observed Operational Flaw (The Hook) | 15-Sec Phone Cold Call Hook (Bhavya) | 3-Sentence WhatsApp / Email Hook (Dhruv) |
+
+### FORMAT 2: Structured JSON (For Direct Import into n8n / Airtable CRM)
+Provide a valid JSON array containing objects with keys:
+`company_name`, `website_url`, `phone_number`, `decision_maker_name`, `decision_maker_title`, `linkedin_url`, `observed_flaw`, `cold_call_pitch`, `whatsapp_message`.
+
+EXECUTION STEP:
+Begin live search now. Formulate search queries targeting directories, Google Local results, and LinkedIn company listings in [TARGET_LOCATION]. Validate existence before outputting each record.
+```
+
+---
+
+#### 🛠️ How Bhavya & Dhruv Execute This in 30 Minutes Daily
+
+1. **Step 1 — Generate Real Leads (Dhruv or Bhavya, 5 mins):**
+   - Open **Perplexity Pro** (switch to *Sonar Deep Research* or *Pro Search*) or **ChatGPT with Search**.
+   - Fill in the 5 placeholders (e.g., Niche: `Dermatology Clinics`, Location: `South Mumbai & Bandra`, Offer: `AI WhatsApp & Voice Appointment Booking System`).
+   - Run the master prompt. You get 10–15 verified leads with real phone numbers and live URLs.
+
+2. **Step 2 — Push to Notion CRM (Automated or Manual, 2 mins):**
+   - Copy the JSON output directly into your agency Notion CRM or Airtable base.
+
+3. **Step 3 — Bhavya's Outbound Phone Sprint (Bhavya, 30–45 mins):**
+   - Bhavya picks up the phone and dials the public business phone numbers from the table.
+   - Use the **15-Second Phone Cold Call Hook** provided in the table.
+   - *Goal:* 15 calls → 3 conversations with clinic managers/owners → 1 discovery demo booked.
+
+4. **Step 4 — Dhruv's Multi-Touch Follow-Up (Dhruv, 15 mins):**
+   - For leads Bhavya couldn't reach on phone: Dhruv sends the personalized 3-sentence WhatsApp / LinkedIn note.
+   - Tag the lead in CRM as `Contacted - Call` or `Contacted - WhatsApp`.
+
+---
+
 ### Channels That Actually Work for Indian SMBs
 
 #### 🔵 Channel 1: WhatsApp Outreach (Highest ROI in India)

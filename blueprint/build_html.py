@@ -70,10 +70,10 @@ section_descs = {
     "s2":  "Entry / Mid / Advanced service tiers with pricing (India & Intl), emerging skills to build",
     "s3":  "Business model comparison, pricing packages, unit economics to hit ₹1L/₹5L/₹10L/mo",
     "s4":  "What NOT to spend on, essential tools, week-by-week 90-day plan, credibility building",
-    "s5":  "WhatsApp outreach scripts, LinkedIn tactics, FB groups, referral loops, negotiation reality",
+    "s5":  "Master AI lead generation prompt (real leads), WhatsApp outreach scripts, LinkedIn tactics, FB groups, referral loops",
     "s6":  "Upwork strategy, LinkedIn cold outreach, cold email templates, Twitter/X, trust gap fixes",
     "s7":  "Must-learn tools (now vs later), non-technical skills, ops stack, legal MVS for India",
-    "s8":  "When to hire, first 3 hires in order, SOP framework, when to raise prices / drop clients",
+    "s8":  "Bhavya & Dhruv 2-person work division, AI-delegated roles, lean execution, when to hire, SOPs",
     "s9":  "Commoditization, client in-housing, API risk, regulatory — and how to build a real moat",
     "s10": "90-day milestones, 6-month goals, 12-month targets, the Year 1→2→3 mental model",
 }
@@ -1308,7 +1308,7 @@ full_html = f"""<!DOCTYPE html>
 </body>
 </html>"""
 
-output_paths = ["index.html", "../index.html"]
+output_paths = ["index.html"]
 for p in output_paths:
     with open(p, "w") as f:
         f.write(full_html)

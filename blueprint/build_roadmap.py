@@ -276,10 +276,67 @@ html_content = """<!DOCTYPE html>
     flex-wrap: wrap;
     gap: 16px;
   }
+  .filter-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+  }
+  .track-filters {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .track-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    margin-right: 4px;
+  }
+  .track-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 7px 16px;
+    border-radius: 999px;
+    font-size: 0.84rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .track-btn:hover {
+    border-color: var(--accent);
+    color: var(--heading);
+  }
+  .track-btn.active[data-track="all"] {
+    background: var(--surface2);
+    border-color: var(--border);
+    color: var(--heading);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  }
+  .track-btn.active[data-track="bhavya"] {
+    background: #0284c7;
+    border-color: #0284c7;
+    color: #ffffff;
+    box-shadow: 0 2px 12px rgba(2, 132, 199, 0.4);
+  }
+  .track-btn.active[data-track="dhruv"] {
+    background: #10b981;
+    border-color: #10b981;
+    color: #ffffff;
+    box-shadow: 0 2px 12px rgba(16, 185, 129, 0.4);
+  }
   .phase-filters {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
+    align-items: center;
   }
   .filter-btn {
     background: var(--surface);
@@ -297,6 +354,153 @@ html_content = """<!DOCTYPE html>
     color: #ffffff;
     border-color: var(--accent);
     box-shadow: 0 2px 10px var(--accent-glow);
+  }
+
+  /* ── Owner Pills ── */
+  .owner-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin-left: 8px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .owner-bhavya {
+    background: rgba(2, 132, 199, 0.15);
+    color: #38bdf8;
+    border: 1px solid rgba(2, 132, 199, 0.4);
+  }
+  .owner-dhruv {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.4);
+  }
+  .owner-ai {
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+  }
+  .owner-shared {
+    background: rgba(139, 92, 246, 0.15);
+    color: #a78bfa;
+    border: 1px solid rgba(139, 92, 246, 0.4);
+  }
+
+  /* ── Fast-Track Lean Cards ── */
+  .fast-track-section {
+    margin-bottom: 40px;
+  }
+  .fast-track-banner {
+    background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(2,132,199,0.08));
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .fast-banner-text h3 {
+    color: var(--heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .fast-banner-text p {
+    color: var(--muted);
+    font-size: 0.88rem;
+    margin: 0;
+  }
+  .fast-track-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+  }
+  .fast-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .fast-card:hover {
+    transform: translateY(-3px);
+  }
+  .fast-card-bhavya { border-top: 4px solid #0284c7; }
+  .fast-card-dhruv { border-top: 4px solid #10b981; }
+  .fast-card-ai { border-top: 4px solid #f59e0b; }
+  .fast-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .fast-card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .fast-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 999px;
+  }
+  .fast-badge-bhavya { background: rgba(2,132,199,0.2); color: #38bdf8; }
+  .fast-badge-dhruv { background: rgba(16,185,129,0.2); color: #34d399; }
+  .fast-badge-ai { background: rgba(245,158,11,0.2); color: #fbbf24; }
+  .fast-card-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+  .fast-checklist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .fast-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.84rem;
+  }
+  .fast-item input[type="checkbox"] {
+    margin-top: 3px;
+    cursor: pointer;
+    accent-color: var(--accent);
+  }
+  .fast-item label {
+    cursor: pointer;
+    color: var(--text);
+  }
+  .fast-item label strong {
+    color: var(--heading);
+  }
+  .fast-card-footer {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    font-size: 0.82rem;
+    color: var(--accent);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
   }
 
   .search-box {
@@ -593,9 +797,9 @@ html_content = """<!DOCTYPE html>
 </nav>
 
 <div class="hero">
-  <div class="hero-tag">Zero to Hero Execution Guide</div>
+  <div class="hero-tag">Zero to Hero Execution Guide · 2-Person Agency Division</div>
   <h1>🚀 Technical Learning & Skill Roadmap</h1>
-  <p>The exact step-by-step learning path to master n8n workflows, LLM Function Calling, Voice AI, RAG Knowledge Bases, and Client Delivery.</p>
+  <p>The exact step-by-step path divided between <strong>Bhavya</strong> (Backend Architecture & Outbound Closing) and <strong>Dhruv</strong> (n8n Automations, AI Agents & Twitter Inbound). Zero tutorial hell: learn only what you need to ship your first client project in &lt;5 days.</p>
   
   <div class="progress-container">
     <div class="progress-header">
@@ -609,31 +813,141 @@ html_content = """<!DOCTYPE html>
 </div>
 
 <div class="controls-bar">
-  <div class="phase-filters">
-    <button class="filter-btn active" onclick="filterPhase('all', this)">All Modules</button>
-    <button class="filter-btn" onclick="filterPhase('p1', this)">Phase 1: Workflow Automation</button>
-    <button class="filter-btn" onclick="filterPhase('p2', this)">Phase 2: LLMs & Prompts</button>
-    <button class="filter-btn" onclick="filterPhase('p3', this)">Phase 3: RAG & Chatbots</button>
-    <button class="filter-btn" onclick="filterPhase('p4', this)">Phase 4: Voice AI Agents</button>
-    <button class="filter-btn" onclick="filterPhase('p5', this)">Phase 5: Full-Stack & Delivery</button>
+  <div class="filter-groups">
+    <div class="track-filters">
+      <span class="track-label">Target Track:</span>
+      <button class="track-btn active" data-track="all" onclick="filterTrack('all', this)">👥 Both Co-Founders</button>
+      <button class="track-btn" data-track="bhavya" onclick="filterTrack('bhavya', this)">👨‍💻 Bhavya's Track (Backend & Outbound)</button>
+      <button class="track-btn" data-track="dhruv" onclick="filterTrack('dhruv', this)">🤖 Dhruv's Track (n8n, AI & Inbound)</button>
+    </div>
+    <div class="phase-filters">
+      <span class="track-label">Phase:</span>
+      <button class="filter-btn active" onclick="filterPhase('all', this)">All Modules</button>
+      <button class="filter-btn" onclick="filterPhase('p1', this)">Phase 1: Automations</button>
+      <button class="filter-btn" onclick="filterPhase('p2', this)">Phase 2: LLMs & Prompts</button>
+      <button class="filter-btn" onclick="filterPhase('p3', this)">Phase 3: RAG & Bots</button>
+      <button class="filter-btn" onclick="filterPhase('p4', this)">Phase 4: Voice Agents</button>
+      <button class="filter-btn" onclick="filterPhase('p5', this)">Phase 5: Full-Stack & Sales</button>
+    </div>
   </div>
 
   <div class="search-box">
     <span class="search-icon">🔍</span>
-    <input type="text" id="roadmap-search" class="search-input" placeholder="Search skills, YT channels, docs..." onkeyup="searchRoadmap()"/>
+    <input type="text" id="roadmap-search" class="search-input" placeholder="Search skills, tools, docs..." onkeyup="searchRoadmap()"/>
   </div>
 </div>
 
 <div class="main-container">
 
+  <!-- CO-FOUNDER LEAN FAST-TRACK CARDS -->
+  <div class="fast-track-section">
+    <div class="fast-track-banner">
+      <div class="fast-banner-text">
+        <h3>⚡ Lean 5-Day Fast-Track: Stop Studying, Start Shipping</h3>
+        <p>Do NOT waste weeks in tutorial hell. Complete only the 3 tasks for your track, build ONE template, and immediately start client outreach.</p>
+      </div>
+      <div class="fast-banner-actions">
+        <button class="track-btn active" data-track="all" onclick="filterTrack('all', this)">👥 All Tracks</button>
+        <button class="track-btn" data-track="bhavya" onclick="filterTrack('bhavya', this)">👨‍💻 Bhavya's Focus</button>
+        <button class="track-btn" data-track="dhruv" onclick="filterTrack('dhruv', this)">🤖 Dhruv's Focus</button>
+      </div>
+    </div>
+
+    <div class="fast-track-grid">
+      <!-- Bhavya Card -->
+      <div class="fast-card fast-card-bhavya" data-track="bhavya">
+        <div>
+          <div class="fast-card-header">
+            <div class="fast-card-title">👨‍💻 Bhavya: Backend & Outbound Sales</div>
+            <span class="fast-badge fast-badge-bhavya">4-Day Sprint</span>
+          </div>
+          <p class="fast-card-desc">Master the outbound phone hook and build a deployable FastAPI + Supabase backend. Zero extra study.</p>
+          <ul class="fast-checklist">
+            <li class="fast-item">
+              <input type="checkbox" id="ft_b1" class="task-check"/>
+              <label for="ft_b1"><strong>Day 1 (Cold Calls):</strong> Rehearse the 15-second phone hook & 4 objection responses out loud for 2 hours.</label>
+            </li>
+            <li class="fast-item">
+              <input type="checkbox" id="ft_b2" class="task-check"/>
+              <label for="ft_b2"><strong>Day 2–3 (Backend):</strong> Build 1 reusable FastAPI + Supabase REST endpoint with Pydantic validation.</label>
+            </li>
+            <li class="fast-item">
+              <input type="checkbox" id="ft_b3" class="task-check"/>
+              <label for="ft_b3"><strong>Day 4 (DevOps):</strong> Deploy FastAPI container to a $5 Hetzner VPS with Docker & Caddy SSL.</label>
+            </li>
+          </ul>
+        </div>
+        <div class="fast-card-footer">
+          <span>🎯 Daily Metric: 15–20 cold calls/day to leads from Master Lead Engine</span>
+        </div>
+      </div>
+
+      <!-- Dhruv Card -->
+      <div class="fast-card fast-card-dhruv" data-track="dhruv">
+        <div>
+          <div class="fast-card-header">
+            <div class="fast-card-title">🤖 Dhruv: AI Automations & Twitter Inbound</div>
+            <span class="fast-badge fast-badge-dhruv">5-Day Sprint</span>
+          </div>
+          <p class="fast-card-desc">Build deployable n8n workflows, configure a Vapi voice agent, and launch daily Twitter build-in-public.</p>
+          <ul class="fast-checklist">
+            <li class="fast-item">
+              <input type="checkbox" id="ft_d1" class="task-check"/>
+              <label for="ft_d1"><strong>Day 1–2 (n8n):</strong> Build a webhook lead intake workflow that enriches data via an LLM node & alerts Telegram.</label>
+            </li>
+            <li class="fast-item">
+              <input type="checkbox" id="ft_d2" class="task-check"/>
+              <label for="ft_d2"><strong>Day 3–4 (Voice AI):</strong> Set up a Vapi.ai / Retell voice appointment receptionist connected to Google Calendar.</label>
+            </li>
+            <li class="fast-item">
+              <input type="checkbox" id="ft_d3" class="task-check"/>
+              <label for="ft_d3"><strong>Day 5 (Twitter Authority):</strong> Record 2-min Loom demos of the builds and schedule 10 build-in-public threads.</label>
+            </li>
+          </ul>
+        </div>
+        <div class="fast-card-footer">
+          <span>🎯 Daily Metric: 1 Twitter breakdown/day + 10 founder comment touches</span>
+        </div>
+      </div>
+
+      <!-- AI Automated Card -->
+      <div class="fast-card fast-card-ai" data-track="shared">
+        <div>
+          <div class="fast-card-header">
+            <div class="fast-card-title">⚡ 100% AI-Automated Operations</div>
+            <span class="fast-badge fast-badge-ai">Zero Founder Time</span>
+          </div>
+          <p class="fast-card-desc">Automations running in the background so neither Bhavya nor Dhruv wastes time on admin grunt work.</p>
+          <ul class="fast-checklist">
+            <li class="fast-item">
+              <input type="checkbox" id="ft_ai1" class="task-check"/>
+              <label for="ft_ai1"><strong>Lead Extraction:</strong> Master Prompt run in Perplexity Pro pushes verified leads directly to Notion CRM.</label>
+            </li>
+            <li class="fast-item">
+              <input type="checkbox" id="ft_ai2" class="task-check"/>
+              <label for="ft_ai2"><strong>Email Sequences:</strong> Instantly.ai handles multi-inbox rotation, warmup, and outbound drip follow-ups.</label>
+            </li>
+            <li class="fast-item">
+              <input type="checkbox" id="ft_ai3" class="task-check"/>
+              <label for="ft_ai3"><strong>Meeting Notes & SOW:</strong> Fireflies.ai captures sales calls; n8n + Claude generates SOW proposal in 90 seconds.</label>
+            </li>
+          </ul>
+        </div>
+        <div class="fast-card-footer">
+          <span>🎯 Efficiency: Saves 15+ hours/week of administrative founder overhead</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- MODULE 1 -->
-  <div class="module-card reveal" data-phase="p1">
+  <div class="module-card reveal" data-phase="p1" data-track="dhruv bhavya">
     <div class="module-header">
       <div class="module-header-left">
         <div class="module-icon-badge">⚡</div>
         <div class="module-title">
           <h2>Module 1: Workflow Automation & Integrations</h2>
-          <div class="module-subtitle">Mastering n8n, Make.com, Webhooks & REST APIs</div>
+          <div class="module-subtitle">Mastering n8n, Make.com, Webhooks & REST APIs · <span class="owner-pill owner-dhruv">🤖 Dhruv (Lead)</span> <span class="owner-pill owner-bhavya">👨‍💻 Bhavya (APIs)</span></div>
         </div>
       </div>
       <div class="module-badge">Phase 1 · Week 1-2</div>
@@ -643,17 +957,17 @@ html_content = """<!DOCTYPE html>
         <div>
           <div class="section-label">🎯 Core Concepts & Skills</div>
           <ul class="skills-list">
-            <li class="skill-item">
+            <li class="skill-item" data-track="bhavya">
               <input type="checkbox" id="m1_1" class="task-check"/>
-              <label for="m1_1" class="skill-text"><strong>Webhooks & REST APIs:</strong> GET, POST, Headers, Authorization Bearer Tokens & Webhook Triggers.</label>
+              <label for="m1_1" class="skill-text"><strong>Webhooks & REST APIs:</strong> GET, POST, Headers, Authorization Bearer Tokens & Webhook Triggers. <span class="owner-pill owner-bhavya">👨‍💻 Bhavya</span></label>
             </li>
-            <li class="skill-item">
+            <li class="skill-item" data-track="dhruv">
               <input type="checkbox" id="m1_2" class="task-check"/>
-              <label for="m1_2" class="skill-text"><strong>n8n Fundamentals:</strong> Self-hosting on Docker/Hetzner, Code Node (JS/Py), IF/Switch Logic & Error Handling.</label>
+              <label for="m1_2" class="skill-text"><strong>n8n Fundamentals:</strong> Self-hosting on Docker/Hetzner, Code Node (JS/Py), IF/Switch Logic & Error Handling. <span class="owner-pill owner-dhruv">🤖 Dhruv</span></label>
             </li>
-            <li class="skill-item">
+            <li class="skill-item" data-track="dhruv">
               <input type="checkbox" id="m1_3" class="task-check"/>
-              <label for="m1_3" class="skill-text"><strong>Data Transformation:</strong> Parsing complex JSON structures, filtering arrays, and mapping CRM fields.</label>
+              <label for="m1_3" class="skill-text"><strong>Data Transformation:</strong> Parsing complex JSON structures, filtering arrays, and mapping CRM fields. <span class="owner-pill owner-dhruv">🤖 Dhruv</span></label>
             </li>
           </ul>
         </div>
@@ -695,19 +1009,19 @@ html_content = """<!DOCTYPE html>
       </div>
       <div class="project-box">
         <div class="project-title">🛠️ Portfolio Project #1</div>
-        <div class="project-desc"><strong>WhatsApp/Email Lead Intake Engine:</strong> Build an n8n workflow that catches incoming form submissions via Webhook, enriches lead data, posts a summary to Slack/WhatsApp, and creates a lead in Airtable/HubSpot.</div>
+        <div class="project-desc"><strong>WhatsApp/Email Lead Intake Engine:</strong> Dhruv builds the n8n workflow catching form submissions via Webhook and enriching lead data. Bhavya configures the database endpoint in Supabase / Airtable to store records.</div>
       </div>
     </div>
   </div>
 
   <!-- MODULE 2 -->
-  <div class="module-card reveal" data-phase="p2">
+  <div class="module-card reveal" data-phase="p2" data-track="dhruv bhavya">
     <div class="module-header">
       <div class="module-header-left">
         <div class="module-icon-badge">🧠</div>
         <div class="module-title">
           <h2>Module 2: LLM APIs, Function Calling & Structured Prompts</h2>
-          <div class="module-subtitle">OpenAI API, Claude 3.5 Sonnet Tool Use & JSON Schemas</div>
+          <div class="module-subtitle">OpenAI API, Claude 3.5 Sonnet Tool Use & JSON Schemas · <span class="owner-pill owner-dhruv">🤖 Dhruv (Lead)</span> <span class="owner-pill owner-bhavya">👨‍💻 Bhavya (Microservices)</span></div>
         </div>
       </div>
       <div class="module-badge">Phase 2 · Week 3-4</div>
@@ -717,17 +1031,17 @@ html_content = """<!DOCTYPE html>
         <div>
           <div class="section-label">🎯 Core Concepts & Skills</div>
           <ul class="skills-list">
-            <li class="skill-item">
+            <li class="skill-item" data-track="dhruv">
               <input type="checkbox" id="m2_1" class="task-check"/>
-              <label for="m2_1" class="skill-text"><strong>Prompt Architecture:</strong> System Prompts, Few-shot prompting, Chain of Thought (CoT), & Guardrails.</label>
+              <label for="m2_1" class="skill-text"><strong>Prompt Architecture:</strong> System Prompts, Few-shot prompting, Chain of Thought (CoT), & Guardrails. <span class="owner-pill owner-dhruv">🤖 Dhruv</span></label>
             </li>
-            <li class="skill-item">
+            <li class="skill-item" data-track="shared">
               <input type="checkbox" id="m2_2" class="task-check"/>
-              <label for="m2_2" class="skill-text"><strong>Structured Outputs:</strong> Enforcing strict JSON Schemas (Pydantic / OpenAI JSON Mode) for zero parser errors.</label>
+              <label for="m2_2" class="skill-text"><strong>Structured Outputs:</strong> Enforcing strict JSON Schemas (Pydantic / OpenAI JSON Mode) for zero parser errors. <span class="owner-pill owner-shared">⚡ Shared</span></label>
             </li>
-            <li class="skill-item">
+            <li class="skill-item" data-track="dhruv">
               <input type="checkbox" id="m2_3" class="task-check"/>
-              <label for="m2_3" class="skill-text"><strong>Tool Use & Function Calling:</strong> Allowing LLMs to execute external APIs (Search, Calculator, Database Lookup).</label>
+              <label for="m2_3" class="skill-text"><strong>Tool Use & Function Calling:</strong> Allowing LLMs to execute external APIs (Search, Calculator, Database Lookup). <span class="owner-pill owner-dhruv">🤖 Dhruv</span></label>
             </li>
           </ul>
         </div>
@@ -769,19 +1083,19 @@ html_content = """<!DOCTYPE html>
       </div>
       <div class="project-box">
         <div class="project-title">🛠️ Portfolio Project #2</div>
-        <div class="project-desc"><strong>AI Email Intent Classifier & Draft Generator:</strong> Build a tool that reads inbound customer support emails, extracts sentiment + urgency + category using Function Calling, and drafts an accurate response automatically.</div>
+        <div class="project-desc"><strong>AI Email Intent Classifier & Draft Generator:</strong> Dhruv authors the system prompt and few-shot classification logic. Bhavya wraps it in a lightweight FastAPI microservice with Pydantic output validation.</div>
       </div>
     </div>
   </div>
 
   <!-- MODULE 3 -->
-  <div class="module-card reveal" data-phase="p3">
+  <div class="module-card reveal" data-phase="p3" data-track="dhruv bhavya">
     <div class="module-header">
       <div class="module-header-left">
         <div class="module-icon-badge">📚</div>
         <div class="module-title">
           <h2>Module 3: AI Chatbots & RAG Knowledge Systems</h2>
-          <div class="module-subtitle">Voiceflow, Botpress, Vector Databases & Document Embeddings</div>
+          <div class="module-subtitle">Voiceflow, Botpress, Vector Databases & Document Embeddings · <span class="owner-pill owner-dhruv">🤖 Dhruv (Bot Logic)</span> <span class="owner-pill owner-bhavya">👨‍💻 Bhavya (Vector DB)</span></div>
         </div>
       </div>
       <div class="module-badge">Phase 3 · Week 5-6</div>
@@ -791,17 +1105,17 @@ html_content = """<!DOCTYPE html>
         <div>
           <div class="section-label">🎯 Core Concepts & Skills</div>
           <ul class="skills-list">
-            <li class="skill-item">
+            <li class="skill-item" data-track="shared">
               <input type="checkbox" id="m3_1" class="task-check"/>
-              <label for="m3_1" class="skill-text"><strong>Vector Embeddings:</strong> Chunking text (character/semantic), OpenAI text-embedding-3-small, Similarity search.</label>
+              <label for="m3_1" class="skill-text"><strong>Vector Embeddings:</strong> Chunking text (character/semantic), OpenAI text-embedding-3-small, Similarity search. <span class="owner-pill owner-shared">⚡ Shared</span></label>
             </li>
-            <li class="skill-item">
+            <li class="skill-item" data-track="bhavya">
               <input type="checkbox" id="m3_2" class="task-check"/>
-              <label for="m3_2" class="skill-text"><strong>Vector Stores:</strong> Pinecone, Qdrant, & Supabase pgvector setup for multi-tenant client data.</label>
+              <label for="m3_2" class="skill-text"><strong>Vector Stores & Databases:</strong> Pinecone, Qdrant, & Supabase pgvector setup for multi-tenant client data. <span class="owner-pill owner-bhavya">👨‍💻 Bhavya</span></label>
             </li>
-            <li class="skill-item">
+            <li class="skill-item" data-track="dhruv">
               <input type="checkbox" id="m3_3" class="task-check"/>
-              <label for="m3_3" class="skill-text"><strong>Visual Bot Builders:</strong> Voiceflow & Botpress state management, API steps, custom JS actions, & website embedding.</label>
+              <label for="m3_3" class="skill-text"><strong>Visual Bot Builders:</strong> Voiceflow & Botpress state management, API steps, custom JS actions, & website embedding. <span class="owner-pill owner-dhruv">🤖 Dhruv</span></label>
             </li>
           </ul>
         </div>
@@ -843,19 +1157,19 @@ html_content = """<!DOCTYPE html>
       </div>
       <div class="project-box">
         <div class="project-title">🛠️ Portfolio Project #3</div>
-        <div class="project-desc"><strong>Multi-Tenant E-Commerce / Clinic Support Bot:</strong> Build a Voiceflow chatbot that embeds on a client site, answers questions strictly from uploaded PDF SOPs, and collects lead info to book appointments.</div>
+        <div class="project-desc"><strong>Multi-Tenant E-Commerce / Clinic Support Bot:</strong> Dhruv designs the visual Voiceflow conversation tree and website embed widget. Bhavya configures Supabase pgvector to ingest and query client PDF documents.</div>
       </div>
     </div>
   </div>
 
   <!-- MODULE 4 -->
-  <div class="module-card reveal" data-phase="p4">
+  <div class="module-card reveal" data-phase="p4" data-track="dhruv bhavya">
     <div class="module-header">
       <div class="module-header-left">
         <div class="module-icon-badge">📞</div>
         <div class="module-title">
           <h2>Module 4: Conversational Voice AI Agents</h2>
-          <div class="module-subtitle">Vapi.ai, Retell AI, Twilio Phone Integration & Latency Optimization</div>
+          <div class="module-subtitle">Vapi.ai, Retell AI, Twilio Phone Integration & Latency Optimization · <span class="owner-pill owner-dhruv">🤖 Dhruv (Voice Agent)</span> <span class="owner-pill owner-bhavya">👨‍💻 Bhavya (Twilio & Webhook Backend)</span></div>
         </div>
       </div>
       <div class="module-badge">Phase 4 · Week 7-8</div>
@@ -865,17 +1179,17 @@ html_content = """<!DOCTYPE html>
         <div>
           <div class="section-label">🎯 Core Concepts & Skills</div>
           <ul class="skills-list">
-            <li class="skill-item">
+            <li class="skill-item" data-track="dhruv">
               <input type="checkbox" id="m4_1" class="task-check"/>
-              <label for="m4_1" class="skill-text"><strong>Voice Agent Architecture:</strong> Speech-to-Text (Deepgram), LLM (Groq/Claude), Text-to-Speech (ElevenLabs).</label>
+              <label for="m4_1" class="skill-text"><strong>Voice Agent Architecture:</strong> Speech-to-Text (Deepgram), LLM (Groq/Claude), Text-to-Speech (ElevenLabs). <span class="owner-pill owner-dhruv">🤖 Dhruv</span></label>
             </li>
-            <li class="skill-item">
+            <li class="skill-item" data-track="bhavya">
               <input type="checkbox" id="m4_2" class="task-check"/>
-              <label for="m4_2" class="skill-text"><strong>Inbound & Outbound Calling:</strong> Purchasing Twilio phone numbers, configuring Vapi/Retell assistants & Webhooks.</label>
+              <label for="m4_2" class="skill-text"><strong>Inbound & Outbound Calling:</strong> Purchasing Twilio phone numbers, configuring Vapi/Retell assistants & Webhooks. <span class="owner-pill owner-bhavya">👨‍💻 Bhavya</span></label>
             </li>
-            <li class="skill-item">
+            <li class="skill-item" data-track="dhruv">
               <input type="checkbox" id="m4_3" class="task-check"/>
-              <label for="m4_3" class="skill-text"><strong>Real-time Calendar Booking:</strong> Connecting Cal.com / Google Calendar API during a live voice phone call.</label>
+              <label for="m4_3" class="skill-text"><strong>Real-time Calendar Booking:</strong> Connecting Cal.com / Google Calendar API during a live voice phone call. <span class="owner-pill owner-dhruv">🤖 Dhruv</span></label>
             </li>
           </ul>
         </div>
@@ -917,19 +1231,19 @@ html_content = """<!DOCTYPE html>
       </div>
       <div class="project-box">
         <div class="project-title">🛠️ Portfolio Project #4</div>
-        <div class="project-desc"><strong>Dental / Real Estate AI Phone Receptionist:</strong> Build an inbound phone agent using Vapi + Twilio that answers patient inquiries, handles objections, checks available slots, and books appointments on Google Calendar.</div>
+        <div class="project-desc"><strong>Dental / Real Estate AI Phone Receptionist:</strong> Dhruv programs the Vapi.ai assistant prompt, objection handling, and Google Calendar tool. Bhavya provisions the Twilio phone number and connects the server-side call logging webhook.</div>
       </div>
     </div>
   </div>
 
   <!-- MODULE 5 -->
-  <div class="module-card reveal" data-phase="p5">
+  <div class="module-card reveal" data-phase="p5" data-track="bhavya dhruv">
     <div class="module-header">
       <div class="module-header-left">
         <div class="module-icon-badge">🛠️</div>
         <div class="module-title">
           <h2>Module 5: Full-Stack AI Services & Client Delivery</h2>
-          <div class="module-subtitle">Next.js, FastAPI, Client Dashboards & Cold Acquisition Systems</div>
+          <div class="module-subtitle">Next.js, FastAPI, Client Dashboards & Cold Acquisition Systems · <span class="owner-pill owner-bhavya">👨‍💻 Bhavya (Backend & Cold Calls)</span> <span class="owner-pill owner-dhruv">🤖 Dhruv (Web & Social)</span></div>
         </div>
       </div>
       <div class="module-badge">Phase 5 · Week 9-12</div>
@@ -939,17 +1253,21 @@ html_content = """<!DOCTYPE html>
         <div>
           <div class="section-label">🎯 Core Concepts & Skills</div>
           <ul class="skills-list">
-            <li class="skill-item">
+            <li class="skill-item" data-track="bhavya">
               <input type="checkbox" id="m5_1" class="task-check"/>
-              <label for="m5_1" class="skill-text"><strong>Custom AI Microservices:</strong> Python FastAPI + Pydantic backends deployed on Render / Vercel.</label>
+              <label for="m5_1" class="skill-text"><strong>Custom AI Microservices:</strong> Python FastAPI + Pydantic backends deployed on Render / Hetzner VPS. <span class="owner-pill owner-bhavya">👨‍💻 Bhavya</span></label>
             </li>
-            <li class="skill-item">
+            <li class="skill-item" data-track="dhruv">
               <input type="checkbox" id="m5_2" class="task-check"/>
-              <label for="m5_2" class="skill-text"><strong>Agency Client Portal:</strong> Building a sleek Next.js dashboard where clients view lead logs, analytics, and call transcripts.</label>
+              <label for="m5_2" class="skill-text"><strong>Agency Client Portal & Web:</strong> Building a sleek Next.js / HTML agency site and Notion client onboarding portal. <span class="owner-pill owner-dhruv">🤖 Dhruv</span></label>
             </li>
-            <li class="skill-item">
+            <li class="skill-item" data-track="bhavya">
               <input type="checkbox" id="m5_3" class="task-check"/>
-              <label for="m5_3" class="skill-text"><strong>Cold Outreach Infrastructure:</strong> Setting up Instantly.ai, SPF/DKIM/DMARC domains, and LinkedIn Sales Nav scripts.</label>
+              <label for="m5_3" class="skill-text"><strong>Cold Acquisition & Phone Outreach:</strong> Sourcing leads with Master AI Lead Engine and executing 15-sec cold call closing sprints. <span class="owner-pill owner-bhavya">👨‍💻 Bhavya</span></label>
+            </li>
+            <li class="skill-item" data-track="dhruv">
+              <input type="checkbox" id="m5_4" class="task-check"/>
+              <label for="m5_4" class="skill-text"><strong>Twitter/X Inbound Authority Engine:</strong> Daily build-in-public workflow breakdowns, Loom video demos & DM nurturing. <span class="owner-pill owner-dhruv">🤖 Dhruv</span></label>
             </li>
           </ul>
         </div>
@@ -991,7 +1309,7 @@ html_content = """<!DOCTYPE html>
       </div>
       <div class="project-box">
         <div class="project-title">🛠️ Portfolio Project #5</div>
-        <div class="project-desc"><strong>Agency Portfolio Website & Cold Lead Campaign:</strong> Build your high-converting Agency Website using Next.js / HTML, set up 3 cold email sending domains, and launch a 100-lead cold email outreach sprint.</div>
+        <div class="project-desc"><strong>Agency Launch & Outbound Revenue Sprint:</strong> Dhruv launches the agency portfolio site and publishes daily build-in-public threads. Bhavya executes 20 outbound dials/day using the Master AI Lead Engine to sign the first paying client.</div>
       </div>
     </div>
   </div>
@@ -1054,16 +1372,68 @@ html_content = """<!DOCTYPE html>
 
   updateProgress();
 
-  // Phase Filter Logic
+  // Track & Phase Dual-Filter Logic
+  let currentPhase = 'all';
+  let currentTrack = 'all';
+
+  function filterTrack(track, btn) {
+    document.querySelectorAll('.track-btn').forEach(b => {
+      if (b.getAttribute('data-track') === track) {
+        b.classList.add('active');
+      } else {
+        b.classList.remove('active');
+      }
+    });
+    currentTrack = track;
+    applyFilters();
+  }
+
   function filterPhase(phase, btn) {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
+    currentPhase = phase;
+    applyFilters();
+  }
 
+  function applyFilters() {
+    // Filter Module Cards
     document.querySelectorAll('.module-card').forEach(card => {
-      if (phase === 'all' || card.getAttribute('data-phase') === phase) {
+      const cardPhase = card.getAttribute('data-phase');
+      const cardTrack = card.getAttribute('data-track') || 'shared';
+
+      const phaseMatch = (currentPhase === 'all' || cardPhase === currentPhase);
+      const trackMatch = (currentTrack === 'all' || cardTrack.includes(currentTrack) || cardTrack.includes('shared'));
+
+      if (phaseMatch && trackMatch) {
         card.style.display = 'block';
       } else {
         card.style.display = 'none';
+      }
+    });
+
+    // Filter/Highlight Fast-Track Cards
+    document.querySelectorAll('.fast-card').forEach(card => {
+      const cardTrack = card.getAttribute('data-track') || 'shared';
+      if (currentTrack === 'all') {
+        card.style.display = 'flex';
+        card.style.opacity = '1';
+      } else if (cardTrack === currentTrack || cardTrack === 'shared') {
+        card.style.display = 'flex';
+        card.style.opacity = '1';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // Dim or highlight skills inside visible cards
+    document.querySelectorAll('.skill-item').forEach(item => {
+      const itemTrack = item.getAttribute('data-track') || 'shared';
+      if (currentTrack === 'all') {
+        item.style.opacity = '1';
+      } else if (itemTrack === currentTrack || itemTrack === 'shared') {
+        item.style.opacity = '1';
+      } else {
+        item.style.opacity = '0.35';
       }
     });
   }
@@ -1094,7 +1464,7 @@ html_content = """<!DOCTYPE html>
 </html>
 """
 
-output_paths = ["learning_roadmap.html", "AI_Agency_Blueprint/learning_roadmap.html"]
+output_paths = ["learning_roadmap.html"]
 for p in output_paths:
     with open(p, "w") as f:
         f.write(html_content)
