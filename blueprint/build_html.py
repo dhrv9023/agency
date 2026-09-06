@@ -332,8 +332,9 @@ full_html = f"""<!DOCTYPE html>
   .hero p {{
     color: var(--muted);
     font-size: 1.1rem;
-    max-width: 600px;
+    max-width: 820px;
     margin: 0 auto 32px;
+    line-height: 1.6;
   }}
   .hero-stats {{
     display: flex;
@@ -565,9 +566,9 @@ full_html = f"""<!DOCTYPE html>
   }}
 
   .container {{
-    max-width: 1240px;
+    max-width: min(1800px, 96vw);
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 clamp(20px, 3vw, 48px);
   }}
 
   /* ── Creative Angle Banner ── */

@@ -226,13 +226,14 @@ html_content = """<!DOCTYPE html>
   .hero p {
     color: var(--muted);
     font-size: 1.05rem;
-    max-width: 680px;
+    max-width: 860px;
     margin: 0 auto 28px;
+    line-height: 1.6;
   }
 
   /* Progress Tracker Header */
   .progress-container {
-    max-width: 540px;
+    max-width: 660px;
     margin: 0 auto;
     background: var(--surface);
     border: 1px solid var(--border);
@@ -267,40 +268,42 @@ html_content = """<!DOCTYPE html>
 
   /* ── Filter Controls ── */
   .controls-bar {
-    max-width: 1200px;
+    max-width: min(1800px, 96vw);
     margin: 32px auto 0;
-    padding: 0 30px;
+    padding: 0 clamp(16px, 2.5vw, 40px);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+  .controls-top-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 16px;
-  }
-  .filter-groups {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    flex: 1;
+    width: 100%;
   }
   .track-filters {
     display: flex;
-    gap: 8px;
+    gap: 10px;
     align-items: center;
     flex-wrap: wrap;
   }
   .track-label {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--muted);
     margin-right: 4px;
+    white-space: nowrap;
   }
   .track-btn {
     background: var(--surface);
     border: 1px solid var(--border);
     color: var(--muted);
-    padding: 7px 16px;
+    padding: 8px 18px;
     border-radius: 999px;
     font-size: 0.84rem;
     font-weight: 600;
@@ -309,6 +312,7 @@ html_content = """<!DOCTYPE html>
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    white-space: nowrap;
   }
   .track-btn:hover {
     border-color: var(--accent);
@@ -324,13 +328,13 @@ html_content = """<!DOCTYPE html>
     background: #0284c7;
     border-color: #0284c7;
     color: #ffffff;
-    box-shadow: 0 2px 12px rgba(2, 132, 199, 0.4);
+    box-shadow: 0 2px 14px rgba(2, 132, 199, 0.4);
   }
   .track-btn.active[data-track="dhruv"] {
     background: #10b981;
     border-color: #10b981;
     color: #ffffff;
-    box-shadow: 0 2px 12px rgba(16, 185, 129, 0.4);
+    box-shadow: 0 2px 14px rgba(16, 185, 129, 0.4);
   }
   .phase-filters {
     display: flex;
@@ -342,18 +346,48 @@ html_content = """<!DOCTYPE html>
     background: var(--surface);
     border: 1px solid var(--border);
     color: var(--muted);
-    padding: 6px 14px;
-    border-radius: 8px;
+    padding: 7px 16px;
+    border-radius: 999px;
     font-size: 0.82rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
+    white-space: nowrap;
   }
   .filter-btn:hover, .filter-btn.active {
     background: var(--accent);
     color: #ffffff;
     border-color: var(--accent);
     box-shadow: 0 2px 10px var(--accent-glow);
+  }
+
+  .search-box {
+    position: relative;
+    min-width: 260px;
+    flex: 0 1 340px;
+  }
+  .search-input {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 9px 16px 9px 38px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    outline: none;
+    transition: all 0.2s;
+  }
+  .search-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+  }
+  .search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 0.85rem;
   }
 
   /* ── Owner Pills ── */
@@ -503,63 +537,37 @@ html_content = """<!DOCTYPE html>
     gap: 6px;
   }
 
-  .search-box {
-    position: relative;
-    min-width: 260px;
-  }
-  .search-input {
-    width: 100%;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    color: var(--text);
-    padding: 8px 16px 8px 36px;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-  .search-input:focus {
-    border-color: var(--accent);
-  }
-  .search-icon {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--muted);
-    font-size: 0.85rem;
-  }
-
   /* ── Main Container ── */
   .main-container {
-    max-width: 1200px;
+    max-width: min(1800px, 96vw);
     margin: 32px auto 80px;
-    padding: 0 30px;
+    padding: 0 clamp(16px, 2.5vw, 40px);
+    width: 100%;
   }
 
   /* Module Card */
   .module-card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 18px;
-    margin-bottom: 32px;
+    border-radius: 20px;
+    margin-bottom: 36px;
     overflow: hidden;
     transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   }
   .module-card:hover {
     border-color: var(--card-hover-border);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 36px rgba(0,0,0,0.2);
   }
 
   .module-header {
-    padding: 24px 30px;
+    padding: 24px clamp(20px, 2.5vw, 36px);
     background: var(--surface2);
     border-bottom: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 14px;
   }
   .module-header-left {
     display: flex;
@@ -602,14 +610,14 @@ html_content = """<!DOCTYPE html>
   }
 
   .module-body {
-    padding: 28px 30px;
+    padding: 30px clamp(20px, 2.5vw, 36px);
   }
 
   /* Grid Layout Inside Module */
   .grid-two-col {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
+    grid-template-columns: 1.12fr 0.88fr;
+    gap: clamp(24px, 3vw, 44px);
   }
 
   .section-label {
@@ -765,16 +773,111 @@ html_content = """<!DOCTYPE html>
   }
   .footer strong { color: var(--accent); }
 
-  /* ── Mobile Breakpoints ── */
+  /* ── Responsive Breakpoints ── */
+  @media (max-width: 1280px) {
+    .controls-bar, .main-container {
+      max-width: 98vw;
+      padding: 0 clamp(16px, 2vw, 32px);
+    }
+    .grid-two-col {
+      gap: 28px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .grid-two-col {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .controls-top-row {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 14px;
+    }
+    .search-box {
+      min-width: 100%;
+    }
+    .fast-track-banner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .fast-banner-actions {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
   @media (max-width: 768px) {
-    .nav { padding: 10px 16px; }
-    .hero { padding: 40px 16px 30px; }
-    .controls-bar { padding: 0 16px; flex-direction: column; align-items: stretch; }
-    .search-box { min-width: 100%; }
-    .main-container { padding: 0 16px; }
-    .grid-two-col { grid-template-columns: 1fr; gap: 20px; }
-    .module-header { padding: 16px 20px; }
-    .module-body { padding: 20px 16px; }
+    .nav {
+      padding: 12px 16px;
+    }
+    .nav-brand span:last-child {
+      font-size: 0.9rem;
+    }
+    .hero {
+      padding: 44px 16px 36px;
+    }
+    .hero h1 {
+      font-size: 2rem;
+    }
+    .hero p {
+      font-size: 0.95rem;
+    }
+    .controls-bar {
+      padding: 0 14px;
+      margin-top: 20px;
+      gap: 12px;
+    }
+    .main-container {
+      padding: 0 14px;
+      margin-top: 24px;
+    }
+    .track-filters, .phase-filters {
+      gap: 6px;
+    }
+    .track-btn, .filter-btn {
+      padding: 6px 14px;
+      font-size: 0.8rem;
+    }
+    .fast-card {
+      padding: 20px 16px;
+    }
+    .module-header {
+      padding: 18px 16px;
+    }
+    .module-body {
+      padding: 20px 16px;
+    }
+    .project-box {
+      padding: 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .nav {
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .nav-actions {
+      width: 100%;
+      justify-content: space-between;
+    }
+    .hero h1 {
+      font-size: 1.75rem;
+    }
+    .hero p {
+      font-size: 0.9rem;
+    }
+    .track-btn, .filter-btn {
+      font-size: 0.75rem;
+      padding: 5px 10px;
+    }
+    .fast-track-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
 </head>
@@ -813,27 +916,27 @@ html_content = """<!DOCTYPE html>
 </div>
 
 <div class="controls-bar">
-  <div class="filter-groups">
+  <div class="controls-top-row">
     <div class="track-filters">
       <span class="track-label">Target Track:</span>
       <button class="track-btn active" data-track="all" onclick="filterTrack('all', this)">👥 Both Co-Founders</button>
-      <button class="track-btn" data-track="bhavya" onclick="filterTrack('bhavya', this)">👨‍💻 Bhavya's Track (Backend & Outbound)</button>
-      <button class="track-btn" data-track="dhruv" onclick="filterTrack('dhruv', this)">🤖 Dhruv's Track (n8n, AI & Inbound)</button>
+      <button class="track-btn" data-track="bhavya" onclick="filterTrack('bhavya', this)">👨‍💻 Bhavya's Track</button>
+      <button class="track-btn" data-track="dhruv" onclick="filterTrack('dhruv', this)">🤖 Dhruv's Track</button>
     </div>
-    <div class="phase-filters">
-      <span class="track-label">Phase:</span>
-      <button class="filter-btn active" onclick="filterPhase('all', this)">All Modules</button>
-      <button class="filter-btn" onclick="filterPhase('p1', this)">Phase 1: Automations</button>
-      <button class="filter-btn" onclick="filterPhase('p2', this)">Phase 2: LLMs & Prompts</button>
-      <button class="filter-btn" onclick="filterPhase('p3', this)">Phase 3: RAG & Bots</button>
-      <button class="filter-btn" onclick="filterPhase('p4', this)">Phase 4: Voice Agents</button>
-      <button class="filter-btn" onclick="filterPhase('p5', this)">Phase 5: Full-Stack & Sales</button>
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="roadmap-search" class="search-input" placeholder="Search skills, tools, docs..." onkeyup="searchRoadmap()"/>
     </div>
   </div>
 
-  <div class="search-box">
-    <span class="search-icon">🔍</span>
-    <input type="text" id="roadmap-search" class="search-input" placeholder="Search skills, tools, docs..." onkeyup="searchRoadmap()"/>
+  <div class="phase-filters">
+    <span class="track-label">Phase:</span>
+    <button class="filter-btn active" onclick="filterPhase('all', this)">All Modules</button>
+    <button class="filter-btn" onclick="filterPhase('p1', this)">Phase 1: Automations</button>
+    <button class="filter-btn" onclick="filterPhase('p2', this)">Phase 2: LLMs & Prompts</button>
+    <button class="filter-btn" onclick="filterPhase('p3', this)">Phase 3: RAG & Bots</button>
+    <button class="filter-btn" onclick="filterPhase('p4', this)">Phase 4: Voice Agents</button>
+    <button class="filter-btn" onclick="filterPhase('p5', this)">Phase 5: Full-Stack & Sales</button>
   </div>
 </div>
 
