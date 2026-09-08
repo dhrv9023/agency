@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting / Not Found</title>
+  <script>
+    // GitHub Pages client-side redirect for /admin and /admin/
+    const path = window.location.pathname;
+    if (path.endsWith('/admin') || path.endsWith('/admin/')) {
+      const target = path.replace(/\/admin\/?$/, '/admin.html') + window.location.search + window.location.hash;
+      window.location.replace(target);
+    }
+  </script>
+</head>
+<body style="background-color: #070709; color: #9ca3af; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0;">
+  <div style="text-align: center; max-width: 480px; padding: 24px;">
+    <h1 style="color: #f9fafb; font-size: 2rem; margin-bottom: 12px;">404 - Page Not Found</h1>
+    <p style="font-size: 0.95rem; line-height: 1.5; margin-bottom: 24px;">The page you are looking for does not exist or has been moved.</p>
+    <div style="display: flex; gap: 12px; justify-content: center;">
+      <a href="./" style="background-color: #18181b; color: #e4e4e7; border: 1px solid #27272a; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-size: 0.9rem;">Home</a>
+      <a href="./admin.html" style="background-color: #10b981; color: #022c22; font-weight: 600; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-size: 0.9rem;">Operations Portal</a>
+    </div>
+  </div>
+</body>
+</html>
