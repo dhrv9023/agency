@@ -7,8 +7,11 @@
   <meta http-equiv="refresh" content="0; url=../admin.html">
   <meta name="robots" content="noindex, nofollow">
   <script>
-    // Preserve query parameters and hashes during instant redirect
-    const target = '../admin.html' + window.location.search + window.location.hash;
+    // Preserve base path, query parameters, and hashes during instant redirect
+    const currentPath = window.location.pathname;
+    const target = currentPath.includes('/admin')
+      ? currentPath.replace(/\/admin\/?$/, '/admin.html') + window.location.search + window.location.hash
+      : '../admin.html' + window.location.search + window.location.hash;
     window.location.replace(target);
   </script>
 </head>

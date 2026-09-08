@@ -1093,6 +1093,122 @@
         align-items: flex-start;
       }
     }
+
+    /* Strategy 2.0 Custom Styles */
+    .strat-callout-box {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(245, 158, 11, 0.05) 100%);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .strat-flow-diagram {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 18px;
+      margin: 16px 0;
+    }
+    .strat-flow-step {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 9px 13px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #f3f4f6;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .strat-flow-arrow {
+      color: #ef4444;
+      font-size: 0.85rem;
+    }
+    .strat-metric-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-family: var(--font-mono);
+      font-weight: 700;
+    }
+    .metric-pill-red { background: rgba(239, 68, 68, 0.15); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.3); }
+    .metric-pill-green { background: rgba(16, 185, 129, 0.15); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .metric-pill-amber { background: rgba(245, 158, 11, 0.15); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .metric-pill-blue { background: rgba(59, 130, 246, 0.15); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.3); }
+    .strat-script-box {
+      background: #08090d;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-left: 3px solid #ef4444;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 12px 0;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+    .strat-step-block {
+      background: var(--admin-surface);
+      border: 1px solid var(--admin-border);
+      border-radius: 12px;
+      padding: 22px;
+      margin-bottom: 18px;
+      transition: all 0.2s ease;
+    }
+    .strat-step-block:hover {
+      border-color: rgba(239, 68, 68, 0.45);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    .strat-step-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .strat-step-num {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #ef4444;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .strat-table-highlight {
+      color: #ef4444;
+      font-weight: 700;
+      font-family: var(--font-mono);
+    }
+    .strat-objection-box {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 12px;
+    }
+    .strat-objection-q {
+      color: #fca5a5;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .strat-objection-a {
+      color: #d1d5db;
+      font-size: 0.85rem;
+      line-height: 1.55;
+    }
   </style>
 </head>
 <body>
@@ -1125,6 +1241,9 @@
         </a>
         <a href="#strategy-intel" class="tool-btn" style="background: rgba(139,92,246,0.12); border-color: rgba(139,92,246,0.35); color: #c4b5fd;" onclick="document.getElementById('strategy-intel').scrollIntoView({behavior:'smooth'}); return false;">
           <i class="fa-solid fa-chess"></i> Strategy
+        </a>
+        <a href="#strategy-intel" class="tool-btn" style="background: rgba(239,68,68,0.12); border-color: rgba(239,68,68,0.35); color: #fca5a5;" onclick="document.getElementById('strategy-intel').scrollIntoView({behavior:'smooth'}); switchStratTab('strategy2', document.querySelector('.strat-tab-btn[data-tab=\'strategy2\']')); return false;">
+          <i class="fa-solid fa-fire"></i> Strategy 2.0
         </a>
         <a href="index.html" class="tool-btn">
           <i class="fa-solid fa-arrow-up-right-from-square"></i> Public Site
@@ -1699,6 +1818,7 @@
             <span class="strat-badge strat-badge-purple"><i class="fa-solid fa-lock"></i> Internal Strategic Intel</span>
             <span class="strat-badge strat-badge-emerald"><i class="fa-solid fa-coins"></i> Zero-Capital Model</span>
             <span class="strat-badge strat-badge-amber"><i class="fa-solid fa-crosshairs"></i> Niche Money Map</span>
+            <span class="strat-badge" style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.35); color: #fca5a5;"><i class="fa-solid fa-fire"></i> Strategy 2.0: Home Services</span>
           </div>
           <h2>Strategy &amp; Operations Intelligence Hub</h2>
           <p>
@@ -1731,6 +1851,9 @@
         </button>
         <button class="strat-tab-btn" onclick="switchStratTab('verdict', this)">
           <i class="fa-solid fa-trophy"></i> 6. Rankings &amp; Golden Rules
+        </button>
+        <button class="strat-tab-btn" data-tab="strategy2" onclick="switchStratTab('strategy2', this)" style="border-color: rgba(239, 68, 68, 0.45); color: #fca5a5; background: rgba(239, 68, 68, 0.08);">
+          <i class="fa-solid fa-fire"></i> 7. Strategy 2.0 (HVAC &amp; Plumbing)
         </button>
       </div>
 
@@ -2410,6 +2533,698 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- ============================================================
+           TAB 7: STRATEGY 2.0 — PRODUCTIZED HOME-SERVICES AUTOMATION
+           Vertical AI Lead Recovery & Booking for US HVAC & Plumbing
+           ============================================================ -->
+      <div id="strat-tab-strategy2" class="strat-tab-pane">
+        
+        <!-- Hero Callout Box -->
+        <div class="strat-callout-box">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="strat-metric-pill metric-pill-red"><i class="fa-solid fa-fire"></i> STRATEGY 2.0 VERTICAL FLAGSHIP</span>
+              <span class="strat-metric-pill metric-pill-amber"><i class="fa-solid fa-crosshairs"></i> TARGET: US HVAC &amp; PLUMBING</span>
+              <span class="strat-metric-pill metric-pill-green"><i class="fa-solid fa-money-bill"></i> $750 – $1,000 FIRST PILOT</span>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #9ca3af;">
+              EXECUTION STAGE: <strong>GROUND ZERO → 1ST PAYING CLIENT</strong>
+            </div>
+          </div>
+
+          <h3 style="font-size: 1.5rem; font-weight: 800; color: #ffffff; margin: 0 0 8px; letter-spacing: -0.01em;">
+            AI Lead Recovery &amp; Booking System for Home-Service Businesses
+          </h3>
+          <p style="color: #d1d5db; font-size: 0.92rem; line-height: 1.6; margin: 0 0 14px; max-width: 900px;">
+            The fundamental strategic pivot: Stop selling generic "AI automation", "RAG", or "custom development". 
+            Instead, sell a tangible business outcome: <strong>"We help HVAC and plumbing contractors recover lost inquiries and turn after-hours quote requests into booked diagnostic jobs before their competitors can call them back."</strong>
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 16px;">
+            <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 14px;">
+              <div style="font-family: var(--font-mono); font-size: 0.7rem; color: #9ca3af; text-transform: uppercase;">Average Repair Ticket</div>
+              <div style="font-size: 1.25rem; font-weight: 800; color: #fcd34d; font-family: var(--font-mono); margin-top: 2px;">$350 – $600</div>
+              <div style="font-size: 0.75rem; color: #6b7280; margin-top: 2px;">Diagnostic, capacitor, freon, minor leak</div>
+            </div>
+            <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 14px;">
+              <div style="font-family: var(--font-mono); font-size: 0.7rem; color: #9ca3af; text-transform: uppercase;">System Replacement Ticket</div>
+              <div style="font-size: 1.25rem; font-weight: 800; color: #6ee7b7; font-family: var(--font-mono); margin-top: 2px;">$8,000 – $16,000</div>
+              <div style="font-size: 0.75rem; color: #6b7280; margin-top: 2px;">Full AC condenser / heat pump replacement</div>
+            </div>
+            <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 14px;">
+              <div style="font-family: var(--font-mono); font-size: 0.7rem; color: #9ca3af; text-transform: uppercase;">The ROI Equation</div>
+              <div style="font-size: 1.25rem; font-weight: 800; color: #fca5a5; font-family: var(--font-mono); margin-top: 2px;">1 Recovered Job</div>
+              <div style="font-size: 0.75rem; color: #6b7280; margin-top: 2px;">Pays for your entire $750–$1,000 pilot 10x over</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1. What You Sell: The 3-Tier Ladder -->
+        <div style="margin-bottom: 28px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+            <h4 style="font-size: 1.15rem; font-weight: 700; color: #ffffff; margin: 0;">
+              <i class="fa-solid fa-layer-group" style="color: #ef4444; margin-right: 8px;"></i>
+              The 3-Tier Monetization Ladder &amp; Progression Model
+            </h4>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #9ca3af;">A &rarr; C &rarr; D EVOLUTION PATH</span>
+          </div>
+
+          <div class="strat-grid-4">
+            <!-- Offer 1: Pilot -->
+            <div class="strat-card" style="border-color: rgba(239, 68, 68, 0.4);">
+              <div>
+                <div class="strat-card-head">
+                  <h3 class="strat-niche-name">Offer #1: The Pilot</h3>
+                  <span class="strat-badge strat-badge-amber">STAGE 1</span>
+                </div>
+                <div class="strat-val-tag" style="color: #fca5a5;">$750 – $1,000</div>
+                <p class="strat-desc">
+                  For <strong>one business</strong>. Your sole objective is NOT recurring revenue yet. It is getting someone to say <em>"Yes, build this for us"</em> and buying customer feedback with your time.
+                </p>
+                <ul class="strat-usecases-list">
+                  <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> Instant lead capture &amp; response (<45s)</li>
+                  <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> Conversational AI qualification</li>
+                  <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> Follow-up SMS/Email sequences</li>
+                  <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> Diagnostic booking request</li>
+                  <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> Real-time owner/dispatcher SMS alert</li>
+                </ul>
+              </div>
+              <div class="strat-meta-footer">
+                <span>Objective: 1st Sale</span>
+                <span style="color: #fca5a5;">Target: Day 15–30</span>
+              </div>
+            </div>
+
+            <!-- Offer 2: Productized -->
+            <div class="strat-card" style="border-color: rgba(245, 158, 11, 0.4);">
+              <div>
+                <div class="strat-card-head">
+                  <h3 class="strat-niche-name">Offer #2: Productized</h3>
+                  <span class="strat-badge strat-badge-amber">STAGE 2</span>
+                </div>
+                <div class="strat-val-tag" style="color: #fcd34d;">$1,500 – $3,000</div>
+                <p class="strat-desc">
+                  Once you've done this 2–3 times. Standardized system, minimal customization, modular architecture. Zero custom backend rewrites.
+                </p>
+                <ul class="strat-usecases-list">
+                  <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> Turnkey 72-hr setup</li>
+                  <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> Reusable FastAPI webhook engine</li>
+                  <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> Standardized HVAC intent prompt</li>
+                  <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> Multi-calendar booking sync</li>
+                  <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> Plug-and-play website widget</li>
+                </ul>
+              </div>
+              <div class="strat-meta-footer">
+                <span>Objective: Standardization</span>
+                <span style="color: #fcd34d;">Clients #2–#5</span>
+              </div>
+            </div>
+
+            <!-- Offer 3: Retainer -->
+            <div class="strat-card" style="border-color: rgba(16, 185, 129, 0.4);">
+              <div>
+                <div class="strat-card-head">
+                  <h3 class="strat-niche-name">Offer #3: Retainer</h3>
+                  <span class="strat-badge strat-badge-emerald">STAGE 3</span>
+                </div>
+                <div class="strat-val-tag" style="color: #6ee7b7;">$200 – $750 / mo</div>
+                <p class="strat-desc">
+                  Ongoing infrastructure care. The client never cancels because your system is actively booking thousands of dollars in jobs every month.
+                </p>
+                <ul class="strat-usecases-list">
+                  <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> Cloud hosting &amp; 99.9% uptime</li>
+                  <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> Twilio SMS deliverability &amp; numbers</li>
+                  <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> LLM API tokens (<$5/mo actual cost)</li>
+                  <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> Monthly conversion analytics</li>
+                  <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> Seasonal promotion blasts</li>
+                </ul>
+              </div>
+              <div class="strat-meta-footer">
+                <span>Gross Margin: 95%+</span>
+                <span style="color: #6ee7b7;">Sticky MRR</span>
+              </div>
+            </div>
+
+            <!-- Stage 4: SaaS -->
+            <div class="strat-card" style="border-color: rgba(139, 92, 246, 0.4);">
+              <div>
+                <div class="strat-card-head">
+                  <h3 class="strat-niche-name">LeadFlow AI (SaaS)</h3>
+                  <span class="strat-badge strat-badge-purple">STAGE 4</span>
+                </div>
+                <div class="strat-val-tag" style="color: #c4b5fd;">$199 – $499 / mo</div>
+                <p class="strat-desc">
+                  The long game. Turn the field-tested architecture into a multi-tenant platform. Home-service businesses self-onboard and connect their forms.
+                </p>
+                <ul class="strat-usecases-list">
+                  <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> Self-serve portal &amp; onboarding</li>
+                  <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> Direct Zapier / ServiceTitan webhooks</li>
+                  <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> Visual workflow builder</li>
+                  <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> Zero custom code per client</li>
+                </ul>
+              </div>
+              <div class="strat-meta-footer">
+                <span>The Endgame</span>
+                <span style="color: #c4b5fd;">Scale Phase</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. The Ideal Customer Profile (ICP) & Signals -->
+        <div style="margin-bottom: 28px;">
+          <h4 style="font-size: 1.15rem; font-weight: 700; color: #ffffff; margin: 0 0 14px;">
+            <i class="fa-solid fa-bullseye" style="color: #f59e0b; margin-right: 8px;"></i>
+            Ideal Customer Profile (ICP) &amp; Prospect Qualification Matrix
+          </h4>
+
+          <div class="strat-grid-3">
+            <div class="strat-card" style="border-color: rgba(16, 185, 129, 0.3);">
+              <div class="strat-card-head">
+                <h3 class="strat-niche-name" style="color: #6ee7b7;"><i class="fa-solid fa-circle-check"></i> The Sweet Spot</h3>
+                <span class="strat-badge strat-badge-emerald">TARGET THIS</span>
+              </div>
+              <ul class="strat-usecases-list" style="margin-top: 10px;">
+                <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> <strong>5–30 employees</strong> (3–15 service trucks on the road)</li>
+                <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> <strong>High-heat / extreme climate US metros:</strong> Dallas/Fort Worth, Houston, Phoenix, Miami, Atlanta, Tampa, Las Vegas</li>
+                <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> <strong>Running Google Ads / LSA:</strong> Paying $60–$150 per click for emergency HVAC keywords</li>
+                <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> <strong>Online quote forms on site:</strong> Active inbound traffic volume</li>
+                <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> High owner accessibility (reachable via phone/email)</li>
+              </ul>
+            </div>
+
+            <div class="strat-card" style="border-color: rgba(239, 68, 68, 0.3);">
+              <div class="strat-card-head">
+                <h3 class="strat-niche-name" style="color: #fca5a5;"><i class="fa-solid fa-triangle-exclamation"></i> The Leaky Bucket Signals</h3>
+                <span class="strat-badge strat-badge-amber">LOOK FOR THESE</span>
+              </div>
+              <ul class="strat-usecases-list" style="margin-top: 10px;">
+                <li class="strat-usecase-item"><i class="fa-solid fa-xmark" style="color: #ef4444;"></i> Static contact form: "We will get back to you within 24–48 hours"</li>
+                <li class="strat-usecase-item"><i class="fa-solid fa-xmark" style="color: #ef4444;"></i> No automated SMS confirmation sent to the homeowner</li>
+                <li class="strat-usecase-item"><i class="fa-solid fa-xmark" style="color: #ef4444;"></i> No after-hours response (leads submitted after 5 PM sit until 8 AM)</li>
+                <li class="strat-usecase-item"><i class="fa-solid fa-xmark" style="color: #ef4444;"></i> No live booking or diagnostic calendar picker</li>
+                <li class="strat-usecase-item"><i class="fa-solid fa-xmark" style="color: #ef4444;"></i> Generic "Thank You" screen with zero next steps</li>
+              </ul>
+            </div>
+
+            <div class="strat-card" style="border-color: rgba(107, 114, 128, 0.4);">
+              <div class="strat-card-head">
+                <h3 class="strat-niche-name" style="color: #9ca3af;"><i class="fa-solid fa-ban"></i> Disqualifiers (Do NOT Pitch)</h3>
+                <span class="strat-badge" style="background: rgba(107, 114, 128, 0.2); color: #9ca3af;">AVOID</span>
+              </div>
+              <ul class="strat-usecases-list" style="margin-top: 10px;">
+                <li class="strat-usecase-item"><i class="fa-solid fa-ban" style="color: #9ca3af;"></i> <strong>Solo 1-Man Trucks:</strong> Zero inbound ad volume, cash poor, will waste 10 hours of your time.</li>
+                <li class="strat-usecase-item"><i class="fa-solid fa-ban" style="color: #9ca3af;"></i> <strong>100+ Truck PE Conglomerates:</strong> 6-month enterprise procurement, locked into ServiceTitan Enterprise APIs, won't talk to independent founders.</li>
+                <li class="strat-usecase-item"><i class="fa-solid fa-ban" style="color: #9ca3af;"></i> Companies with zero website or dead phone numbers.</li>
+                <li class="strat-usecase-item"><i class="fa-solid fa-ban" style="color: #9ca3af;"></i> Companies that already have an advanced AI receptionist like ServiceBell / Slang.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. System Architecture & Tech Stack -->
+        <div style="margin-bottom: 28px;">
+          <h4 style="font-size: 1.15rem; font-weight: 700; color: #ffffff; margin: 0 0 14px;">
+            <i class="fa-solid fa-network-wired" style="color: #3b82f6; margin-right: 8px;"></i>
+            System Flow Architecture &amp; The $0–$5k Tech Stack
+          </h4>
+
+          <div class="strat-flow-diagram">
+            <div class="strat-flow-step">
+              <i class="fa-solid fa-globe" style="color: #3b82f6;"></i>
+              <span>1. Lead Arrives (Web/LSA Form)</span>
+            </div>
+            <div class="strat-flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+            <div class="strat-flow-step">
+              <i class="fa-solid fa-bolt" style="color: #f59e0b;"></i>
+              <span>2. FastAPI Ingestion Webhook (&lt;100ms)</span>
+            </div>
+            <div class="strat-flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+            <div class="strat-flow-step">
+              <i class="fa-solid fa-comment-sms" style="color: #10b981;"></i>
+              <span>3. Instant SMS Dispatched (&lt;45s)</span>
+            </div>
+            <div class="strat-flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+            <div class="strat-flow-step">
+              <i class="fa-solid fa-robot" style="color: #ef4444;"></i>
+              <span>4. AI Qualifier (Urgency &amp; System Specs)</span>
+            </div>
+            <div class="strat-flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+            <div class="strat-flow-step">
+              <i class="fa-solid fa-calendar-check" style="color: #8b5cf6;"></i>
+              <span>5. Diagnostic Slot Booked</span>
+            </div>
+            <div class="strat-flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+            <div class="strat-flow-step">
+              <i class="fa-solid fa-bell" style="color: #ec4899;"></i>
+              <span>6. Dispatcher / Owner SMS Alert</span>
+            </div>
+          </div>
+
+          <div class="strat-verdict-table-wrap">
+            <table class="strat-verdict-table">
+              <thead>
+                <tr>
+                  <th>Layer</th>
+                  <th>Technology</th>
+                  <th>Monthly Cost</th>
+                  <th>Why It Fits Dhruv's Strengths</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong style="color: #ffffff;">Backend &amp; Webhooks</strong></td>
+                  <td>FastAPI (Python) + Async Event Pipeline</td>
+                  <td><span class="strat-metric-pill metric-pill-green">$0 (Free Tier)</span></td>
+                  <td>Dhruv's core strength. Ultra-fast response times (&lt;100ms), easy Twilio webhook handling.</td>
+                </tr>
+                <tr>
+                  <td><strong style="color: #ffffff;">AI Qualifier Engine</strong></td>
+                  <td>GPT-4o-mini / Gemini Flash (Strict Guardrails)</td>
+                  <td><span class="strat-metric-pill metric-pill-green">&lt; $2 / mo / client</span></td>
+                  <td>Token cost is negligible (~$0.0002/turn). Guardrails prevent quoting prices; focuses purely on qualifying urgency.</td>
+                </tr>
+                <tr>
+                  <td><strong style="color: #ffffff;">Telephony &amp; SMS</strong></td>
+                  <td>Twilio / Telnyx SMS API</td>
+                  <td><span class="strat-metric-pill metric-pill-green">~$5 – $10 / mo / client</span></td>
+                  <td>Pay only per message (~$0.0079/SMS). Client easily absorbs or pays $300+/mo retainer.</td>
+                </tr>
+                <tr>
+                  <td><strong style="color: #ffffff;">Database &amp; Persistence</strong></td>
+                  <td>PostgreSQL (Neon / Supabase / Railway)</td>
+                  <td><span class="strat-metric-pill metric-pill-green">$0 (Free Tier)</span></td>
+                  <td>Relational storage for leads, conversational history, appointment states, and client configurations.</td>
+                </tr>
+                <tr>
+                  <td><strong style="color: #ffffff;">Calendar &amp; Booking</strong></td>
+                  <td>Cal.com / Calendly API / Google Calendar</td>
+                  <td><span class="strat-metric-pill metric-pill-green">$0 (Free Tier)</span></td>
+                  <td>Avoids custom calendar logic; lets technician set their dispatch availability directly.</td>
+                </tr>
+                <tr>
+                  <td><strong style="color: #ffffff;">Demo &amp; Client Dashboard</strong></td>
+                  <td>React / Next.js + Tailwind / Vanilla CSS</td>
+                  <td><span class="strat-metric-pill metric-pill-green">$0 (Vercel / Netlify)</span></td>
+                  <td>Clean, high-converting interactive demo where prospects can test the live SMS flow in real time.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 4. The Killer Move: The Generic HVAC Demo -->
+        <div style="margin-bottom: 28px;">
+          <h4 style="font-size: 1.15rem; font-weight: 700; color: #ffffff; margin: 0 0 14px;">
+            <i class="fa-solid fa-wand-magic-sparkles" style="color: #ec4899; margin-right: 8px;"></i>
+            The Killer Move: Build "The Weapon" (Generic HVAC Working Demo) Before Selling
+          </h4>
+
+          <div style="background: var(--admin-surface); border: 1px solid var(--admin-border); border-radius: 12px; padding: 22px;">
+            <div style="color: #d1d5db; font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">
+              <strong>The Golden Rule with Trade Contractors:</strong> Blue-collar business owners have zero imagination. If you say <em>"We can build an AI webhook integration with an asynchronous qualification pipeline"</em>, they will hang up the phone. But if you put their phone number into a live demo and their pocket buzzes 10 seconds later with an intelligent HVAC dispatcher, <strong>the deal is practically closed.</strong>
+            </div>
+
+            <div class="strat-grid-3">
+              <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 14px;">
+                <div style="font-weight: 700; color: #ffffff; font-size: 0.88rem; margin-bottom: 6px;">
+                  1. The Fictional HVAC Brand
+                </div>
+                <div style="font-size: 0.8rem; color: #9ca3af; line-height: 1.5;">
+                  Build a high-converting 1-page site for <strong>"Apex Air Solutions — Dallas TX"</strong>. Clean, modern, with an urgent quote form: <em>"AC Blowing Warm Air? Emergency Dispatch Within 2 Hours."</em>
+                </div>
+              </div>
+
+              <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 14px;">
+                <div style="font-weight: 700; color: #ffffff; font-size: 0.88rem; margin-bottom: 6px;">
+                  2. The Live SMS Qualifier
+                </div>
+                <div style="font-size: 0.8rem; color: #9ca3af; line-height: 1.5;">
+                  The form triggers your FastAPI backend. In 20 seconds, Twilio texts the phone: <em>"Hi John, this is Sarah with Apex Air. I saw your emergency request for 75201. Is your outdoor condenser fan currently spinning?"</em>
+                </div>
+              </div>
+
+              <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 14px;">
+                <div style="font-weight: 700; color: #ffffff; font-size: 0.88rem; margin-bottom: 6px;">
+                  3. The Live Dispatcher Alert
+                </div>
+                <div style="font-size: 0.8rem; color: #9ca3af; line-height: 1.5;">
+                  As soon as the homeowner responds, the system qualifies the intent, requests a booking window, and texts the owner: <em>"🔥 NEW QUALIFIED LEAD: John Doe, 12-yr-old Trane unit not cooling, slot booked 10 AM tomorrow."</em>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Brutal Reality Check & Unit Economics -->
+        <div style="margin-bottom: 28px;">
+          <h4 style="font-size: 1.15rem; font-weight: 700; color: #ffffff; margin: 0 0 14px;">
+            <i class="fa-solid fa-triangle-exclamation" style="color: #ef4444; margin-right: 8px;"></i>
+            Brutal Reality Check &amp; Cold Outreach Unit Economics (No Sugarcoating)
+          </h4>
+
+          <div class="strat-verdict-table-wrap" style="margin-bottom: 18px;">
+            <table class="strat-verdict-table">
+              <thead>
+                <tr>
+                  <th>Funnel Stage</th>
+                  <th>Cold Outreach Math (30-Day Sprint)</th>
+                  <th>Conversion Benchmark</th>
+                  <th>The Brutal Reality</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong style="color: #ffffff;">Target Database</strong></td>
+                  <td><span class="strat-table-highlight">300</span> Vetted US HVAC/Plumbing Companies</td>
+                  <td>100% Top of Funnel</td>
+                  <td>Must be qualified manually: 5–30 staff, running Google Ads, leaky contact form.</td>
+                </tr>
+                <tr>
+                  <td><strong style="color: #ffffff;">Email Deliverability &amp; Opens</strong></td>
+                  <td>105 – 135 Opens</td>
+                  <td>35% – 45% Open Rate</td>
+                  <td>Must use secondary domains &amp; warm inbox. If emails land in spam, this drops to 5%.</td>
+                </tr>
+                <tr>
+                  <td><strong style="color: #ffffff;">Total Replies</strong></td>
+                  <td>6 – 12 Total Replies</td>
+                  <td>2% – 4% Reply Rate</td>
+                  <td>Half will be: <em>"Remove me"</em> or <em>"Not interested"</em>. 3–5 will be curious.</td>
+                </tr>
+                <tr>
+                  <td><strong style="color: #ffffff;">Cold Phone Calls (Partner)</strong></td>
+                  <td>100 Dials &rarr; 20 Gatekeepers &rarr; 6 Owners</td>
+                  <td>6% Owner Reach Rate</td>
+                  <td>Gatekeepers block ruthlessly. The pitch to the receptionist must be: <em>"Quick question for the service manager regarding after-hours website leads."</em></td>
+                </tr>
+                <tr>
+                  <td><strong style="color: #ffffff;">Booked 15-Min Demos</strong></td>
+                  <td><span style="color: #fcd34d; font-weight: 700; font-family: var(--font-mono);">3 – 5 Demos</span></td>
+                  <td>1% – 1.6% of Total List</td>
+                  <td>Show the live demo within 3 minutes of the call. Never deliver a slide deck.</td>
+                </tr>
+                <tr>
+                  <td><strong style="color: #ffffff;">Closed Pilot Deals</strong></td>
+                  <td><span style="color: #6ee7b7; font-weight: 700; font-family: var(--font-mono); font-size: 1.05rem;">1 – 2 Paying Clients</span></td>
+                  <td>25% – 40% Close on Demo</td>
+                  <td><strong>Revenue: $750 – $2,000 in bank.</strong> One client validates the business model.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Objections & Rebuttals -->
+          <div style="margin-top: 18px;">
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 800; color: #fca5a5; text-transform: uppercase; margin-bottom: 10px;">
+              The 4 Objections Every HVAC Owner Will Throw at You (And How to Destroy Them)
+            </div>
+
+            <div class="strat-objection-box">
+              <div class="strat-objection-q">
+                <i class="fa-solid fa-shield-halved"></i> Objection 1: "We already have ServiceTitan / Jobber / Housecall Pro."
+              </div>
+              <div class="strat-objection-a">
+                <strong>Rebuttal:</strong> <em>"ServiceTitan is great for dispatching technicians and billing once a job is booked. But it doesn't instantly text a homeowner at 9:30 PM on a Saturday when their AC breaks down. 78% of customers buy from the first company that responds. We sit in front of ServiceTitan to catch the lead in 30 seconds and hand off the booked diagnostic directly to your dispatch board."</em>
+              </div>
+            </div>
+
+            <div class="strat-objection-box">
+              <div class="strat-objection-q">
+                <i class="fa-solid fa-shield-halved"></i> Objection 2: "Our office receptionist handles all customer inquiries."
+              </div>
+              <div class="strat-objection-a">
+                <strong>Rebuttal:</strong> <em>"Your receptionist does a great job between 8 AM and 5 PM. But what happens to the quote requests that come through your website between 6 PM and 7 AM, or all weekend? In peak summer, over 40% of emergency HVAC emergencies happen outside office hours. Those homeowners don't wait until Monday morning—they call the next contractor on Google."</em>
+              </div>
+            </div>
+
+            <div class="strat-objection-box">
+              <div class="strat-objection-q">
+                <i class="fa-solid fa-shield-halved"></i> Objection 3: "I don't trust an AI to give wrong prices to my customers."
+              </div>
+              <div class="strat-objection-a">
+                <strong>Rebuttal:</strong> <em>"That's exactly why our system is strictly hardcoded NEVER to quote prices or diagnose mechanical issues. Its only job is to collect the customer's name, address, urgency, and book a diagnostic slot so your licensed technician can give the quote in person. It protects your brand 100%."</em>
+              </div>
+            </div>
+
+            <div class="strat-objection-box">
+              <div class="strat-objection-q">
+                <i class="fa-solid fa-shield-halved"></i> Objection 4: "We get enough work from referrals and word-of-mouth."
+              </div>
+              <div class="strat-objection-a">
+                <strong>Rebuttal:</strong> <em>"If you're strictly word-of-mouth, you don't need this. But I noticed you're actively running Google Ads right now. At $80+ per click, every lead that submits your form and doesn't get an immediate call back is literally flushing $100 down the drain. We make sure none of that ad spend is wasted."</em>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Weekly Execution Schedule & Division of Labor -->
+        <div style="margin-bottom: 28px;">
+          <h4 style="font-size: 1.15rem; font-weight: 700; color: #ffffff; margin: 0 0 14px;">
+            <i class="fa-solid fa-calendar-week" style="color: #10b981; margin-right: 8px;"></i>
+            Weekly Operating Schedule &amp; Division of Labor (Dhruv &amp; Partner)
+          </h4>
+
+          <div class="strat-grid-2">
+            <div class="strat-card">
+              <div class="strat-card-head">
+                <h3 class="strat-niche-name" style="color: #6ee7b7;"><i class="fa-solid fa-code"></i> Dhruv's Domain (Engineering &amp; Product)</h3>
+                <span class="strat-badge strat-badge-emerald">SYSTEMS</span>
+              </div>
+              <ul class="strat-usecases-list">
+                <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> <strong>Weekday Shift (60–90m alternating):</strong> Build &amp; polish the generic HVAC demonstration system; configure Twilio webhooks; prompt engineering guardrails; build client dashboard.</li>
+                <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> <strong>Saturday (2h build):</strong> Deploy reliable infrastructure on Railway/Render/Vercel; implement client lead notification SMS pipeline.</li>
+                <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> <strong>Sunday (1h metrics + 1h prep):</strong> Audit webhook logs, track SMS deliverability, refine cold tech audit scripts.</li>
+                <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> <strong>The Golden Rule for Dhruv:</strong> Never write custom code for hypothetical features. Only build what is needed to close or deliver the current pilot.</li>
+              </ul>
+            </div>
+
+            <div class="strat-card">
+              <div class="strat-card-head">
+                <h3 class="strat-niche-name" style="color: #fcd34d;"><i class="fa-solid fa-phone-volume"></i> Partner's Domain (Sales &amp; Distribution)</h3>
+                <span class="strat-badge strat-badge-amber">REVENUE</span>
+              </div>
+              <ul class="strat-usecases-list">
+                <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> <strong>Weekday Shift (60–90m daily):</strong> Prospecting Google Maps in Dallas/Houston/Phoenix; building the 300-lead database; sending 10–15 personalized outreach emails; 15 phone dials to owner/dispatchers.</li>
+                <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> <strong>Sales Calls:</strong> Leading the 15-minute demo calls; executing the "Live Phone Test" on the prospect's mobile device.</li>
+                <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> <strong>Follow-Up:</strong> Relentless multi-touch follow-up via phone, SMS, and email until a firm "Yes" or "No".</li>
+                <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> <strong>The Golden Rule for Partner:</strong> If you don't talk to at least 15 prospects a week, the business has zero revenue velocity. Sales is a contact sport.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. NEW SECTION: FROM WEBSITE DONE TO FIRST PAYING CLIENT -->
+        <div style="margin-top: 32px;">
+          <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(59, 130, 246, 0.08) 100%); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 14px; padding: 24px; margin-bottom: 22px;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+              <span class="strat-metric-pill metric-pill-green"><i class="fa-solid fa-flag-checkered"></i> NEW OPERATIONAL SPRINT</span>
+              <span class="strat-metric-pill metric-pill-blue"><i class="fa-solid fa-bolt"></i> ZERO TO CASH IN HAND</span>
+            </div>
+            <h3 style="font-size: 1.45rem; font-weight: 800; color: #ffffff; margin: 0 0 8px;">
+              "Our Website Is Almost Complete — Now What?"
+            </h3>
+            <p style="color: #d1d5db; font-size: 0.92rem; line-height: 1.6; margin: 0;">
+              The exact day-by-day, step-by-step tactical roadmap from the minute you stop coding your agency website until you collect your first <strong>$750 – $1,000 client check</strong>.
+            </p>
+          </div>
+
+          <!-- STEP 1 -->
+          <div class="strat-step-block">
+            <div class="strat-step-header">
+              <div>
+                <span class="strat-step-num">STEP 01 &bull; DAY 1</span>
+                <h4 style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 4px 0 0;">
+                  Website Freeze &amp; The "Designer's Trap" Evacuation
+                </h4>
+              </div>
+              <span class="strat-metric-pill metric-pill-red"><i class="fa-solid fa-hand"></i> IMMEDIATE ACTION</span>
+            </div>
+            <p style="color: #d1d5db; font-size: 0.88rem; line-height: 1.6; margin: 0 0 10px;">
+              <strong>The Brutal Truth:</strong> Blue-collar HVAC business owners in Texas or Florida do <em>NOT</em> browse design agency websites. They do not care about your CSS animations, your glassmorphism buttons, or your portfolio. A website serves exactly ONE purpose: <strong>a 10-second credibility check</strong> when someone Googles your name after an email.
+            </p>
+            <div class="strat-script-box" style="border-left-color: #ef4444;">
+              <strong>FOUNDER DIRECTIVE:</strong> Stop adding pages. Stop tweaking CSS padding. Put a clean headline ("We Help Home-Service Contractors Recover Lost Leads with Automated Instant Response"), your contact details, and FREEZE the repository. Zero more hours on the agency site until cash is in the bank.
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="strat-step-block">
+            <div class="strat-step-header">
+              <div>
+                <span class="strat-step-num">STEP 02 &bull; DAYS 2–5</span>
+                <h4 style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 4px 0 0;">
+                  Build "The Weapon" (The 5-Day HVAC Lead Recovery Demo)
+                </h4>
+              </div>
+              <span class="strat-metric-pill metric-pill-amber"><i class="fa-solid fa-hammer"></i> DHRUV'S FOCUS</span>
+            </div>
+            <p style="color: #d1d5db; font-size: 0.88rem; line-height: 1.6; margin: 0 0 10px;">
+              Build a realistic demonstration system branded as <strong>"Apex Air Solutions — Dallas TX"</strong>. It should take no more than 4–5 days to build using FastAPI, Twilio, and React.
+            </p>
+            <ul class="strat-usecases-list" style="margin-bottom: 12px;">
+              <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> <strong>Form Submission:</strong> Name, Phone Number, Zip Code, "What's going on with your AC?"</li>
+              <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> <strong>Twilio SMS Hook:</strong> Sub-30 second automated text message to the submitted mobile number.</li>
+              <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> <strong>AI Qualification Prompt:</strong> Strictly asks: (1) Is the fan running? (2) Approximate age of system? (3) Preferred diagnostic inspection time window.</li>
+              <li class="strat-usecase-item"><i class="fa-solid fa-check"></i> <strong>Real-Time Alert SMS:</strong> Texts Dhruv's or Partner's phone: <em>"🔥 NEW JOB BOOKED: AC blowing hot air in 75201. Diagnostic scheduled 2 PM."</em></li>
+            </ul>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="strat-step-block">
+            <div class="strat-step-header">
+              <div>
+                <span class="strat-step-num">STEP 03 &bull; DAYS 6–8</span>
+                <h4 style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 4px 0 0;">
+                  Build the 100-Prospect War Chest (Google Maps &amp; Ad Audit)
+                </h4>
+              </div>
+              <span class="strat-metric-pill metric-pill-blue"><i class="fa-solid fa-database"></i> PARTNER'S FOCUS</span>
+            </div>
+            <p style="color: #d1d5db; font-size: 0.88rem; line-height: 1.6; margin: 0 0 10px;">
+              Search Google Maps for <strong>"HVAC contractor Dallas TX"</strong>, <strong>"AC repair Phoenix AZ"</strong>, <strong>"emergency plumber Houston TX"</strong>. Open every business with 4.0+ stars and 15–200 reviews.
+            </p>
+            <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px; margin-bottom: 10px; font-family: var(--font-mono); font-size: 0.78rem; color: #e5e7eb;">
+              Company | City | Website | Owner/Manager Name | Direct Email | Phone | Ad Spend Check (Y/N) | Form Weakness Noticed | Outreach Date | Status
+            </div>
+            <p style="color: #9ca3af; font-size: 0.82rem; margin: 0;">
+              <strong>The Secret Filter:</strong> Submit a test message on their form at 7:00 PM on a Tuesday. If nobody texts or calls you within 15 minutes, they have an active leaky bucket. That is your entry point.
+            </p>
+          </div>
+
+          <!-- STEP 4 -->
+          <div class="strat-step-block">
+            <div class="strat-step-header">
+              <div>
+                <span class="strat-step-num">STEP 04 &bull; DAYS 9–18</span>
+                <h4 style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 4px 0 0;">
+                  Launch the Multi-Touch Outbound Blitz (15 Outreaches/Day)
+                </h4>
+              </div>
+              <span class="strat-metric-pill metric-pill-amber"><i class="fa-solid fa-paper-plane"></i> ACTIVE OUTREACH</span>
+            </div>
+            <p style="color: #d1d5db; font-size: 0.88rem; line-height: 1.6; margin: 0 0 10px;">
+              Never send generic spam saying <em>"Hi, we are an AI agency from India..."</em>. That goes straight to trash. Use hyper-personalized problem-focused outreach.
+            </p>
+
+            <div class="strat-script-box" style="border-left-color: #f59e0b;">
+              <span style="color: #fcd34d; font-weight: 700;">PROVEN COLD EMAIL TEMPLATE (35%+ OPEN RATE):</span><br><br>
+              <strong>Subject:</strong> Quick question regarding after-hours quote requests on {{Company_Name}}<br><br>
+              Hi {{First_Name}},<br><br>
+              I was taking a look at your website and noticed your online quote requests go through a standard web form.<br><br>
+              Since you're actively running local ads, I was curious: what happens when a homeowner submits an emergency AC request at 8:30 PM on a Saturday?<br><br>
+              We built a plug-and-play system for HVAC companies in Texas that automatically texts new inquiries within 30 seconds, qualifies their issue, and schedules the diagnostic appointment before they call the next contractor on Google.<br><br>
+              I built a 60-second interactive demo showing how it works for companies like {{Company_Name}}. Worth showing you?<br><br>
+              Best,<br>
+              {{Your_Name}}
+            </div>
+
+            <div class="strat-script-box" style="border-left-color: #10b981;">
+              <span style="color: #6ee7b7; font-weight: 700;">PARTNER COLD CALL SCRIPT (TO GATEKEEPER / OWNER):</span><br><br>
+              <em>"Hey, this is {{Partner_Name}}. Quick question—who's in charge of handling website leads and dispatcher scheduling for after-hours calls?... Great. I'm not calling to sell advertising. We built an automated text-response tool specifically for Dallas HVAC shops that books service calls when quote requests come in after 6 PM. I wanted to send a 60-second demo over to {{Owner_Name}}. What's his direct email?"</em>
+            </div>
+          </div>
+
+          <!-- STEP 5 -->
+          <div class="strat-step-block">
+            <div class="strat-step-header">
+              <div>
+                <span class="strat-step-num">STEP 05 &bull; DAYS 19–24</span>
+                <h4 style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 4px 0 0;">
+                  The 15-Minute "Show The Weapon" Demo Call
+                </h4>
+              </div>
+              <span class="strat-metric-pill metric-pill-purple"><i class="fa-solid fa-headset"></i> SALES CONVERSION</span>
+            </div>
+            <p style="color: #d1d5db; font-size: 0.88rem; line-height: 1.6; margin: 0 0 10px;">
+              Keep the meeting to 15 minutes. Tradesmen hate long meetings. Follow this exact 4-part structure:
+            </p>
+            <div class="strat-grid-4">
+              <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 12px;">
+                <div style="font-weight: 700; color: #ffffff; font-size: 0.82rem; margin-bottom: 4px;">Min 1–3: The Bleeding Neck</div>
+                <div style="font-size: 0.78rem; color: #9ca3af; line-height: 1.4;">"How many leads submitted after 5 PM end up booking with a competitor who answered faster?"</div>
+              </div>
+              <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 12px;">
+                <div style="font-weight: 700; color: #ffffff; font-size: 0.82rem; margin-bottom: 4px;">Min 4–8: The Live Phone Test</div>
+                <div style="font-size: 0.78rem; color: #9ca3af; line-height: 1.4;">"Put your cell phone number into this test form right now. Watch what happens in 15 seconds."</div>
+              </div>
+              <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 12px;">
+                <div style="font-weight: 700; color: #ffffff; font-size: 0.82rem; margin-bottom: 4px;">Min 9–12: Guardrails &amp; Safety</div>
+                <div style="font-size: 0.78rem; color: #9ca3af; line-height: 1.4;">Show how the AI never quotes prices and immediately forwards qualified alerts to their mobile.</div>
+              </div>
+              <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 12px;">
+                <div style="font-weight: 700; color: #ffffff; font-size: 0.82rem; margin-bottom: 4px;">Min 13–15: The Pilot Offer</div>
+                <div style="font-size: 0.78rem; color: #9ca3af; line-height: 1.4;">Drop the $750 pilot pitch with the 30-day performance conditional guarantee.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 6 -->
+          <div class="strat-step-block">
+            <div class="strat-step-header">
+              <div>
+                <span class="strat-step-num">STEP 06 &bull; DAYS 25–28</span>
+                <h4 style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 4px 0 0;">
+                  Closing the $750 – $1,000 Pilot with Ironclad Risk Reversal
+                </h4>
+              </div>
+              <span class="strat-metric-pill metric-pill-green"><i class="fa-solid fa-file-contract"></i> DEAL CLOSED</span>
+            </div>
+            <p style="color: #d1d5db; font-size: 0.88rem; line-height: 1.6; margin: 0 0 10px;">
+              To close your first client when you have zero case studies, you must remove 100% of the perceived risk.
+            </p>
+            <div class="strat-script-box" style="border-left-color: #10b981;">
+              <strong>THE NO-BRAINER PILOT PITCH:</strong><br><br>
+              <em>"Look, John—I know you get 5 emails a day from tech people promising the world. Here's our deal: We will set this entire system up on your current website for a flat $750 pilot fee. We'll handle 100% of the setup, Twilio numbers, and AI prompts. If it doesn't recover at least 3 qualified diagnostic appointments in your first 30 days that would have otherwise gone cold, we'll refund every single penny. Fair enough?"</em>
+            </div>
+          </div>
+
+          <!-- STEP 7 -->
+          <div class="strat-step-block">
+            <div class="strat-step-header">
+              <div>
+                <span class="strat-step-num">STEP 07 &bull; DAYS 29–35</span>
+                <h4 style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin: 4px 0 0;">
+                  72-Hour Rapid Deployment &amp; Retainer Upsell ($350–$500/mo)
+                </h4>
+              </div>
+              <span class="strat-metric-pill metric-pill-green"><i class="fa-solid fa-repeat"></i> RECURRING CASHFLOW</span>
+            </div>
+            <p style="color: #d1d5db; font-size: 0.88rem; line-height: 1.6; margin: 0 0 10px;">
+              Deploy within 72 hours. Hook into their WordPress / Webflow form via webhook. Deliver a weekly Lead Recovery PDF report showing exactly how many leads were saved.
+            </p>
+            <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 14px;">
+              <strong style="color: #6ee7b7;">The Retainer Transition on Day 30:</strong><br>
+              <span style="font-size: 0.85rem; color: #d1d5db; line-height: 1.5;">
+                <em>"John, in the last 30 days the system recovered 6 after-hours quote requests, 2 of which booked full condenser replacements worth $18,400. To keep the Twilio routing active, monitor deliverability, and maintain the AI server, our care plan is $350/month. Should I send over the monthly authorization?"</em>
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Founder Commitment Banner -->
+        <div class="golden-rule-banner" style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(16, 185, 129, 0.08) 100%); border-color: rgba(239, 68, 68, 0.35); margin-top: 30px;">
+          <div style="font-size: 2.2rem; color: #ef4444;">
+            <i class="fa-solid fa-bullhorn"></i>
+          </div>
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 800; color: #fca5a5; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px;">
+              THE STRATEGY 2.0 DIRECTIVE
+            </div>
+            <div style="font-size: 0.98rem; color: #ffffff; font-weight: 600; line-height: 1.55;">
+              "For the next 7 days, forget the 90-day empire. Build ONE convincing AI lead-recovery demo for an HVAC company. Then put it in front of 50 real US prospects. The response to that experiment will tell us far more than another month of coding websites."
+            </div>
+          </div>
+        </div>
+
       </div>
 
     </div>
