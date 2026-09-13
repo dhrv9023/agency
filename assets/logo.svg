@@ -1,14 +1,110 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <rect width="100" height="100" rx="50" fill="#ffffff" />
-  <!-- Minimalist high-tech geometric mark representing connected intelligent systems -->
-  <g transform="translate(20, 20)">
-    <circle cx="30" cy="30" r="24" fill="none" stroke="#000000" stroke-width="4.5" stroke-dasharray="32 14" />
-    <circle cx="30" cy="30" r="13" fill="#000000" />
-    <circle cx="30" cy="30" r="5" fill="#ffffff" />
-    <!-- Pulse nodes -->
-    <circle cx="30" cy="6" r="3.5" fill="#000000" />
-    <circle cx="54" cy="30" r="3.5" fill="#000000" />
-    <circle cx="30" cy="54" r="3.5" fill="#000000" />
-    <circle cx="6" cy="30" r="3.5" fill="#000000" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <!-- Outer Rim Metallic Gradient -->
+    <linearGradient id="bezelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="25%" stop-color="#cbd5e1" />
+      <stop offset="50%" stop-color="#334155" />
+      <stop offset="75%" stop-color="#94a3b8" />
+      <stop offset="100%" stop-color="#ffffff" />
+    </linearGradient>
+
+    <!-- Deep Space Core Backdrop -->
+    <radialGradient id="discBg" cx="50%" cy="42%" r="65%">
+      <stop offset="0%" stop-color="#141824" />
+      <stop offset="50%" stop-color="#080a0f" />
+      <stop offset="100%" stop-color="#020305" />
+    </radialGradient>
+
+    <!-- Inner Bezel Inset -->
+    <linearGradient id="insetBezel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.22)" />
+      <stop offset="100%" stop-color="rgba(0,0,0,0.8)" />
+    </linearGradient>
+
+    <!-- Cyan Electric Aura Glow -->
+    <filter id="coreGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="b1" />
+      <feMerge>
+        <feMergeNode in="b1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <linearGradient id="cyberAura" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.95" />
+      <stop offset="70%" stop-color="#00f0ff" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.2" />
+    </linearGradient>
+
+    <!-- LEFT ARM: Matte Obsidian Titanium -->
+    <linearGradient id="lTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#64748b" />
+      <stop offset="100%" stop-color="#334155" />
+    </linearGradient>
+    <linearGradient id="lOuter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#333846" />
+      <stop offset="50%" stop-color="#1b1d25" />
+      <stop offset="100%" stop-color="#0b0c10" />
+    </linearGradient>
+    <linearGradient id="lInner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e212b" />
+      <stop offset="70%" stop-color="#0e0f14" />
+      <stop offset="100%" stop-color="#050608" />
+    </linearGradient>
+
+    <!-- RIGHT ARM: Mirror Platinum Chrome -->
+    <linearGradient id="rTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#cbd5e1" />
+    </linearGradient>
+    <linearGradient id="rInner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="25%" stop-color="#f8fafc" />
+      <stop offset="65%" stop-color="#cbd5e1" />
+      <stop offset="100%" stop-color="#94a3b8" />
+    </linearGradient>
+    <linearGradient id="rOuter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="40%" stop-color="#cbd5e1" />
+      <stop offset="80%" stop-color="#64748b" />
+      <stop offset="100%" stop-color="#334155" />
+    </linearGradient>
+  </defs>
+
+  <!-- Circular Titanium Housing -->
+  <circle cx="100" cy="100" r="97" fill="url(#discBg)" stroke="url(#bezelGrad)" stroke-width="3" />
+  <circle cx="100" cy="100" r="94" fill="none" stroke="url(#insetBezel)" stroke-width="1.5" />
+
+  <!-- Background Precision Lattice Ring -->
+  <circle cx="100" cy="100" r="82" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="2 4" />
+
+  <!-- Center V Prism Group -->
+  <g id="varah-v-mark">
+    <!-- Ambient Cyan Energy Silhouette -->
+    <path d="M 44 54 L 62 42 L 80 54 L 100 106 L 120 54 L 138 42 L 156 54 L 100 168 Z"
+          fill="none" stroke="url(#cyberAura)" stroke-width="2.5" stroke-linejoin="round"
+          filter="url(#coreGlow)" />
+
+    <!-- LEFT ARM -->
+    <polygon points="44,54 62,42 80,54"
+             fill="url(#lTop)" stroke="#475569" stroke-width="0.5" />
+    <polygon points="44,54 62,42 100,165 89,165"
+             fill="url(#lOuter)" stroke="#1e293b" stroke-width="0.4" />
+    <polygon points="62,42 80,54 100,102 100,165"
+             fill="url(#lInner)" stroke="#0f172a" stroke-width="0.4" />
+
+    <!-- RIGHT ARM -->
+    <polygon points="156,54 138,42 120,54"
+             fill="url(#rTop)" stroke="#ffffff" stroke-width="0.5" />
+    <polygon points="138,42 120,54 100,102 100,165"
+             fill="url(#rInner)" stroke="#e2e8f0" stroke-width="0.4" />
+    <polygon points="156,54 138,42 100,165 111,165"
+             fill="url(#rOuter)" stroke="#94a3b8" stroke-width="0.4" />
+
+    <!-- Spine Glint & Core Laser -->
+    <line x1="138" y1="42" x2="100" y2="165" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" />
+    <line x1="62" y1="42" x2="100" y2="165" stroke="#64748b" stroke-width="0.8" stroke-linecap="round" />
+    <line x1="100" y1="102" x2="100" y2="165" stroke="#00f0ff" stroke-width="1.2" stroke-linecap="round" opacity="0.9" />
   </g>
 </svg>

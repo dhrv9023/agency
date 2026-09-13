@@ -22,3 +22,34 @@ yarn-error.log*
 .vscode/
 .idea/
 coverage/
+
+# Python artifacts & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+ENV/
+
+# Media & Brand Concept Assets (Renders, Mockups & Non-Site Media)
+*.jpg
+*.jpeg
+*.png
+*.webp
+assets/*.jpg
+assets/*.jpeg
+assets/*.png
+assets/*.webp
+
+# Social Media & Brand Identity Deliverables (Not needed on production site)
+assets/linkedin*
+assets/varah*
+assets/logo-prism.svg
+assets/logo-emblem.svg
+brand-identity.html
+
+# Alternative vector brand lockups and icons not referenced on live site (keep assets/logo.svg)
+assets/logo-*.svg
+assets/favicon.svg
+
