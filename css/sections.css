@@ -434,3 +434,347 @@
     align-items: flex-start;
   }
 }
+
+/* ==========================================================================
+   BESPOKE EDITORIAL ARCHITECTURE & CALCULATOR (HIGH-END FRONTEND CRAFT)
+   ========================================================================== */
+
+/* 1. The Bottleneck Ledger (Replaces generic cards with architectural precision) */
+.bottleneck-ledger {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--rule-strong);
+  border-bottom: 1px solid var(--rule-strong);
+  margin-bottom: 56px;
+  background-color: var(--surface);
+  transition: background-color var(--transition-normal);
+}
+
+.bottleneck-cell {
+  padding: clamp(32px, 3.5vw, 48px) clamp(24px, 2.5vw, 36px);
+  border-right: 1px solid var(--rule-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.bottleneck-cell:last-child {
+  border-right: none;
+}
+
+.bottleneck-cell:hover {
+  background-color: var(--surface-raised);
+}
+
+.bottleneck-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.bottleneck-code {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.bottleneck-leak-pill {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.leak-red {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+}
+
+.leak-amber {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #fcd34d;
+}
+
+.leak-blue {
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #7dd3fc;
+}
+
+.bottleneck-title {
+  font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+
+.bottleneck-desc {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+
+.bottleneck-fix-box {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule-color);
+  font-size: 0.875rem;
+  color: var(--text);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.bottleneck-fix-box i {
+  color: #10b981;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* 2. Interactive Revenue Leak & ROI Calculator */
+.calculator-stage {
+  background: linear-gradient(180deg, var(--surface) 0%, var(--surface-raised) 100%);
+  border: 1px solid var(--rule-strong);
+  border-radius: 20px;
+  padding: clamp(32px, 4vw, 56px);
+  margin-top: 64px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.calculator-stage::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+}
+
+.calc-controls-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.calc-field-group label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.calc-val-bubble {
+  font-family: var(--font-mono);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #00f0ff;
+}
+
+/* Custom Styled Range Slider */
+.calc-range-slider {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.calc-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 14px rgba(0, 240, 255, 0.6);
+  cursor: grab;
+  transition: transform var(--transition-fast), background var(--transition-fast);
+}
+
+.calc-range-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: #00f0ff;
+}
+
+/* Industry Segmented Chips */
+.industry-chip-grid {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.calc-chip {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--rule-color);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.calc-chip:hover, .calc-chip.is-active {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+  font-weight: 600;
+}
+
+/* Live KPI Ticker Output Display */
+.calc-results-panel {
+  background: var(--surface-dim);
+  border: 1px solid var(--rule-strong);
+  border-radius: 16px;
+  padding: clamp(28px, 3vw, 40px);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.calc-kpi-block {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--rule-color);
+}
+
+.calc-kpi-block:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.calc-kpi-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.calc-kpi-value {
+  font-family: var(--font-mono);
+  font-size: clamp(1.8rem, 2.8vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ef4444;
+}
+
+.calc-kpi-value.green {
+  color: #10b981;
+}
+
+.calc-kpi-sub {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .bottleneck-ledger {
+    grid-template-columns: 1fr;
+  }
+  .bottleneck-cell {
+    border-right: none;
+    border-bottom: 1px solid var(--rule-color);
+  }
+  .bottleneck-cell:last-child {
+    border-bottom: none;
+  }
+  .calc-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+/* Bespoke Utility Classes for Editorial Cleanliness */
+.node-lost {
+  color: #ef4444 !important;
+  border-color: rgba(239, 68, 68, 0.4) !important;
+}
+
+.node-won {
+  color: #10b981 !important;
+  border-color: rgba(16, 185, 129, 0.4) !important;
+}
+
+.pricing-matrix-row.is-featured {
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 3px solid #38bdf8;
+  padding-left: clamp(16px, 2vw, 24px);
+}
+
+.pricing-matrix-row.is-featured .pricing-tier-name {
+  color: #ffffff;
+}
+
+.pricing-matrix-row.is-featured .pricing-tier-scope {
+  color: #38bdf8;
+}
+
+.tier-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.tier-badge-green {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.tier-badge-blue {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
+.tier-badge-purple {
+  background: rgba(139, 92, 246, 0.12);
+  color: #c4b5fd;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.pricing-footer-link {
+  margin-top: 36px;
+  text-align: center;
+}
+
+.cta-group-left {
+  justify-content: flex-start;
+  margin-bottom: 0;
+}

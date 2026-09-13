@@ -3,103 +3,103 @@
  * Powers the Interactive Service Index, Signature Architecture Diagram, and Workflow Wall
  */
 
-/* 1. Services Editorial Index Data */
+/* 1. Services Editorial Index Data (Outcome-Driven & Business-Focused) */
 const SERVICES_DATA = {
   "01": {
-    badge: "01 // AUTOMATION PIPELINES",
-    title: "AI Automation",
-    desc: "Connect disparate SaaS platforms, databases, and APIs into self-healing, event-driven pipelines that eliminate repetitive manual handoffs.",
-    flow: "Webhook Trigger → Schema Sanitization → Policy Guardrail → Idempotent Tool Execution → Real-time State Reconciliation",
-    link: "solutions/ai-automation.html"
+    badge: "01 // REVENUE AUTOMATION",
+    title: "AI Lead Qualification & Booking",
+    desc: "Turn website and WhatsApp traffic into qualified sales calls in 60 seconds. Inbound leads are instantly scored, asked qualifying questions, and scheduled directly onto your calendar 24/7.",
+    flow: "Inbound Lead Arrives → Instant 45s WhatsApp Response → Budget & ICP Gated → Direct Calendar Booking → CRM Auto-Synced",
+    link: "solutions/ai-sales.html"
   },
   "02": {
-    badge: "02 // AUTONOMOUS REASONING",
-    title: "Autonomous AI Agents",
-    desc: "Deploy task-oriented agents capable of dynamic reasoning, multi-step problem solving, database querying, and tool execution with deterministic boundaries.",
-    flow: "Goal Dispatch → Context Retrieval → ReAct Reasoning Loop → Action Execution → Verification Log",
-    link: "solutions/ai-agents.html"
+    badge: "02 // 24/7 CUSTOMER OPERATIONS",
+    title: "Autonomous Customer Support Agent",
+    desc: "Resolve 70%+ of customer tickets instantly across WhatsApp, Website Chat, and Email. Handles order status, FAQs, refunds, and booking without human staff, with graceful escalation when needed.",
+    flow: "Customer Inquiry → Instant AI Diagnosis → Resolves Common Issues via Database → Instant Update → Human Escalation If Needed",
+    link: "solutions/ai-customer-support.html"
   },
   "03": {
-    badge: "03 // REAL-TIME TELEPHONY",
-    title: "AI Voice Systems",
-    desc: "Ultra-low latency conversational telephony for 24/7 inbound dispatching, emergency triage, appointment booking, and automated phone outreach.",
-    flow: "SIP/PSTN Stream → Neural Audio Turn Detection → Tool Execution → Sub-500ms TTS Response",
+    badge: "03 // INBOUND & OUTBOUND TELEPHONY",
+    title: "AI Voice Phone Receptionist",
+    desc: "Never miss a high-ticket customer phone call again. Our Voice AI picks up the phone in 1 ring, answers common questions naturally, qualifies buyer budget, and books appointments while your team is on-site or asleep.",
+    flow: "Inbound Phone Call → Sub-Second Natural Voice AI Answers → Qualifies Client Needs → Books on Calendar → Sends SMS Confirmation",
     link: "solutions/ai-voice.html"
   },
   "04": {
-    badge: "04 // CUSTOMER OPERATIONS",
-    title: "AI Customer Support",
-    desc: "Resolve repetitive tier-1 support requests deterministically, execute order changes via API, and intelligently route complex cases with full context.",
-    flow: "Customer Inquiry → Sentiment & Intent Classify → Knowledge RAG → API Mutation → Instant CRM Update",
-    link: "solutions/ai-customer-support.html"
-  },
-  "05": {
-    badge: "05 // REVENUE ENGINE",
-    title: "AI Sales Systems",
-    desc: "Qualify inbound inquiries in seconds, enrich buyer firmographics, automate personalized multi-channel follow-ups, and eliminate CRM data entry.",
-    flow: "Lead Webhook → Domain Enrichment → ICP Gating Matrix → Meeting Booking Link → CRM Hygiene Sync",
-    link: "solutions/ai-sales.html"
-  },
-  "06": {
-    badge: "06 // NEURAL RETRIEVAL",
-    title: "AI Knowledge Systems (RAG)",
-    desc: "Unify company documentation, Notion workspaces, and databases into a grounded, verified semantic retrieval engine with strict citations.",
-    flow: "Employee Query → Hybrid BM25 + Vector Search → Cross-Encoder Re-Rank → Strict Citation Gate",
+    badge: "04 // INTERNAL OPERATIONS",
+    title: "Company SOP & Knowledge Assistant",
+    desc: "Turn your scattered Notion docs, employee manuals, contracts, and PDF guides into an instant internal AI copilot. Your team gets verified answers in Slack or Teams in 2 seconds with zero executive interruptions.",
+    flow: "Staff Asks Question in Slack → AI Searches Internal Company Docs → Provides Accurate Answer with Page Source Citation",
     link: "solutions/ai-knowledge.html"
   },
-  "07": {
-    badge: "07 // MULTI-MODAL OCR",
-    title: "Document Intelligence",
-    desc: "Convert complex PDFs, invoices, contracts, and financial records into type-safe, validated JSON data structured for automated downstream systems.",
-    flow: "Document Ingestion → Multi-Modal OCR → Deterministic Math Check → 3-Way PO Matching → ERP Write-Back",
+  "05": {
+    badge: "05 // PAPERWORK AUTOMATION",
+    title: "Automated Document & Invoice Intelligence",
+    desc: "Stop manually re-typing PDF invoices, receipts, and client forms into spreadsheets. Our systems extract complex line-items, verify mathematical totals, and post directly to QuickBooks, Xero, or your ERP.",
+    flow: "Invoice PDF Uploaded → AI Reads Tables & Totals → Validates Against PO → Directly Posted to QuickBooks / Accounting",
     link: "solutions/document-intelligence.html"
   },
+  "06": {
+    badge: "06 // EXECUTIVE VISIBILITY",
+    title: "Automated Executive Dashboards",
+    desc: "Eliminate Friday reporting panic. Autonomous data pipelines pull data from your ad accounts, Stripe, and CRM every week to generate a clean, executive summary delivered directly to your inbox.",
+    flow: "Auto-Pulls CRM & Stripe Data → Aggregates Revenue & Ad Spend → Formats Clean Metrics → Delivers Monday Morning Brief",
+    link: "solutions/ai-automation.html"
+  },
+  "07": {
+    badge: "07 // MULTI-STEP AGENTS",
+    title: "Autonomous Workflow Agents",
+    desc: "Automate complex multi-step business procedures that previously required 3 people: research, data enrichment, supplier communications, and cross-platform synchronizations executed flawlessly.",
+    flow: "Business Trigger Occurs → AI Gathers Required Data → Executes Multi-Step Workflow → Updates Tools → Alerts Your Team",
+    link: "solutions/ai-agents.html"
+  },
   "08": {
-    badge: "08 // BESPOKE ENGINEERING",
-    title: "Custom AI Applications",
-    desc: "Bespoke internal web applications, operational cockpits, and specialized software engineered specifically for your proprietary business workflows.",
-    flow: "Full-Stack Application → Role-Based Auth → Isolated Private VPC → Bespoke AI Middleware Engine",
+    badge: "08 // BESPOKE SOLUTIONS",
+    title: "Custom AI Business Applications",
+    desc: "Bespoke operational cockpits and client-facing web tools engineered specifically for your proprietary business model, built to give you an unassailable competitive advantage.",
+    flow: "Your Proprietary Workflow → Custom Tailored AI System → Integrated with Your Existing Tools → 10x Operational Speed",
     link: "solutions/custom-ai.html"
   }
 };
 
-/* 2. Signature System Architecture Data */
+/* 2. Signature System Architecture Data (Client-Friendly Governance & Execution) */
 const ARCHITECTURE_DATA = {
   input: {
-    title: "STAGE 01: INGESTION & EVENT TRIGGERING",
-    desc: "Ingests raw events from webhooks, Kafka queues, IMAP email streams, telephony SIP channels, or REST APIs into high-throughput asynchronous workers."
+    title: "STAGE 01: INBOUND TRIGGER OR INQUIRY",
+    desc: "A customer reaches out via WhatsApp, website form, email, or phone call — or a business event occurs (like a new sale or invoice upload). The system responds in under 60 seconds."
   },
   understand: {
-    title: "STAGE 02: CONTEXTUAL PARSING & EXTRACTION",
-    desc: "Normalizes unstructured content, parses multi-modal document layouts (OCR), and extracts semantic entities with confidence score gating."
+    title: "STAGE 02: INSTANT CONTEXT & INTENT",
+    desc: "The AI instantly understands the customer's specific need, extracts vital details (budget, dates, order number, or location), and determines the fastest path to resolution."
   },
   reason: {
-    title: "STAGE 03: CONTEXTUAL REASONING & RAG",
-    desc: "Retrieves company policies, past cases, and live database state to evaluate constraints and operational edge-cases without hallucination."
+    title: "STAGE 03: BUSINESS POLICY & SOP VERIFICATION",
+    desc: "The system references your exact company rules, pricing matrices, and documentation to craft the right response without guesswork, speculation, or hallucinations."
   },
   decide: {
-    title: "STAGE 04: POLICY ENFORCEMENT & DECISION ARBITRATION",
-    desc: "Validates proposed actions against permission hierarchies, budget limits, and risk scoring matrices before initiating any tool call."
+    title: "STAGE 04: AUTOMATED DECISION GATING",
+    desc: "The AI determines the exact next step: confirm appointment, answer question, update database, or trigger a human alert based on strict confidence thresholds."
   },
   act: {
-    title: "STAGE 05: TRANSACTIONAL TOOL DISPATCH",
-    desc: "Executes authenticated mutations across enterprise tools: updating CRMs, issuing invoices, dispatching webhooks, and calling internal APIs."
+    title: "STAGE 05: SEAMLESS TOOL EXECUTION",
+    desc: "The system performs the action directly in your existing software: booking your Google/Outlook calendar, updating HubSpot/Salesforce, or sending a WhatsApp confirmation."
   },
   verify: {
-    title: "STAGE 06: RECONCILIATION & OBSERVABILITY",
-    desc: "Verifies external state changes, confirms HTTP 200 responses, checks database consistency, and records full end-to-end OpenTelemetry traces."
+    title: "STAGE 06: ACCURACY & DATA RECONCILIATION",
+    desc: "Double-checks all actions for 100% accuracy, logs full transaction records, and ensures zero data loss or duplicate entries across your CRM."
   },
   done: {
-    title: "STAGE 07A: AUTONOMOUS COMPLETION",
-    desc: "Task completed successfully with full transaction audit log, telemetry metrics recorded, and zero human intervention required."
+    title: "STAGE 07A: 100% AUTONOMOUS SUCCESS",
+    desc: "The task is completed in seconds with zero manual staff hours needed. The lead is booked or the customer query is resolved."
   },
   escalate: {
-    title: "STAGE 07B: HUMAN-IN-THE-LOOP ESCALATION",
-    desc: "Low-confidence or policy-flagged edge cases are packaged with suggested responses and routed to human specialists via Slack or dashboard."
+    title: "STAGE 07B: HUMAN-IN-THE-LOOP SAFETY",
+    desc: "Whenever an edge case, complex complaint, or high-value negotiation occurs, the system instantly alerts your team with complete notes for personal human handling."
   },
   human: {
-    title: "GOVERNANCE: HUMAN SUPERVISION",
-    desc: "Human operators define policy constraints, review anomaly queues, and approve high-value transactions above confidence thresholds."
+    title: "GOVERNANCE: YOU REMAIN IN COMPLETE CONTROL",
+    desc: "You define the rules, view real-time transparency dashboards, and can adjust or override any automation at any time."
   }
 };
 
