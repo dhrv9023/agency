@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <!-- Minimalist High-End Vector Mark -->
+  <g fill="currentColor">
+    <!-- Left Wing -->
+    <polygon points="36,48 56,34 76,48 100,102 100,174 88,174" opacity="0.85" />
+    <polygon points="36,48 56,34 76,48" opacity="0.5" />
+    <!-- Right Wing -->
+    <polygon points="164,48 144,34 124,48 100,102 100,174 112,174" opacity="1.0" />
+    <polygon points="164,48 144,34 124,48" opacity="0.9" />
+  </g>
+</svg>

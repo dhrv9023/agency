@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revenue Leak &amp; AI ROI Calculator — VARAH</title>
+  <meta name="description" content="Calculate how much revenue your business is losing each month to slow lead follow-ups and repetitive manual support — and what VARAH AI can recover.">
+  <link rel="canonical" href="https://agency.ai/calculator">
+  
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header" role="banner">
+    <div class="nav-wrapper">
+      <a href="index.html" class="site-logo-link" aria-label="VARAH Home">
+        <img src="assets/logo.svg" alt="VARAH Logo" class="site-logo-img">
+      </a>
+      <nav class="main-nav-pill" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="solutions.html" class="nav-link">Solutions</a></li>
+          <li class="nav-item"><a href="industries.html" class="nav-link">Industries</a></li>
+          <li class="nav-item"><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+          <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+      <a href="contact.html" class="nav-action-pill">Start a Project</a>
+      <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Theme Mode" title="Toggle Theme Mode">
+        <i class="fa-solid fa-moon theme-icon-dark"></i>
+        <i class="fa-solid fa-sun theme-icon-light"></i>
+      </button>
+      <button class="mobile-burger-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+  <div class="mobile-menu-sheet" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="solutions.html" class="mobile-nav-link">Solutions</a></li>
+      <li><a href="industries.html" class="mobile-nav-link">Industries</a></li>
+      <li><a href="case-studies.html" class="mobile-nav-link">Case Studies</a></li>
+      <li><a href="process.html" class="mobile-nav-link">Process</a></li>
+      <li><a href="pricing.html" class="mobile-nav-link">Pricing</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+    <div class="mobile-theme-switch-row">
+      <span style="font-family: var(--font-mono); font-size: 0.8125rem; color: #666; text-transform: uppercase;">Theme:</span>
+      <button id="mobile-theme-toggle-btn" class="mobile-theme-switch-btn">
+        <span id="mobile-theme-state">Dark</span> Mode
+        <i class="fa-solid fa-circle-half-stroke"></i>
+      </button>
+    </div>
+    <a href="contact.html" class="mobile-cta-btn">Start a Project</a>
+  </div>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="reveal-on-scroll">
+          <span class="eyebrow">// Interactive Assessment</span>
+          <h1 class="page-hero-title">Calculate Your Monthly Revenue Leak.</h1>
+          <p class="page-hero-desc">
+            Most businesses lose between 15% and 25% of their inbound revenue to slow follow-up times and operational friction. Use this interactive tool to estimate your exact monthly leakage and projected recovery.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="calculator-stage" id="revenue-calculator">
+          <div class="calc-grid">
+            <!-- Left Controls -->
+            <div class="calc-controls-panel">
+              <div class="calc-field-group">
+                <label>Select Your Industry:</label>
+                <div class="industry-chip-grid">
+                  <button type="button" class="calc-chip is-active" data-industry="realestate">Real Estate</button>
+                  <button type="button" class="calc-chip" data-industry="clinic">Clinics / Health</button>
+                  <button type="button" class="calc-chip" data-industry="ecommerce">E-Commerce / D2C</button>
+                  <button type="button" class="calc-chip" data-industry="legal">Legal / Finance</button>
+                  <button type="button" class="calc-chip" data-industry="b2b">B2B SaaS / Services</button>
+                </div>
+              </div>
+
+              <div class="calc-field-group">
+                <label>
+                  <span>Monthly Inbound Inquiries:</span>
+                  <span class="calc-val-bubble" id="calc-leads-val">120 inquiries</span>
+                </label>
+                <input type="range" id="calc-leads-slider" class="calc-range-slider" min="30" max="800" step="10" value="120">
+                <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--muted); margin-top: 6px; font-family: var(--font-mono);">
+                  <span>30 / mo</span>
+                  <span>400 / mo</span>
+                  <span>800 / mo</span>
+                </div>
+              </div>
+
+              <div class="calc-field-group">
+                <label>
+                  <span>Average Client / Deal Value:</span>
+                  <span class="calc-val-bubble" id="calc-deal-val">$1,500</span>
+                </label>
+                <input type="range" id="calc-deal-slider" class="calc-range-slider" min="200" max="8000" step="100" value="1500">
+                <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--muted); margin-top: 6px; font-family: var(--font-mono);">
+                  <span>$200</span>
+                  <span>$4,000</span>
+                  <span>$8,000+</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Results Readout -->
+            <div class="calc-results-panel">
+              <div class="calc-kpi-block">
+                <div class="calc-kpi-label">ESTIMATED REVENUE LOST TO SLOW FOLLOW-UP</div>
+                <div class="calc-kpi-value" id="calc-out-leaked">$32,400</div>
+                <div class="calc-kpi-sub">Leads lost to competitors due to standard 4–24 hour response delays.</div>
+              </div>
+
+              <div class="calc-kpi-block">
+                <div class="calc-kpi-label">TEAM HOURS WASTED ON REPETITIVE ADMIN</div>
+                <div class="calc-kpi-value" style="color: #f59e0b;" id="calc-out-hours">42 hrs / mo</div>
+                <div class="calc-kpi-sub">Time burned answering repetitive FAQs and chasing manual CRM updates.</div>
+              </div>
+
+              <div class="calc-kpi-block">
+                <div class="calc-kpi-label" style="color: #10b981;">PROJECTED REVENUE RECOVERED WITH VARAH AI</div>
+                <div class="calc-kpi-value green" id="calc-out-recovered">$21,600</div>
+                <div class="calc-kpi-sub" style="color: var(--text);">Directly recaptured with 45-second follow-up and 24/7 calendar booking.</div>
+              </div>
+
+              <div style="margin-top: 12px;">
+                <a href="contact.html" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                  Fix These Leaks &rarr; Schedule Bottleneck Audit
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Methodology Explanation -->
+        <div style="margin-top: 64px; border-top: 1px solid var(--rule-color); padding-top: 48px;">
+          <h2 style="font-size: 1.5rem; font-weight: 600; color: var(--text); margin-bottom: 20px;">The Methodology Behind This Calculation</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.6;">
+            <div>
+              <h3 style="font-size: 1.1rem; color: var(--text); margin: 0 0 8px;">The 5-Minute Lead Window</h3>
+              <p style="margin: 0;">Studies by Harvard Business Review and LeadConnect show that firms attempting to reach leads within 5 minutes are 21x more likely to qualify them than those who wait 30 minutes. 78% of customers buy from the first responder.</p>
+            </div>
+            <div>
+              <h3 style="font-size: 1.1rem; color: var(--text); margin: 0 0 8px;">Repetitive Support Fatigue</h3>
+              <p style="margin: 0;">An average knowledge worker spends 28% of their work week managing email and repetitive administrative tasks. In customer-facing roles, up to 60% of inquiries are identical repeat questions.</p>
+            </div>
+            <div>
+              <h3 style="font-size: 1.1rem; color: var(--text); margin: 0 0 8px;">Conservative Recovery Modeling</h3>
+              <p style="margin: 0;">Our recovery projections use conservative 10%–16% baseline recapture rates observed across real-world client deployments, verified through CRM audit telemetry.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section section-bright">
+      <div class="container">
+        <div class="editorial-conversion-banner reveal-on-scroll">
+          <span class="eyebrow">Take Action</span>
+          <h2 class="editorial-conversion-title">Ready to stop losing revenue?</h2>
+          <p class="editorial-conversion-desc">
+            Book a 15-minute Bottleneck Audit. We will map your operations and show you exactly where AI can recover 20+ hours a week and fix your revenue leaks.
+          </p>
+          <div class="hero-cta-group cta-group-left">
+            <a href="contact.html" class="btn btn-primary">Start a Project</a>
+            <a href="book.html" class="btn btn-secondary"><i class="fa-regular fa-calendar-check" style="margin-right: 6px;"></i> Book 15-Min Discovery Call</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-statement-massive">BUILD SYSTEMS THAT WORK WHILE YOU WORK.</div>
+      <div class="footer-nav-grid">
+        <div class="footer-brand-col">
+          <div class="footer-logo-row">
+            <img src="assets/logo.svg" alt="VARAH Logo">
+            <span class="footer-brand-name">VARAH // SYSTEMS</span>
+          </div>
+          <p class="footer-desc-text">Enterprise AI Systems &amp; Automation. We eliminate operational bottlenecks and fix revenue leaks for modern businesses.</p>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Solutions</h4>
+          <ul class="footer-link-list">
+            <li class="footer-link-item"><a href="solutions/ai-sales.html">Lead Qualification</a></li>
+            <li class="footer-link-item"><a href="solutions/ai-customer-support.html">Customer Support</a></li>
+            <li class="footer-link-item"><a href="solutions/ai-voice.html">Voice AI Telephony</a></li>
+            <li class="footer-link-item"><a href="solutions/ai-knowledge.html">Knowledge Systems</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Tools &amp; Pages</h4>
+          <ul class="footer-link-list">
+            <li class="footer-link-item"><a href="calculator.html">ROI Calculator</a></li>
+            <li class="footer-link-item"><a href="pricing.html">Pricing &amp; Scope</a></li>
+            <li class="footer-link-item"><a href="process.html">Our Process</a></li>
+            <li class="footer-link-item"><a href="case-studies.html">Case Studies</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-heading">Company</h4>
+          <ul class="footer-link-list">
+            <li class="footer-link-item"><a href="about.html">About Us</a></li>
+            <li class="footer-link-item"><a href="contact.html">Contact Us</a></li>
+            <li class="footer-link-item"><a href="book.html">Book Discovery Call</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <div class="footer-copyright">&copy; 2026 VARAH SYSTEMS INC. ALL RIGHTS RESERVED.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/calculator.js"></script>
+</body>
+</html>
