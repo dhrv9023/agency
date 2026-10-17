@@ -3,10 +3,13 @@ node_modules/
 .pnp
 .pnp.js
 
-# Build outputs
+# Build outputs & Next.js
+.next/
 dist/
 build/
 out/
+*.tsbuildinfo
+scratch/
 
 # Environment and IDE files
 .env

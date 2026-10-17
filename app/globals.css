@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #050608;
+  --foreground: #ffffff;
+}
+
+:root[data-theme="light"],
+html.light,
+[data-theme="light"] {
+  --background: #F3F3F0;
+  --foreground: #111111;
+}
+
+body {
+  background-color: var(--admin-bg, var(--background));
+  color: var(--admin-text, var(--foreground));
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ==========================================================================
+   ADMIN PORTAL — LIGHT MODE GLOBAL ARCHITECTURAL PALETTE
+   ========================================================================== */
+:root[data-theme="light"],
+html.light,
+[data-theme="light"] {
+  --admin-bg: #F3F3F0;
+  --admin-surface: #FFFFFF;
+  --admin-surface-hover: #F8F8F6;
+  --admin-surface-card: #FFFFFF;
+  --admin-border: rgba(17, 17, 17, 0.12);
+  --admin-border-focus: rgba(0, 180, 216, 0.5);
+  --admin-text: #111111;
+  --admin-text-secondary: #4b5563;
+  --admin-text-muted: #64748b;
+  --admin-header-bg: rgba(243, 243, 240, 0.92);
+}
+
+[data-theme="light"] body {
+  background-color: #F3F3F0 !important;
+  color: #111111 !important;
+}
+
+/* 1. Typography & Contrast Overrides */
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] h5,
+[data-theme="light"] h6 {
+  color: #111111 !important;
+}
+
+[data-theme="light"] .text-white,
+[data-theme="light"] h1.text-white,
+[data-theme="light"] h2.text-white,
+[data-theme="light"] h3.text-white,
+[data-theme="light"] h4.text-white {
+  color: #111111 !important;
+}
+
+[data-theme="light"] .text-gray-200 {
+  color: #1f2937 !important;
+}
+
+[data-theme="light"] .text-gray-300 {
+  color: #374151 !important;
+}
+
+[data-theme="light"] .text-gray-400 {
+  color: #4b5563 !important;
+}
+
+[data-theme="light"] .text-gray-500 {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .hover\:text-white:hover {
+  color: #111111 !important;
+}
+
+/* 2. Surfaces & Backgrounds */
+[data-theme="light"] .bg-\[\#0c0d12\],
+[data-theme="light"] .bg-\[\#070709\],
+[data-theme="light"] .bg-\[\#0e0f14\],
+[data-theme="light"] .bg-\[\#0b0c10\],
+[data-theme="light"] .bg-\[\#08090d\],
+[data-theme="light"] .bg-\[\#0d0e14\] {
+  background-color: #FFFFFF !important;
+  border-color: rgba(17, 17, 17, 0.12) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02) !important;
+}
+
+/* Secondary controls (Search bars, nested containers, view switchers) */
+[data-theme="light"] .bg-\[\#11131a\],
+[data-theme="light"] .bg-\[\#171a24\],
+[data-theme="light"] .bg-\[\#14161f\],
+[data-theme="light"] .bg-\[\#151722\],
+[data-theme="light"] .bg-\[\#161922\],
+[data-theme="light"] .bg-\[\#1d212c\] {
+  background-color: #F8F8F6 !important;
+  border-color: rgba(17, 17, 17, 0.14) !important;
+  color: #111111 !important;
+}
+
+/* Semi-transparent badges and action buttons */
+[data-theme="light"] .bg-white\/5 {
+  background-color: #FFFFFF !important;
+  border-color: rgba(17, 17, 17, 0.16) !important;
+  color: #374151 !important;
+}
+
+[data-theme="light"] .hover\:bg-white\/10:hover {
+  background-color: #EAEAE6 !important;
+  color: #111111 !important;
+}
+
+[data-theme="light"] .hover\:bg-white\/5:hover {
+  background-color: #F3F3F0 !important;
+}
+
+[data-theme="light"] .hover\:bg-white\/\[0\.02\]:hover,
+[data-theme="light"] .hover\:bg-white\/\[0\.03\]:hover {
+  background-color: rgba(17, 17, 17, 0.04) !important;
+}
+
+/* 3. Borders & Dividers */
+[data-theme="light"] .border-white\/10,
+[data-theme="light"] .border-white\/20,
+[data-theme="light"] .border-white\/5,
+[data-theme="light"] .border-\[rgba\(255\,255\,255\,0\.08\)\],
+[data-theme="light"] .border-\[rgba\(255\,255\,255\,0\.12\)\],
+[data-theme="light"] .border-\[rgba\(255\,255\,255\,0\.14\)\],
+[data-theme="light"] .border-\[rgba\(255\,255\,255\,0\.18\)\],
+[data-theme="light"] .border-\[rgba\(255\,255\,255\,0\.06\)\] {
+  border-color: rgba(17, 17, 17, 0.12) !important;
+}
+
+[data-theme="light"] .divide-\[rgba\(255\,255\,255\,0\.06\)\] > :not([hidden]) ~ :not([hidden]),
+[data-theme="light"] .divide-white\/5 > :not([hidden]) ~ :not([hidden]),
+[data-theme="light"] .divide-white\/10 > :not([hidden]) ~ :not([hidden]) {
+  border-color: rgba(17, 17, 17, 0.10) !important;
+}
+
+/* 4. Form Inputs & Dropdowns */
+[data-theme="light"] input,
+[data-theme="light"] select,
+[data-theme="light"] textarea {
+  color: #111111 !important;
+}
+
+[data-theme="light"] input::placeholder,
+[data-theme="light"] textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+[data-theme="light"] select option {
+  background-color: #FFFFFF !important;
+  color: #111111 !important;
+}
+
+/* 5. Data Tables & Lists */
+[data-theme="light"] thead.bg-\[\#11131a\] {
+  background-color: #F8F8F6 !important;
+  color: #4b5563 !important;
+  border-bottom-color: rgba(17, 17, 17, 0.14) !important;
+}
+
+[data-theme="light"] table tbody tr {
+  color: #374151 !important;
+}
+
+[data-theme="light"] table tbody tr:hover {
+  background-color: rgba(17, 17, 17, 0.03) !important;
+}
+
+/* 6. Modals, Drawers & Backdrop */
+[data-theme="light"] .fixed.bg-black\/60,
+[data-theme="light"] .fixed.bg-black\/75 {
+  background-color: rgba(15, 23, 42, 0.45) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+[data-theme="light"] .bg-\[\#11131a\]\/80 {
+  background-color: rgba(248, 248, 246, 0.95) !important;
+  border-bottom-color: rgba(17, 17, 17, 0.12) !important;
+}
+
+/* 7. Accent Highlights & Pipeline Badges */
+[data-theme="light"] .text-\[\#00f0ff\] {
+  color: #0284c7 !important;
+}
+
+[data-theme="light"] .bg-\[\#00f0ff\]\/10 {
+  background-color: rgba(2, 132, 199, 0.12) !important;
+  color: #0369a1 !important;
+  border-color: rgba(2, 132, 199, 0.3) !important;
+}
+
+[data-theme="light"] .border-\[\#00f0ff\]\/30 {
+  border-color: rgba(2, 132, 199, 0.35) !important;
+}
+

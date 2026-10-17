@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180" width="100%" height="100%">
+  <defs>
+    <linearGradient id="hlBezel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" /><stop offset="100%" stop-color="#475569" />
+    </linearGradient>
+  </defs>
+
+  <!-- Group: The Emblem Badge Scaled -->
+  <g transform="translate(15, 15) scale(0.75)">
+    <!-- Titanium Housing -->
+    <circle cx="100" cy="100" r="97" fill="#080a0f" stroke="url(#hlBezel)" stroke-width="3" />
+    <path d="M 44 54 L 62 42 L 80 54 L 100 106 L 120 54 L 138 42 L 156 54 L 100 168 Z"
+          fill="none" stroke="#00f0ff" stroke-width="2.5" opacity="0.8" />
+    <polygon points="44,54 62,42 80,54" fill="#64748b" />
+    <polygon points="44,54 62,42 100,165 89,165" fill="#1b1d25" />
+    <polygon points="62,42 80,54 100,102 100,165" fill="#0e0f14" />
+    <polygon points="156,54 138,42 120,54" fill="#ffffff" />
+    <polygon points="138,42 120,54 100,102 100,165" fill="#f8fafc" />
+    <polygon points="156,54 138,42 100,165 111,165" fill="#94a3b8" />
+    <line x1="138" y1="42" x2="100" y2="165" stroke="#ffffff" stroke-width="1.2" />
+    <line x1="100" y1="102" x2="100" y2="165" stroke="#00f0ff" stroke-width="1.2" />
+  </g>
+
+  <!-- Divider Rule -->
+  <line x1="185" y1="42" x2="185" y2="138" stroke="rgba(0, 0, 0, 0.15)" stroke-width="1.2" />
+
+  <!-- Typography: Wordmark "VARAH" (Dark for light bg) -->
+  <text x="220" y="98"
+        font-family="'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif"
+        font-size="64"
+        font-weight="700"
+        letter-spacing="0.28em"
+        fill="#090a0f">VARAH</text>
+
+  <!-- Subtitle Tagline -->
+  <text x="225" y="132"
+        font-family="'SF Mono', 'Fira Code', 'Roboto Mono', monospace"
+        font-size="14"
+        font-weight="600"
+        letter-spacing="0.46em"
+        fill="#64748b">AI SYSTEMS &amp; AUTOMATION</text>
+</svg>
