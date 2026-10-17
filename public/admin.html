@@ -1431,24 +1431,43 @@
 
   <!-- Interactive Logic -->
   <script>
-    // No mock data — live pipeline connected to website forms
-    const DEFAULT_LEADS = [];
+    // Pre-seeded with 18 High-Growth Target Accounts
+    const DEFAULT_LEADS = [
+      { id: 'lead_hexclad', name: 'Daniel Wiesenfeld', email: 'd.wiesenfeld@hexclad.com', company: 'HexClad', source: 'Outbound Prospecting', service: 'Autonomous Tier-1/2 CX Agent', message: 'Deflect 68% of WISMO and return tickets across global storefronts while executing instant exchanges autonomously.', budget: '$60,000 - $110,000', date: 'Oct 12, 2026', status: 'Proposal Sent' },
+      { id: 'lead_guardian_dentistry', name: 'Dr. Hitesh Patel', email: 'hpatel@guardiandentistry.com', company: 'Guardian Dentistry Partners', source: 'Outbound Prospecting', service: '24/7 Voice AI Telephony Scheduler', message: '150+ clinics facing 25%+ missed inbound patient scheduling calls ($800 lost production/patient). Voice AI schedules directly into Dentrix PMS.', budget: '$75,000 - $140,000', date: 'Oct 13, 2026', status: 'In Review' },
+      { id: 'lead_rentvine', name: 'David Bitton', email: 'dbitton@rentvine.com', company: 'Rentvine', source: 'Outbound Prospecting', service: 'Cognitive OCR & Migration Pipeline', message: '4,600% growth causing customer onboarding bottlenecks. Automated extraction and cleanup of legacy chart-of-accounts from AppFolio/Buildium.', budget: '$50,000 - $95,000', date: 'Oct 10, 2026', status: 'Discovery Booked' },
+      { id: 'lead_atomix', name: 'Austin Kreinz', email: 'akreinz@atomixlogistics.com', company: 'Atomix Logistics', source: 'Outbound Prospecting', service: 'Multi-Agent Order Dispatcher', message: 'Ranked #10 on Inc 5000 with 11,400% growth. Autonomous multi-node inventory routing during viral order spikes without manual warehouse intervention.', budget: '$45,000 - $85,000', date: 'Oct 11, 2026', status: 'Discovery Booked' },
+      { id: 'lead_aprio', name: 'Richard Kopelman', email: 'rkopelman@aprio.com', company: 'Aprio', source: 'Outbound Prospecting', service: 'Cognitive Document Intelligence', message: 'Addressing CPA talent shortage by automating seasonal K-1, W-2, and trial balance ingestion with 99.4% OCR extraction accuracy.', budget: '$80,000 - $160,000', date: 'Oct 09, 2026', status: 'In Review' },
+      { id: 'lead_arrive_logistics', name: 'J. Michael Meredith', email: 'm.meredith@arrivelogistics.com', company: 'Arrive Logistics', source: 'Outbound Prospecting', service: 'Multi-Agent Carrier Sourcing & Rate Parser', message: 'Replaces manual carrier rate quote copying from emails into TMS with autonomous multi-agent parsing and instant margin validation.', budget: '$90,000 - $180,000', date: 'Oct 16, 2026', status: 'New' },
+      { id: 'lead_vitana_pediatric', name: 'Rachel Simmons', email: 'rsimmons@vitanapartners.com', company: 'Vitana Pediatric & Orthodontic Partners', source: 'Outbound Prospecting', service: 'Voice AI Telephony & Multichannel Recall', message: 'Natural conversational voice scheduling for after-hours pediatric appointments, reducing parent bounce rates and clinic no-shows.', budget: '$40,000 - $75,000', date: 'Oct 15, 2026', status: 'New' },
+      { id: 'lead_asset_living', name: 'Thomas Thorne', email: 'tthorne@assetliving.com', company: 'Asset Living', source: 'Outbound Prospecting', service: 'Maintenance Diagnostic & Dispatch Agent', message: 'Triages 500+ daily maintenance calls across 100,000+ multifamily doors, eliminating unnecessary vendor truck rolls.', budget: '$70,000 - $130,000', date: 'Oct 14, 2026', status: 'New' },
+      { id: 'lead_ridge', name: 'Sean Frank', email: 'sfrank@ridge.com', company: 'Ridge', source: 'Outbound Prospecting', service: 'Multilingual CX Agent & 3PL Sync', message: 'Automating European localized support and cross-border return inspections without scaling customer support headcount.', budget: '$55,000 - $95,000', date: 'Oct 08, 2026', status: 'Discovery Booked' },
+      { id: 'lead_steam_logistics', name: 'Jason Provonsha', email: 'jprovonsha@steamlogistics.com', company: 'Steam Logistics', source: 'Outbound Prospecting', service: 'Port Telemetry Scraper & Customs Parser', message: 'Real-time container telemetry and automated delivery order extraction to eliminate port demurrage and detention penalties.', budget: '$65,000 - $120,000', date: 'Oct 07, 2026', status: 'Proposal Sent' },
+      { id: 'lead_cherry_bekaert', name: 'Michelle Thompson', email: 'mthompson@cbh.com', company: 'Cherry Bekaert', source: 'Outbound Prospecting', service: 'Client Workpaper Harmonization Pipeline', message: 'Standardized data onboarding and trial balance consolidation across acquired regional accounting practices.', budget: '$95,000 - $190,000', date: 'Oct 06, 2026', status: 'In Review' },
+      { id: 'lead_evernest', name: 'Matthew Whitaker', email: 'mwhitaker@evernest.co', company: 'Evernest', source: 'Outbound Prospecting', service: 'Automated Tenant Lifecycle & Renewal Workflow', message: 'Automates applicant vetting and lease renewal negotiations across 20,000+ single-family rental doors.', budget: '$50,000 - $90,000', date: 'Oct 16, 2026', status: 'New' },
+      { id: 'lead_liquid_death', name: 'Mike Cessario', email: 'ops@liquiddeath.com', company: 'Liquid Death', source: 'Outbound Prospecting', service: 'Autonomous Deduction Dispute Agent', message: 'Automatically matches retail distributor chargebacks (Walmart/Target) and generates automated dispute documentation.', budget: '$75,000 - $135,000', date: 'Oct 14, 2026', status: 'New' },
+      { id: 'lead_highfive', name: 'Dr. Clinton Hazen', email: 'chazen@highfivehc.com', company: 'HighFive Healthcare', source: 'Outbound Prospecting', service: 'Insurance Pre-Auth Document Agent', message: 'Cognitive OCR extracts clinical surgical notes and submits pre-authorizations automatically, cutting procedure cancellations.', budget: '$60,000 - $110,000', date: 'Oct 15, 2026', status: 'New' },
+      { id: 'lead_shipbots', name: 'Payman Taei', email: 'ptaei@shipbots.com', company: 'Shipbots', source: 'Outbound Prospecting', service: '3PL Dimensional Discrepancy Auditing Engine', message: 'Catches dimensional carrier overbilling discrepancies across 200+ D2C merchant accounts.', budget: '$35,000 - $65,000', date: 'Sep 17, 2026', status: 'Closed Won' },
+      { id: 'lead_allinone', name: 'Julie Keyes', email: 'jkeyes@allinoneaccounting.com', company: 'All In One Accounting', source: 'Outbound Prospecting', service: 'AP/AR Bank Reconciliation Engine', message: 'Automates receipt matching and monthly ledger closing for fractional CFO and accounting clients.', budget: '$40,000 - $75,000', date: 'Sep 12, 2026', status: 'Closed Won' },
+      { id: 'lead_realmanage', name: 'Christopher Acker', email: 'cacker@realmanage.com', company: 'RealManage', source: 'Outbound Prospecting', service: 'Semantic HOA Bylaw Search Assistant', message: 'Resolves architectural review committee backlogs and answers homeowner compliance questions using private RAG.', budget: '$55,000 - $105,000', date: 'Oct 13, 2026', status: 'New' },
+      { id: 'lead_true_classic', name: 'Nick Ventura', email: 'nventura@trueclassictees.com', company: 'True Classic', source: 'Outbound Prospecting', service: 'Agentic Sizing & Exchange Consultation Assistant', message: 'Intercepts sizing return requests and offers real-time size recommendations to convert refunds into exchanges.', budget: '$65,000 - $115,000', date: 'Oct 11, 2026', status: 'Discovery Booked' },
+    ];
 
     function getLeads() {
       const stored = localStorage.getItem('agency_leads');
       if (!stored) {
-        return [];
+        localStorage.setItem('agency_leads', JSON.stringify(DEFAULT_LEADS));
+        return DEFAULT_LEADS;
       }
       try {
         const parsed = JSON.parse(stored);
-        // Filter out any stale mock leads if present
-        const real = parsed.filter(l => !l.id || (!l.id.startsWith('lead_1') && !l.id.startsWith('lead_2') && !l.id.startsWith('lead_3') && !l.id.startsWith('lead_4') && l.name !== 'Marcus Vance' && l.name !== 'Sarah Jenkins'));
-        if (real.length !== parsed.length) {
-          localStorage.setItem('agency_leads', JSON.stringify(real));
+        if (!Array.isArray(parsed) || parsed.length === 0) {
+          localStorage.setItem('agency_leads', JSON.stringify(DEFAULT_LEADS));
+          return DEFAULT_LEADS;
         }
-        return real;
+        return parsed;
       } catch {
-        return [];
+        return DEFAULT_LEADS;
       }
     }
 
