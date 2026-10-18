@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sub-300ms Voice AI Receptionist — Interactive Telephony & PMS Simulator | VARAH SYSTEMS</title>
+  <meta name="description" content="Production-grade real-time conversational telephony simulator for dental and medical clinical operations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="telephony-lab-body">
+
+  <!-- Top System Telemetry Bar -->
+  <header class="lab-header">
+    <div class="brand-group">
+      <div class="brand-badge">
+        <span class="live-pulse-dot"></span>
+        <span>VARAH SYSTEMS // VOICE AI LAB</span>
+      </div>
+      <h1 class="lab-title">Sub-300ms Clinical Receptionist & PMS Scheduler</h1>
+    </div>
+
+    <!-- Live Latency HUD -->
+    <div class="latency-hud">
+      <div class="hud-item total-latency">
+        <span class="hud-label">ROUNDTRIP LATENCY</span>
+        <span class="hud-value" id="hud-total-latency">285 <span class="unit">ms</span></span>
+      </div>
+      <div class="hud-divider"></div>
+      <div class="hud-item">
+        <span class="hud-label">STT (DEEPGRAM)</span>
+        <span class="hud-value hud-sub" id="hud-stt">112 ms</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">LLM FIRST TOKEN</span>
+        <span class="hud-value hud-sub" id="hud-llm">94 ms</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">TTS (CARTESIA)</span>
+        <span class="hud-value hud-sub" id="hud-tts">79 ms</span>
+      </div>
+      <div class="hud-status-badge">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>HIPAA BAA COMPLIANT</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Workstation Layout -->
+  <main class="lab-layout">
+
+    <!-- LEFT COLUMN: Virtual Telephony Console & Audio Engine -->
+    <section class="telephony-console-card">
+      <div class="panel-header">
+        <div class="panel-title">
+          <i class="fa-solid fa-phone-volume"></i>
+          <span>Live Telephony Simulator</span>
+        </div>
+        <div class="call-state-pill" id="call-state-pill">
+          <span class="state-dot"></span>
+          <span id="call-state-text">LINE IDLE</span>
+        </div>
+      </div>
+
+      <!-- Phone Visual Display & Sine Waveform Canvas -->
+      <div class="virtual-call-stage">
+        <div class="agent-avatar-ring" id="agent-avatar-ring">
+          <div class="avatar-core">
+            <i class="fa-solid fa-brain-circuit"></i>
+          </div>
+          <div class="pulse-ring ring-1"></div>
+          <div class="pulse-ring ring-2"></div>
+        </div>
+
+        <div class="caller-meta">
+          <h2 class="agent-name">Aura (AI Patient Coordinator)</h2>
+          <p class="clinic-sub">Apex Dental Care // Direct Triage Line</p>
+        </div>
+
+        <!-- Real-Time Audio Spectrum Canvas -->
+        <div class="waveform-container">
+          <canvas id="waveform-canvas" width="460" height="70"></canvas>
+        </div>
+
+        <!-- Live Telemetry Speech Bar -->
+        <div class="speech-status-bar" id="speech-status-bar">
+          <i class="fa-solid fa-waveform"></i>
+          <span id="speech-status-text">Click "Start Live Call" to initiate conversation</span>
+        </div>
+
+        <!-- Call Actions Toolbar -->
+        <div class="call-controls-row">
+          <button class="call-btn start-call" id="btn-toggle-call">
+            <i class="fa-solid fa-phone"></i>
+            <span id="btn-call-label">Start Live Call</span>
+          </button>
+          <button class="call-btn mic-btn" id="btn-toggle-mic" disabled title="Toggle Microphone">
+            <i class="fa-solid fa-microphone"></i>
+            <span>Speak Mic</span>
+          </button>
+          <button class="call-btn reset-btn" id="btn-reset-demo" title="Reset Simulation">
+            <i class="fa-solid fa-arrow-rotate-left"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick-Fire Clinical Scenarios -->
+      <div class="scenarios-panel">
+        <div class="scenarios-title">
+          <span>1-Click Clinical Test Scenarios</span>
+          <span class="scenario-hint">Click any prompt to simulate patient voice</span>
+        </div>
+        <div class="scenarios-grid">
+          <button class="scenario-chip" data-prompt="Hi, I have a cracked molar with severe pain and need an appointment tomorrow morning.">
+            <i class="fa-solid fa-tooth text-cyan"></i>
+            <div class="chip-content">
+              <strong>Emergency Toothache</strong>
+              <span>Severe pain, needs tomorrow AM</span>
+            </div>
+          </button>
+
+          <button class="scenario-chip" data-prompt="Hello, I need to reschedule my routine hygiene cleaning from Tuesday to Friday afternoon with Dr. Lin.">
+            <i class="fa-solid fa-calendar-days text-emerald"></i>
+            <div class="chip-content">
+              <strong>Reschedule Hygiene Visit</strong>
+              <span>Shift to Friday PM with Dr. Lin</span>
+            </div>
+          </button>
+
+          <button class="scenario-chip" data-prompt="Hi there, do you take Delta Dental Premier PPO insurance, and can I book a new patient consultation?">
+            <i class="fa-solid fa-file-invoice-dollar text-amber"></i>
+            <div class="chip-content">
+              <strong>Insurance Verification</strong>
+              <span>Delta Dental PPO check + consult</span>
+            </div>
+          </button>
+
+          <button class="scenario-chip alert-chip" data-prompt="Emergency! I had a tooth pulled two hours ago and now I have uncontrollable bleeding and swelling.">
+            <i class="fa-solid fa-triangle-exclamation text-rose"></i>
+            <div class="chip-content">
+              <strong>Urgent Trauma Triage</strong>
+              <span>Uncontrolled bleeding &rarr; Immediate Transfer</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Live Conversational Transcript Stream -->
+      <div class="transcript-feed-panel">
+        <div class="feed-header">
+          <span>Live Conversation Stream (Sub-300ms Tokens)</span>
+          <span class="stream-badge"><i class="fa-solid fa-bolt"></i> STREAMING</span>
+        </div>
+        <div class="transcript-log" id="transcript-log">
+          <div class="log-entry system-msg">
+            <span class="log-time">[System]</span>
+            <span class="log-text">Awaiting call initiation. Audio buffer initialized at 24kHz.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- RIGHT COLUMN: Practice Management System (PMS) Live Calendar -->
+    <section class="pms-calendar-card">
+      <div class="panel-header">
+        <div class="panel-title">
+          <i class="fa-solid fa-hospital-user"></i>
+          <span>Practice Management System (Dentrix Live Sync)</span>
+        </div>
+        <div class="sync-badge">
+          <span class="sync-dot"></span>
+          <span>PMS API: CONNECTED</span>
+        </div>
+      </div>
+
+      <!-- Clinic Providers Selector -->
+      <div class="provider-roster">
+        <div class="provider-pill active" data-prov="all">
+          <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=120&q=80" alt="Dr. Lin" class="prov-avatar">
+          <div class="prov-info">
+            <strong>Dr. Sarah Lin, DDS</strong>
+            <span>General & Cosmetic</span>
+          </div>
+        </div>
+        <div class="provider-pill" data-prov="all">
+          <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=120&q=80" alt="Dr. Patel" class="prov-avatar">
+          <div class="prov-info">
+            <strong>Dr. Hitesh Patel, DMD</strong>
+            <span>Oral Surgery & Implants</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Schedule Board & Slot Slots -->
+      <div class="pms-schedule-board">
+        <div class="board-header">
+          <span id="calendar-day-header">Thursday, October 22 — Clinical Operator Schedule</span>
+          <span class="slots-available-counter" id="slots-available-counter">6 Slots Available</span>
+        </div>
+
+        <div class="slots-grid" id="pms-slots-grid">
+          <!-- Dynamically generated slots injected by app.js -->
+        </div>
+      </div>
+
+      <!-- Live Committed Appointment Dossier Card (Animates on Booking) -->
+      <div class="booking-receipt-card" id="booking-receipt-card">
+        <div class="receipt-header">
+          <div class="receipt-icon">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <div>
+            <h3>Appointment Committed to PMS</h3>
+            <span class="conf-code" id="receipt-conf-code">DENTRIX-CONF #8942-AX</span>
+          </div>
+        </div>
+
+        <div class="receipt-body">
+          <div class="receipt-row">
+            <span class="r-label">Patient Name:</span>
+            <span class="r-val" id="receipt-patient-name">Alex Morgan</span>
+          </div>
+          <div class="receipt-row">
+            <span class="r-label">Procedure:</span>
+            <span class="r-val" id="receipt-procedure">Emergency Exam & Diagnostic X-Rays</span>
+          </div>
+          <div class="receipt-row">
+            <span class="r-label">Provider:</span>
+            <span class="r-val" id="receipt-provider">Dr. Sarah Lin, DDS</span>
+          </div>
+          <div class="receipt-row">
+            <span class="r-label">Scheduled Time:</span>
+            <span class="r-val text-emerald" id="receipt-time">Thursday at 10:30 AM</span>
+          </div>
+          <div class="receipt-row">
+            <span class="r-label">Insurance Verified:</span>
+            <span class="r-val" id="receipt-insurance">Delta Dental Premier PPO (Pre-Check Passed ✅)</span>
+          </div>
+        </div>
+
+        <div class="receipt-footer">
+          <span class="sms-badge"><i class="fa-solid fa-message"></i> SMS Confirmation Dispatched to Caller</span>
+        </div>
+      </div>
+
+      <!-- Telemetry Architecture Footnote -->
+      <div class="tech-spec-footer">
+        <div class="spec-col">
+          <i class="fa-solid fa-microphone-lines"></i>
+          <div>
+            <strong>Audio Ingestion</strong>
+            <span>Deepgram Nova-2 (112ms)</span>
+          </div>
+        </div>
+        <div class="spec-col">
+          <i class="fa-solid fa-brain"></i>
+          <div>
+            <strong>Clinical Reasoning</strong>
+            <span>Claude 3.5 Haiku (94ms)</span>
+          </div>
+        </div>
+        <div class="spec-col">
+          <i class="fa-solid fa-waveform-lines"></i>
+          <div>
+            <strong>Voice Synthesis</strong>
+            <span>Cartesia Sonic (79ms)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Interactive JavaScript Engine -->
+  <script src="app.js"></script>
+</body>
+</html>
