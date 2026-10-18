@@ -160,6 +160,27 @@
             <span class="log-text">Awaiting call initiation. Audio buffer initialized at 24kHz.</span>
           </div>
         </div>
+
+        <!-- Interactive Direct Caller Input -->
+        <form class="caller-input-form" id="caller-input-form">
+          <div class="input-wrapper">
+            <i class="fa-solid fa-comment-dots"></i>
+            <input 
+              type="text" 
+              id="caller-input-text" 
+              placeholder="Type your response (e.g. 'Monday', 'tomorrow morning', 'Alex Morgan', 'Yes')..." 
+              autocomplete="off"
+            />
+            <button type="submit" id="btn-send-message" class="btn-send" title="Send message to Aura">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>Send</span>
+            </button>
+          </div>
+          <div class="input-hint">
+            <span><i class="fa-solid fa-keyboard"></i> Type & press Enter, or use "Speak Mic" above</span>
+            <span class="sub-badge">Zero Latency Buffer</span>
+          </div>
+        </form>
       </div>
     </section>
 

@@ -583,6 +583,90 @@ body.telephony-lab-body {
   font-family: var(--font-mono);
 }
 
+/* Direct Text Chat Bar */
+.caller-input-form {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.caller-input-form .input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 4px 6px 4px 12px;
+  transition: all 0.2s ease;
+}
+
+.caller-input-form .input-wrapper:focus-within {
+  border-color: var(--cyan);
+  background-color: rgba(0, 240, 255, 0.04);
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.15);
+}
+
+.caller-input-form .input-wrapper i {
+  font-size: 0.85rem;
+  color: var(--cyan);
+}
+
+.caller-input-form input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  outline: none;
+  padding: 6px 0;
+}
+
+.caller-input-form input::placeholder {
+  color: var(--text-dim);
+  font-size: 0.78rem;
+}
+
+.caller-input-form .btn-send {
+  background-color: var(--cyan);
+  color: #050608;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s ease;
+}
+
+.caller-input-form .btn-send:hover {
+  background-color: #38bdf8;
+  transform: translateY(-1px);
+}
+
+.caller-input-form .input-hint {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.67rem;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  padding: 0 2px;
+}
+
+.caller-input-form .sub-badge {
+  color: var(--emerald);
+  font-weight: 500;
+}
+
 /* ------------------------------------------------------------------------------
    6. RIGHT COLUMN: PMS CALENDAR BOARD
    ------------------------------------------------------------------------------ */

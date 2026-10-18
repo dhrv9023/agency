@@ -16,10 +16,18 @@
     isCallActive: false,
     isMicActive: false,
     isSpeaking: false,
-    currentStep: 'INIT', // INIT, GREETED, OFFERING, BOOKED, EMERGENCY
+    currentStep: 'INIT', // INIT, GREETED, AWAITING_TIME, AWAITING_NAME, COMMITTED, COMPLETED, EMERGENCY
     lockedSlotId: null,
     bookedSlotId: null,
     selectedProvider: 'all',
+    memory: {
+      patientName: '',
+      requestedDay: '',
+      requestedTime: '',
+      requestedDoctor: '',
+      procedure: 'Comprehensive Exam & Cleaning',
+      insurance: 'Delta Dental Premier PPO',
+    }
   };
 
   const PMS_SCHEDULE = [
@@ -47,6 +55,8 @@
   const bookingReceiptCard = document.getElementById('booking-receipt-card');
   const canvas = document.getElementById('waveform-canvas');
   const ctx = canvas.getContext('2d');
+  const callerInputForm = document.getElementById('caller-input-form');
+  const callerInputText = document.getElementById('caller-input-text');
 
   // Latency HUD DOM
   const hudTotal = document.getElementById('hud-total-latency');
@@ -302,12 +312,61 @@
   }
 
   // ----------------------------------------------------------------------------
-  // 6. CLINICAL CONVERSATION ENGINE & ACTION TRIGGERS
   // ----------------------------------------------------------------------------
+  // 6. CLINICAL CONVERSATION ENGINE & STATE MACHINE
+  // ----------------------------------------------------------------------------
+  function extractPatientName(text) {
+    const clean = text.trim();
+    const lower = clean.toLowerCase();
+
+    // If it contains day/time/intent keywords, it's NOT a patient name
+    const intentWords = [
+      'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday',
+      'morning', 'afternoon', 'evening', 'tomorrow', 'today', 'tonight',
+      'appointment', 'schedule', 'book', 'dr', 'doctor', 'lin', 'patel',
+      'tooth', 'toothache', 'cleaning', 'hygiene', 'reschedule', 'exam',
+      'insurance', 'delta', 'dental', 'cost', 'price', 'am', 'pm'
+    ];
+    if (intentWords.some(w => lower.includes(w))) {
+      return null;
+    }
+
+    const namePatterns = [
+      /(?:my name is|i am|this is|i'm|call me|name's)\s+([a-zA-Z]+(?:\s+[a-zA-Z]+)?)/i,
+      /^([a-zA-Z]+(?:\s+[a-zA-Z]+)?)$/i
+    ];
+
+    const stopWords = [
+      'yes', 'sure', 'confirm', 'okay', 'ok', 'yep', 'yeah', 'correct', 'right',
+      'hello', 'hi', 'hey', 'please', 'thanks', 'thank you', 'none', 'nothing',
+      'that works', 'sounds good', 'book it', 'first', 'second', 'the first', 'the second'
+    ];
+
+    for (const pattern of namePatterns) {
+      const match = clean.match(pattern);
+      if (match && match[1]) {
+        const candidate = match[1].trim();
+        if (!stopWords.includes(candidate.toLowerCase()) && candidate.length >= 2) {
+          return candidate.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
+        }
+      }
+    }
+    return null;
+  }
+
   function handleCallerUtterance(text) {
+    if (!text || !text.trim()) return;
+
+    // Barge-in interruption: cancel agent speech immediately if user speaks
+    if (state.isSpeaking && window.speechSynthesis) {
+      window.speechSynthesis.cancel();
+      state.isSpeaking = false;
+      avatarRing.classList.remove('speaking');
+    }
+
     if (!state.isCallActive) {
       startCall();
-      setTimeout(() => processUtterance(text), 1500);
+      setTimeout(() => processUtterance(text), 1600);
     } else {
       processUtterance(text);
     }
@@ -315,16 +374,16 @@
 
   function processUtterance(text) {
     appendTranscript('caller', text);
-    speechStatusText.textContent = 'Aura analyzing clinical intent & PMS slots...';
+    speechStatusText.textContent = 'Aura analyzing clinical intent & Dentrix PMS slots...';
 
-    const t = text.toLowerCase();
+    const t = text.toLowerCase().trim();
 
     // 1. EMERGENCY CLINICAL TRIAGE TRIGGER
-    if (t.includes('bleeding') || t.includes('uncontrollable') || t.includes('swelling') || t.includes('trauma')) {
+    if (t.includes('bleeding') || t.includes('uncontrollable') || t.includes('swelling') || t.includes('trauma') || t.includes('accident')) {
       state.currentStep = 'EMERGENCY';
       speechStatusText.textContent = 'CRITICAL TRIAGE: Warm Transfer Initiated';
 
-      speakAI("This sounds like an acute surgical emergency. I am transferring your call immediately to our on-call clinical triage director. Please hold while I bridge you.", () => {
+      speakAI("This sounds like an acute surgical emergency. I am transferring your call immediately to our on-call clinical triage director, Dr. Hitesh Patel. Please hold while I bridge you.", () => {
         callStatePill.className = 'call-state-pill alert-chip';
         callStateText.textContent = 'WARM EMERGENCY TRANSFER';
         appendTranscript('system', 'Clinical alert: Caller transferred to On-Call Oral Surgeon Dr. Hitesh Patel.');
@@ -332,44 +391,307 @@
       return;
     }
 
-    // 2. RESCHEDULING SCENARIO
-    if (t.includes('reschedule') || (t.includes('hygiene') && t.includes('friday'))) {
-      state.currentStep = 'OFFERING';
-      lockSlot('slot_4');
-
-      speakAI("I'd be glad to help you reschedule that cleaning. For Dr. Sarah Lin, I have an opening this Friday at 1:15 PM, or with Dr. Patel at 2:30 PM. Would 1:15 PM work well for you?", () => {
-        speechStatusText.textContent = 'Slot 1:15 PM held. Awaiting caller confirmation.';
+    // 2. WRAP-UP / GOODBYE AFTER BOOKING
+    if (state.currentStep === 'COMMITTED' && (t.includes('no') || t.includes("that's all") || t.includes('that is all') || t.includes('nothing') || t.includes('thank') || t.includes('bye') || t.includes('goodbye'))) {
+      state.currentStep = 'COMPLETED';
+      const name = state.memory.patientName ? `, ${state.memory.patientName}` : '';
+      speakAI(`You're very welcome${name}! We look forward to seeing you at Apex Dental Care. Have a wonderful rest of your day, goodbye!`, () => {
+        speechStatusText.textContent = 'Call completed. Session ended gracefully.';
       });
       return;
     }
 
-    // 3. INSURANCE VERIFICATION SCENARIO
-    if (t.includes('delta dental') || t.includes('insurance') || t.includes('consultation')) {
-      state.currentStep = 'OFFERING';
+    // 3. DAY INTENTS & SLOTS SELECTION (e.g. "Monday", "Tomorrow morning", "Friday")
+    if (t.includes('tomorrow morning') || (t.includes('tomorrow') && (t.includes('morning') || t.includes('am')))) {
+      state.memory.requestedDay = 'Tomorrow';
+      state.memory.requestedTime = '10:30 AM';
+      state.currentStep = 'AWAITING_NAME';
       lockSlot('slot_2');
 
-      speakAI("Yes, we are in-network with Delta Dental Premier PPO! For a new patient consultation, I have an opening tomorrow morning at 10:30 AM with Dr. Lin. Would you like me to reserve that slot for you?", () => {
-        speechStatusText.textContent = 'Insurance verified. 10:30 AM held.';
+      speakAI("Tomorrow morning is perfect. I have 10:30 AM available with Dr. Sarah Lin, and I've placed a temporary hold on that slot in our schedule. May I please have your full name to finalize the reservation?", () => {
+        speechStatusText.textContent = 'Slot 10:30 AM held in Dentrix. Awaiting caller name.';
       });
       return;
     }
 
-    // 4. CONFIRMATION STEP (OR TOOTHACHE DEFAULT)
-    if (t.includes('confirm') || t.includes('yes') || t.includes('toothache') || t.includes('cracked molar') || t.includes('pain') || state.currentStep === 'OFFERING') {
-      state.currentStep = 'BOOKED';
-      const slot = PMS_SCHEDULE.find(s => s.id === 'slot_2');
+    if (t.includes('tomorrow afternoon') || (t.includes('tomorrow') && (t.includes('afternoon') || t.includes('pm')))) {
+      state.memory.requestedDay = 'Tomorrow';
+      state.memory.requestedTime = '01:15 PM';
+      state.currentStep = 'AWAITING_NAME';
+      lockSlot('slot_4');
 
-      commitSlot('slot_2', 'Alex Morgan', 'Emergency Toothache Exam', 'Thursday at 10:30 AM', 'Dr. Sarah Lin, DDS');
+      speakAI("Tomorrow afternoon we have 1:15 PM with Dr. Sarah Lin or 2:30 PM with Dr. Patel. I've placed a hold on 1:15 PM for you. Would you like me to book this with your name?", () => {
+        speechStatusText.textContent = 'Slot 1:15 PM held in Dentrix. Awaiting caller name.';
+      });
+      return;
+    }
 
-      speakAI("You are all set, Alex! I've confirmed your appointment for Thursday at 10:30 AM with Dr. Sarah Lin. We just texted your calendar invite and intake forms to your number. Is there anything else I can assist with today?", () => {
+    if (t.includes('tomorrow')) {
+      state.memory.requestedDay = 'Tomorrow';
+      state.currentStep = 'AWAITING_TIME';
+      lockSlot('slot_2');
+
+      speakAI("For tomorrow, Dr. Sarah Lin has 10:30 AM in the morning and 1:15 PM in the afternoon. Which time works better for your schedule?", () => {
+        speechStatusText.textContent = 'Tomorrow slots presented. Awaiting time preference.';
+      });
+      return;
+    }
+
+    if (t.includes('monday') || t.includes('mon')) {
+      state.memory.requestedDay = 'Monday';
+      state.currentStep = 'AWAITING_TIME';
+      lockSlot('slot_1');
+
+      speakAI("For Monday, Dr. Sarah Lin has an opening at 9:00 AM for hygiene and 10:30 AM for exams, or Dr. Patel has 2:30 PM in the afternoon. Would morning or afternoon suit you better?", () => {
+        speechStatusText.textContent = 'Monday slots presented from Dentrix. Awaiting time preference.';
+      });
+      return;
+    }
+
+    if (t.includes('friday') || t.includes('fri')) {
+      state.memory.requestedDay = 'Friday';
+      state.currentStep = 'AWAITING_NAME';
+      lockSlot('slot_4');
+
+      speakAI("For Friday, Dr. Sarah Lin has an opening at 1:15 PM, and Dr. Patel has 2:30 PM. I've held 1:15 PM with Dr. Lin for you. Would that work, and what is your name?", () => {
+        speechStatusText.textContent = 'Friday 1:15 PM held in Dentrix. Awaiting caller name.';
+      });
+      return;
+    }
+
+    if (t.includes('tuesday') || t.includes('wednesday') || t.includes('thursday') || t.includes('next week')) {
+      const dayCapitalized = t.includes('tuesday') ? 'Tuesday' : t.includes('wednesday') ? 'Wednesday' : t.includes('thursday') ? 'Thursday' : 'Next week';
+      state.memory.requestedDay = dayCapitalized;
+      state.currentStep = 'AWAITING_NAME';
+      lockSlot('slot_2');
+
+      speakAI(`We have openings available for ${dayCapitalized}! Our earliest slot is 10:30 AM with Dr. Sarah Lin. I've placed a temporary hold on that time. Would you like me to book it with your name?`, () => {
+        speechStatusText.textContent = `${dayCapitalized} 10:30 AM held in Dentrix. Awaiting caller name.`;
+      });
+      return;
+    }
+
+    // 5. TIME PREFERENCE INTENTS (e.g. "morning", "afternoon", "10:30", "1:15", "first one")
+    if (t.includes('morning') || t.includes(' am') || t.includes('am ') || t.endsWith('am')) {
+      state.memory.requestedTime = '10:30 AM';
+      state.currentStep = 'AWAITING_NAME';
+      lockSlot('slot_2');
+
+      speakAI("Got it, morning! I have 10:30 AM tomorrow with Dr. Sarah Lin available. I've placed a temporary 2-minute hold on that slot in Dentrix. May I have your full name to reserve it?", () => {
+        speechStatusText.textContent = 'Dentrix lock: 10:30 AM held. Awaiting patient name.';
+      });
+      return;
+    }
+
+    if (t.includes('afternoon') || t.includes(' pm') || t.includes('pm ') || t.endsWith('pm') || t.includes('evening')) {
+      state.memory.requestedTime = '01:15 PM';
+      state.currentStep = 'AWAITING_NAME';
+      lockSlot('slot_4');
+
+      speakAI("Understood, afternoon! I have 1:15 PM with Dr. Sarah Lin or 2:30 PM with Dr. Patel. I've held 1:15 PM for you. May I have your name to confirm it?", () => {
+        speechStatusText.textContent = 'Dentrix lock: 1:15 PM held. Awaiting patient name.';
+      });
+      return;
+    }
+
+    if (t.includes('10:30') || t.includes('10 30') || t.includes('ten thirty')) {
+      state.memory.requestedTime = '10:30 AM';
+      state.currentStep = 'AWAITING_NAME';
+      lockSlot('slot_2');
+
+      speakAI("10:30 AM is an ideal slot! I've held that time with Dr. Sarah Lin. May I please have your full name to complete the booking?", () => {
+        speechStatusText.textContent = 'Dentrix lock: 10:30 AM held. Awaiting patient name.';
+      });
+      return;
+    }
+
+    if (t.includes('9:00') || t.includes('9 am') || t.includes('nine am') || t.includes('9am')) {
+      state.memory.requestedTime = '09:00 AM';
+      state.currentStep = 'AWAITING_NAME';
+      lockSlot('slot_1');
+
+      speakAI("9:00 AM with Dr. Sarah Lin is held for you! What is your full name to finalize the reservation in Dentrix?", () => {
+        speechStatusText.textContent = 'Dentrix lock: 09:00 AM held. Awaiting patient name.';
+      });
+      return;
+    }
+
+    if (t.includes('1:15') || t.includes('1 15') || t.includes('one fifteen')) {
+      state.memory.requestedTime = '01:15 PM';
+      state.currentStep = 'AWAITING_NAME';
+      lockSlot('slot_4');
+
+      speakAI("1:15 PM with Dr. Sarah Lin is reserved! Could you please share your full name so I can dispatch your calendar invite?", () => {
+        speechStatusText.textContent = 'Dentrix lock: 01:15 PM held. Awaiting patient name.';
+      });
+      return;
+    }
+
+    if (t.includes('2:30') || t.includes('2 30') || t.includes('two thirty')) {
+      state.memory.requestedTime = '02:30 PM';
+      state.memory.requestedDoctor = 'Dr. Hitesh Patel, DMD';
+      state.currentStep = 'AWAITING_NAME';
+      lockSlot('slot_5');
+
+      speakAI("2:30 PM with Dr. Hitesh Patel is held for you! May I have your full name to confirm?", () => {
+        speechStatusText.textContent = 'Dentrix lock: 02:30 PM held. Awaiting patient name.';
+      });
+      return;
+    }
+
+    if (t.includes('first') || t.includes('first one') || t.includes('earliest')) {
+      state.memory.requestedTime = '10:30 AM';
+      state.currentStep = 'AWAITING_NAME';
+      lockSlot('slot_2');
+
+      speakAI("Perfect, let's lock in the first opening tomorrow at 10:30 AM with Dr. Sarah Lin. May I have your full name to confirm?", () => {
+        speechStatusText.textContent = 'Dentrix lock: 10:30 AM held. Awaiting patient name.';
+      });
+      return;
+    }
+
+    if (t.includes('second') || t.includes('second one') || t.includes('later')) {
+      state.memory.requestedTime = '01:15 PM';
+      state.currentStep = 'AWAITING_NAME';
+      lockSlot('slot_4');
+
+      speakAI("Great, I've selected the afternoon opening at 1:15 PM with Dr. Sarah Lin. That time is now reserved in Dentrix. May I have your full name to finalize it?", () => {
+        speechStatusText.textContent = 'Dentrix lock: 01:15 PM held. Awaiting patient name.';
+      });
+      return;
+    }
+
+    // 6. DOCTOR PREFERENCES
+    if (t.includes('dr lin') || t.includes('dr. lin') || t.includes('sarah lin') || t.includes('lin')) {
+      state.memory.requestedDoctor = 'Dr. Sarah Lin, DDS';
+      state.currentStep = 'AWAITING_NAME';
+      lockSlot('slot_2');
+
+      speakAI("Dr. Sarah Lin is fantastic! She has 10:30 AM tomorrow morning or 1:15 PM Friday. I've placed a temporary hold on 10:30 AM tomorrow for you. Would you like me to book that with your name?", () => {
+        speechStatusText.textContent = 'Dr. Lin: 10:30 AM held. Awaiting caller name.';
+      });
+      return;
+    }
+
+    if (t.includes('dr patel') || t.includes('dr. patel') || t.includes('hitesh patel') || t.includes('patel')) {
+      state.memory.requestedDoctor = 'Dr. Hitesh Patel, DMD';
+      state.currentStep = 'AWAITING_NAME';
+      lockSlot('slot_5');
+
+      speakAI("Dr. Hitesh Patel specializes in oral surgery, root canals, and implants. He has an opening Friday at 2:30 PM. I've held that slot for you. What is your full name to lock it in?", () => {
+        speechStatusText.textContent = 'Dr. Patel: 2:30 PM held. Awaiting caller name.';
+      });
+      return;
+    }
+
+    // 7. CLINICAL PROCEDURES / SYMPTOMS
+    if (t.includes('toothache') || t.includes('cracked molar') || t.includes('pain') || t.includes('cavity') || t.includes('hurt')) {
+      state.memory.procedure = 'Emergency Toothache Exam';
+      state.currentStep = 'AWAITING_TIME';
+      lockSlot('slot_2');
+
+      speakAI("I'm so sorry you're dealing with dental pain. We always prioritize urgent cases! I have an emergency exam slot tomorrow morning at 10:30 AM with Dr. Sarah Lin. Does that time work for you?", () => {
+        speechStatusText.textContent = 'Emergency exam slot 10:30 AM held. Awaiting caller response.';
+      });
+      return;
+    }
+
+    if (t.includes('cleaning') || t.includes('hygiene') || t.includes('checkup') || t.includes('routine')) {
+      state.memory.procedure = 'Routine Hygiene Cleaning';
+      state.currentStep = 'AWAITING_TIME';
+      lockSlot('slot_1');
+
+      speakAI("Preventive cleanings are so important! We have a routine hygiene opening tomorrow morning at 9:00 AM with Dr. Lin, or Friday at 1:15 PM. Which one fits your schedule better?", () => {
+        speechStatusText.textContent = 'Hygiene slots retrieved. Awaiting time preference.';
+      });
+      return;
+    }
+
+    if (t.includes('reschedule')) {
+      state.currentStep = 'AWAITING_TIME';
+      lockSlot('slot_4');
+
+      speakAI("I'd be glad to help you reschedule that cleaning. For Dr. Sarah Lin, I have an opening tomorrow morning at 10:30 AM, or this Friday at 1:15 PM. Would 10:30 AM work well for you?", () => {
+        speechStatusText.textContent = 'Reschedule options retrieved. 10:30 AM held.';
+      });
+      return;
+    }
+
+    // 8. INSURANCE VERIFICATION
+    if (t.includes('delta dental') || t.includes('insurance') || t.includes('ppo') || t.includes('metlife') || t.includes('cigna') || t.includes('aetna') || t.includes('guardian') || t.includes('coverage')) {
+      state.currentStep = 'AWAITING_NAME';
+      lockSlot('slot_2');
+
+      speakAI("Yes, we are in-network with Delta Dental Premier PPO, Guardian, MetLife, and Cigna! Preventative visits are typically covered at 100%. I have an open slot tomorrow at 10:30 AM with Dr. Lin. May I have your name to reserve it?", () => {
+        speechStatusText.textContent = 'Insurance verified: In-Network PPO. 10:30 AM held.';
+      });
+      return;
+    }
+
+    // 9. PRICING & LOCATION
+    if (t.includes('cost') || t.includes('price') || t.includes('how much') || t.includes('fee')) {
+      state.currentStep = 'AWAITING_NAME';
+      lockSlot('slot_2');
+
+      speakAI("For self-pay patients, our new patient comprehensive exam and x-ray package is flat $149, or zero out-of-pocket under most PPO plans. We have 10:30 AM open tomorrow with Dr. Lin. Would you like me to hold that for you?", () => {
+        speechStatusText.textContent = 'Fee schedule quoted ($149 or 100% PPO). 10:30 AM held.';
+      });
+      return;
+    }
+
+    if (t.includes('where') || t.includes('location') || t.includes('address') || t.includes('parking')) {
+      speakAI("We are located at 450 Sutter Medical Pavilion, Suite 800, right next to Union Square with validated underground garage parking. Can I help you book an appointment while I have you on the line?", () => {
+        speechStatusText.textContent = 'Clinic location provided. Awaiting scheduling inquiry.';
+      });
+      return;
+    }
+
+    // 9. CHECK FOR PATIENT NAME OR EXPLICIT CONFIRMATION
+    const extractedName = extractPatientName(text);
+    const isAffirmation = t === 'yes' || t.startsWith('yes ') || t.includes('confirm') || t.includes('sounds good') || 
+                          t.includes('that works') || t.includes('book it') || t.includes('please do') || 
+                          t.includes('sure') || t.includes('perfect') || t.includes('go ahead') || t.includes('book that');
+
+    if ((state.currentStep === 'AWAITING_NAME' || state.lockedSlotId) && (extractedName || isAffirmation)) {
+      const patientName = extractedName || state.memory.patientName || 'Alex Morgan';
+      state.memory.patientName = patientName;
+      state.currentStep = 'COMMITTED';
+
+      const targetSlotId = state.lockedSlotId || 'slot_2';
+      const slotObj = PMS_SCHEDULE.find(s => s.id === targetSlotId) || PMS_SCHEDULE[1];
+      const timeStr = state.memory.requestedDay 
+        ? `${state.memory.requestedDay} at ${slotObj.time}` 
+        : `Tomorrow at ${slotObj.time}`;
+      const providerStr = slotObj.provider;
+      const procedureStr = state.memory.procedure || slotObj.type;
+
+      commitSlot(targetSlotId, patientName, procedureStr, timeStr, providerStr);
+
+      speakAI(`You are all set, ${patientName}! I have officially confirmed your appointment for ${timeStr} with ${providerStr}. We just texted your calendar invite and digital intake forms to your number. Is there anything else I can assist with today?`, () => {
         speechStatusText.textContent = 'Appointment committed to Dentrix. SMS sent.';
-        appendTranscript('system', 'PMS Update: Slot #slot_2 locked -> committed. Calendar invitation dispatched via Twilio SMS.');
+        appendTranscript('system', `PMS Update: Slot #${targetSlotId} locked -> committed. Calendar invitation dispatched via Twilio SMS.`);
       });
       return;
     }
 
-    // Default Fallback
-    speakAI("I can certainly help you with that. We have openings available tomorrow morning with Dr. Lin or Friday afternoon with Dr. Patel. Which day works best for your schedule?");
+    // 10. CONTEXT-AWARE SMART FALLBACK (Never repeats identical canned string blindly)
+    if (state.currentStep === 'AWAITING_NAME') {
+      const targetSlot = PMS_SCHEDULE.find(s => s.id === (state.lockedSlotId || 'slot_2')) || PMS_SCHEDULE[1];
+      speakAI(`I have the ${targetSlot.time} opening held on our schedule for you. May I just have your full name so I can confirm the reservation in Dentrix?`, () => {
+        speechStatusText.textContent = 'Slot held. Awaiting caller name.';
+      });
+    } else if (state.currentStep === 'AWAITING_TIME') {
+      speakAI("Would tomorrow morning at 10:30 AM with Dr. Sarah Lin or Friday afternoon at 2:30 PM with Dr. Patel work better for you?", () => {
+        speechStatusText.textContent = 'Awaiting day/time preference.';
+      });
+    } else if (state.currentStep === 'COMMITTED') {
+      speakAI("Your appointment is confirmed on our schedule! Please let me know if you need directions, pre-visit instructions, or anything else today.");
+    } else {
+      state.currentStep = 'AWAITING_TIME';
+      speakAI("I can certainly help you with that! We have openings available tomorrow morning at 10:30 AM with Dr. Sarah Lin or Friday afternoon at 2:30 PM with Dr. Patel. Which day works best for your schedule?", () => {
+        speechStatusText.textContent = 'Schedule options presented. Awaiting caller choice.';
+      });
+    }
   }
 
   // ----------------------------------------------------------------------------
@@ -409,6 +731,15 @@
     state.lockedSlotId = null;
     state.bookedSlotId = null;
     state.currentStep = 'INIT';
+    state.memory = {
+      patientName: '',
+      requestedDay: '',
+      requestedTime: '',
+      requestedDoctor: '',
+      procedure: 'Comprehensive Exam & Cleaning',
+      insurance: 'Delta Dental Premier PPO',
+    };
+    if (callerInputText) callerInputText.value = '';
     bookingReceiptCard.style.display = 'none';
     renderPmsSchedule();
     transcriptLog.innerHTML = `
@@ -429,7 +760,20 @@
   });
 
   btnToggleMic.addEventListener('click', () => {
-    if (!state.isCallActive) return;
+    if (!state.isCallActive) {
+      startCall();
+      setTimeout(() => {
+        if (recognition) {
+          try {
+            recognition.start();
+            setMicState(true);
+          } catch (e) {
+            console.warn('SpeechRecognition error:', e);
+          }
+        }
+      }, 1000);
+      return;
+    }
     if (recognition) {
       if (state.isMicActive) {
         recognition.stop();
@@ -443,7 +787,7 @@
         }
       }
     } else {
-      alert('Speech Recognition is not supported by your current browser. Please click one of the quick scenario buttons below to test!');
+      alert('Speech Recognition is not supported by your current browser. You can type directly in the chat box below or click any scenario!');
     }
   });
 
@@ -456,6 +800,17 @@
       if (prompt) handleCallerUtterance(prompt);
     });
   });
+
+  // Direct text input form
+  if (callerInputForm && callerInputText) {
+    callerInputForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const val = callerInputText.value.trim();
+      if (!val) return;
+      callerInputText.value = '';
+      handleCallerUtterance(val);
+    });
+  }
 
   // Initialize
   renderPmsSchedule();
