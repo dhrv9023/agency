@@ -302,6 +302,33 @@ For rapid local testing and client presentations, the login portal at `/admin/lo
 
 ---
 
+## 🔤 Self-Hosted Typography & Font Architecture
+
+In compliance with Workstream 7, all external font CDNs (`fonts.googleapis.com`, `fonts.gstatic.com`) have been permanently removed from the entire platform. Typography is 100% self-hosted, offline-capable, and privacy-preserving.
+
+### 1. Font Sources & Licensing
+* **Inter**: Latin subset variable WOFF2 (weights 100–900).
+  * **Source**: Google Fonts official Latin distribution (`https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7SUc.woff2`).
+  * **License**: SIL Open Font License (OFL) v1.1. Committed in [`public/assets/fonts/OFL-Inter.txt`](file:///home/dhruv/AGENCY/public/assets/fonts/OFL-Inter.txt).
+* **JetBrains Mono**: Latin subset variable WOFF2 (weights 100–800).
+  * **Source**: Google Fonts official Latin distribution (`https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxDcwg.woff2`).
+  * **License**: SIL Open Font License (OFL) v1.1. Committed in [`public/assets/fonts/OFL-JetBrainsMono.txt`](file:///home/dhruv/AGENCY/public/assets/fonts/OFL-JetBrainsMono.txt).
+
+### 2. Weights: Used vs. Loaded Audit
+* **Inter**:
+  * **Weights Used in CSS**: `400` (Body), `500` (Interactive Links/Buttons), `600` (Cards/Eyebrows), `700` (Headings/CTAs), `800` (Display Titles).
+  * **Loaded**: Variable Latin WOFF2 (`84 KB`) seamlessly satisfying all required weights with a single cached HTTP request.
+* **JetBrains Mono**:
+  * **Weights Used in CSS**: `400` (Code/Data), `500` (Pills/Badges), `600` (Telemetry Counters).
+  * **Loaded**: Variable Latin WOFF2 (`31 KB`) covering all monospace weights.
+
+### 3. Performance & Layout Stability (Zero CLS)
+* **Preload**: The critical weight font (`Inter-Variable-Latin.woff2`) is preloaded in `<head>` via `scripts/sync-meta.js` with `fetchpriority="high"`.
+* **Font Display**: Set to `font-display: swap` across all `@font-face` blocks.
+* **Fallback Metric Overrides**: Calibrated `@font-face` fallbacks (`Inter Fallback` on Arial, `JetBrains Mono Fallback` on Courier New) with `size-adjust: 107%`, `ascent-override: 90%`, and `descent-override: 22.5%` eliminate layout shift when web fonts swap in.
+
+---
+
 ## 📜 License & Intellectual Property
 
 Proprietary enterprise software developed for **VARAH SYSTEMS**. All rights reserved.

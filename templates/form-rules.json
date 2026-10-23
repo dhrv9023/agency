@@ -1,0 +1,98 @@
+{
+  "fields": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 100,
+      "description": "Client full name"
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "maxLength": 254,
+      "description": "Work email address"
+    },
+    "company": {
+      "type": "string",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 100,
+      "description": "Company or organization name"
+    },
+    "website": {
+      "type": "url",
+      "required": false,
+      "maxLength": 200,
+      "description": "Company website URL"
+    },
+    "overview": {
+      "type": "string",
+      "required": false,
+      "maxLength": 500,
+      "description": "Company operational overview"
+    },
+    "message": {
+      "type": "string",
+      "required": true,
+      "minLength": 10,
+      "maxLength": 3000,
+      "description": "Operational bottleneck or process to automate"
+    },
+    "tools": {
+      "type": "string",
+      "required": false,
+      "maxLength": 300,
+      "description": "Current software stack, tools, and databases"
+    },
+    "teamSize": {
+      "type": "string",
+      "required": false,
+      "maxLength": 50,
+      "description": "Approximate team size"
+    },
+    "serviceInterest": {
+      "type": "string",
+      "required": false,
+      "maxLength": 100,
+      "description": "Primary service or architecture of interest"
+    },
+    "budgetRange": {
+      "type": "string",
+      "required": false,
+      "maxLength": 100,
+      "description": "Project budget scope"
+    },
+    "timeline": {
+      "type": "string",
+      "required": false,
+      "maxLength": 100,
+      "description": "Target deployment timeline"
+    },
+    "preferredTimes": {
+      "type": "string",
+      "required": false,
+      "maxLength": 200,
+      "description": "Preferred consultation times including time zone"
+    },
+    "context": {
+      "type": "string",
+      "required": false,
+      "maxLength": 1000,
+      "description": "Additional project context"
+    },
+    "turnstileToken": {
+      "type": "string",
+      "required": false,
+      "maxLength": 2048,
+      "description": "Cloudflare Turnstile verification token"
+    }
+  },
+  "constants": {
+    "responseSla": "We reply within one business day.",
+    "rateLimitMaxRequests": 5,
+    "rateLimitWindowMinutes": 15,
+    "blockedRetentionDays": 30,
+    "blockedMessageMaxLength": 200
+  }
+}

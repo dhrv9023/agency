@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <title>VARAH SYSTEMS Icon</title>
+  <style>
+    @media (prefers-color-scheme: light) {
+      .beam-left { fill: #64748b; }
+      .beam-right { fill: #040508; }
+      .nexus-core { fill: #0090a8; }
+    }
+    @media (prefers-color-scheme: dark) {
+      .beam-left { fill: #94a3b8; }
+      .beam-right { fill: #ffffff; }
+      .nexus-core { fill: #00f0ff; }
+    }
+  </style>
+  <polygon class="beam-left" points="2,4 16,4 27,39 16,39" fill="#94a3b8" />
+  <polygon class="beam-right" points="46,4 32,4 21,39 32,39" fill="#ffffff" />
+  <polygon class="nexus-core" points="19.5,38 24,45 28.5,38 24,31" fill="#00f0ff" />
+  <rect class="nexus-core" x="22.5" y="8" width="3" height="20" rx="1.5" fill="#00f0ff" />
+</svg>

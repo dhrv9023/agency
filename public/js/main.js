@@ -5,10 +5,21 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initThemeManager();
-  initNavigation();
   initScrollReveals();
   initFaqAccordions();
+  initCopyrightYear();
 });
+
+/**
+ * Dynamic Copyright Year Runtime Updater
+ */
+function initCopyrightYear() {
+  const yearEl = document.getElementById('copyright-year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear().toString();
+  }
+}
+
 
 /**
  * Global Theme Manager for Light and Dark Modes
@@ -27,11 +38,7 @@ function initThemeManager() {
   applyTheme(currentTheme);
 
   function applyTheme(theme) {
-    if (theme === 'light') {
-      root.setAttribute('data-theme', 'light');
-    } else {
-      root.removeAttribute('data-theme');
-    }
+    root.setAttribute('data-theme', theme);
     localStorage.setItem('agency_theme', theme);
     localStorage.setItem('varah_admin_theme', theme);
     currentTheme = theme;
@@ -67,63 +74,7 @@ function initThemeManager() {
   });
 }
 
-/**
- * Mobile Navigation Drawer & Escape Listener
- */
-function initNavigation() {
-  const burgerBtn = document.querySelector('.mobile-burger-btn');
-  const menuSheet = document.querySelector('.mobile-menu-sheet');
-  const menuBackdrop = document.querySelector('.mobile-menu-backdrop');
-  const mobileLinks = document.querySelectorAll('.mobile-nav-link, .mobile-cta-btn');
-
-  if (!burgerBtn || !menuSheet || !menuBackdrop) return;
-
-  function openMenu() {
-    burgerBtn.classList.add('is-active');
-    burgerBtn.setAttribute('aria-expanded', 'true');
-    menuSheet.classList.add('is-open');
-    menuBackdrop.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeMenu() {
-    burgerBtn.classList.remove('is-active');
-    burgerBtn.setAttribute('aria-expanded', 'false');
-    menuSheet.classList.remove('is-open');
-    menuBackdrop.classList.remove('is-open');
-    document.body.style.overflow = '';
-  }
-
-  function toggleMenu() {
-    const isOpen = menuSheet.classList.contains('is-open');
-    if (isOpen) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
-  }
-
-  burgerBtn.addEventListener('click', toggleMenu);
-  menuBackdrop.addEventListener('click', closeMenu);
-
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
-
-  // Escape key closes menu
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && menuSheet.classList.contains('is-open')) {
-      closeMenu();
-    }
-  });
-
-  // Window resize > 768px closes mobile menu
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 768 && menuSheet.classList.contains('is-open')) {
-      closeMenu();
-    }
-  });
-}
+// Note: Navigation drawer, focus trap, and scroll lock are managed by public/js/nav.js
 
 /**
  * Intersection Observer for Crisp Scroll Reveals

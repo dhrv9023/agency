@@ -711,12 +711,22 @@ body.telephony-lab-body {
   background-color: rgba(0, 240, 255, 0.05);
 }
 
-.prov-avatar {
+.prov-avatar,
+.prov-avatar-badge {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  object-fit: cover;
-  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 240, 255, 0.08);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
 }
 
 .prov-info {

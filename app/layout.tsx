@@ -2,6 +2,12 @@ import React from 'react';
 import type { Metadata } from 'next';
 import './globals.css';
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover' as const,
+};
+
 export const metadata: Metadata = {
   title: 'Operations & Strategy Portal — AI Systems & Automation Agency',
   description: 'Internal operations console, lead pipeline CRM, system telemetry, and business management.',
@@ -30,12 +36,6 @@ export default function RootLayout({
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-          rel="stylesheet"
         />
       </head>
       <body className="antialiased min-h-screen font-sans transition-colors duration-200">

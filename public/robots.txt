@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Disallow Internal Admin Portal & APIs
+Disallow: /admin
+Disallow: /admin.html
+Disallow: /api/
+
+# Disallow Internal Guidelines & Dev Pages
+Disallow: /brand-identity.html
+Disallow: /dev/
+
+# Sitemap Location
+Sitemap: https://domain-pending.invalid/sitemap.xml

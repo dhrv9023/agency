@@ -1,87 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1584 396" width="1584" height="396">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1584 396" width="1584" height="396" fill="none">
+  <title>VARAH SYSTEMS — LinkedIn Banner</title>
   <defs>
-    <radialGradient id="liBgGlow" cx="75%" cy="50%" r="60%">
-      <stop offset="0%" stop-color="#0e1726" />
-      <stop offset="50%" stop-color="#07090e" />
-      <stop offset="100%" stop-color="#020305" />
-    </radialGradient>
-
-    <pattern id="techGrid" width="44" height="44" patternUnits="userSpaceOnUse">
-      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="rgba(255, 255, 255, 0.03)" stroke-width="1" />
-      <circle cx="44" cy="44" r="1" fill="rgba(0, 240, 255, 0.15)" />
-    </pattern>
-
-    <linearGradient id="liCyanAura" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.9" />
-      <stop offset="60%" stop-color="#00f0ff" stop-opacity="0.6" />
-      <stop offset="100%" stop-color="#6366f1" stop-opacity="0.2" />
-    </linearGradient>
-
-    <filter id="liGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="6" result="b1" />
-      <feMerge><feMergeNode in="b1"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-
-    <linearGradient id="liLeftFacet" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#475569" /><stop offset="50%" stop-color="#1e293b" /><stop offset="100%" stop-color="#0f172a" />
-    </linearGradient>
-
-    <linearGradient id="liRightFacet" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" /><stop offset="40%" stop-color="#e2e8f0" /><stop offset="100%" stop-color="#94a3b8" />
-    </linearGradient>
+    <style>
+      .bg { fill: #040508; }
+      .brand { font-family: 'Inter', -apple-system, sans-serif; font-size: 64px; font-weight: 800; fill: #ffffff; letter-spacing: 0.12em; }
+      .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; fill: #00f0ff; letter-spacing: 0.2em; text-transform: uppercase; }
+      .subtitle { font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 500; fill: #94a3b8; letter-spacing: 0.12em; }
+      .pills { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; fill: #cbd5e1; }
+      .divider { stroke: rgba(255, 255, 255, 0.1); stroke-width: 1; }
+    </style>
   </defs>
 
-  <!-- Background Base -->
-  <rect width="1584" height="396" fill="url(#liBgGlow)" />
-  <rect width="1584" height="396" fill="url(#techGrid)" />
+  <!-- Deep Obsidian Solid Background -->
+  <rect width="1584" height="396" class="bg" />
 
-  <!-- Cybernetic Circuit Data Lines on Right -->
-  <g opacity="0.35">
-    <path d="M 980 198 L 1100 198 L 1140 140 L 1380 140" fill="none" stroke="#00f0ff" stroke-width="1.2" />
-    <path d="M 1020 220 L 1120 220 L 1160 270 L 1420 270" fill="none" stroke="#38bdf8" stroke-width="1" />
-    <circle cx="1380" cy="140" r="3" fill="#00f0ff" />
-    <circle cx="1420" cy="270" r="2.5" fill="#38bdf8" />
-  </g>
-
-  <!-- Left Side: LinkedIn Avatar Reserved Zone (Soft guideline/safe zone) -->
-  <!-- Center/Right Typography Lockup -->
+  <!-- Center / Right Typography Lockup -->
   <g transform="translate(380, 0)">
-    <!-- Brand Category Tag -->
-    <rect x="0" y="104" width="220" height="26" rx="13" fill="rgba(0, 240, 255, 0.08)" stroke="rgba(0, 240, 255, 0.3)" />
-    <text x="16" y="121" font-family="'SF Mono', 'Roboto Mono', monospace" font-size="11" font-weight="600" fill="#00f0ff" letter-spacing="0.25em">AI SYSTEMS AGENCY</text>
+    <!-- Brand Category Pill -->
+    <rect x="0" y="80" width="230" height="28" rx="4" fill="rgba(0, 240, 255, 0.08)" stroke="rgba(0, 240, 255, 0.25)" />
+    <text x="16" y="99" class="eyebrow">AI AUTOMATION AGENCY</text>
 
     <!-- Main Wordmark -->
-    <text x="0" y="200" font-family="'Inter', -apple-system, sans-serif" font-size="76" font-weight="800" fill="#ffffff" letter-spacing="0.26em">VARAH</text>
+    <text x="0" y="180" class="brand">VARAH SYSTEMS</text>
 
-    <!-- Subtitle / Tagline -->
-    <text x="4" y="246" font-family="'SF Mono', 'Roboto Mono', monospace" font-size="15" font-weight="500" fill="#94a3b8" letter-spacing="0.32em">ENTERPRISE AI SYSTEMS &amp; AUTOMATION // SYSTEMS OVER HYPE</text>
+    <!-- Subtitle / Approved Homepage Positioning Line -->
+    <text x="2" y="222" class="subtitle">INTELLIGENT SYSTEMS THAT SCALE YOUR BUSINESS</text>
 
-    <!-- Stat Pills -->
-    <g transform="translate(4, 274)" font-family="'Inter', sans-serif" font-size="12" fill="#cbd5e1">
+    <!-- Hairline Divider -->
+    <line x1="2" y1="250" x2="680" y2="250" class="divider" />
+
+    <!-- Capability Indicators -->
+    <g transform="translate(2, 280)" class="pills">
       <text x="0" y="0">&bull; Autonomous Agents</text>
-      <text x="160" y="0">&bull; Enterprise Workflows</text>
-      <text x="330" y="0">&bull; Production Engineering</text>
+      <text x="180" y="0">&bull; Inbound Qualification</text>
+      <text x="380" y="0">&bull; Document Intelligence</text>
     </g>
   </g>
 
-  <!-- Large Faceted V Emblem on Far Right -->
-  <g transform="translate(1240, 68) scale(1.3)" filter="url(#liGlow)">
-    <!-- Cyan Outline Aura -->
-    <path d="M 36 48 L 56 34 L 76 48 L 100 106 L 124 48 L 144 34 L 164 48 L 100 178 Z"
-          fill="none" stroke="url(#liCyanAura)" stroke-width="3" stroke-linejoin="round" />
-    
-    <!-- Left Wing -->
-    <polygon points="36,48 56,34 76,48" fill="#64748b" />
-    <polygon points="36,48 56,34 100,174 88,174" fill="url(#liLeftFacet)" stroke="#1e293b" stroke-width="0.5" />
-    <polygon points="56,34 76,48 100,102 100,174" fill="#0f172a" stroke="#1e293b" stroke-width="0.5" />
-
-    <!-- Right Wing -->
-    <polygon points="164,48 144,34 124,48" fill="#ffffff" />
-    <polygon points="144,34 124,48 100,102 100,174" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" />
-    <polygon points="164,48 144,34 100,174 112,174" fill="url(#liRightFacet)" stroke="#94a3b8" stroke-width="0.5" />
-
-    <!-- Sharp Center Ridge Glint -->
-    <line x1="144" y1="34" x2="100" y2="174" stroke="#ffffff" stroke-width="1.8" />
-    <line x1="100" y1="102" x2="100" y2="174" stroke="#00f0ff" stroke-width="1.8" />
+  <!-- Concept 1 Binary Convergent V Mark on Right -->
+  <g transform="translate(1200, 78) scale(5)">
+    <polygon points="2,4 16,4 27,39 16,39" fill="#94a3b8" />
+    <polygon points="46,4 32,4 21,39 32,39" fill="#ffffff" />
+    <polygon points="19.5,38 24,45 28.5,38 24,31" fill="#00f0ff" />
+    <rect x="22.5" y="8" width="3" height="20" rx="1.5" fill="#00f0ff" />
   </g>
 </svg>

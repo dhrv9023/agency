@@ -1,0 +1,432 @@
+/* ==============================================================================
+   VARAH SYSTEMS — Cookie & Privacy Consent Banner & Dialog Styles (Workstream 10)
+   Standards:
+     - Strict adherence to global design tokens (--surface, --text, --border).
+     - Visual parity: Reject All equals Accept All in prominence and sizing.
+     - Accessible: 44px tap targets, 4.5:1 text contrast, focus rings, reduced-motion.
+     - Collision-safe: fixed bottom position, respects safe-area-inset-bottom.
+   ============================================================================== */
+
+/* ------------------------------------------------------------------------------
+   1. Bottom Sticky Consent Banner
+   ------------------------------------------------------------------------------ */
+.consent-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 990;
+  background-color: var(--surface);
+  border-top: 1px solid var(--border-strong);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.12);
+  padding: var(--space-4) var(--space-4) calc(var(--space-4) + var(--safe-bottom)) var(--space-4);
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+}
+
+.consent-banner[hidden],
+.consent-dialog[hidden],
+.consent-gpc-badge[hidden],
+[hidden] {
+  display: none !important;
+}
+
+.consent-banner-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.consent-banner-text {
+  flex: 1 1 500px;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.consent-banner-text strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.consent-banner-link {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition-fast);
+}
+
+.consent-banner-link:hover,
+.consent-banner-link:focus-visible {
+  color: var(--accent);
+}
+
+.consent-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+/* Equal Visual Weight for Accept and Reject Actions */
+.consent-btn-action {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0 var(--space-4);
+  height: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-rect);
+  border: 1px solid var(--border-strong);
+  background-color: var(--surface-raised);
+  color: var(--text);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.consent-btn-action:hover {
+  background-color: var(--surface-subtle);
+  border-color: var(--text);
+}
+
+.consent-btn-action:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.consent-btn-text {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  height: 44px;
+  min-height: 44px;
+  padding: 0 var(--space-3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition-fast);
+}
+
+.consent-btn-text:hover {
+  color: var(--text);
+}
+
+.consent-btn-text:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------------------------
+   2. Preferences Modal Dialog (<dialog>)
+   ------------------------------------------------------------------------------ */
+.consent-dialog {
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-rect);
+  background-color: var(--surface);
+  color: var(--text);
+  max-width: 580px;
+  width: 92%;
+  padding: 0;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  margin: auto;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.consent-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+}
+
+.consent-dialog-card {
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+}
+
+.consent-dialog-header {
+  padding: var(--space-4) var(--space-6);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.consent-dialog-title {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.consent-dialog-close {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--muted);
+  cursor: pointer;
+  padding: var(--space-1);
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-rect);
+  transition: color var(--transition-fast);
+}
+
+.consent-dialog-close:hover {
+  color: var(--text);
+}
+
+.consent-dialog-close:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.consent-dialog-body {
+  padding: var(--space-4) var(--space-6);
+  overflow-y: auto;
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.consent-dialog-intro {
+  margin-top: 0;
+  margin-bottom: var(--space-4);
+}
+
+/* Global Privacy Control (GPC) Notice Badge */
+.consent-gpc-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-4);
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-rect);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text);
+}
+
+.consent-gpc-badge i {
+  color: var(--accent);
+}
+
+/* Category Item Rows */
+.consent-category-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.consent-category-item {
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--surface-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-rect);
+}
+
+.consent-category-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-1);
+}
+
+.consent-category-label {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.consent-badge-locked {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px var(--space-2);
+  border-radius: 4px;
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.consent-category-desc {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+/* Switch Controls (Accessible Checkbox Styled) */
+.consent-switch-label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.consent-switch-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.consent-switch-track {
+  width: 42px;
+  height: 24px;
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  position: relative;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.consent-switch-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--text-secondary);
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.consent-switch-input:checked + .consent-switch-track {
+  background-color: var(--text);
+  border-color: var(--text);
+}
+
+.consent-switch-input:checked + .consent-switch-track .consent-switch-thumb {
+  transform: translateX(18px);
+  background-color: var(--surface);
+}
+
+.consent-switch-input:focus-visible + .consent-switch-track {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.consent-switch-input:disabled + .consent-switch-track {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.consent-dialog-footer {
+  padding: var(--space-4) var(--space-6);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+/* Footer Cookie Settings Button */
+.footer-cookie-settings-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  line-height: inherit;
+  transition: color var(--transition-fast);
+}
+
+.footer-cookie-settings-btn:hover {
+  color: var(--text);
+}
+
+.footer-cookie-settings-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------------------------
+   3. Mobile Responsive Adaptations (< 768px)
+   ------------------------------------------------------------------------------ */
+@media (max-width: 767px) {
+  .consent-banner-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .consent-banner-actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--space-2);
+  }
+
+  .consent-btn-action,
+  .consent-btn-text {
+    width: 100%;
+  }
+
+  .consent-dialog-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .consent-dialog-footer .consent-btn-action {
+    width: 100%;
+  }
+}
+
+/* ------------------------------------------------------------------------------
+   4. Reduced Motion Preference
+   ------------------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  .consent-banner,
+  .consent-btn-action,
+  .consent-switch-track,
+  .consent-switch-thumb {
+    transition: none !important;
+  }
+}

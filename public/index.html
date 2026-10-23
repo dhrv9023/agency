@@ -2,13 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VARAH — Enterprise AI Systems &amp; Automation // Systems Over Hype</title>
-  <meta name="description" content="We fix revenue leaks and automate repetitive business operations with custom AI systems. 60-second lead qualification, 24/7 customer support, and autonomous workflows.">
-  <meta name="keywords" content="AI systems, business automation, AI agents, enterprise workflow automation, custom AI solutions, VARAH AI, lead qualification automation, voice AI">
-  <link rel="canonical" href="https://agency.ai/">
-  
-  <!-- CSS Stylesheets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <!-- META_START -->
+  <title>AI Systems & Automation Architectures | VARAH SYSTEMS</title>
+  <meta name="description" content="Engineer deterministic AI workflows, autonomous agents, and systems integrations. Eliminate operational bottlenecks and scale operations predictably.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://domain-pending.invalid/">
+
+  <!-- Open Graph / Social Embed Protocol -->
+  <meta property="og:site_name" content="VARAH SYSTEMS">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI Systems & Automation Architectures | VARAH SYSTEMS">
+  <meta property="og:description" content="Engineer deterministic AI workflows, autonomous agents, and systems integrations. Eliminate operational bottlenecks and scale operations predictably.">
+  <meta property="og:url" content="https://domain-pending.invalid/">
+  <meta property="og:image" content="https://domain-pending.invalid/assets/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="VARAH SYSTEMS — Intelligent Systems That Scale Your Business">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Systems & Automation Architectures | VARAH SYSTEMS">
+  <meta name="twitter:description" content="Engineer deterministic AI workflows, autonomous agents, and systems integrations. Eliminate operational bottlenecks and scale operations predictably.">
+  <meta name="twitter:image" content="https://domain-pending.invalid/assets/og-default.png">
+  <meta name="twitter:image:alt" content="VARAH SYSTEMS — Intelligent Systems That Scale Your Business">
+
+  <!-- Theme Color & Web Manifest -->
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#040508">
+  <!-- Self-Hosted Critical Font Preload (Inter Variable Latin) -->
+  <link rel="preload" href="assets/fonts/Inter-Variable-Latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://domain-pending.invalid/#organization",
+        "name": "VARAH SYSTEMS",
+        "url": "https://domain-pending.invalid/",
+        "logo": "https://domain-pending.invalid/assets/logo.svg"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://domain-pending.invalid/#website",
+        "url": "https://domain-pending.invalid/",
+        "name": "VARAH SYSTEMS",
+        "publisher": {
+          "@id": "https://domain-pending.invalid/#organization"
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- META_END -->
+<!-- CSS Stylesheets -->
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/navigation.css">
   <link rel="stylesheet" href="css/components.css">
@@ -17,75 +71,87 @@
 </head>
 <body>
 
-  <!-- Site Header (Exact Spec Pill Nav) -->
+  <!-- HEADER_START -->
+  <!-- Flat Minimalist Header (Hairline Border • Token Architecture) -->
   <header class="site-header" role="banner">
-    <div class="nav-wrapper">
-      <!-- 1. Circular Logo -->
-      <a href="index.html" class="site-logo-link" aria-label="VARAH Home">
-        <img src="assets/logo.svg" alt="VARAH Logo" class="site-logo-img">
+    <div class="nav-wrapper container">
+      <!-- 1. Semantic Logo -->
+      <a href="#top" class="site-logo-link" aria-label="VARAH SYSTEMS - home" aria-current="page">
+        <svg class="site-logo-mark" viewBox="0 0 48 48" width="32" height="32" aria-hidden="true" fill="none">
+          <polygon points="2,4 16,4 27,39 16,39" fill="var(--slate-400, #94a3b8)" />
+          <polygon points="46,4 32,4 21,39 32,39" fill="var(--text, #ffffff)" />
+          <polygon points="19.5,38 24,45 28.5,38 24,31" fill="var(--cyan, #00f0ff)" />
+          <rect x="22.5" y="8" width="3" height="20" rx="1.5" fill="var(--cyan, #00f0ff)" />
+        </svg>
+        <span class="site-logo-text">VARAH</span>
       </a>
 
-      <!-- 2. Main Navigation Pill -->
-      <nav class="main-nav-pill" aria-label="Main Navigation">
+      <!-- 2. Flat Desktop Navigation -->
+      <nav class="main-nav" aria-label="Main Navigation">
         <ul class="nav-list">
-          <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
           <li class="nav-item"><a href="solutions.html" class="nav-link">Solutions</a></li>
           <li class="nav-item"><a href="industries.html" class="nav-link">Industries</a></li>
-          <li class="nav-item"><a href="process.html" class="nav-link">Process</a></li>
+          <li class="nav-item"><a href="case-studies.html" class="nav-link">Case Studies</a></li>
           <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
           <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="admin.html" onclick="if(window.location.port==='3000'||window.location.hostname==='localhost'){event.preventDefault();window.location.href='/admin';}" class="nav-link" title="Internal Operations Hub" style="color: #00f0ff; border-left: 1px solid rgba(255,255,255,0.12); padding-left: 12px; margin-left: 4px;"><i class="fa-solid fa-gauge" style="font-size:0.8em; margin-right:4px;"></i>Portal</a></li>
         </ul>
       </nav>
 
-      <!-- 3. Action Pill (Start a Project) -->
-      <a href="contact.html" class="nav-action-pill">Start a Project</a>
-
-      <!-- 4. Theme Mode Toggle Button -->
-      <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Theme Mode" title="Toggle Theme Mode">
-        <i class="fa-solid fa-moon theme-icon-dark"></i>
-        <i class="fa-solid fa-sun theme-icon-light"></i>
-      </button>
-
-      <!-- Mobile Burger Toggle Button -->
-      <button class="mobile-burger-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
-        <span class="burger-bar"></span>
-        <span class="burger-bar"></span>
-        <span class="burger-bar"></span>
-      </button>
+      <!-- 3. Header Actions & Theme Toggle -->
+      <div class="header-actions">
+        <a href="contact.html" class="btn btn-primary btn-sm">Start a Project</a>
+        <button id="theme-toggle-btn" class="theme-toggle-btn" type="button" aria-label="Toggle Theme Mode" title="Toggle Theme Mode">
+          <i class="fa-solid fa-moon theme-icon-dark" aria-hidden="true"></i>
+          <i class="fa-solid fa-sun theme-icon-light" aria-hidden="true"></i>
+        </button>
+        <!-- Accessible Mobile Menu Toggle Button -->
+        <button class="mobile-burger-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span class="burger-bar" aria-hidden="true"></span>
+          <span class="burger-bar" aria-hidden="true"></span>
+          <span class="burger-bar" aria-hidden="true"></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <!-- Mobile Menu Backdrop & Drawer -->
+  <!-- Accessible Mobile Navigation Drawer (Focus Trapped • Inert Guarded) -->
   <div class="mobile-menu-backdrop" aria-hidden="true"></div>
-  <div class="mobile-menu-sheet" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+  <div id="mobile-drawer" class="mobile-menu-sheet" role="dialog" aria-modal="true" aria-label="Site Navigation">
+    <div class="mobile-sheet-header">
+      <span class="mobile-sheet-title">Navigation</span>
+      <button class="mobile-sheet-close-btn" type="button" aria-label="Close menu">&times;</button>
+    </div>
     <ul class="mobile-nav-list">
-      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="/" class="mobile-nav-link active" aria-current="page">Home</a></li>
       <li><a href="solutions.html" class="mobile-nav-link">Solutions</a></li>
       <li><a href="industries.html" class="mobile-nav-link">Industries</a></li>
       <li><a href="case-studies.html" class="mobile-nav-link">Case Studies</a></li>
-      <li><a href="process.html" class="mobile-nav-link">Process</a></li>
       <li><a href="pricing.html" class="mobile-nav-link">Pricing</a></li>
-      <li><a href="calculator.html" class="mobile-nav-link">ROI Calculator</a></li>
-      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
-      <li><a href="admin.html" onclick="if(window.location.port==='3000'||window.location.hostname==='localhost'){event.preventDefault();window.location.href='/admin';}" class="mobile-nav-link" style="color: #00f0ff; font-weight: 600;"><i class="fa-solid fa-gauge" style="margin-right: 6px;"></i>Operations Portal</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
     </ul>
-
     <div class="mobile-theme-switch-row">
-      <span style="font-family: var(--font-mono); font-size: 0.8125rem; color: #666; text-transform: uppercase;">Theme:</span>
-      <button id="mobile-theme-toggle-btn" class="mobile-theme-switch-btn">
+      <span class="mobile-theme-label">Theme Mode:</span>
+      <button id="mobile-theme-toggle-btn" class="mobile-theme-switch-btn" type="button">
         <span id="mobile-theme-state">Dark</span> Mode
-        <i class="fa-solid fa-circle-half-stroke"></i>
+        <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
       </button>
     </div>
-
+    <div class="mobile-contact-summary">
+      <span class="mobile-contact-label">Direct Inquiry:</span>
+      <a href="mailto:contact@domain-pending.invalid" class="mobile-contact-email">contact@domain-pending.invalid</a>
+    </div>
     <a href="contact.html" class="mobile-cta-btn">Start a Project</a>
   </div>
+  <!-- No-JS Fallback Anchor -->
+  <noscript>
+    <a href="#site-footer" class="no-js-nav-fallback">Jump to Site Navigation &darr;</a>
+  </noscript>
+  <!-- HEADER_END -->
 
   <main>
     <!-- SECTION 1: HOMEPAGE HERO (Outcome-Driven, Business-Focused) -->
     <section class="hero-section" id="hero-section" aria-label="Hero">
-      <!-- CloudFront Video Background (UNCHANGED) -->
+      <!-- Background Video & Dual-Mode Overlay -->
       <video class="hero-video-bg" autoplay muted loop playsinline preload="auto">
         <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260809_012548_ef22562c-c0ae-4816-ad9d-f8922af4e6a7.mp4" type="video/mp4">
       </video>
@@ -181,58 +247,13 @@
 
         <!-- Subheadline: What We Actually Do For Clients -->
         <p class="hero-subtitle reveal-on-scroll">
-          We eliminate repetitive operational bottlenecks, qualify inbound leads in 60 seconds, and automate customer support 24/7 &mdash; so your team focuses only on high-value work.
+          We eliminate repetitive operational bottlenecks, automate inbound qualification, and resolve customer support inquiries &mdash; so your team focuses only on high-value work.
         </p>
 
         <!-- CTAs -->
         <div class="hero-cta-group reveal-on-scroll">
           <a href="contact.html" class="btn btn-primary">Start a Project</a>
-          <a href="book.html" class="btn btn-secondary"><i class="fa-regular fa-calendar-check" style="margin-right: 6px;"></i> Book Discovery Call</a>
-        </div>
-
-        <!-- 4 Statistics Typographic Strip (Client-Focused Business Numbers with Entrance Counters) -->
-        <div class="hero-stats-wrapper reveal-on-scroll">
-          <div class="stats-strip">
-            <div class="stat-cell" data-metric="speed" data-target="60" data-format="< {val}s">
-              <div class="stat-top-row">
-                <span class="stat-label-top">&lt; Speed to Lead</span>
-                <span class="stat-status-pill"><span class="stat-status-dot"></span> LIVE</span>
-              </div>
-              <div class="stat-value">&lt; 60s</div>
-              <div class="stat-label">Instant WhatsApp &amp; Email Response</div>
-              <div class="stat-hover-detail">Autonomous 45s qualification &amp; booking</div>
-            </div>
-
-            <div class="stat-cell" data-metric="support" data-target="70" data-format="{val}%+">
-              <div class="stat-top-row">
-                <span class="stat-label-top">Support Deflection</span>
-                <span class="stat-status-pill"><span class="stat-status-dot"></span> ACTIVE</span>
-              </div>
-              <div class="stat-value">70%+</div>
-              <div class="stat-label">Routine Inquiries Resolved Autonomously</div>
-              <div class="stat-hover-detail">Tier-1 FAQ &amp; order triage deflection</div>
-            </div>
-
-            <div class="stat-cell" data-metric="time" data-target="25" data-format="{val}+ hrs">
-              <div class="stat-top-row">
-                <span class="stat-label-top">Team Time Saved</span>
-                <span class="stat-status-pill"><span class="stat-status-dot"></span> TRACKED</span>
-              </div>
-              <div class="stat-value">25+ hrs</div>
-              <div class="stat-label">Reclaimed Weekly Per Team Member</div>
-              <div class="stat-hover-detail">Estimated weekly grunt work eliminated</div>
-            </div>
-
-            <div class="stat-cell" data-metric="accuracy" data-target="100" data-format="{val}%">
-              <div class="stat-top-row">
-                <span class="stat-label-top">Pipeline Accuracy</span>
-                <span class="stat-status-pill"><span class="stat-status-dot"></span> VERIFIED</span>
-              </div>
-              <div class="stat-value">100%</div>
-              <div class="stat-label">Automated CRM Sync &amp; Zero Lost Deals</div>
-              <div class="stat-hover-detail">Real-time bidirectional database sync</div>
-            </div>
-          </div>
+          <a href="process.html" class="btn btn-secondary">Review Our Process</a>
         </div>
       </div>
     </section>
@@ -242,10 +263,7 @@
       <div class="container">
         <!-- Section Header -->
         <div class="section-header reveal-on-scroll">
-          <div class="section-badge-cluster">
-            <span class="eyebrow">01 // THE AUTOMATION LAYER</span>
-            <span class="system-status-indicator"><span class="status-dot-pulse"></span> SYSTEM RUNNING</span>
-          </div>
+          <span class="eyebrow">01 // The Automation Layer</span>
           <h2 id="automation-heading" class="section-title">
             Turn repetitive work into systems that run themselves.
           </h2>
@@ -286,64 +304,64 @@
               
               <div class="chaos-nodes-container">
                 <!-- Node 1: WhatsApp -->
-                <div class="system-chip input-chip" data-node-id="whatsapp" tabindex="0" role="button" aria-label="WhatsApp Inbound Message">
+                <button type="button" class="system-chip input-chip" data-node-id="whatsapp" aria-label="WhatsApp Inbound Message">
                   <div class="chip-status-dot"></div>
                   <i class="fa-brands fa-whatsapp chip-icon" aria-hidden="true"></i>
                   <div class="chip-content">
                     <span class="chip-tag">WHATSAPP</span>
                     <span class="chip-sub">Inbound customer inquiry</span>
                   </div>
-                </div>
+                </button>
 
                 <!-- Node 2: Web Lead -->
-                <div class="system-chip input-chip" data-node-id="web-lead" tabindex="0" role="button" aria-label="Website Form Lead">
+                <button type="button" class="system-chip input-chip" data-node-id="web-lead" aria-label="Website Form Lead">
                   <div class="chip-status-dot"></div>
                   <i class="fa-solid fa-globe chip-icon" aria-hidden="true"></i>
                   <div class="chip-content">
                     <span class="chip-tag">WEB LEAD</span>
                     <span class="chip-sub">High-intent form submitted</span>
                   </div>
-                </div>
+                </button>
 
                 <!-- Node 3: Support Ticket -->
-                <div class="system-chip input-chip" data-node-id="support-ticket" tabindex="0" role="button" aria-label="Support Ticket">
+                <button type="button" class="system-chip input-chip" data-node-id="support-ticket" aria-label="Support Ticket">
                   <div class="chip-status-dot"></div>
                   <i class="fa-solid fa-headset chip-icon" aria-hidden="true"></i>
                   <div class="chip-content">
                     <span class="chip-tag">SUPPORT TICKET</span>
                     <span class="chip-sub">Urgent ticket &amp; FAQ</span>
                   </div>
-                </div>
+                </button>
 
                 <!-- Node 4: Email Inquiry -->
-                <div class="system-chip input-chip" data-node-id="email" tabindex="0" role="button" aria-label="Inbound Email">
+                <button type="button" class="system-chip input-chip" data-node-id="email" aria-label="Inbound Email">
                   <div class="chip-status-dot"></div>
                   <i class="fa-regular fa-envelope chip-icon" aria-hidden="true"></i>
                   <div class="chip-content">
                     <span class="chip-tag">EMAIL INQUIRY</span>
                     <span class="chip-sub">Quote &amp; project request</span>
                   </div>
-                </div>
+                </button>
 
                 <!-- Node 5: Invoice PDF -->
-                <div class="system-chip input-chip" data-node-id="invoice" tabindex="0" role="button" aria-label="Invoice Document">
+                <button type="button" class="system-chip input-chip" data-node-id="invoice" aria-label="Invoice Document">
                   <div class="chip-status-dot"></div>
                   <i class="fa-solid fa-file-invoice chip-icon" aria-hidden="true"></i>
                   <div class="chip-content">
                     <span class="chip-tag">INVOICE PDF</span>
                     <span class="chip-sub">Supplier statement attached</span>
                   </div>
-                </div>
+                </button>
 
                 <!-- Node 6: Data Streams -->
-                <div class="system-chip input-chip" data-node-id="data-sync" tabindex="0" role="button" aria-label="Telemetry & Data Streams">
+                <button type="button" class="system-chip input-chip" data-node-id="data-sync" aria-label="Telemetry & Data Streams">
                   <div class="chip-status-dot"></div>
                   <i class="fa-solid fa-database chip-icon" aria-hidden="true"></i>
                   <div class="chip-content">
                     <span class="chip-tag">DATA STREAMS</span>
                     <span class="chip-sub">Ad spend &amp; Stripe transactions</span>
                   </div>
-                </div>
+                </button>
               </div>
             </div>
 
@@ -369,7 +387,7 @@
                 <div class="orbit-ring ring-inner"></div>
 
                 <!-- Central Processing Core -->
-                <div class="engine-core" id="engine-core" tabindex="0" role="button" aria-label="Varah Orchestration Core">
+                <button type="button" class="engine-core" id="engine-core" aria-label="Varah Orchestration Core">
                   <div class="core-pulse-wave"></div>
                   <div class="core-shell">
                     <div class="core-inner-gem">
@@ -380,7 +398,7 @@
                     <span class="core-tag">VARAH // CORE</span>
                     <span class="core-state" id="core-state-indicator">ORCHESTRATING</span>
                   </div>
-                </div>
+                </button>
               </div>
 
               <!-- Engine Telemetry Sub-Bar -->
@@ -494,10 +512,7 @@
       <div class="container">
         <!-- Section Header -->
         <div class="section-header reveal-on-scroll">
-          <div class="section-badge-cluster">
-            <span class="eyebrow">02 // WHAT WE BUILD</span>
-            <span class="system-status-indicator"><span class="status-dot-pulse"></span> ARCHITECTURE READY</span>
-          </div>
+          <span class="eyebrow">02 // What We Build</span>
           <h2 id="solutions-heading" class="section-title">
             Production AI systems engineered for immediate ROI.
           </h2>
@@ -506,278 +521,109 @@
           </p>
         </div>
 
-        <!-- The Interactive Systems Architecture Console -->
-        <div class="systems-index-console reveal-on-scroll" id="systems-index-console" role="region" aria-label="Interactive AI Systems Architecture Index">
-          <!-- Top Technical Calibration Bar -->
-          <div class="console-calibration-ribbon">
-            <div class="ribbon-col">
-              <span class="calibration-dot live-cyan"></span>
-              <span class="calibration-label">CONSOLE:</span>
-              <span class="calibration-val">SYSTEMS_INDEX // v4.2</span>
+        <!-- Numbered Editorial Solutions Architecture List -->
+        <div class="solutions-editorial-list reveal-on-scroll">
+          <!-- Item 01: Flagship Highlighted -->
+          <article class="solutions-editorial-item is-highlighted">
+            <span class="solutions-item-num">01</span>
+            <div class="solutions-item-body">
+              <h3 class="solutions-item-title">AI Lead Qualification &amp; Booking Engine</h3>
+              <p class="solutions-item-scope">
+                Engages inbound inquiries in 60 seconds across WhatsApp and Web, qualifies budget and timeline, and schedules qualified sales calls directly onto your calendar 24/7.
+              </p>
             </div>
-            <div class="ribbon-col ribbon-center">
-              <span class="calibration-label">ACTIVE SUBSYSTEM:</span>
-              <span class="calibration-val live-id" id="ribbon-active-id">SYS_01 // REVENUE ENGINE</span>
+            <a href="solutions/ai-sales.html" class="solutions-item-link">
+              <span>Inspect Spec</span>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <!-- Item 02 -->
+          <article class="solutions-editorial-item">
+            <span class="solutions-item-num">02</span>
+            <div class="solutions-item-body">
+              <h3 class="solutions-item-title">Autonomous Customer Support Agent</h3>
+              <p class="solutions-item-scope">
+                Resolves routine customer tickets autonomously across WhatsApp, Web chat, and Email with real-time CRM sync and instant human handoff for VIP escalations.
+              </p>
             </div>
-            <div class="ribbon-col">
-              <span class="calibration-label">STATUS:</span>
-              <span class="calibration-val"><span class="calibration-dot live-green"></span> 6 OF 6 OPERATIONAL</span>
+            <a href="solutions/ai-customer-support.html" class="solutions-item-link">
+              <span>Inspect Spec</span>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <!-- Item 03 -->
+          <article class="solutions-editorial-item">
+            <span class="solutions-item-num">03</span>
+            <div class="solutions-item-body">
+              <h3 class="solutions-item-title">Voice AI Telephony &amp; Receptionist</h3>
+              <p class="solutions-item-scope">
+                Natural conversational voice AI that answers inbound phone calls in 1 ring, handles FAQs, qualifies callers, and commits bookings directly into your PMS schedule.
+              </p>
             </div>
-          </div>
+            <a href="solutions/ai-voice.html" class="solutions-item-link">
+              <span>Inspect Spec</span>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </article>
 
-          <!-- Main Stage: Split Radial Explorer & System Readout -->
-          <div class="console-stage-grid">
-            
-            <!-- LEFT / CENTER ZONE: The Radial Systems Dial -->
-            <div class="radial-interface-zone" id="radial-interface-zone" role="tablist" aria-label="System Submodules">
-              <!-- Radial Canvas Area with SVG Geometries -->
-              <div class="radial-dial-wrapper" id="radial-dial-wrapper">
-                <!-- SVG Precision Coordinates & Vector Connectors -->
-                <svg class="radial-geometry-svg" id="radial-geometry-svg" viewBox="0 0 540 540" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <!-- Concentric Coordinate Rings -->
-                  <circle class="radial-ring outer-reticle" cx="270" cy="270" r="248" />
-                  <circle class="radial-ring mid-reticle" cx="270" cy="270" r="186" />
-                  <circle class="radial-ring inner-reticle" cx="270" cy="270" r="118" />
-                  
-                  <!-- Radial Angle Division Lines (Subtle 60° Spokes) -->
-                  <g class="radial-spokes-layer">
-                    <line class="radial-spoke" x1="270" y1="270" x2="270" y2="24" />
-                    <line class="radial-spoke" x1="270" y1="270" x2="483" y2="147" />
-                    <line class="radial-spoke" x1="270" y1="270" x2="483" y2="393" />
-                    <line class="radial-spoke" x1="270" y1="270" x2="270" y2="516" />
-                    <line class="radial-spoke" x1="270" y1="270" x2="57" y2="393" />
-                    <line class="radial-spoke" x1="270" y1="270" x2="57" y2="147" />
-                  </g>
-
-                  <!-- Active Radial Vector Ray (Dynamic highlight line connecting center to active module) -->
-                  <line class="active-vector-ray" id="active-vector-ray" x1="270" y1="270" x2="135" y2="95" />
-
-                  <!-- Traveling Data Particles Layer -->
-                  <g class="radial-particles-layer" id="radial-particles-layer"></g>
-
-                  <!-- Precision Angle Ticks on Outer Rim -->
-                  <g class="radial-ticks-layer">
-                    <circle class="tick-dot" cx="270" cy="22" r="2.5" />
-                    <circle class="tick-dot" cx="485" cy="146" r="2.5" />
-                    <circle class="tick-dot" cx="485" cy="394" r="2.5" />
-                    <circle class="tick-dot" cx="270" cy="518" r="2.5" />
-                    <circle class="tick-dot" cx="55" cy="394" r="2.5" />
-                    <circle class="tick-dot" cx="55" cy="146" r="2.5" />
-                  </g>
-                </svg>
-
-                <!-- Central Control Identity (Geometric typography & reticle, not a card or orb) -->
-                <div class="radial-central-identity" id="radial-central-identity">
-                  <div class="core-reticle-border"></div>
-                  <div class="core-reticle-crosshair"></div>
-                  <div class="core-identity-content">
-                    <span class="core-system-monogram">VARAH</span>
-                    <span class="core-system-sub">SYSTEMS</span>
-                    <span class="core-system-tag"><span class="core-pulse-pip"></span> ARCHITECTURE</span>
-                  </div>
-                </div>
-
-                <!-- Six Radial Module Nodes (Positioned radially around the core) -->
-                <!-- Module 01: Top-Left (300°) -->
-                <button type="button" class="radial-node-module is-active-node node-pos-01" id="node-sys-01" data-sys-id="01" role="tab" aria-selected="true" aria-controls="system-readout" tabindex="0">
-                  <span class="node-indicator-dot"></span>
-                  <div class="node-meta">
-                    <span class="node-index">01</span>
-                    <span class="node-category">REVENUE</span>
-                  </div>
-                  <span class="node-sub-label">LEAD ENGINE</span>
-                </button>
-
-                <!-- Module 02: Top (0°) -->
-                <button type="button" class="radial-node-module node-pos-02" id="node-sys-02" data-sys-id="02" role="tab" aria-selected="false" aria-controls="system-readout" tabindex="-1">
-                  <span class="node-indicator-dot"></span>
-                  <div class="node-meta">
-                    <span class="node-index">02</span>
-                    <span class="node-category">OPERATIONS</span>
-                  </div>
-                  <span class="node-sub-label">24/7 SUPPORT</span>
-                </button>
-
-                <!-- Module 03: Top-Right (60°) -->
-                <button type="button" class="radial-node-module node-pos-03" id="node-sys-03" data-sys-id="03" role="tab" aria-selected="false" aria-controls="system-readout" tabindex="-1">
-                  <span class="node-indicator-dot"></span>
-                  <div class="node-meta">
-                    <span class="node-index">03</span>
-                    <span class="node-category">TELEPHONY</span>
-                  </div>
-                  <span class="node-sub-label">VOICE AI</span>
-                </button>
-
-                <!-- Module 04: Bottom-Right (120°) -->
-                <button type="button" class="radial-node-module node-pos-04" id="node-sys-04" data-sys-id="04" role="tab" aria-selected="false" aria-controls="system-readout" tabindex="-1">
-                  <span class="node-indicator-dot"></span>
-                  <div class="node-meta">
-                    <span class="node-index">04</span>
-                    <span class="node-category">KNOWLEDGE</span>
-                  </div>
-                  <span class="node-sub-label">SOP AGENT</span>
-                </button>
-
-                <!-- Module 05: Bottom (180°) -->
-                <button type="button" class="radial-node-module node-pos-05" id="node-sys-05" data-sys-id="05" role="tab" aria-selected="false" aria-controls="system-readout" tabindex="-1">
-                  <span class="node-indicator-dot"></span>
-                  <div class="node-meta">
-                    <span class="node-index">05</span>
-                    <span class="node-category">DOCUMENTS</span>
-                  </div>
-                  <span class="node-sub-label">INVOICE OCR</span>
-                </button>
-
-                <!-- Module 06: Bottom-Left (240°) -->
-                <button type="button" class="radial-node-module node-pos-06" id="node-sys-06" data-sys-id="06" role="tab" aria-selected="false" aria-controls="system-readout" tabindex="-1">
-                  <span class="node-indicator-dot"></span>
-                  <div class="node-meta">
-                    <span class="node-index">06</span>
-                    <span class="node-category">DATAFLOW</span>
-                  </div>
-                  <span class="node-sub-label">PIPELINES</span>
-                </button>
-
-              </div>
+          <!-- Item 04 -->
+          <article class="solutions-editorial-item">
+            <span class="solutions-item-num">04</span>
+            <div class="solutions-item-body">
+              <h3 class="solutions-item-title">Internal SOP &amp; RAG Knowledge Engine</h3>
+              <p class="solutions-item-scope">
+                Centralizes internal documentation, standard operating procedures, and technical schemas so your operations team retrieves verified answers and policies in seconds.
+              </p>
             </div>
+            <a href="solutions/ai-knowledge.html" class="solutions-item-link">
+              <span>Inspect Spec</span>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </article>
 
-            <!-- MOBILE STACKED SYSTEM INDEX (Rule 15: Vertically stacked index with horizontal dividers) -->
-            <div class="mobile-system-index" role="tablist" aria-label="System Index Modules">
-              <button type="button" class="mobile-index-row is-active" data-sys-id="01" role="tab" aria-selected="true" aria-controls="system-readout">
-                <span class="m-row-left">
-                  <span class="m-row-num">01</span>
-                  <span class="m-row-name">REVENUE</span>
-                </span>
-                <span class="m-row-tag">LEAD ENGINE</span>
-                <span class="m-row-pip"></span>
-              </button>
-              <button type="button" class="mobile-index-row" data-sys-id="02" role="tab" aria-selected="false" aria-controls="system-readout">
-                <span class="m-row-left">
-                  <span class="m-row-num">02</span>
-                  <span class="m-row-name">OPERATIONS</span>
-                </span>
-                <span class="m-row-tag">24/7 SUPPORT</span>
-                <span class="m-row-pip"></span>
-              </button>
-              <button type="button" class="mobile-index-row" data-sys-id="03" role="tab" aria-selected="false" aria-controls="system-readout">
-                <span class="m-row-left">
-                  <span class="m-row-num">03</span>
-                  <span class="m-row-name">TELEPHONY</span>
-                </span>
-                <span class="m-row-tag">VOICE AI</span>
-                <span class="m-row-pip"></span>
-              </button>
-              <button type="button" class="mobile-index-row" data-sys-id="04" role="tab" aria-selected="false" aria-controls="system-readout">
-                <span class="m-row-left">
-                  <span class="m-row-num">04</span>
-                  <span class="m-row-name">KNOWLEDGE</span>
-                </span>
-                <span class="m-row-tag">SOP AGENT</span>
-                <span class="m-row-pip"></span>
-              </button>
-              <button type="button" class="mobile-index-row" data-sys-id="05" role="tab" aria-selected="false" aria-controls="system-readout">
-                <span class="m-row-left">
-                  <span class="m-row-num">05</span>
-                  <span class="m-row-name">DOCUMENTS</span>
-                </span>
-                <span class="m-row-tag">INVOICE OCR</span>
-                <span class="m-row-pip"></span>
-              </button>
-              <button type="button" class="mobile-index-row" data-sys-id="06" role="tab" aria-selected="false" aria-controls="system-readout">
-                <span class="m-row-left">
-                  <span class="m-row-num">06</span>
-                  <span class="m-row-name">DATAFLOW</span>
-                </span>
-                <span class="m-row-tag">PIPELINES</span>
-                <span class="m-row-pip"></span>
-              </button>
+          <!-- Item 05 -->
+          <article class="solutions-editorial-item">
+            <span class="solutions-item-num">05</span>
+            <div class="solutions-item-body">
+              <h3 class="solutions-item-title">Document Intelligence &amp; Invoice OCR</h3>
+              <p class="solutions-item-scope">
+                Extracts structured line items from supplier invoices, receipts, and vendor PDFs with 99.4% accuracy, syncing verified records directly into QuickBooks and accounting ledgers.
+              </p>
             </div>
+            <a href="solutions/document-intelligence.html" class="solutions-item-link">
+              <span>Inspect Spec</span>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </article>
 
-            <!-- RIGHT ZONE: Technical System Readout Panel -->
-            <div class="system-readout-zone" id="system-readout" role="tabpanel" aria-labelledby="node-sys-01">
-              <div class="readout-frame">
-                <!-- Subsystem Header & Status -->
-                <div class="readout-header">
-                  <div class="readout-tag-row">
-                    <span class="readout-system-id" id="readout-sys-id">SYSTEM 01 // REVENUE ENGINE</span>
-                    <span class="readout-outcome-badge" id="readout-outcome-badge">
-                      <span class="badge-dot"></span> <span id="readout-outcome-text">&lt; 60 SEC SPEED</span>
-                    </span>
-                  </div>
-                  <h3 class="readout-title" id="readout-title">AI Lead Qualification &amp; Booking</h3>
-                </div>
-
-                <!-- Architectural Description -->
-                <div class="readout-body">
-                  <p class="readout-desc" id="readout-desc">
-                    Engage inbound inquiries in 60 seconds on WhatsApp, qualify budget and timeline, and schedule sales calls directly on your calendar 24/7.
-                  </p>
-                </div>
-
-                <!-- Execution Micro-Flow Signal Strip (Strictly inside readout) -->
-                <div class="readout-section">
-                  <div class="readout-section-label">
-                    <span>MICRO-EXECUTION FLOW</span>
-                    <span class="flow-latency-badge" id="readout-latency-badge">SUB-MINUTE</span>
-                  </div>
-                  <div class="micro-flow-track" id="readout-micro-flow">
-                    <!-- Populated dynamically by js/systems-index.js -->
-                  </div>
-                </div>
-
-                <!-- Connected Infrastructure Stack -->
-                <div class="readout-section">
-                  <div class="readout-section-label">CONNECTED INFRASTRUCTURE</div>
-                  <div class="connected-stack-pills" id="readout-stack-pills">
-                    <!-- Populated dynamically by js/systems-index.js -->
-                  </div>
-                </div>
-
-                <!-- Deep Dive Action & SOW Specs -->
-                <div class="readout-footer">
-                  <div class="readout-deployment-meta">
-                    <span class="meta-label">DEPLOYMENT TIMELINE:</span>
-                    <span class="meta-val">7–14 BUSINESS DAYS</span>
-                  </div>
-                  <a href="solutions/ai-sales.html" class="readout-action-link" id="readout-link">
-                    <span>Inspect REVENUE ENGINE Spec</span>
-                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                  </a>
-                </div>
-              </div>
+          <!-- Item 06 -->
+          <article class="solutions-editorial-item">
+            <span class="solutions-item-num">06</span>
+            <div class="solutions-item-body">
+              <h3 class="solutions-item-title">Multi-Agent Operations Pipelines</h3>
+              <p class="solutions-item-scope">
+                Connects your databases, CRM, ERP, and messaging channels into self-monitoring autonomous workflows that execute repetitive data pipelines without human manual entry.
+              </p>
             </div>
+            <a href="solutions/ai-automation.html" class="solutions-item-link">
+              <span>Inspect Spec</span>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </article>
+        </div>
 
-          </div>
-
-          <!-- Bottom Persistent System Index Ribbon -->
-          <div class="console-footer-ribbon">
-            <div class="index-label-group">
-              <span class="index-title">SYSTEM INDEX</span>
-              <span class="index-count">[06 MODULES]</span>
-            </div>
-            
-            <div class="index-fast-switch-list" role="navigation" aria-label="Direct System Switcher">
-              <button type="button" class="fast-switch-item is-active" data-fast-id="01"><span class="switch-num">01</span> REVENUE</button>
-              <button type="button" class="fast-switch-item" data-fast-id="02"><span class="switch-num">02</span> OPERATIONS</button>
-              <button type="button" class="fast-switch-item" data-fast-id="03"><span class="switch-num">03</span> TELEPHONY</button>
-              <button type="button" class="fast-switch-item" data-fast-id="04"><span class="switch-num">04</span> KNOWLEDGE</button>
-              <button type="button" class="fast-switch-item" data-fast-id="05"><span class="switch-num">05</span> DOCUMENTS</button>
-              <button type="button" class="fast-switch-item" data-fast-id="06"><span class="switch-num">06</span> DATAFLOW</button>
-            </div>
-
-            <div class="index-explore-cta">
-              <a href="solutions.html" class="system-explore-all-link">
-                <span>All 8 Solutions &amp; Technical Architecture</span>
-                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-
+        <div class="solutions-footer-action reveal-on-scroll" style="margin-top: var(--space-8); text-align: left;">
+          <a href="solutions.html" class="editorial-link">
+            <span>Explore Complete Solutions Index &amp; Specifications</span>
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 4: HOW WE WORK (The Simple 3-Step Client Journey) -->
+    <!-- SECTION 03: HOW WE WORK (The Simple 3-Step Client Journey) -->
     <section class="section section-contrast-dark" aria-labelledby="process-heading">
       <div class="container">
         <div class="section-header reveal-on-scroll">
@@ -868,7 +714,7 @@
               <span class="tier-badge tier-badge-blue">MOST POPULAR</span>
             </div>
             <div>
-              <a href="contact.html?plan=growth" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.875rem;">Start Growth Plan</a>
+              <a href="contact.html?plan=growth" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.875rem;">Start a Project</a>
             </div>
           </div>
 
@@ -906,11 +752,11 @@
           <span class="eyebrow">Take Action</span>
           <h2 class="editorial-conversion-title">What should your business stop doing manually?</h2>
           <p class="editorial-conversion-desc">
-            Schedule a free 15-minute Bottleneck Audit. We will map your operations and show you exactly where AI can recover 20+ hours a week and fix your revenue leaks.
+            Tell us about your operations. We map repetitive bottlenecks and architect intelligent systems that scale your business.
           </p>
           <div class="hero-cta-group cta-group-left">
             <a href="contact.html" class="btn btn-primary">Start a Project</a>
-            <a href="book.html" class="btn btn-secondary"><i class="fa-regular fa-calendar-check" style="margin-right: 6px;"></i> Book 15-Min Discovery Call</a>
+            <a href="process.html" class="btn btn-secondary">Review Our Process</a>
           </div>
         </div>
       </div>
@@ -919,33 +765,37 @@
   </main>
 
   <!-- SITE FOOTER -->
-  <footer class="site-footer" role="contentinfo">
+  <!-- FOOTER_START -->
+  <!-- Substantial Editorial Site Footer (Single Source of Truth) -->
+  <footer id="site-footer" class="site-footer" role="contentinfo">
     <div class="container">
-      <div class="footer-statement-massive">
-        BUILD SYSTEMS THAT WORK WHILE YOU WORK.
-      </div>
-
+      <div class="footer-statement-massive">BUILD SYSTEMS THAT WORK WHILE YOU WORK.</div>
       <div class="footer-nav-grid">
         <div class="footer-brand-col">
           <div class="footer-logo-row">
-            <img src="assets/logo.svg" alt="VARAH Logo">
+            <svg class="footer-logo-mark" viewBox="0 0 48 48" width="28" height="28" aria-hidden="true" fill="none">
+              <polygon points="2,4 16,4 27,39 16,39" fill="#94a3b8" />
+              <polygon points="46,4 32,4 21,39 32,39" fill="#ffffff" />
+              <polygon points="19.5,38 24,45 28.5,38 24,31" fill="#00f0ff" />
+              <rect x="22.5" y="8" width="3" height="20" rx="1.5" fill="#00f0ff" />
+            </svg>
             <span class="footer-brand-name">VARAH // SYSTEMS</span>
           </div>
           <p class="footer-desc-text">
-            Enterprise AI Systems &amp; Automation.<br>
-            We eliminate operational bottlenecks and fix revenue leaks for modern businesses.
+            Intelligent systems that scale your business.<br>
+            We eliminate repetitive operational bottlenecks and build systems that work while you work.
           </p>
         </div>
 
         <div>
           <h4 class="footer-col-heading">Solutions</h4>
           <ul class="footer-link-list">
-            <li class="footer-link-item"><a href="solutions/ai-sales.html">Lead Qualification</a></li>
-            <li class="footer-link-item"><a href="solutions/ai-customer-support.html">Customer Support</a></li>
-            <li class="footer-link-item"><a href="solutions/ai-voice.html">Voice AI Telephony</a></li>
-            <li class="footer-link-item"><a href="solutions/ai-knowledge.html">Knowledge Systems</a></li>
-            <li class="footer-link-item"><a href="solutions/document-intelligence.html">Document Intelligence</a></li>
             <li class="footer-link-item"><a href="solutions/ai-automation.html">Workflow Automation</a></li>
+            <li class="footer-link-item"><a href="solutions/ai-agents.html">Autonomous AI Agents</a></li>
+            <li class="footer-link-item"><a href="solutions/ai-voice.html">Voice AI Telephony</a></li>
+            <li class="footer-link-item"><a href="solutions/ai-customer-support.html">Customer Support</a></li>
+            <li class="footer-link-item"><a href="solutions/ai-knowledge.html">Knowledge Systems (RAG)</a></li>
+            <li class="footer-link-item"><a href="solutions/document-intelligence.html">Document Intelligence</a></li>
             <li class="footer-link-item"><a href="solutions.html">All Solutions &rarr;</a></li>
           </ul>
         </div>
@@ -958,41 +808,140 @@
             <li class="footer-link-item"><a href="industries/recruitment.html">Recruitment</a></li>
             <li class="footer-link-item"><a href="industries/marketing.html">Marketing Agencies</a></li>
             <li class="footer-link-item"><a href="industries/professional-services.html">Professional Services</a></li>
+            <li class="footer-link-item"><a href="industries/manufacturing.html">Manufacturing &amp; Logistics</a></li>
             <li class="footer-link-item"><a href="industries.html">All Industries &rarr;</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-col-heading">Company &amp; Tools</h4>
+          <h4 class="footer-col-heading">Company</h4>
           <ul class="footer-link-list">
-            <li class="footer-link-item"><a href="calculator.html">ROI Calculator</a></li>
-            <li class="footer-link-item"><a href="pricing.html">Pricing &amp; Packages</a></li>
-            <li class="footer-link-item"><a href="process.html">Our Process</a></li>
             <li class="footer-link-item"><a href="case-studies.html">Case Studies</a></li>
+            <li class="footer-link-item"><a href="process.html">Our Process</a></li>
+            <li class="footer-link-item"><a href="pricing.html">Pricing &amp; Scope</a></li>
+            <li class="footer-link-item"><a href="calculator.html">ROI Calculator</a></li>
             <li class="footer-link-item"><a href="about.html">About Us</a></li>
             <li class="footer-link-item"><a href="contact.html">Contact Us</a></li>
-            <li class="footer-link-item"><a href="book.html">Book Discovery Call</a></li>
+            <li class="footer-link-item"><a href="mailto:contact@domain-pending.invalid">contact@domain-pending.invalid</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom-bar">
         <div class="footer-copyright">
-          &copy; 2026 VARAH SYSTEMS INC. ALL RIGHTS RESERVED.
+          &copy; <span id="copyright-year">2026</span> VARAH SYSTEMS. All rights reserved.
         </div>
+        <!-- Workstream 10: Legal Pages Slot -->
         <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="cookies.html">Cookies</a>
+          <button type="button" id="open-cookie-preferences-btn" class="footer-cookie-settings-btn">Cookie Settings</button>
           <a href="calculator.html">Calculator</a>
           <a href="pricing.html">Pricing</a>
           <a href="contact.html">Contact</a>
+          <!-- Relocated Layer B Operations Portal Link -->
+          <a href="/admin" rel="nofollow" class="footer-admin-link">Operations Portal</a>
         </div>
       </div>
     </div>
   </footer>
 
+  <!-- Cookie & Privacy Consent Banner (Workstream 10) -->
+  <div id="consent-banner" class="consent-banner" role="region" aria-label="Privacy and Cookie Consent" hidden>
+    <div class="consent-banner-inner">
+      <p class="consent-banner-text">
+        <strong>Privacy &amp; Cookies:</strong> We use functional storage to preserve your theme and submission preferences. Optional analytics remain blocked until granted. Read our <a href="privacy.html" class="consent-banner-link">Privacy Policy</a> and <a href="cookies.html" class="consent-banner-link">Cookie Policy</a>.
+      </p>
+      <div class="consent-banner-actions">
+        <button type="button" id="consent-reject-all-btn" class="consent-btn-action">Reject All</button>
+        <button type="button" id="consent-accept-all-btn" class="consent-btn-action">Accept All</button>
+        <button type="button" id="consent-manage-btn" class="consent-btn-text">Preferences</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accessible Preferences Modal Dialog (<dialog>) -->
+  <dialog id="consent-preferences-dialog" class="consent-dialog" aria-labelledby="consent-dialog-title" aria-describedby="consent-dialog-desc">
+    <div class="consent-dialog-card">
+      <div class="consent-dialog-header">
+        <h3 id="consent-dialog-title" class="consent-dialog-title">Consent Preferences</h3>
+        <button type="button" id="consent-dialog-close-btn" class="consent-dialog-close" aria-label="Close preferences modal">&times;</button>
+      </div>
+      <div class="consent-dialog-body">
+        <p id="consent-dialog-desc" class="consent-dialog-intro">
+          Customize which categories of client-side storage and scripts you permit. Strictly necessary storage cannot be deactivated as it is required for site operation.
+        </p>
+
+        <!-- Global Privacy Control (GPC) Notice -->
+        <div id="consent-gpc-notice" class="consent-gpc-badge" hidden>
+          <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+          <span>Global Privacy Control (GPC) signal detected: Non-essential tracking disabled.</span>
+        </div>
+
+        <div class="consent-category-list">
+          <!-- Necessary Category -->
+          <div class="consent-category-item">
+            <div class="consent-category-top">
+              <span class="consent-category-label">
+                Strictly Necessary
+                <span class="consent-badge-locked">Always Active</span>
+              </span>
+              <label class="consent-switch-label" aria-label="Strictly Necessary storage (locked)">
+                <input type="checkbox" class="consent-switch-input" checked disabled>
+                <span class="consent-switch-track"><span class="consent-switch-thumb"></span></span>
+              </label>
+            </div>
+            <p class="consent-category-desc">
+              Essential for core functions including security verification (Cloudflare Turnstile), UI theme persistence, and inquiry session gating.
+            </p>
+          </div>
+
+          <!-- Analytics Category -->
+          <div class="consent-category-item">
+            <div class="consent-category-top">
+              <span class="consent-category-label">Performance &amp; Analytics</span>
+              <label class="consent-switch-label" for="consent-toggle-analytics" aria-label="Toggle Performance and Analytics">
+                <input type="checkbox" id="consent-toggle-analytics" class="consent-switch-input">
+                <span class="consent-switch-track"><span class="consent-switch-thumb"></span></span>
+              </label>
+            </div>
+            <p class="consent-category-desc">
+              Helps us understand aggregated visitor interaction to improve site navigation and technical performance. No personal tracking is installed today.
+            </p>
+          </div>
+
+          <!-- Marketing Category -->
+          <div class="consent-category-item">
+            <div class="consent-category-top">
+              <span class="consent-category-label">Marketing &amp; Targeting</span>
+              <label class="consent-switch-label" for="consent-toggle-marketing" aria-label="Toggle Marketing and Targeting">
+                <input type="checkbox" id="consent-toggle-marketing" class="consent-switch-input">
+                <span class="consent-switch-track"><span class="consent-switch-thumb"></span></span>
+              </label>
+            </div>
+            <p class="consent-category-desc">
+              Third-party advertising pixels and campaign conversion attribution. We do not currently run or permit marketing trackers.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="consent-dialog-footer">
+        <button type="button" id="consent-modal-reject-all-btn" class="consent-btn-action">Reject All</button>
+        <button type="button" id="consent-modal-accept-all-btn" class="consent-btn-action">Accept All</button>
+        <button type="button" id="consent-save-preferences-btn" class="consent-btn-action" style="background-color: var(--text); color: var(--surface);">Save Choices</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Consent Engine Script -->
+  <script src="js/consent.js"></script>
+  <!-- FOOTER_END -->
+
   <!-- Core JavaScript Scripts -->
+  <script src="js/nav.js"></script>
   <script src="js/main.js"></script>
   <script src="js/hero-network.js"></script>
   <script src="js/orchestration.js"></script>
-  <script src="js/systems-index.js"></script>
 </body>
 </html>

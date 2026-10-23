@@ -25,7 +25,7 @@ declare module '@prisma/client' {
     update(args: { where: WhereUniqueInput; data: UpdateInput }): Promise<T>;
     upsert(args: { where: WhereUniqueInput; create: CreateInput; update: UpdateInput }): Promise<T>;
     delete(args: { where: WhereUniqueInput }): Promise<T>;
-    deleteMany(args?: { where?: Partial<T> }): Promise<{ count: number }>;
+    deleteMany(args?: { where?: Record<string, unknown> }): Promise<{ count: number }>;
     count(args?: { where?: Partial<T> }): Promise<number>;
   }
 
@@ -177,6 +177,20 @@ declare module '@prisma/client' {
 
     auditLog: PrismaModelDelegate<
       { id: string; action: string; entityType: string; createdAt: Date },
+      Record<string, unknown>,
+      Record<string, unknown>,
+      { id?: string }
+    >;
+
+    rateLimitRecord: PrismaModelDelegate<
+      { id: string; key: string; action: string; count: number; expiresAt: Date; createdAt: Date; updatedAt: Date },
+      Record<string, unknown>,
+      Record<string, unknown>,
+      { id?: string; key_action?: { key: string; action: string } }
+    >;
+
+    blockedAttempt: PrismaModelDelegate<
+      { id: string; ipHash: string; emailDomain: string | null; truncatedMessage: string | null; reason: string; createdAt: Date },
       Record<string, unknown>,
       Record<string, unknown>,
       { id?: string }

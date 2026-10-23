@@ -2,12 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Operations & Strategy Portal — AI Systems & Automation Agency</title>
-  <meta name="description" content="Internal operations console, lead pipeline CRM, system telemetry, and business management.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <!-- META_START -->
+  <title>Operations & Strategy Portal | VARAH SYSTEMS</title>
+  <meta name="description" content="Internal administrative console for telemetry, lead management, and operations control.">
   <meta name="robots" content="noindex, nofollow">
-  
-  <!-- CSS Stylesheets -->
+  <link rel="canonical" href="https://domain-pending.invalid/admin.html">
+
+  <!-- Open Graph / Social Embed Protocol -->
+  <meta property="og:site_name" content="VARAH SYSTEMS">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Operations & Strategy Portal | VARAH SYSTEMS">
+  <meta property="og:description" content="Internal administrative console for telemetry, lead management, and operations control.">
+  <meta property="og:url" content="https://domain-pending.invalid/admin.html">
+  <meta property="og:image" content="https://domain-pending.invalid/assets/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Operations & Strategy Portal — VARAH SYSTEMS">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Operations & Strategy Portal | VARAH SYSTEMS">
+  <meta name="twitter:description" content="Internal administrative console for telemetry, lead management, and operations control.">
+  <meta name="twitter:image" content="https://domain-pending.invalid/assets/og-default.png">
+  <meta name="twitter:image:alt" content="Operations & Strategy Portal — VARAH SYSTEMS">
+
+  <!-- Theme Color & Web Manifest -->
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#040508">
+  <!-- Self-Hosted Critical Font Preload (Inter Variable Latin) -->
+  <link rel="preload" href="assets/fonts/Inter-Variable-Latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+  <!-- META_END -->
+<!-- CSS Stylesheets -->
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/navigation.css">
   <link rel="stylesheet" href="css/components.css">
@@ -1217,9 +1247,7 @@
   <header class="admin-header">
     <div class="admin-header-inner">
       <a href="index.html" class="admin-brand">
-        <div class="admin-brand-icon">
-          <img src="assets/logo.svg" alt="Agency Logo">
-        </div>
+          <img src="assets/logo/logo-mark.svg" alt="VARAH SYSTEMS Logo" width="32" height="32">
         <div class="admin-title-group">
           <h1>
             AGENCY OPERATIONS
@@ -1233,10 +1261,10 @@
           <span class="admin-status-pulse"></span>
           <span>NODE: LIVE</span>
         </div>
-        <a href="#leads-section" class="tool-btn" style="background: rgba(0, 240, 255, 0.1); border-color: rgba(0, 240, 255, 0.3); color: #00f0ff;">
+        <a href="/admin/leads" class="tool-btn" style="background: rgba(0, 240, 255, 0.1); border-color: rgba(0, 240, 255, 0.3); color: #00f0ff;">
           <i class="fa-solid fa-users"></i> Leads / CRM
         </a>
-        <a href="#analytics-section" class="tool-btn" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); color: #6ee7b7;">
+        <a href="/admin/analytics" class="tool-btn" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); color: #6ee7b7;">
           <i class="fa-solid fa-chart-line"></i> Analytics
         </a>
         <a href="index.html" class="tool-btn">
@@ -1410,7 +1438,7 @@
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; font-size: 0.8125rem;">
         <div>
           <span style="color: var(--muted); display: block;">Email Address:</span>
-          <a id="modal-email-link" href="#" style="color: #6ee7b7; text-decoration: none; font-family: var(--font-mono);"></a>
+          <a id="modal-email-link" href="#lead-modal" style="color: #6ee7b7; text-decoration: none; font-family: var(--font-mono);"></a>
         </div>
         <div>
           <span style="color: var(--muted); display: block;">Estimated Budget:</span>
@@ -1419,7 +1447,7 @@
       </div>
 
       <div style="display: flex; gap: 10px; justify-content: flex-end;">
-        <a id="modal-compose-btn" href="#" class="card-action-btn btn-emerald">
+        <a id="modal-compose-btn" href="#lead-modal" class="card-action-btn btn-emerald">
           <i class="fa-solid fa-envelope"></i> Send Direct Email
         </a>
       </div>
@@ -1514,7 +1542,7 @@
               </div>
               <h4 style="color: #ffffff; font-size: 1.1rem; font-weight: 600; margin: 0 0 8px;">No Inbound Leads Yet</h4>
               <p style="font-size: 0.875rem; color: #9ca3af; max-width: 440px; margin: 0 auto 20px; line-height: 1.6;">
-                Real inquiries submitted via your public Contact Form (contact.html) or Booking Scheduler (book.html) will be captured and displayed here in real time.
+                Real inquiries submitted via your public Contact Form (contact.html) will be captured and displayed here in real time.
               </p>
               <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
                 <a href="contact.html" target="_blank" class="tool-btn" style="background: rgba(16, 185, 129, 0.12); border-color: #10b981; color: #6ee7b7; text-decoration: none;">

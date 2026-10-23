@@ -197,8 +197,13 @@ model Lead {
   utmSource      String?
   utmMedium      String?
   utmCampaign    String?
-  convertedOnPage String?            // e.g. "/solutions/ai-voice" or "/book"
+  convertedOnPage String?            // e.g. "/solutions/ai-voice" or "/contact.html"
   referrerUrl    String?
+  preferredTimes String?
+
+  // Notification Delivery Auditing
+  slackNotificationStatus String?    @default("pending") // "sent", "skipped: not configured", "failed"
+  emailNotificationStatus String?    @default("pending") // "sent", "dry-run", "skipped: not configured", "failed"
 
   // Management & Ownership
   assignedToId   String?
@@ -577,4 +582,33 @@ model NewsletterSubscriber {
 
   @@index([email])
   @@index([status])
+}
+
+// ------------------------------------------------------------------------------
+// MODULE 9: RATE LIMITING & ABUSE PREVENTION (WORKSTREAM 9)
+// ------------------------------------------------------------------------------
+
+model RateLimitRecord {
+  id        String   @id @default(uuid())
+  key       String   // HMAC-SHA256 hash of client IP
+  action    String   // e.g. "contact_form"
+  count     Int      @default(1)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([key, action])
+  @@index([expiresAt])
+}
+
+model BlockedAttempt {
+  id               String   @id @default(uuid())
+  ipHash           String   // HMAC-SHA256 hash of client IP
+  emailDomain      String?  // Anonymized domain only (e.g. "company.com") — no full email or PII
+  truncatedMessage String?  @db.VarChar(200) // Truncated to max 200 chars
+  reason           String   // e.g. "RATE_LIMITED", "INVALID_CAPTCHA", "HONEYPOT"
+  createdAt        DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([ipHash])
 }

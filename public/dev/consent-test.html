@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Consent Gating Test Fixture | VARAH SYSTEMS</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/consent.css">
+</head>
+<body class="test-fixture-page">
+  <main style="padding: 40px; max-width: 800px; margin: 0 auto; font-family: var(--font-sans);">
+    <h1>Consent Gating Test Fixture</h1>
+    <p>This is a dev-only, noindex fixture used strictly by <code>npm run check:consent</code> to test script gating.</p>
+
+    <!-- Gated Dummy Analytics Script -->
+    <script type="text/plain" data-consent="analytics">
+      window.__test_analytics_script_executed = true;
+      console.log('[TEST_FIXTURE] Gated analytics script executed successfully!');
+    </script>
+
+    <!-- Gated Dummy Marketing Script -->
+    <script type="text/plain" data-consent="marketing">
+      window.__test_marketing_script_executed = true;
+      console.log('[TEST_FIXTURE] Gated marketing script executed successfully!');
+    </script>
+  </main>
+
+  <!-- Consent Banner -->
+  <div id="consent-banner" class="consent-banner" role="region" aria-label="Privacy and Cookie Consent" hidden>
+    <div class="consent-banner-inner">
+      <p class="consent-banner-text">
+        <strong>Privacy &amp; Cookies:</strong> Test banner for verification.
+      </p>
+      <div class="consent-banner-actions">
+        <button type="button" id="consent-reject-all-btn" class="consent-btn-action">Reject All</button>
+        <button type="button" id="consent-accept-all-btn" class="consent-btn-action">Accept All</button>
+        <button type="button" id="consent-manage-btn" class="consent-btn-text">Preferences</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Preferences Modal Dialog -->
+  <dialog id="consent-preferences-dialog" class="consent-dialog" aria-labelledby="consent-dialog-title" aria-describedby="consent-dialog-desc">
+    <div class="consent-dialog-card">
+      <div class="consent-dialog-header">
+        <h3 id="consent-dialog-title" class="consent-dialog-title">Consent Preferences</h3>
+        <button type="button" id="consent-dialog-close-btn" class="consent-dialog-close" aria-label="Close preferences modal">&times;</button>
+      </div>
+      <div class="consent-dialog-body">
+        <p id="consent-dialog-desc">Test preferences description</p>
+        <div id="consent-gpc-notice" class="consent-gpc-badge" hidden>
+          <span>GPC Active</span>
+        </div>
+        <div class="consent-category-list">
+          <div class="consent-category-item">
+            <label class="consent-switch-label">
+              <input type="checkbox" id="consent-toggle-analytics" class="consent-switch-input">
+              <span class="consent-switch-track"><span class="consent-switch-thumb"></span></span>
+              <span>Analytics</span>
+            </label>
+          </div>
+          <div class="consent-category-item">
+            <label class="consent-switch-label">
+              <input type="checkbox" id="consent-toggle-marketing" class="consent-switch-input">
+              <span class="consent-switch-track"><span class="consent-switch-thumb"></span></span>
+              <span>Marketing</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="consent-dialog-footer">
+        <button type="button" id="consent-modal-reject-all-btn" class="consent-btn-action">Reject All</button>
+        <button type="button" id="consent-modal-accept-all-btn" class="consent-btn-action">Accept All</button>
+        <button type="button" id="consent-save-preferences-btn" class="consent-btn-action">Save Choices</button>
+      </div>
+    </div>
+  </dialog>
+
+  <footer>
+    <button type="button" id="open-cookie-preferences-btn" class="footer-cookie-settings-btn">Cookie Settings</button>
+  </footer>
+
+  <script src="../js/consent.js"></script>
+</body>
+</html>

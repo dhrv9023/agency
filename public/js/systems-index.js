@@ -24,11 +24,11 @@
       category: 'REVENUE ENGINE',
       shortCat: 'REVENUE',
       title: 'AI Lead Qualification & Booking',
-      desc: 'Engage inbound inquiries in 60 seconds on WhatsApp, qualify budget and timeline, and schedule sales calls directly on your calendar 24/7.',
+      desc: 'Engage inbound inquiries promptly, qualify requirements and availability, and schedule sales calls directly on your calendar.',
       flowSteps: ['INBOUND', 'QUALIFY', 'SCORE', 'BOOK'],
       stack: ['WHATSAPP', 'HUBSPOT / CRM', 'CALENDAR'],
-      outcome: '< 60 SEC SPEED',
-      latency: 'SUB-MINUTE',
+      outcome: 'RAPID RESPONSE',
+      latency: 'AUTOMATED',
       link: 'solutions/ai-sales.html',
       angleDeg: 300, // Top-Left
       nodePos: { cx: 135, cy: 95 }
@@ -39,10 +39,10 @@
       category: '24/7 OPERATIONS',
       shortCat: 'OPERATIONS',
       title: 'Autonomous Customer Support Agent',
-      desc: 'Resolve 70%+ of routine customer tickets instantly across WhatsApp, Web & Email with zero lag and graceful human handoff for VIPs.',
+      desc: 'Resolve high-volume routine customer tickets across WhatsApp, Web & Email with structured human handoff for edge cases.',
       flowSteps: ['MESSAGE', 'UNDERSTAND', 'RESOLVE', 'HANDOFF'],
       stack: ['WHATSAPP', 'ZENDESK / INTERCOM', 'EMAIL'],
-      outcome: '70%+ DEFLECTION',
+      outcome: 'ROUTINE DEFLECTION',
       latency: 'REAL-TIME',
       link: 'solutions/ai-customer-support.html',
       angleDeg: 0, // Top
@@ -54,11 +54,11 @@
       category: 'TELEPHONY',
       shortCat: 'TELEPHONY',
       title: 'AI Voice Phone Receptionist',
-      desc: 'Natural conversational voice AI that picks up inbound phone calls in 1 ring, answers FAQs, qualifies prospects, and books jobs.',
+      desc: 'Natural conversational voice AI that answers inbound phone calls promptly, answers FAQs, qualifies prospects, and books appointments.',
       flowSteps: ['CALL', 'ANSWER', 'QUALIFY', 'BOOK'],
       stack: ['TWILIO / SIP', 'VAPI / RETELL', 'CALENDAR'],
-      outcome: '1-RING ANSWER',
-      latency: '< 800MS VOICE',
+      outcome: 'PROMPT RESPONSE',
+      latency: 'LOW LATENCY',
       link: 'solutions/ai-voice.html',
       angleDeg: 60, // Top-Right
       nodePos: { cx: 405, cy: 95 }
@@ -73,7 +73,7 @@
       flowSteps: ['QUESTION', 'RETRIEVE', 'VERIFY', 'ANSWER'],
       stack: ['NOTION', 'GOOGLE DRIVE', 'SLACK', 'TEAMS'],
       outcome: 'VERIFIED CITATIONS',
-      latency: 'ZERO HALLUCINATION',
+      latency: 'GROUNDED RETRIEVAL',
       link: 'solutions/ai-knowledge.html',
       angleDeg: 120, // Bottom-Right
       nodePos: { cx: 405, cy: 445 }
@@ -84,10 +84,10 @@
       category: 'PAPERWORK',
       shortCat: 'DOCUMENTS',
       title: 'Document & Invoice Intelligence',
-      desc: 'Extract table items, line totals, and tax data from PDF invoices automatically with 99%+ accuracy and direct post to QuickBooks or your ERP.',
+      desc: 'Extract table items, line totals, and tax data from PDF invoices automatically with structured validation and direct post to QuickBooks or ERP.',
       flowSteps: ['DOCUMENT', 'EXTRACT', 'VALIDATE', 'POST'],
       stack: ['PDF / OCR', 'QUICKBOOKS', 'XERO / SAP'],
-      outcome: '99%+ ACCURACY',
+      outcome: 'VALIDATED DATA',
       latency: 'BATCH / STREAM',
       link: 'solutions/document-intelligence.html',
       angleDeg: 180, // Bottom
@@ -99,7 +99,7 @@
       category: 'DATAFLOW',
       shortCat: 'DATAFLOW',
       title: 'Autonomous Workflow Pipelines',
-      desc: 'Connect your disconnected software tools into self-healing, event-driven pipelines that eliminate hundreds of hours of manual copy-pasting.',
+      desc: 'Connect your disconnected software tools into self-healing, event-driven pipelines that eliminate manual spreadsheet data transfers.',
       flowSteps: ['EVENT', 'DECIDE', 'EXECUTE', 'SYNC'],
       stack: ['WEBHOOKS', 'POSTGRES', 'STRIPE', 'AIRTABLE'],
       outcome: 'ZERO BOTTLENECK',

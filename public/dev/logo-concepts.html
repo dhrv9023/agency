@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Logo System Concepts Preview — VARAH SYSTEMS [DEV ONLY]</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    @font-face {
+      font-family: 'Inter';
+      src: url('/assets/fonts/Inter-Variable-Latin.woff2') format('woff2');
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'JetBrains Mono';
+      src: url('/assets/fonts/JetBrainsMono-Variable-Latin.woff2') format('woff2');
+      font-display: swap;
+    }
+  </style>
+  <style>
+    :root {
+      --bg: #040508;
+      --surface: #0a0c12;
+      --surface-border: rgba(255, 255, 255, 0.08);
+      --text: #ffffff;
+      --muted: #94a3b8;
+      --cyan: #00f0ff;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      padding: 40px 24px 80px;
+    }
+
+    .container { max-width: 1240px; margin: 0 auto; }
+
+    .header {
+      border-bottom: 1px solid var(--surface-border);
+      padding-bottom: 24px;
+      margin-bottom: 40px;
+    }
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      color: var(--cyan);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .lead {
+      color: var(--muted);
+      max-width: 780px;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .concept-card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: 12px;
+      padding: 36px;
+      margin-bottom: 48px;
+    }
+
+    .concept-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid var(--surface-border);
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .concept-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .concept-badge {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--cyan);
+      background: rgba(0, 240, 255, 0.1);
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 240, 255, 0.2);
+    }
+
+    .rationale-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 32px;
+      font-size: 0.9375rem;
+    }
+    @media (max-width: 768px) {
+      .rationale-grid { grid-template-columns: 1fr; }
+    }
+    .rationale-box {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid var(--surface-border);
+    }
+    .rationale-heading {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--cyan);
+      margin-bottom: 8px;
+    }
+    .weakness-box {
+      border-color: rgba(239, 68, 68, 0.2);
+      background: rgba(239, 68, 68, 0.04);
+    }
+    .weakness-heading {
+      color: #f87171;
+    }
+
+    .specimen-section-title {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .specimens-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    .specimen-box {
+      border-radius: 8px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px;
+      position: relative;
+    }
+    .specimen-dark {
+      background: #040508;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .specimen-light {
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      color: #040508;
+    }
+    .specimen-label {
+      position: absolute;
+      top: 10px;
+      left: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.625rem;
+      opacity: 0.6;
+      text-transform: uppercase;
+    }
+
+    .scale-row {
+      display: flex;
+      align-items: flex-end;
+      gap: 32px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 8px;
+      border: 1px solid var(--surface-border);
+      flex-wrap: wrap;
+    }
+    .scale-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .scale-caption {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      color: var(--muted);
+    }
+
+    /* Outlined Wordmark Text Styling */
+    .wordmark-svg {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="eyebrow">Workstream 6 // Brand Identity Architecture</div>
+      <h1>VARAH SYSTEMS — Official Logo System &amp; Verification</h1>
+      <p class="lead">
+        <strong>Selected Concept: Concept 1 — The Binary Convergent "V" (Dual Routing Nexus)</strong><br>
+        Positioning line: <em>"Intelligent systems that scale your business"</em>.<br>
+        100% vector, zero gradients, zero glow filters, zero raster textures, zero badge containers. Outlined vector paths extracted from official Inter Bold and JetBrains Mono fonts.
+      </p>
+    </header>
+
+    <!-- OFFICIAL PRODUCTION SVG ASSETS SHOWCASE -->
+    <section class="concept-card" style="border: 1px solid var(--cyan); background: rgba(0, 240, 255, 0.03);">
+      <div class="concept-header">
+        <h2 class="concept-title" style="color: var(--cyan);">Official Production Assets (public/assets/logo/)</h2>
+        <span class="concept-badge" style="background: var(--cyan); color: #040508; font-weight: 700;">APPROVED &amp; IMPLEMENTED</span>
+      </div>
+
+      <div class="specimens-grid">
+        <!-- Horizontal Dark Lockup -->
+        <div class="specimen-box specimen-dark">
+          <span class="specimen-label">Horizontal Dark (4.9 KB)</span>
+          <img src="/assets/logo/logo-horizontal.svg" alt="Horizontal Dark Logo" style="max-width: 90%; height: auto;">
+        </div>
+
+        <!-- Horizontal Light Lockup -->
+        <div class="specimen-box specimen-light">
+          <span class="specimen-label" style="color: #64748b;">Horizontal Light (5.0 KB)</span>
+          <img src="/assets/logo/logo-horizontal-light.svg" alt="Horizontal Light Logo" style="max-width: 90%; height: auto;">
+        </div>
+
+        <!-- Stacked Lockup -->
+        <div class="specimen-box specimen-dark">
+          <span class="specimen-label">Stacked Dark (4.9 KB)</span>
+          <img src="/assets/logo/logo-stacked.svg" alt="Stacked Dark Logo" style="max-height: 90px; width: auto;">
+        </div>
+
+        <!-- Monochrome White -->
+        <div class="specimen-box specimen-dark">
+          <span class="specimen-label">Monochrome White #FFF (4.7 KB)</span>
+          <img src="/assets/logo/logo-mono-white.svg" alt="Monochrome White Logo" style="max-width: 90%; height: auto;">
+        </div>
+
+        <!-- Monochrome Black -->
+        <div class="specimen-box specimen-light">
+          <span class="specimen-label" style="color: #64748b;">Monochrome Black #000 (4.7 KB)</span>
+          <img src="/assets/logo/logo-mono-black.svg" alt="Monochrome Black Logo" style="max-width: 90%; height: auto;">
+        </div>
+
+        <!-- Standalone Mark & Favicon -->
+        <div class="specimen-box specimen-dark">
+          <span class="specimen-label">Mark (604 B) &amp; Favicon (535 B)</span>
+          <div style="display: flex; gap: 32px; align-items: center;">
+            <img src="/assets/logo/logo-mark.svg" alt="Standalone Mark" width="48" height="48">
+            <img src="/assets/logo/logo-favicon.svg" alt="Favicon Icon" width="32" height="32">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- CONCEPT 1 -->
+    <!-- ================================================================= -->
+    <article class="concept-card">
+      <div class="concept-header">
+        <h2 class="concept-title">Concept 1: The Binary Convergent "V" (Dual Routing Nexus)</h2>
+        <span class="concept-badge">ARCHITECTURAL CONVERGENCE</span>
+      </div>
+
+      <div class="rationale-grid">
+        <div class="rationale-box">
+          <div class="rationale-heading">Concept Rationale</div>
+          <p>
+            Two precision geometric beams converge at a 60-degree nexus to form an architectural 'V'. The descending left beam represents raw, chaotic inbound operations (unstructured emails, messy supplier bills, leaked leads); the ascending right beam represents deterministic automated output (clean CRM execution, verified records). At the central junction, an offset 3px routing channel demonstrates the transformative logic of an engineered automation system. It is uniquely ownable to VARAH because it embeds the initial 'V' while projecting forward velocity and precision.
+          </p>
+        </div>
+        <div class="rationale-box weakness-box">
+          <div class="rationale-heading weakness-heading">Honest Weakness</div>
+          <p>
+            Because convergent angular geometry is a classic staple of modern technical infrastructure, the central routing channel must maintain adequate visual weight at tiny resolutions (16×16 px) so it does not blend into a standard chevron when viewed at extreme distance.
+          </p>
+        </div>
+      </div>
+
+      <div class="specimen-section-title">Lockup Specimens: Full-Color, Light Background &amp; Monochrome</div>
+      <div class="specimens-grid">
+        <!-- Dark Full-Color Lockup -->
+        <div class="specimen-box specimen-dark">
+          <span class="specimen-label">Dark Full-Color</span>
+          <svg class="wordmark-svg" viewBox="0 0 340 56" width="300" height="49" xmlns="http://www.w3.org/2000/svg">
+            <!-- Mark (Height: 48px) -->
+            <g transform="translate(4, 4)">
+              <!-- Left Inbound Beam -->
+              <polygon points="0,4 16,4 28,40 16,40" fill="#94a3b8" />
+              <!-- Right Outbound Beam -->
+              <polygon points="44,4 32,4 20,40 32,40" fill="#ffffff" />
+              <!-- Central Transform Nexus Core -->
+              <polygon points="20,40 24,48 28,40 24,32" fill="#00f0ff" />
+              <line x1="24" y1="8" x2="24" y2="32" stroke="#00f0ff" stroke-width="2.5" stroke-linecap="round" />
+            </g>
+            <!-- Outlined Wordmark "VARAH SYSTEMS" -->
+            <g transform="translate(68, 12)" fill="#ffffff">
+              <!-- V -->
+              <polygon points="0,0 7,0 14,24 21,0 28,0 17.5,30 10.5,30" />
+              <!-- A -->
+              <polygon points="38,0 46,0 58,30 50,30 47.5,23 36.5,23 34,30 26,30" />
+              <polygon points="42,7 38.5,17 45.5,17" fill="#040508" />
+              <!-- R -->
+              <path d="M 64,0 L 78,0 C 84,0 88,3 88,9 C 88,14 84,17 78,17 L 72,17 L 88,30 L 79,30 L 64.5,18 L 71,18 C 76,18 79,16 79,10 C 79,4 76,2 71,2 L 64,2 Z" />
+              <!-- A -->
+              <polygon points="98,0 106,0 118,30 110,30 107.5,23 96.5,23 94,30 86,30" />
+              <polygon points="102,7 98.5,17 105.5,17" fill="#040508" />
+              <!-- H -->
+              <polygon points="124,0 132,0 132,12 144,12 144,0 152,0 152,30 144,30 144,18 132,18 132,30 124,30" />
+              <!-- Small SYSTEMS Subtitle -->
+              <g transform="translate(164, 4)" fill="#00f0ff" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" letter-spacing="0.25em">
+                <text x="0" y="16">SYSTEMS</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Light Background Lockup -->
+        <div class="specimen-box specimen-light">
+          <span class="specimen-label" style="color: #64748b;">Light Mode Specimen</span>
+          <svg class="wordmark-svg" viewBox="0 0 340 56" width="300" height="49" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(4, 4)">
+              <polygon points="0,4 16,4 28,40 16,40" fill="#475569" />
+              <polygon points="44,4 32,4 20,40 32,40" fill="#040508" />
+              <polygon points="20,40 24,48 28,40 24,32" fill="#0284c7" />
+              <line x1="24" y1="8" x2="24" y2="32" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round" />
+            </g>
+            <g transform="translate(68, 12)" fill="#040508">
+              <polygon points="0,0 7,0 14,24 21,0 28,0 17.5,30 10.5,30" />
+              <polygon points="38,0 46,0 58,30 50,30 47.5,23 36.5,23 34,30 26,30" />
+              <polygon points="42,7 38.5,17 45.5,17" fill="#ffffff" />
+              <path d="M 64,0 L 78,0 C 84,0 88,3 88,9 C 88,14 84,17 78,17 L 72,17 L 88,30 L 79,30 L 64.5,18 L 71,18 C 76,18 79,16 79,10 C 79,4 76,2 71,2 L 64,2 Z" />
+              <polygon points="98,0 106,0 118,30 110,30 107.5,23 96.5,23 94,30 86,30" />
+              <polygon points="102,7 98.5,17 105.5,17" fill="#ffffff" />
+              <polygon points="124,0 132,0 132,12 144,12 144,0 152,0 152,30 144,30 144,18 132,18 132,30 124,30" />
+              <g transform="translate(164, 4)" fill="#0284c7" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" letter-spacing="0.25em">
+                <text x="0" y="16">SYSTEMS</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Monochrome Lockup (Fixed White) -->
+        <div class="specimen-box specimen-dark">
+          <span class="specimen-label">Monochrome White</span>
+          <svg class="wordmark-svg" viewBox="0 0 340 56" width="300" height="49" xmlns="http://www.w3.org/2000/svg" fill="#ffffff">
+            <g transform="translate(4, 4)">
+              <polygon points="0,4 16,4 28,40 16,40" />
+              <polygon points="44,4 32,4 20,40 32,40" />
+              <polygon points="20,40 24,48 28,40 24,32" />
+            </g>
+            <g transform="translate(68, 12)">
+              <polygon points="0,0 7,0 14,24 21,0 28,0 17.5,30 10.5,30" />
+              <polygon points="38,0 46,0 58,30 50,30 47.5,23 36.5,23 34,30 26,30" />
+              <polygon points="42,7 38.5,17 45.5,17" fill="#040508" />
+              <path d="M 64,0 L 78,0 C 84,0 88,3 88,9 C 88,14 84,17 78,17 L 72,17 L 88,30 L 79,30 L 64.5,18 L 71,18 C 76,18 79,16 79,10 C 79,4 76,2 71,2 L 64,2 Z" />
+              <polygon points="98,0 106,0 118,30 110,30 107.5,23 96.5,23 94,30 86,30" />
+              <polygon points="102,7 98.5,17 105.5,17" fill="#040508" />
+              <polygon points="124,0 132,0 132,12 144,12 144,0 152,0 152,30 144,30 144,18 132,18 132,30 124,30" />
+              <g transform="translate(164, 4)" fill="#ffffff" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" letter-spacing="0.25em">
+                <text x="0" y="16">SYSTEMS</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Scale Fidelity Check (256, 64, 32, 16) -->
+      <div class="specimen-section-title">Optical Scale Fidelity (256px, 64px, 32px, 16px)</div>
+      <div class="scale-row">
+        <div class="scale-item">
+          <svg viewBox="0 0 48 48" width="128" height="128">
+            <polygon points="0,4 16,4 28,40 16,40" fill="#94a3b8" />
+            <polygon points="44,4 32,4 20,40 32,40" fill="#ffffff" />
+            <polygon points="20,40 24,48 28,40 24,32" fill="#00f0ff" />
+            <line x1="24" y1="8" x2="24" y2="32" stroke="#00f0ff" stroke-width="2.5" stroke-linecap="round" />
+          </svg>
+          <span class="scale-caption">256px display (128px viewport)</span>
+        </div>
+        <div class="scale-item">
+          <svg viewBox="0 0 48 48" width="64" height="64">
+            <polygon points="0,4 16,4 28,40 16,40" fill="#94a3b8" />
+            <polygon points="44,4 32,4 20,40 32,40" fill="#ffffff" />
+            <polygon points="20,40 24,48 28,40 24,32" fill="#00f0ff" />
+            <line x1="24" y1="8" x2="24" y2="32" stroke="#00f0ff" stroke-width="2.5" stroke-linecap="round" />
+          </svg>
+          <span class="scale-caption">64px display</span>
+        </div>
+        <div class="scale-item">
+          <svg viewBox="0 0 48 48" width="32" height="32">
+            <polygon points="0,4 16,4 28,40 16,40" fill="#94a3b8" />
+            <polygon points="44,4 32,4 20,40 32,40" fill="#ffffff" />
+            <polygon points="20,40 24,48 28,40 24,32" fill="#00f0ff" />
+          </svg>
+          <span class="scale-caption">32px (UI Bar)</span>
+        </div>
+        <div class="scale-item">
+          <svg viewBox="0 0 48 48" width="16" height="16">
+            <polygon points="0,4 16,4 28,40 16,40" fill="#94a3b8" />
+            <polygon points="44,4 32,4 20,40 32,40" fill="#ffffff" />
+            <polygon points="20,40 24,48 28,40 24,32" fill="#00f0ff" />
+          </svg>
+          <span class="scale-caption">16px (Favicon)</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ================================================================= -->
+    <!-- CONCEPT 2 -->
+    <!-- ================================================================= -->
+    <article class="concept-card">
+      <div class="concept-header">
+        <h2 class="concept-title">Concept 2: The Stepped Pipeline Chevron (Stage-Gate Automation)</h2>
+        <span class="concept-badge">DISCRETE MODULAR PIPELINES</span>
+      </div>
+
+      <div class="rationale-grid">
+        <div class="rationale-box">
+          <div class="rationale-heading">Concept Rationale</div>
+          <p>
+            Three parallel rectilinear blocks are stepped diagonally in a disciplined chevron formation. Rather than an unbroken line or generic swoosh, the mark represents discrete, observable execution steps in an automation pipeline (Intake → Logic → Dispatch). Uniform 3px architectural clearance channels between each block emphasize modularity and auditable boundaries. It directly mirrors VARAH's 8-stage delivery methodology (`process.html`), signalling deterministic software engineering rather than ungrounded AI magic.
+          </p>
+        </div>
+        <div class="rationale-box weakness-box">
+          <div class="rationale-heading weakness-heading">Honest Weakness</div>
+          <p>
+            Because it uses stepped parallel bars, it leans intentionally towards an industrial and computational aesthetic. It conveys structural precision and pipeline reliability, but has less organic warmth.
+          </p>
+        </div>
+      </div>
+
+      <div class="specimen-section-title">Lockup Specimens: Full-Color, Light Background &amp; Monochrome</div>
+      <div class="specimens-grid">
+        <!-- Dark Full-Color Lockup -->
+        <div class="specimen-box specimen-dark">
+          <span class="specimen-label">Dark Full-Color</span>
+          <svg class="wordmark-svg" viewBox="0 0 340 56" width="300" height="49" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(6, 6)">
+              <!-- Segment 1: Inbound Top-Left Step -->
+              <rect x="0" y="2" width="14" height="20" rx="1" fill="#94a3b8" transform="skewY(20)" />
+              <!-- Segment 2: Central Chevron Core -->
+              <polygon points="18,16 26,12 34,16 26,38" fill="#00f0ff" />
+              <!-- Segment 3: Outbound Top-Right Step -->
+              <rect x="36" y="-12" width="14" height="20" rx="1" fill="#ffffff" transform="skewY(-20)" />
+            </g>
+            <g transform="translate(68, 12)" fill="#ffffff">
+              <polygon points="0,0 7,0 14,24 21,0 28,0 17.5,30 10.5,30" />
+              <polygon points="38,0 46,0 58,30 50,30 47.5,23 36.5,23 34,30 26,30" />
+              <polygon points="42,7 38.5,17 45.5,17" fill="#040508" />
+              <path d="M 64,0 L 78,0 C 84,0 88,3 88,9 C 88,14 84,17 78,17 L 72,17 L 88,30 L 79,30 L 64.5,18 L 71,18 C 76,18 79,16 79,10 C 79,4 76,2 71,2 L 64,2 Z" />
+              <polygon points="98,0 106,0 118,30 110,30 107.5,23 96.5,23 94,30 86,30" />
+              <polygon points="102,7 98.5,17 105.5,17" fill="#040508" />
+              <polygon points="124,0 132,0 132,12 144,12 144,0 152,0 152,30 144,30 144,18 132,18 132,30 124,30" />
+              <g transform="translate(164, 4)" fill="#00f0ff" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" letter-spacing="0.25em">
+                <text x="0" y="16">SYSTEMS</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Light Background Lockup -->
+        <div class="specimen-box specimen-light">
+          <span class="specimen-label" style="color: #64748b;">Light Mode Specimen</span>
+          <svg class="wordmark-svg" viewBox="0 0 340 56" width="300" height="49" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(6, 6)">
+              <rect x="0" y="2" width="14" height="20" rx="1" fill="#64748b" transform="skewY(20)" />
+              <polygon points="18,16 26,12 34,16 26,38" fill="#0284c7" />
+              <rect x="36" y="-12" width="14" height="20" rx="1" fill="#0f172a" transform="skewY(-20)" />
+            </g>
+            <g transform="translate(68, 12)" fill="#040508">
+              <polygon points="0,0 7,0 14,24 21,0 28,0 17.5,30 10.5,30" />
+              <polygon points="38,0 46,0 58,30 50,30 47.5,23 36.5,23 34,30 26,30" />
+              <polygon points="42,7 38.5,17 45.5,17" fill="#ffffff" />
+              <path d="M 64,0 L 78,0 C 84,0 88,3 88,9 C 88,14 84,17 78,17 L 72,17 L 88,30 L 79,30 L 64.5,18 L 71,18 C 76,18 79,16 79,10 C 79,4 76,2 71,2 L 64,2 Z" />
+              <polygon points="98,0 106,0 118,30 110,30 107.5,23 96.5,23 94,30 86,30" />
+              <polygon points="102,7 98.5,17 105.5,17" fill="#ffffff" />
+              <polygon points="124,0 132,0 132,12 144,12 144,0 152,0 152,30 144,30 144,18 132,18 132,30 124,30" />
+              <g transform="translate(164, 4)" fill="#0284c7" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" letter-spacing="0.25em">
+                <text x="0" y="16">SYSTEMS</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Monochrome Lockup -->
+        <div class="specimen-box specimen-dark">
+          <span class="specimen-label">Monochrome White</span>
+          <svg class="wordmark-svg" viewBox="0 0 340 56" width="300" height="49" xmlns="http://www.w3.org/2000/svg" fill="#ffffff">
+            <g transform="translate(6, 6)">
+              <rect x="0" y="2" width="14" height="20" rx="1" transform="skewY(20)" />
+              <polygon points="18,16 26,12 34,16 26,38" />
+              <rect x="36" y="-12" width="14" height="20" rx="1" transform="skewY(-20)" />
+            </g>
+            <g transform="translate(68, 12)">
+              <polygon points="0,0 7,0 14,24 21,0 28,0 17.5,30 10.5,30" />
+              <polygon points="38,0 46,0 58,30 50,30 47.5,23 36.5,23 34,30 26,30" />
+              <polygon points="42,7 38.5,17 45.5,17" fill="#040508" />
+              <path d="M 64,0 L 78,0 C 84,0 88,3 88,9 C 88,14 84,17 78,17 L 72,17 L 88,30 L 79,30 L 64.5,18 L 71,18 C 76,18 79,16 79,10 C 79,4 76,2 71,2 L 64,2 Z" />
+              <polygon points="98,0 106,0 118,30 110,30 107.5,23 96.5,23 94,30 86,30" />
+              <polygon points="102,7 98.5,17 105.5,17" fill="#040508" />
+              <polygon points="124,0 132,0 132,12 144,12 144,0 152,0 152,30 144,30 144,18 132,18 132,30 124,30" />
+              <g transform="translate(164, 4)" fill="#ffffff" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" letter-spacing="0.25em">
+                <text x="0" y="16">SYSTEMS</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Scale Fidelity Check -->
+      <div class="specimen-section-title">Optical Scale Fidelity (256px, 64px, 32px, 16px)</div>
+      <div class="scale-row">
+        <div class="scale-item">
+          <svg viewBox="0 0 52 44" width="128" height="108">
+            <rect x="0" y="2" width="14" height="20" rx="1" fill="#94a3b8" transform="skewY(20)" />
+            <polygon points="18,16 26,12 34,16 26,38" fill="#00f0ff" />
+            <rect x="36" y="-12" width="14" height="20" rx="1" fill="#ffffff" transform="skewY(-20)" />
+          </svg>
+          <span class="scale-caption">256px display (128px viewport)</span>
+        </div>
+        <div class="scale-item">
+          <svg viewBox="0 0 52 44" width="64" height="54">
+            <rect x="0" y="2" width="14" height="20" rx="1" fill="#94a3b8" transform="skewY(20)" />
+            <polygon points="18,16 26,12 34,16 26,38" fill="#00f0ff" />
+            <rect x="36" y="-12" width="14" height="20" rx="1" fill="#ffffff" transform="skewY(-20)" />
+          </svg>
+          <span class="scale-caption">64px display</span>
+        </div>
+        <div class="scale-item">
+          <svg viewBox="0 0 52 44" width="32" height="27">
+            <rect x="0" y="2" width="14" height="20" rx="1" fill="#94a3b8" transform="skewY(20)" />
+            <polygon points="18,16 26,12 34,16 26,38" fill="#00f0ff" />
+            <rect x="36" y="-12" width="14" height="20" rx="1" fill="#ffffff" transform="skewY(-20)" />
+          </svg>
+          <span class="scale-caption">32px (UI Bar)</span>
+        </div>
+        <div class="scale-item">
+          <svg viewBox="0 0 52 44" width="16" height="14">
+            <rect x="0" y="2" width="14" height="20" rx="1" fill="#94a3b8" transform="skewY(20)" />
+            <polygon points="18,16 26,12 34,16 26,38" fill="#00f0ff" />
+            <rect x="36" y="-12" width="14" height="20" rx="1" fill="#ffffff" transform="skewY(-20)" />
+          </svg>
+          <span class="scale-caption">16px (Favicon)</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ================================================================= -->
+    <!-- CONCEPT 3 -->
+    <!-- ================================================================= -->
+    <article class="concept-card">
+      <div class="concept-header">
+        <h2 class="concept-title">Concept 3: The Monolithic Pillar &amp; Gate (The Precision Pylon 'V')</h2>
+        <span class="concept-badge">ARCHITECTURAL MASS &amp; GATEWAY</span>
+      </div>
+
+      <div class="rationale-grid">
+        <div class="rationale-box">
+          <div class="rationale-heading">Concept Rationale</div>
+          <p>
+            An architectural monogram rooted in high-density Swiss minimalism. Two solid geometric pylons flank a central downward-tapering gateway, forming an unmistakable, weighted 'V' silhouette. The central negative-space aperture illustrates the elimination of organizational friction: wide at the top to ingest complex workflows, channeled into an exact point of precision execution. Sourced in the name "VARAH" (signifying unyielding strength and foundational stability), it delivers immediate authority and highest contrast silhouette readability across any device.
+          </p>
+        </div>
+        <div class="rationale-box weakness-box">
+          <div class="rationale-heading weakness-heading">Honest Weakness</div>
+          <p>
+            The mark prioritizes mass, stability, and high-contrast silhouette over kinetic motion. While it communicates foundational enterprise reliability, it has less implied "speed" than Concept 1 or 2.
+          </p>
+        </div>
+      </div>
+
+      <div class="specimen-section-title">Lockup Specimens: Full-Color, Light Background &amp; Monochrome</div>
+      <div class="specimens-grid">
+        <!-- Dark Full-Color Lockup -->
+        <div class="specimen-box specimen-dark">
+          <span class="specimen-label">Dark Full-Color</span>
+          <svg class="wordmark-svg" viewBox="0 0 340 56" width="300" height="49" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(6, 4)">
+              <!-- Left Pylon -->
+              <polygon points="2,4 18,4 24,44 14,44" fill="#94a3b8" />
+              <!-- Right Pylon -->
+              <polygon points="46,4 30,4 24,44 34,44" fill="#ffffff" />
+              <!-- Keystone Cyan Prism -->
+              <polygon points="24,28 19,42 29,42" fill="#00f0ff" />
+            </g>
+            <g transform="translate(68, 12)" fill="#ffffff">
+              <polygon points="0,0 7,0 14,24 21,0 28,0 17.5,30 10.5,30" />
+              <polygon points="38,0 46,0 58,30 50,30 47.5,23 36.5,23 34,30 26,30" />
+              <polygon points="42,7 38.5,17 45.5,17" fill="#040508" />
+              <path d="M 64,0 L 78,0 C 84,0 88,3 88,9 C 88,14 84,17 78,17 L 72,17 L 88,30 L 79,30 L 64.5,18 L 71,18 C 76,18 79,16 79,10 C 79,4 76,2 71,2 L 64,2 Z" />
+              <polygon points="98,0 106,0 118,30 110,30 107.5,23 96.5,23 94,30 86,30" />
+              <polygon points="102,7 98.5,17 105.5,17" fill="#040508" />
+              <polygon points="124,0 132,0 132,12 144,12 144,0 152,0 152,30 144,30 144,18 132,18 132,30 124,30" />
+              <g transform="translate(164, 4)" fill="#00f0ff" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" letter-spacing="0.25em">
+                <text x="0" y="16">SYSTEMS</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Light Background Lockup -->
+        <div class="specimen-box specimen-light">
+          <span class="specimen-label" style="color: #64748b;">Light Mode Specimen</span>
+          <svg class="wordmark-svg" viewBox="0 0 340 56" width="300" height="49" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(6, 4)">
+              <polygon points="2,4 18,4 24,44 14,44" fill="#64748b" />
+              <polygon points="46,4 30,4 24,44 34,44" fill="#040508" />
+              <polygon points="24,28 19,42 29,42" fill="#0284c7" />
+            </g>
+            <g transform="translate(68, 12)" fill="#040508">
+              <polygon points="0,0 7,0 14,24 21,0 28,0 17.5,30 10.5,30" />
+              <polygon points="38,0 46,0 58,30 50,30 47.5,23 36.5,23 34,30 26,30" />
+              <polygon points="42,7 38.5,17 45.5,17" fill="#ffffff" />
+              <path d="M 64,0 L 78,0 C 84,0 88,3 88,9 C 88,14 84,17 78,17 L 72,17 L 88,30 L 79,30 L 64.5,18 L 71,18 C 76,18 79,16 79,10 C 79,4 76,2 71,2 L 64,2 Z" />
+              <polygon points="98,0 106,0 118,30 110,30 107.5,23 96.5,23 94,30 86,30" />
+              <polygon points="102,7 98.5,17 105.5,17" fill="#ffffff" />
+              <polygon points="124,0 132,0 132,12 144,12 144,0 152,0 152,30 144,30 144,18 132,18 132,30 124,30" />
+              <g transform="translate(164, 4)" fill="#0284c7" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" letter-spacing="0.25em">
+                <text x="0" y="16">SYSTEMS</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Monochrome Lockup -->
+        <div class="specimen-box specimen-dark">
+          <span class="specimen-label">Monochrome White</span>
+          <svg class="wordmark-svg" viewBox="0 0 340 56" width="300" height="49" xmlns="http://www.w3.org/2000/svg" fill="#ffffff">
+            <g transform="translate(6, 4)">
+              <polygon points="2,4 18,4 24,44 14,44" />
+              <polygon points="46,4 30,4 24,44 34,44" />
+              <polygon points="24,28 19,42 29,42" fill="#040508" />
+            </g>
+            <g transform="translate(68, 12)">
+              <polygon points="0,0 7,0 14,24 21,0 28,0 17.5,30 10.5,30" />
+              <polygon points="38,0 46,0 58,30 50,30 47.5,23 36.5,23 34,30 26,30" />
+              <polygon points="42,7 38.5,17 45.5,17" fill="#040508" />
+              <path d="M 64,0 L 78,0 C 84,0 88,3 88,9 C 88,14 84,17 78,17 L 72,17 L 88,30 L 79,30 L 64.5,18 L 71,18 C 76,18 79,16 79,10 C 79,4 76,2 71,2 L 64,2 Z" />
+              <polygon points="98,0 106,0 118,30 110,30 107.5,23 96.5,23 94,30 86,30" />
+              <polygon points="102,7 98.5,17 105.5,17" fill="#040508" />
+              <polygon points="124,0 132,0 132,12 144,12 144,0 152,0 152,30 144,30 144,18 132,18 132,30 124,30" />
+              <g transform="translate(164, 4)" fill="#ffffff" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" letter-spacing="0.25em">
+                <text x="0" y="16">SYSTEMS</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Scale Fidelity Check -->
+      <div class="specimen-section-title">Optical Scale Fidelity (256px, 64px, 32px, 16px)</div>
+      <div class="scale-row">
+        <div class="scale-item">
+          <svg viewBox="0 0 48 48" width="128" height="128">
+            <polygon points="2,4 18,4 24,44 14,44" fill="#94a3b8" />
+            <polygon points="46,4 30,4 24,44 34,44" fill="#ffffff" />
+            <polygon points="24,28 19,42 29,42" fill="#00f0ff" />
+          </svg>
+          <span class="scale-caption">256px display (128px viewport)</span>
+        </div>
+        <div class="scale-item">
+          <svg viewBox="0 0 48 48" width="64" height="64">
+            <polygon points="2,4 18,4 24,44 14,44" fill="#94a3b8" />
+            <polygon points="46,4 30,4 24,44 34,44" fill="#ffffff" />
+            <polygon points="24,28 19,42 29,42" fill="#00f0ff" />
+          </svg>
+          <span class="scale-caption">64px display</span>
+        </div>
+        <div class="scale-item">
+          <svg viewBox="0 0 48 48" width="32" height="32">
+            <polygon points="2,4 18,4 24,44 14,44" fill="#94a3b8" />
+            <polygon points="46,4 30,4 24,44 34,44" fill="#ffffff" />
+            <polygon points="24,28 19,42 29,42" fill="#00f0ff" />
+          </svg>
+          <span class="scale-caption">32px (UI Bar)</span>
+        </div>
+        <div class="scale-item">
+          <svg viewBox="0 0 48 48" width="16" height="16">
+            <polygon points="2,4 18,4 24,44 14,44" fill="#94a3b8" />
+            <polygon points="46,4 30,4 24,44 34,44" fill="#ffffff" />
+            <polygon points="24,28 19,42 29,42" fill="#00f0ff" />
+          </svg>
+          <span class="scale-caption">16px (Favicon)</span>
+        </div>
+      </div>
+    </article>
+  </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "VARAH SYSTEMS — Intelligent Systems That Scale Your Business",
+  "short_name": "VARAH",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#040508",
+  "theme_color": "#040508",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "maskable-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
