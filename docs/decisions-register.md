@@ -10,7 +10,7 @@
 1. **`docs/decisions-register.md`**: The master compilation of Step 0 decisions across all twelve hardening workstreams. Any code, configuration, or runtime behavior contradicting this register is classified as a defect.
 2. **`docs/logo-usage.md`**: Authoritative **solely** for the brand mark, vector construction, contrast minimums, and logo usage guidelines.
 3. **`templates/*.json`** (`meta.json`, `form-rules.json`, `security-headers.json`, `analytics-config.json`): Machine-readable canonical single sources of truth for metadata, schema validation rules, HTTP headers, and analytics gating.
-4. **`docs/target_prospects_strategy_dossier.md` & `docs/target_prospects_lead_sheet.csv`**: **NON-AUTHORITATIVE** for site decisions. These documents contain sales strategy, company targeting criteria, and outreach templates. They must **never** be placed under `public/`, linked on the site, indexed in `sitemap.xml`, or included in production deployment artifacts.
+4. **`docs/strategy/target_prospects_strategy_dossier.md` & `docs/strategy/target_prospects_lead_sheet.csv`**: **NON-AUTHORITATIVE** for site decisions. These documents contain sales strategy, company targeting criteria, and outreach templates. They must **never** be placed under `public/`, linked on the site, indexed in `sitemap.xml`, or included in production deployment artifacts.
 5. **Other Authoritative Docs in `docs/`**: **None**.
 
 ---
@@ -125,5 +125,42 @@
    - **Current Repo State**: Configured with 100,000 iterations.
    - **Contradiction**: OWASP 2023/2024 guidance specifies 600,000 iterations for PBKDF2-HMAC-SHA256.
 5. **Defect #5 — Public Exposure of Strategic Dossier & Prospect Lead Sheet**:
-   - **Current Repo State**: `docs/target_prospects_strategy_dossier.md` and `docs/target_prospects_lead_sheet.csv` are tracked in Git on `main` within a public GitHub repository (`dhrv9023/agency`).
+   - **Current Repo State**: `docs/strategy/target_prospects_strategy_dossier.md` and `docs/strategy/target_prospects_lead_sheet.csv` are tracked in Git on `main` within a public GitHub repository (`dhrv9023/agency`).
    - **Contradiction**: While not exposed on the live website or in `public/`, internal target prospect strategies and cold outreach copy are publicly visible on GitHub.
+
+---
+
+## Workstream 13: Trust, Clarity & Anti-Vibe-Coding Architectural Decisions
+
+### ADR-13.1: Voice, Tone & Human-Written Plain Language Standards
+- **Decision**: Eliminate all AI-generated verbal habits across site copy.
+- **Rules**:
+  - Ban "not X, but Y" / "not just X, it's Y" contrast tropes (T15).
+  - Ban em dash (`—`) overuse across all copy, metadata, and OpenGraph text (T09); replace with clean colons or periods.
+  - Ban buzzwords: `orchestration`, `agentic`, `hyper-scaled`, `game-changing`, `revolutionary`, `unleash`, `supercharge` (T12/T16).
+  - Voice standard: Soft, respectful, engineering-first tone explaining concrete real-world operational workflows for non-technical buyers (clinics, distributors, operations heads).
+
+### ADR-13.2: Dual-Currency Scoping & Engagement Structure
+- **Decision**: Replace generic 3-tier SaaS pricing cards (Starter/Growth/Scale) with transparent, dual-currency operational scoping.
+- **Rules**:
+  - Currency switcher on `public/pricing.html`: Scoped in Indian Rupees (₹ INR) for Indian clients and US Dollars ($ USD) for international clients.
+  - Transparent structure: Fixed-scope project build fee + optional monthly maintenance retainer.
+  - Included warranty: 30 days of post-launch monitoring, prompt tuning, and bug fixes at zero extra cost on every project.
+
+### ADR-13.3: Case Study Honest Framing & Anti-Fabrication Rule
+- **Decision**: Enforce 100% honesty regarding client history. Zero invented client names, fake logos, synthetic quotes, or fabricated ROI metrics.
+- **Rules**:
+  - Case studies retitled to "Example System Architectures" and "Illustrative Reference Walkthroughs".
+  - Transparently labeled as pilot engineering blueprints showing real data flows, integration schemas, and safety guardrails.
+
+### ADR-13.4: Asset Self-Hosting & Zero-Third-Party CDN Dependency
+- **Decision**: Remove external CloudFront video embeds and external FontAwesome CDN stylesheets.
+- **Rules**:
+  - Hero background video self-hosted locally at `public/assets/videos/hero-bg.mp4` (124 KB, down from 13.86 MB via `ffmpeg` compression) paired with `public/assets/images/hero-poster.webp` (16 KB) for instant 0.1s LCP rendering.
+  - FontAwesome CDN `<link>` removed from all public HTML pages; critical navigation icons rendered via zero-dependency inline SVGs.
+
+### ADR-13.5: AI-Tells Static Scanner Enforcement
+- **Decision**: Implement zero-dependency automated scanners (`scripts/check-ai-tells.mjs` and `scripts/check-plain-language.mjs`) checking for T01–T29 tells and readability on every commit.
+- **Rules**:
+  - Zero critical build-blockers permitted in CI/CD pipeline before deployment.
+

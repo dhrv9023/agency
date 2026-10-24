@@ -31,6 +31,35 @@ VARAH SYSTEMS is an enterprise-grade administration console purpose-built to ope
 
 ---
 
+## 📂 Repository Organization & Architecture
+
+The repository is structured into distinct, modular functional tiers:
+
+```
+AGENCY/
+├── app/                  # Layer B: Next.js 14 App Router (Admin Console & /api/contact)
+├── components/           # Layer B: React UI components for internal operations
+├── docs/                 # Documentation, decisions register & strategy dossier
+│   ├── ARCHITECTURE.md   # Comprehensive system architecture & directory map
+│   ├── decisions-register.md # Single source of truth for workstream decisions
+│   ├── logo-usage.md     # Vector geometry, lockups & contrast standards
+│   └── strategy/         # Sales targeting intelligence & prospecting lead sheets
+├── lib/                  # Shared core utilities (auth, security, Prisma, validations)
+├── prisma/               # PostgreSQL schema (schema.prisma) and seed scripts
+├── public/               # Layer A: Public static marketing site (HTML/CSS/JS)
+├── scripts/              # 28 automated build, synchronization, audit & test suites
+├── server/               # Next.js Server Actions (auth, leads, cms, analytics, settings)
+├── templates/            # Canonical Single Sources of Truth (meta, form rules, headers)
+├── types/                # Strict TypeScript type definitions (admin.ts, prisma.d.ts)
+├── services/             # Standalone specialized microservices (Voice AI Scheduler)
+├── fonts-src/            # Upstream font binary sources (Inter, JetBrains Mono)
+└── archive/              # Archived legacy materials (historical agency blueprints)
+```
+
+> 📘 **Full Architecture Guide**: See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for the exhaustive subsystem breakdown and script catalog.
+
+---
+
 ## 📦 Core Operational Modules
 
 ### 1. Dashboard Overview (`/admin`)

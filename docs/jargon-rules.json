@@ -1,0 +1,39 @@
+{
+  "banned_terms": {
+    "LLM": "AI language model",
+    "RAG": "AI that answers using your own company documents",
+    "agentic": "AI assistant that completes tasks for you",
+    "autonomous agent": "AI assistant that completes tasks for you",
+    "orchestration": "software connection and automated workflow",
+    "pipeline": "automated workflow",
+    "deterministic": "rule-based and predictable",
+    "inference": "AI processing",
+    "vector database": "secure document index",
+    "fine-tuning": "customizing models for your specific operations",
+    "hallucination": "AI factual mistake",
+    "scalable": "designed to handle growth without adding headcount",
+    "synergy": "practical business value",
+    "end-to-end": "from start to finish",
+    "leverage": "use",
+    "seamless": "smooth and reliable",
+    "cutting-edge": "modern",
+    "revolutionary": "advanced",
+    "game-changing": "effective",
+    "unlock": "achieve",
+    "supercharge": "accelerate",
+    "transform": "modernize"
+  },
+  "voice_rules": {
+    "tone": "Soft, professional, and respectful to every client",
+    "target_audience": "Non-technical business owners, clinic managers, shop owners, finance leads",
+    "em_dash_policy": "Zero em dashes (—) or double hyphens (--) permitted in user-facing copy",
+    "contrast_policy": "Direct statements only; prohibit 'not just X, it is Y' and 'more than a' patterns",
+    "sentence_length_target": "Under 20 words per sentence",
+    "paragraph_length_target": "Under 4 lines per paragraph",
+    "primary_cta": {
+      "label": "Start a Project",
+      "destination": "contact.html"
+    },
+    "response_time_promise": "We reply within one business day."
+  }
+}

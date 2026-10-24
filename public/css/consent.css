@@ -18,7 +18,6 @@
   z-index: 990;
   background-color: var(--surface);
   border-top: 1px solid var(--border-strong);
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.12);
   padding: var(--space-4) var(--space-4) calc(var(--space-4) + var(--safe-bottom)) var(--space-4);
   transition: opacity var(--transition-normal), transform var(--transition-normal);
 }
@@ -146,7 +145,7 @@
   max-width: 580px;
   width: 92%;
   padding: 0;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border-strong);
   margin: auto;
   position: fixed;
   inset: 0;
@@ -154,8 +153,7 @@
 }
 
 .consent-dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 .consent-dialog-card {

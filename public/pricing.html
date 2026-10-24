@@ -18,7 +18,7 @@
   <meta property="og:image" content="https://domain-pending.invalid/assets/og-default.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Transparent Pricing & Engagement Models — VARAH SYSTEMS">
+  <meta property="og:image:alt" content="Transparent Pricing & Engagement Models: VARAH SYSTEMS">
   <meta property="og:locale" content="en_US">
 
   <!-- Twitter Cards -->
@@ -26,7 +26,7 @@
   <meta name="twitter:title" content="Transparent Pricing & Engagement Models | VARAH SYSTEMS">
   <meta name="twitter:description" content="Explore transparent, scope-based investment tiers: Architectural Audits, Automation Sprints, Custom Systems, and Retainers. View our engagement models.">
   <meta name="twitter:image" content="https://domain-pending.invalid/assets/og-default.png">
-  <meta name="twitter:image:alt" content="Transparent Pricing & Engagement Models — VARAH SYSTEMS">
+  <meta name="twitter:image:alt" content="Transparent Pricing & Engagement Models: VARAH SYSTEMS">
 
   <!-- Theme Color & Web Manifest -->
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#040508">
@@ -65,7 +65,6 @@
   <link rel="stylesheet" href="css/navigation.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/sections.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
@@ -99,8 +98,8 @@
       <div class="header-actions">
         <a href="contact.html" class="btn btn-primary btn-sm">Start a Project</a>
         <button id="theme-toggle-btn" class="theme-toggle-btn" type="button" aria-label="Toggle Theme Mode" title="Toggle Theme Mode">
-          <i class="fa-solid fa-moon theme-icon-dark" aria-hidden="true"></i>
-          <i class="fa-solid fa-sun theme-icon-light" aria-hidden="true"></i>
+          <svg class="theme-icon-dark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+          <svg class="theme-icon-light" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
         </button>
         <!-- Accessible Mobile Menu Toggle Button -->
         <button class="mobile-burger-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
@@ -131,7 +130,7 @@
       <span class="mobile-theme-label">Theme Mode:</span>
       <button id="mobile-theme-toggle-btn" class="mobile-theme-switch-btn" type="button">
         <span id="mobile-theme-state">Dark</span> Mode
-        <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a10 10 0 0 0 0 20Z" fill="currentColor"></path></svg>
       </button>
     </div>
     <div class="mobile-contact-summary">
@@ -150,101 +149,147 @@
     <section class="page-hero">
       <div class="container">
         <div class="reveal-on-scroll">
-          <span class="eyebrow">Engagement Models</span>
-          <h1 class="page-hero-title">Transparent, Value-Grounded Scoping</h1>
+          <span class="eyebrow">Clear Investment</span>
+          <h1 class="page-hero-title">Simple, Predictable Pricing Based on Scope</h1>
           <p class="page-hero-desc">
-            Every engagement is scoped around the specific workflow, technical complexity, and expected business value. We avoid rigid cookie-cutter plans that don't match real company operations.
+            We provide fixed-price quotes with defined deliverables. You always know the full investment and timeline before any work begins.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Editorial Pricing & Scope Matrix (Non-Card Layout) -->
     <section class="section">
       <div class="container">
+        <!-- Currency Selector Strip -->
+        <div class="currency-toggle-wrapper reveal-on-scroll" style="display: flex; justify-content: center; margin-bottom: 40px;">
+          <div style="display: inline-flex; border: 1px solid var(--border-strong); border-radius: var(--radius-rect); padding: 4px; background: var(--surface-subtle); gap: 4px;">
+            <button type="button" id="curr-btn-inr" class="btn btn-sm" style="background: var(--text); color: var(--surface); border: none; padding: 6px 16px; font-size: 0.8125rem; font-weight: 600; border-radius: calc(var(--radius-rect) - 2px); cursor: pointer;">India (₹ INR)</button>
+            <button type="button" id="curr-btn-usd" class="btn btn-sm" style="background: transparent; color: var(--muted); border: none; padding: 6px 16px; font-size: 0.8125rem; font-weight: 600; border-radius: calc(var(--radius-rect) - 2px); cursor: pointer;">International ($ USD)</button>
+          </div>
+        </div>
+
         <div class="pricing-matrix-strip reveal-on-scroll">
-          <!-- Tier 1: AI Audit -->
-          <div class="pricing-matrix-row">
-            <div>
-              <h2 class="pricing-tier-name">AI Audit</h2>
-              <div class="pricing-tier-scope">Stage 01 // 1–2 Weeks</div>
+          <!-- Model 1: Focused Automation Sprint -->
+          <div class="pricing-matrix-row" style="background: var(--surface-subtle); border: 1px solid var(--border); border-radius: var(--radius-rect); padding: 32px; margin-bottom: 24px;">
+            <div style="margin-bottom: 16px;">
+              <h2 class="pricing-tier-name" style="font-size: 1.5rem; margin-top: 0; margin-bottom: 6px;">Focused Automation Sprint</h2>
+              <div class="pricing-tier-scope" style="font-family: var(--font-mono); color: var(--accent); font-size: 0.875rem;">Delivery: 2 to 4 Weeks</div>
             </div>
-            <div class="pricing-tier-body">
-              For businesses that need to identify, quantify, and prioritize automation opportunities across operations. Delivers a complete workflow audit, API feasibility assessment, and architectural blueprint.
+            
+            <div class="pricing-tier-body" style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
+              Ideal for automating one high-friction bottleneck, such as customer question routing, automatic invoice entry, or lead qualification to calendar. Includes sandbox testing, staff training, and a 30-day post-launch warranty.
             </div>
-            <div>
-              <span class="text-white" style="font-family: var(--font-mono); font-size: 0.875rem;">Deliverable: Architectural Blueprint</span>
+
+            <!-- Currency Values -->
+            <div class="curr-val-inr" style="display: block; margin-bottom: 24px; padding: 16px; border: 1px solid var(--border); border-radius: var(--radius-rect); background: var(--bg);">
+              <div style="font-size: 1.25rem; font-weight: 700; color: var(--text); margin-bottom: 4px;">₹75,000 to ₹1,50,000 <span style="font-size: 0.875rem; font-weight: 400; color: var(--muted);">(Fixed Build Fee)</span></div>
+              <div style="font-size: 0.9375rem; color: var(--text-secondary);">+ ₹15,000 / month <span style="font-size: 0.8125rem; color: var(--muted);">(System Maintenance &amp; Telemetry Retainer)</span></div>
             </div>
+
+            <div class="curr-val-usd" style="display: none; margin-bottom: 24px; padding: 16px; border: 1px solid var(--border); border-radius: var(--radius-rect); background: var(--bg);">
+              <div style="font-size: 1.25rem; font-weight: 700; color: var(--text); margin-bottom: 4px;">$2,500 to $4,500 <span style="font-size: 0.875rem; font-weight: 400; color: var(--muted);">(Fixed Build Fee)</span></div>
+              <div style="font-size: 0.9375rem; color: var(--text-secondary);">+ $350 / month <span style="font-size: 0.8125rem; color: var(--muted);">(System Maintenance &amp; Telemetry Retainer)</span></div>
+            </div>
+
             <div>
-              <a href="contact.html" class="editorial-link">Scope Audit &rarr;</a>
+              <a href="contact.html" class="btn btn-primary btn-sm">Start a Project</a>
             </div>
           </div>
 
-          <!-- Tier 2: Automation Sprint -->
-          <div class="pricing-matrix-row">
-            <div>
-              <h2 class="pricing-tier-name">Automation Sprint</h2>
-              <div class="pricing-tier-scope">Stage 02 // 2–4 Weeks</div>
+          <!-- Model 2: Multi-System Architecture -->
+          <div class="pricing-matrix-row" style="background: var(--surface-subtle); border: 1px solid var(--border); border-radius: var(--radius-rect); padding: 32px; margin-bottom: 24px;">
+            <div style="margin-bottom: 16px;">
+              <h2 class="pricing-tier-name" style="font-size: 1.5rem; margin-top: 0; margin-bottom: 6px;">Multi-System Architecture</h2>
+              <div class="pricing-tier-scope" style="font-family: var(--font-mono); color: var(--accent); font-size: 0.875rem;">Delivery: 4 to 8 Weeks</div>
             </div>
-            <div class="pricing-tier-body">
-              For implementing and deploying a defined, high-impact workflow automation pipeline rapidly into production with direct CRM/database integrations and edge-case stress testing.
+            
+            <div class="pricing-tier-body" style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 20px;">
+              Designed for companies connecting multiple operational departments, such as integrating web intake, CRM records, inventory lookups, and automated accounting reconciliation. Includes deep exception handling, human review checkpoints, and 60 days of warranty.
             </div>
-            <div>
-              <span class="text-white" style="font-family: var(--font-mono); font-size: 0.875rem;">Deliverable: Live Production Pipeline</span>
-            </div>
-            <div>
-              <a href="contact.html" class="editorial-link">Scope Sprint &rarr;</a>
-            </div>
-          </div>
 
-          <!-- Tier 3: AI System -->
-          <div class="pricing-matrix-row">
-            <div>
-              <h2 class="pricing-tier-name">AI System</h2>
-              <div class="pricing-tier-scope">Stage 03 // 6–10 Weeks</div>
+            <!-- Currency Values -->
+            <div class="curr-val-inr" style="display: block; margin-bottom: 24px; padding: 16px; border: 1px solid var(--border); border-radius: var(--radius-rect); background: var(--bg);">
+              <div style="font-size: 1.25rem; font-weight: 700; color: var(--text); margin-bottom: 4px;">₹2,00,000 to ₹4,50,000 <span style="font-size: 0.875rem; font-weight: 400; color: var(--muted);">(Fixed Build Fee)</span></div>
+              <div style="font-size: 0.9375rem; color: var(--text-secondary);">+ ₹35,000 / month <span style="font-size: 0.8125rem; color: var(--muted);">(System Maintenance &amp; Telemetry Retainer)</span></div>
             </div>
-            <div class="pricing-tier-body">
-              For larger custom implementations, multi-agent frameworks, proprietary web applications, or complex enterprise RAG engines with private VPC isolation and RBAC.
-            </div>
-            <div>
-              <span class="text-white" style="font-family: var(--font-mono); font-size: 0.875rem;">Deliverable: Enterprise AI Infrastructure</span>
-            </div>
-            <div>
-              <a href="contact.html" class="editorial-link">Scope Custom System &rarr;</a>
-            </div>
-          </div>
 
-          <!-- Tier 4: Managed AI Systems -->
-          <div class="pricing-matrix-row">
-            <div>
-              <h2 class="pricing-tier-name">Managed AI Systems</h2>
-              <div class="pricing-tier-scope">Stage 04 // Monthly Retainer</div>
+            <div class="curr-val-usd" style="display: none; margin-bottom: 24px; padding: 16px; border: 1px solid var(--border); border-radius: var(--radius-rect); background: var(--bg);">
+              <div style="font-size: 1.25rem; font-weight: 700; color: var(--text); margin-bottom: 4px;">$5,500 to $9,500 <span style="font-size: 0.875rem; font-weight: 400; color: var(--muted);">(Fixed Build Fee)</span></div>
+              <div style="font-size: 0.9375rem; color: var(--text-secondary);">+ $750 / month <span style="font-size: 0.8125rem; color: var(--muted);">(System Maintenance &amp; Telemetry Retainer)</span></div>
             </div>
-            <div class="pricing-tier-body">
-              Ongoing optimization, 24/7 telemetry monitoring, schema drift mitigation, API version maintenance, continuous prompt evaluations, and priority SLA support.
-            </div>
+
             <div>
-              <span class="text-white" style="font-family: var(--font-mono); font-size: 0.875rem;">Deliverable: Continuous Retainer & SLA</span>
-            </div>
-            <div>
-              <a href="contact.html" class="editorial-link">Scope Retainer &rarr;</a>
+              <a href="contact.html" class="btn btn-primary btn-sm">Start a Project</a>
             </div>
           </div>
         </div>
 
-        <div class="editorial-conversion-banner reveal-on-scroll" style="margin-top: 80px;">
-          <span class="eyebrow">Scoping Conversation</span>
-          <h2 class="editorial-conversion-title">Let's scope your system.</h2>
+        <!-- What Affects Cost & Inclusions Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 48px;">
+          <div style="border: 1px solid var(--border); border-radius: var(--radius-rect); padding: 24px; background: var(--surface-subtle);">
+            <h3 style="font-size: 1.125rem; margin-top: 0; margin-bottom: 12px; color: var(--text);">What Affects Project Cost</h3>
+            <ul style="color: var(--text-secondary); line-height: 1.6; padding-left: 18px; margin: 0;">
+              <li style="margin-bottom: 8px;"><strong>Software connections:</strong> Connecting standard cloud tools takes less engineering time than legacy custom databases.</li>
+              <li style="margin-bottom: 8px;"><strong>Business rules:</strong> Simple rule-based routing is faster to verify than multi-step extraction with variance checks.</li>
+              <li><strong>Processing speed:</strong> Real-time telephony requires lower-latency infrastructure than batch nightly processing.</li>
+            </ul>
+          </div>
+
+          <div style="border: 1px solid var(--border); border-radius: var(--radius-rect); padding: 24px; background: var(--surface-subtle);">
+            <h3 style="font-size: 1.125rem; margin-top: 0; margin-bottom: 12px; color: var(--text);">What Is Always Included</h3>
+            <ul style="color: var(--text-secondary); line-height: 1.6; padding-left: 18px; margin: 0;">
+              <li style="margin-bottom: 8px;">Direct collaboration with the engineer architecting your system.</li>
+              <li style="margin-bottom: 8px;">Complete handover documentation and video walkthroughs for your staff.</li>
+              <li style="margin-bottom: 8px;">Full administrative control of your accounts, credentials, and data.</li>
+              <li>Zero markup on third-party software licenses.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="editorial-conversion-banner reveal-on-scroll" style="margin-top: 80px; text-align: center;">
+          <h2 class="editorial-conversion-title">Request a fixed-price scoping proposal.</h2>
           <p class="editorial-conversion-desc">
-            Every engagement is scoped around the workflow, complexity and expected business value. Let's discuss your timeline and technical criteria.
+            Tell us about your daily operational bottleneck. We will review your workflow and provide a clear, written proposal within one business day.
           </p>
-          <div class="hero-cta-group" style="justify-content: flex-start; margin-bottom: 0;">
+          <div class="hero-cta-group" style="justify-content: center; margin-bottom: 0;">
             <a href="contact.html" class="btn btn-primary">Start a Project</a>
-            <a href="calculator.html" class="btn btn-secondary">Calculate ROI</a>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Currency Switcher Vanilla Script -->
+    <script>
+      (function() {
+        var btnInr = document.getElementById('curr-btn-inr');
+        var btnUsd = document.getElementById('curr-btn-usd');
+        if (!btnInr || !btnUsd) return;
+
+        function setCurrency(curr) {
+          var inrBlocks = document.querySelectorAll('.curr-val-inr');
+          var usdBlocks = document.querySelectorAll('.curr-val-usd');
+
+          if (curr === 'inr') {
+            inrBlocks.forEach(function(el) { el.style.display = 'block'; });
+            usdBlocks.forEach(function(el) { el.style.display = 'none'; });
+            btnInr.style.background = 'var(--text)';
+            btnInr.style.color = 'var(--surface)';
+            btnUsd.style.background = 'transparent';
+            btnUsd.style.color = 'var(--muted)';
+          } else {
+            inrBlocks.forEach(function(el) { el.style.display = 'none'; });
+            usdBlocks.forEach(function(el) { el.style.display = 'block'; });
+            btnUsd.style.background = 'var(--text)';
+            btnUsd.style.color = 'var(--surface)';
+            btnInr.style.background = 'transparent';
+            btnInr.style.color = 'var(--muted)';
+          }
+        }
+
+        btnInr.addEventListener('click', function() { setCurrency('inr'); });
+        btnUsd.addEventListener('click', function() { setCurrency('usd'); });
+      })();
+    </script>
   </main>
 
   <!-- FOOTER_START -->
@@ -276,7 +321,7 @@
             <li class="footer-link-item"><a href="solutions/ai-agents.html">Autonomous AI Agents</a></li>
             <li class="footer-link-item"><a href="solutions/ai-voice.html">Voice AI Telephony</a></li>
             <li class="footer-link-item"><a href="solutions/ai-customer-support.html">Customer Support</a></li>
-            <li class="footer-link-item"><a href="solutions/ai-knowledge.html">Knowledge Systems (RAG)</a></li>
+            <li class="footer-link-item"><a href="solutions/ai-knowledge.html">Knowledge Systems</a></li>
             <li class="footer-link-item"><a href="solutions/document-intelligence.html">Document Intelligence</a></li>
             <li class="footer-link-item"><a href="solutions.html">All Solutions &rarr;</a></li>
           </ul>
@@ -301,6 +346,8 @@
             <li class="footer-link-item"><a href="case-studies.html">Case Studies</a></li>
             <li class="footer-link-item"><a href="process.html">Our Process</a></li>
             <li class="footer-link-item"><a href="pricing.html">Pricing &amp; Scope</a></li>
+            <li class="footer-link-item"><a href="faq.html">FAQ</a></li>
+            <li class="footer-link-item"><a href="security.html">Security &amp; Privacy</a></li>
             <li class="footer-link-item"><a href="calculator.html">ROI Calculator</a></li>
             <li class="footer-link-item"><a href="about.html">About Us</a></li>
             <li class="footer-link-item"><a href="contact.html">Contact Us</a></li>
@@ -318,6 +365,8 @@
           <a href="privacy.html">Privacy</a>
           <a href="terms.html">Terms</a>
           <a href="cookies.html">Cookies</a>
+          <a href="security.html">Security</a>
+          <a href="faq.html">FAQ</a>
           <button type="button" id="open-cookie-preferences-btn" class="footer-cookie-settings-btn">Cookie Settings</button>
           <a href="calculator.html">Calculator</a>
           <a href="pricing.html">Pricing</a>
@@ -370,7 +419,7 @@
 
         <!-- Global Privacy Control (GPC) Notice -->
         <div id="consent-gpc-notice" class="consent-gpc-badge" hidden>
-          <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: -2px; margin-right: 6px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           <span>Global Privacy Control (GPC) signal detected: Non-essential tracking disabled.</span>
         </div>
 

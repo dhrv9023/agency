@@ -21,6 +21,8 @@
     "check:analytics": "tsx scripts/check-analytics.ts",
     "check:headers": "tsx scripts/check-headers.ts",
     "check:perf": "tsx scripts/check-perf.ts",
+    "check:ai-tells": "node scripts/check-ai-tells.mjs",
+    "check:plain-language": "node scripts/check-plain-language.mjs",
     "test:nav": "node scripts/test-nav-drawer.js",
     "test:contact": "tsx scripts/test-contact-api.ts",
     "dev": "npm run build:css && next dev",

@@ -128,8 +128,8 @@ ${navLinksHtml}
       <div class="header-actions">
         <a href="${prefix}contact.html" class="btn btn-primary btn-sm">Start a Project</a>
         <button id="theme-toggle-btn" class="theme-toggle-btn" type="button" aria-label="Toggle Theme Mode" title="Toggle Theme Mode">
-          <i class="fa-solid fa-moon theme-icon-dark" aria-hidden="true"></i>
-          <i class="fa-solid fa-sun theme-icon-light" aria-hidden="true"></i>
+          <svg class="theme-icon-dark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+          <svg class="theme-icon-light" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
         </button>
         <!-- Accessible Mobile Menu Toggle Button -->
         <button class="mobile-burger-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
@@ -155,7 +155,7 @@ ${drawerLinksHtml}
       <span class="mobile-theme-label">Theme Mode:</span>
       <button id="mobile-theme-toggle-btn" class="mobile-theme-switch-btn" type="button">
         <span id="mobile-theme-state">Dark</span> Mode
-        <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a10 10 0 0 0 0 20Z" fill="currentColor"></path></svg>
       </button>
     </div>
     <div class="mobile-contact-summary">
@@ -204,7 +204,7 @@ function generateFooterMarkup(filePath) {
             <li class="footer-link-item"><a href="${prefix}solutions/ai-agents.html">Autonomous AI Agents</a></li>
             <li class="footer-link-item"><a href="${prefix}solutions/ai-voice.html">Voice AI Telephony</a></li>
             <li class="footer-link-item"><a href="${prefix}solutions/ai-customer-support.html">Customer Support</a></li>
-            <li class="footer-link-item"><a href="${prefix}solutions/ai-knowledge.html">Knowledge Systems (RAG)</a></li>
+            <li class="footer-link-item"><a href="${prefix}solutions/ai-knowledge.html">Knowledge Systems</a></li>
             <li class="footer-link-item"><a href="${prefix}solutions/document-intelligence.html">Document Intelligence</a></li>
             <li class="footer-link-item"><a href="${prefix}solutions.html">All Solutions &rarr;</a></li>
           </ul>
@@ -229,6 +229,8 @@ function generateFooterMarkup(filePath) {
             <li class="footer-link-item"><a href="${prefix}case-studies.html">Case Studies</a></li>
             <li class="footer-link-item"><a href="${prefix}process.html">Our Process</a></li>
             <li class="footer-link-item"><a href="${prefix}pricing.html">Pricing &amp; Scope</a></li>
+            <li class="footer-link-item"><a href="${prefix}faq.html">FAQ</a></li>
+            <li class="footer-link-item"><a href="${prefix}security.html">Security &amp; Privacy</a></li>
             <li class="footer-link-item"><a href="${prefix}calculator.html">ROI Calculator</a></li>
             <li class="footer-link-item"><a href="${prefix}about.html">About Us</a></li>
             <li class="footer-link-item"><a href="${prefix}contact.html">Contact Us</a></li>
@@ -246,6 +248,8 @@ function generateFooterMarkup(filePath) {
           <a href="${prefix}privacy.html">Privacy</a>
           <a href="${prefix}terms.html">Terms</a>
           <a href="${prefix}cookies.html">Cookies</a>
+          <a href="${prefix}security.html">Security</a>
+          <a href="${prefix}faq.html">FAQ</a>
           <button type="button" id="open-cookie-preferences-btn" class="footer-cookie-settings-btn">Cookie Settings</button>
           <a href="${prefix}calculator.html">Calculator</a>
           <a href="${prefix}pricing.html">Pricing</a>
@@ -298,7 +302,7 @@ function generateFooterMarkup(filePath) {
 
         <!-- Global Privacy Control (GPC) Notice -->
         <div id="consent-gpc-notice" class="consent-gpc-badge" hidden>
-          <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: -2px; margin-right: 6px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           <span>Global Privacy Control (GPC) signal detected: Non-essential tracking disabled.</span>
         </div>
 

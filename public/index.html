@@ -18,7 +18,7 @@
   <meta property="og:image" content="https://domain-pending.invalid/assets/og-default.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="VARAH SYSTEMS — Intelligent Systems That Scale Your Business">
+  <meta property="og:image:alt" content="VARAH SYSTEMS: Intelligent Systems That Scale Your Business">
   <meta property="og:locale" content="en_US">
 
   <!-- Twitter Cards -->
@@ -26,7 +26,7 @@
   <meta name="twitter:title" content="AI Systems & Automation Architectures | VARAH SYSTEMS">
   <meta name="twitter:description" content="Engineer deterministic AI workflows, autonomous agents, and systems integrations. Eliminate operational bottlenecks and scale operations predictably.">
   <meta name="twitter:image" content="https://domain-pending.invalid/assets/og-default.png">
-  <meta name="twitter:image:alt" content="VARAH SYSTEMS — Intelligent Systems That Scale Your Business">
+  <meta name="twitter:image:alt" content="VARAH SYSTEMS: Intelligent Systems That Scale Your Business">
 
   <!-- Theme Color & Web Manifest -->
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#040508">
@@ -67,7 +67,6 @@
   <link rel="stylesheet" href="css/navigation.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/sections.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
@@ -101,8 +100,8 @@
       <div class="header-actions">
         <a href="contact.html" class="btn btn-primary btn-sm">Start a Project</a>
         <button id="theme-toggle-btn" class="theme-toggle-btn" type="button" aria-label="Toggle Theme Mode" title="Toggle Theme Mode">
-          <i class="fa-solid fa-moon theme-icon-dark" aria-hidden="true"></i>
-          <i class="fa-solid fa-sun theme-icon-light" aria-hidden="true"></i>
+          <svg class="theme-icon-dark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+          <svg class="theme-icon-light" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
         </button>
         <!-- Accessible Mobile Menu Toggle Button -->
         <button class="mobile-burger-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
@@ -133,7 +132,7 @@
       <span class="mobile-theme-label">Theme Mode:</span>
       <button id="mobile-theme-toggle-btn" class="mobile-theme-switch-btn" type="button">
         <span id="mobile-theme-state">Dark</span> Mode
-        <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a10 10 0 0 0 0 20Z" fill="currentColor"></path></svg>
       </button>
     </div>
     <div class="mobile-contact-summary">
@@ -152,389 +151,69 @@
     <!-- SECTION 1: HOMEPAGE HERO (Outcome-Driven, Business-Focused) -->
     <section class="hero-section" id="hero-section" aria-label="Hero">
       <!-- Background Video & Dual-Mode Overlay -->
-      <video class="hero-video-bg" autoplay muted loop playsinline preload="auto">
-        <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260809_012548_ef22562c-c0ae-4816-ad9d-f8922af4e6a7.mp4" type="video/mp4">
+      <video class="hero-video-bg" autoplay muted loop playsinline preload="none" poster="assets/images/hero-poster.webp">
+        <source src="assets/videos/hero-bg.mp4" type="video/mp4">
       </video>
       <div class="hero-overlay-gradient"></div>
-
-      <!-- FOREGROUND AUTOMATION SIGNAL LAYER (Subtle Peripheral Nervous System) -->
-      <div class="hero-automation-layer" id="hero-automation-layer" aria-hidden="true">
-        <!-- SVG Network for Dynamic Bezier Paths and Subtle Data Particles -->
-        <svg class="hero-network-svg" id="hero-network-svg" xmlns="http://www.w3.org/2000/svg">
-          <g class="hero-paths-group" id="hero-paths-group"></g>
-          <g class="hero-particles-group" id="hero-particles-group"></g>
-        </svg>
-
-        <!-- Peripheral Input Nodes (Negative Space around Hero Content) -->
-        <div class="hero-signal-node input-node node-email" data-hero-node="email" style="top: 22%; left: 5%;">
-          <span class="node-indicator"></span>
-          <span class="node-label">EMAIL</span>
-          <span class="node-sub">Inbound</span>
-        </div>
-
-        <div class="hero-signal-node input-node node-crm" data-hero-node="crm" style="top: 46%; left: 3.5%;">
-          <span class="node-indicator"></span>
-          <span class="node-label">CRM</span>
-          <span class="node-sub">Sync</span>
-        </div>
-
-        <div class="hero-signal-node input-node node-support" data-hero-node="support" style="bottom: 23%; left: 6%;">
-          <span class="node-indicator"></span>
-          <span class="node-label">SUPPORT</span>
-          <span class="node-sub">Ticket</span>
-        </div>
-
-        <div class="hero-signal-node input-node node-web" data-hero-node="web" style="top: 22%; right: 5%;">
-          <span class="node-indicator"></span>
-          <span class="node-label">WEB LEAD</span>
-          <span class="node-sub">Gated</span>
-        </div>
-
-        <div class="hero-signal-node input-node node-whatsapp" data-hero-node="whatsapp" style="top: 46%; right: 3.5%;">
-          <span class="node-indicator"></span>
-          <span class="node-label">WHATSAPP</span>
-          <span class="node-sub">Instant</span>
-        </div>
-
-        <div class="hero-signal-node input-node node-invoice" data-hero-node="invoice" style="bottom: 23%; right: 6%;">
-          <span class="node-indicator"></span>
-          <span class="node-label">INVOICE</span>
-          <span class="node-sub">Data</span>
-        </div>
-
-        <!-- Central Abstract Orchestration Core (Behind Headline) -->
-        <div class="hero-central-core" id="hero-central-core">
-          <div class="hero-core-orbit orbit-1"></div>
-          <div class="hero-core-orbit orbit-2"></div>
-          <div class="hero-core-faint-label">VARAH // ORCHESTRATION CORE</div>
-        </div>
-
-        <!-- Peripheral Output States (Activated by Traveling Particles) -->
-        <div class="hero-signal-node output-node out-synced" data-hero-out="crm" style="top: 34%; left: 4%;">
-          <span class="out-check">&check;</span>
-          <span class="out-label">CRM UPDATED</span>
-        </div>
-
-        <div class="hero-signal-node output-node out-resolved" data-hero-out="support" style="bottom: 12%; left: 8%;">
-          <span class="out-check">&check;</span>
-          <span class="out-label">SUPPORT RESOLVED</span>
-        </div>
-
-        <div class="hero-signal-node output-node out-qualified" data-hero-out="lead" style="top: 34%; right: 4%;">
-          <span class="out-check">&check;</span>
-          <span class="out-label">LEAD QUALIFIED</span>
-        </div>
-
-        <div class="hero-signal-node output-node out-booked" data-hero-out="meeting" style="bottom: 12%; right: 8%;">
-          <span class="out-check">&check;</span>
-          <span class="out-label">MEETING BOOKED</span>
-        </div>
-      </div>
 
       <!-- HERO CONTENT (Dominant Visual Layer) -->
       <div class="hero-content">
         <!-- Trust Indicator Pill -->
         <div class="trust-badge reveal-on-scroll">
           <span class="trust-badge-dot"></span>
-          <span>We Fix Revenue Leaks With AI Automation</span>
+          <span>Custom AI Systems &bull; Built For Operations</span>
         </div>
 
-        <!-- Retro Dot-Matrix Headline -->
+        <!-- Headline -->
         <h1 class="hero-title reveal-on-scroll">
-          <span>INTELLIGENT SYSTEMS</span>
-          <span>THAT SCALE YOUR BUSINESS</span>
+          <span>Reliable AI systems that</span>
+          <span>run your daily operations.</span>
         </h1>
 
         <!-- Subheadline: What We Actually Do For Clients -->
         <p class="hero-subtitle reveal-on-scroll">
-          We eliminate repetitive operational bottlenecks, automate inbound qualification, and resolve customer support inquiries &mdash; so your team focuses only on high-value work.
+          We build custom AI automations for clinics, distributors, and operations teams. We connect your existing tools, automate repetitive tasks, and keep human oversight where it matters.
         </p>
 
         <!-- CTAs -->
         <div class="hero-cta-group reveal-on-scroll">
           <a href="contact.html" class="btn btn-primary">Start a Project</a>
-          <a href="process.html" class="btn btn-secondary">Review Our Process</a>
+          <a href="process.html" class="btn btn-secondary">See How It Works</a>
         </div>
+        <p class="hero-note reveal-on-scroll" style="margin-top: var(--space-3); font-size: 0.8125rem; color: var(--text-muted);">
+          We reply within one business day.
+        </p>
       </div>
     </section>
 
-    <!-- SECTION 1: THE AUTOMATION LAYER (Living Systems Visualization) -->
-    <section class="section section-secondary automation-section" id="automation-layer" aria-labelledby="automation-heading">
+    <!-- SECTION 1: WHAT WE AUTOMATE FOR YOU (Editorial Solutions) -->
+    <section class="section section-secondary" id="what-we-automate" aria-labelledby="automate-heading">
       <div class="container">
-        <!-- Section Header -->
         <div class="section-header reveal-on-scroll">
-          <span class="eyebrow">01 // The Automation Layer</span>
-          <h2 id="automation-heading" class="section-title">
-            Turn repetitive work into systems that run themselves.
+          <span class="eyebrow">01 // Practical Systems</span>
+          <h2 id="automate-heading" class="section-title">
+            What we automate for your business.
           </h2>
           <p class="section-subtitle">
-            Leads, support, operations, data and reporting don't need more people pushing information between disconnected tools. We design intelligent systems that connect the work, execute the routine and keep your team focused on what actually matters.
+            We focus on four common operational bottlenecks. Each system connects directly into your current software, operates with strict human safety rules, and runs without daily manual babysitting.
           </p>
         </div>
 
-        <!-- The Living Systems Cinematic Stage -->
-        <div class="automation-system-stage" id="automation-stage" role="region" aria-label="Interactive Business Automation System Visualization">
-          <!-- Top Telemetry Ribbon -->
-          <div class="stage-telemetry-header">
-            <div class="telemetry-col left-col">
-              <span class="telemetry-label">INPUT SIGNALS</span>
-              <span class="telemetry-val"><span class="telemetry-dot live-cyan"></span> UNSTRUCTURED / ACTIVE</span>
-            </div>
-            <div class="telemetry-col center-col">
-              <span class="telemetry-label">ORCHESTRATION ENGINE</span>
-              <span class="telemetry-val">VARAH // CORE v3.4 [ONLINE]</span>
-            </div>
-            <div class="telemetry-col right-col">
-              <span class="telemetry-label">SYSTEM OUTCOMES</span>
-              <span class="telemetry-val"><span class="telemetry-dot live-green"></span> 100% AUTOMATED &amp; VERIFIED</span>
-            </div>
-          </div>
-
-          <!-- Main Interactive Stage Canvas -->
-          <div class="stage-canvas-wrapper" id="stage-canvas-wrapper">
-            <!-- Connecting SVG Network for Dynamic Bezier Paths & Traveling Particles -->
-            <svg class="stage-connections-svg" id="stage-connections-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <g class="path-network" id="path-network"></g>
-              <g class="particle-layer" id="particle-layer"></g>
-            </svg>
-
-            <!-- ZONE 1 (LEFT): BUSINESS CHAOS (Scattered Input Nodes) -->
-            <div class="stage-zone zone-chaos" id="zone-chaos" aria-label="Input Signals">
-              <span class="zone-watermark">01 // UNSTRUCTURED SIGNALS</span>
-              
-              <div class="chaos-nodes-container">
-                <!-- Node 1: WhatsApp -->
-                <button type="button" class="system-chip input-chip" data-node-id="whatsapp" aria-label="WhatsApp Inbound Message">
-                  <div class="chip-status-dot"></div>
-                  <i class="fa-brands fa-whatsapp chip-icon" aria-hidden="true"></i>
-                  <div class="chip-content">
-                    <span class="chip-tag">WHATSAPP</span>
-                    <span class="chip-sub">Inbound customer inquiry</span>
-                  </div>
-                </button>
-
-                <!-- Node 2: Web Lead -->
-                <button type="button" class="system-chip input-chip" data-node-id="web-lead" aria-label="Website Form Lead">
-                  <div class="chip-status-dot"></div>
-                  <i class="fa-solid fa-globe chip-icon" aria-hidden="true"></i>
-                  <div class="chip-content">
-                    <span class="chip-tag">WEB LEAD</span>
-                    <span class="chip-sub">High-intent form submitted</span>
-                  </div>
-                </button>
-
-                <!-- Node 3: Support Ticket -->
-                <button type="button" class="system-chip input-chip" data-node-id="support-ticket" aria-label="Support Ticket">
-                  <div class="chip-status-dot"></div>
-                  <i class="fa-solid fa-headset chip-icon" aria-hidden="true"></i>
-                  <div class="chip-content">
-                    <span class="chip-tag">SUPPORT TICKET</span>
-                    <span class="chip-sub">Urgent ticket &amp; FAQ</span>
-                  </div>
-                </button>
-
-                <!-- Node 4: Email Inquiry -->
-                <button type="button" class="system-chip input-chip" data-node-id="email" aria-label="Inbound Email">
-                  <div class="chip-status-dot"></div>
-                  <i class="fa-regular fa-envelope chip-icon" aria-hidden="true"></i>
-                  <div class="chip-content">
-                    <span class="chip-tag">EMAIL INQUIRY</span>
-                    <span class="chip-sub">Quote &amp; project request</span>
-                  </div>
-                </button>
-
-                <!-- Node 5: Invoice PDF -->
-                <button type="button" class="system-chip input-chip" data-node-id="invoice" aria-label="Invoice Document">
-                  <div class="chip-status-dot"></div>
-                  <i class="fa-solid fa-file-invoice chip-icon" aria-hidden="true"></i>
-                  <div class="chip-content">
-                    <span class="chip-tag">INVOICE PDF</span>
-                    <span class="chip-sub">Supplier statement attached</span>
-                  </div>
-                </button>
-
-                <!-- Node 6: Data Streams -->
-                <button type="button" class="system-chip input-chip" data-node-id="data-sync" aria-label="Telemetry & Data Streams">
-                  <div class="chip-status-dot"></div>
-                  <i class="fa-solid fa-database chip-icon" aria-hidden="true"></i>
-                  <div class="chip-content">
-                    <span class="chip-tag">DATA STREAMS</span>
-                    <span class="chip-sub">Ad spend &amp; Stripe transactions</span>
-                  </div>
-                </button>
-              </div>
-            </div>
-
-            <!-- ZONE 2 (CENTER): AI ORCHESTRATION ENGINE -->
-            <div class="stage-zone zone-engine" id="zone-engine" aria-label="AI Orchestration Engine">
-              <span class="zone-watermark">02 // INTELLIGENCE &amp; ROUTING</span>
-              
-              <div class="engine-assembly" id="engine-assembly">
-                <!-- Concentric Orbital Ring 3 (Outer) -->
-                <div class="orbit-ring ring-outer">
-                  <div class="module-node node-leads"><span class="module-dot"></span><span>LEADS</span></div>
-                  <div class="module-node node-ops"><span class="module-dot"></span><span>OPS</span></div>
-                </div>
-
-                <!-- Concentric Orbital Ring 2 (Mid) -->
-                <div class="orbit-ring ring-mid">
-                  <div class="module-node node-support"><span class="module-dot"></span><span>SUPPORT</span></div>
-                  <div class="module-node node-crm"><span class="module-dot"></span><span>CRM</span></div>
-                  <div class="module-node node-data"><span class="module-dot"></span><span>DATA</span></div>
-                </div>
-
-                <!-- Concentric Orbital Ring 1 (Inner) -->
-                <div class="orbit-ring ring-inner"></div>
-
-                <!-- Central Processing Core -->
-                <button type="button" class="engine-core" id="engine-core" aria-label="Varah Orchestration Core">
-                  <div class="core-pulse-wave"></div>
-                  <div class="core-shell">
-                    <div class="core-inner-gem">
-                      <div class="core-status-ping"></div>
-                    </div>
-                  </div>
-                  <div class="core-label-box">
-                    <span class="core-tag">VARAH // CORE</span>
-                    <span class="core-state" id="core-state-indicator">ORCHESTRATING</span>
-                  </div>
-                </button>
-              </div>
-
-              <!-- Engine Telemetry Sub-Bar -->
-              <div class="engine-telemetry-badge">
-                <span class="engine-stat-item"><i class="fa-solid fa-bolt text-cyan" aria-hidden="true"></i> LATENCY: &lt; 420ms</span>
-                <span class="engine-divider">|</span>
-                <span class="engine-stat-item"><i class="fa-solid fa-arrows-rotate text-cyan spin-slow" aria-hidden="true"></i> 24/7 ACTIVE</span>
-              </div>
-            </div>
-
-            <!-- ZONE 3 (RIGHT): CLEAN AUTOMATED OUTCOMES -->
-            <div class="stage-zone zone-outcomes" id="zone-outcomes" aria-label="System Outcomes">
-              <span class="zone-watermark">03 // MEASURABLE EXECUTION</span>
-
-              <div class="outcome-nodes-container">
-                <!-- Outcome 1: Lead Qualified -->
-                <div class="system-chip outcome-chip" data-outcome-id="lead" tabindex="0" aria-label="Outcome: Lead Qualified">
-                  <div class="outcome-check"><i class="fa-solid fa-check" aria-hidden="true"></i></div>
-                  <div class="outcome-content">
-                    <div class="outcome-header">
-                      <span class="outcome-tag">LEAD QUALIFIED</span>
-                      <span class="outcome-time">+42 sec</span>
-                    </div>
-                    <span class="outcome-desc">Pre-screened &amp; calendar booked</span>
-                  </div>
-                </div>
-
-                <!-- Outcome 2: CRM Synced -->
-                <div class="system-chip outcome-chip" data-outcome-id="crm" tabindex="0" aria-label="Outcome: CRM Auto-Synced">
-                  <div class="outcome-check"><i class="fa-solid fa-check" aria-hidden="true"></i></div>
-                  <div class="outcome-content">
-                    <div class="outcome-header">
-                      <span class="outcome-tag">CRM AUTO-SYNCED</span>
-                      <span class="outcome-time">0.8s</span>
-                    </div>
-                    <span class="outcome-desc">Enriched profile &amp; deal created</span>
-                  </div>
-                </div>
-
-                <!-- Outcome 3: Support Resolved -->
-                <div class="system-chip outcome-chip" data-outcome-id="support" tabindex="0" aria-label="Outcome: Support Resolved">
-                  <div class="outcome-check"><i class="fa-solid fa-check" aria-hidden="true"></i></div>
-                  <div class="outcome-content">
-                    <div class="outcome-header">
-                      <span class="outcome-tag">SUPPORT RESOLVED</span>
-                      <span class="outcome-time">Instant</span>
-                    </div>
-                    <span class="outcome-desc">Customer answered &amp; ticket closed</span>
-                  </div>
-                </div>
-
-                <!-- Outcome 4: Discovery Scheduled -->
-                <div class="system-chip outcome-chip" data-outcome-id="meeting" tabindex="0" aria-label="Outcome: Discovery Scheduled">
-                  <div class="outcome-check"><i class="fa-solid fa-check" aria-hidden="true"></i></div>
-                  <div class="outcome-content">
-                    <div class="outcome-header">
-                      <span class="outcome-tag">DISCOVERY SCHEDULED</span>
-                      <span class="outcome-time">Confirmed</span>
-                    </div>
-                    <span class="outcome-desc">Invites sent + reminders prepped</span>
-                  </div>
-                </div>
-
-                <!-- Outcome 5: Invoice Verified -->
-                <div class="system-chip outcome-chip" data-outcome-id="invoice" tabindex="0" aria-label="Outcome: Invoice Verified">
-                  <div class="outcome-check"><i class="fa-solid fa-check" aria-hidden="true"></i></div>
-                  <div class="outcome-content">
-                    <div class="outcome-header">
-                      <span class="outcome-tag">INVOICE VERIFIED</span>
-                      <span class="outcome-time">Reconciled</span>
-                    </div>
-                    <span class="outcome-desc">Posted to QuickBooks without manual entry</span>
-                  </div>
-                </div>
-
-                <!-- Outcome 6: Executive Briefing -->
-                <div class="system-chip outcome-chip" data-outcome-id="report" tabindex="0" aria-label="Outcome: Executive Briefing">
-                  <div class="outcome-check"><i class="fa-solid fa-check" aria-hidden="true"></i></div>
-                  <div class="outcome-content">
-                    <div class="outcome-header">
-                      <span class="outcome-tag">EXECUTIVE BRIEFING</span>
-                      <span class="outcome-time">08:00 AM</span>
-                    </div>
-                    <span class="outcome-desc">Consolidated KPI brief sent to leadership</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Bottom Telemetry & Status Bar -->
-          <div class="stage-footer-telemetry">
-            <div class="stream-stat">
-              <span class="stat-bullet">●</span>
-              <span class="stat-text">STREAM: <strong id="live-throughput-counter">1,428</strong> EVENTS PROCESSED TODAY</span>
-            </div>
-            <div class="interaction-hint">
-              <i class="fa-solid fa-fingerprint" aria-hidden="true"></i>
-              <span>Hover or tap any signal to trace automated route through engine</span>
-            </div>
-            <div class="automation-efficiency-badge">
-              <span>ZERO HUMAN BOTTLENECK</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 2: WHAT WE BUILD (Interactive AI Systems Index) -->
-    <section class="section section-systems-index" id="what-we-build" aria-labelledby="solutions-heading">
-      <div class="container">
-        <!-- Section Header -->
-        <div class="section-header reveal-on-scroll">
-          <span class="eyebrow">02 // What We Build</span>
-          <h2 id="solutions-heading" class="section-title">
-            Production AI systems engineered for immediate ROI.
-          </h2>
-          <p class="section-subtitle">
-            No theoretical science experiments. We deploy field-tested, production-grade automations directly into your existing software in 7 to 14 days.
-          </p>
-        </div>
-
-        <!-- Numbered Editorial Solutions Architecture List -->
         <div class="solutions-editorial-list reveal-on-scroll">
-          <!-- Item 01: Flagship Highlighted -->
+          <!-- Item 01 -->
           <article class="solutions-editorial-item is-highlighted">
             <span class="solutions-item-num">01</span>
             <div class="solutions-item-body">
-              <h3 class="solutions-item-title">AI Lead Qualification &amp; Booking Engine</h3>
+              <h3 class="solutions-item-title">Customer Support &amp; Inquiries</h3>
               <p class="solutions-item-scope">
-                Engages inbound inquiries in 60 seconds across WhatsApp and Web, qualifies budget and timeline, and schedules qualified sales calls directly onto your calendar 24/7.
+                Resolves repetitive customer questions around the clock across WhatsApp, Web chat, and Email. Automatically looks up order and booking data, logs updates to your CRM, and routes complex requests directly to your staff.
               </p>
+              <div class="solutions-item-meta" style="margin-top: var(--space-2); font-size: 0.8125rem; color: var(--text-muted);">
+                Typical turnaround: Instant responses &bull; Escalation threshold: 100% human-verified
+              </div>
             </div>
-            <a href="solutions/ai-sales.html" class="solutions-item-link">
-              <span>Inspect Spec</span>
-              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            <a href="solutions/ai-customer-support.html" class="solutions-item-link">
+              <span>View System Details &rarr;</span>
             </a>
           </article>
 
@@ -542,14 +221,16 @@
           <article class="solutions-editorial-item">
             <span class="solutions-item-num">02</span>
             <div class="solutions-item-body">
-              <h3 class="solutions-item-title">Autonomous Customer Support Agent</h3>
+              <h3 class="solutions-item-title">Voice AI Phone Receptionist</h3>
               <p class="solutions-item-scope">
-                Resolves routine customer tickets autonomously across WhatsApp, Web chat, and Email with real-time CRM sync and instant human handoff for VIP escalations.
+                Answers inbound phone calls on the first ring with natural, respectful speech. Handles routine office inquiries, qualifies callers, confirms service availability, and reserves appointments straight into your calendar or PMS.
               </p>
+              <div class="solutions-item-meta" style="margin-top: var(--space-2); font-size: 0.8125rem; color: var(--text-muted);">
+                Tone: Soft, respectful, and professional &bull; Integrates with: Twilio, standard phone lines
+              </div>
             </div>
-            <a href="solutions/ai-customer-support.html" class="solutions-item-link">
-              <span>Inspect Spec</span>
-              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            <a href="solutions/ai-voice.html" class="solutions-item-link">
+              <span>View System Details &rarr;</span>
             </a>
           </article>
 
@@ -557,14 +238,16 @@
           <article class="solutions-editorial-item">
             <span class="solutions-item-num">03</span>
             <div class="solutions-item-body">
-              <h3 class="solutions-item-title">Voice AI Telephony &amp; Receptionist</h3>
+              <h3 class="solutions-item-title">Lead Qualification &amp; Follow-Up</h3>
               <p class="solutions-item-scope">
-                Natural conversational voice AI that answers inbound phone calls in 1 ring, handles FAQs, qualifies callers, and commits bookings directly into your PMS schedule.
+                Responds to new web form inquiries within minutes. Gathers project scope, verifies budget and timing criteria, filters spam, and places qualified prospects directly onto your team calendar.
               </p>
+              <div class="solutions-item-meta" style="margin-top: var(--space-2); font-size: 0.8125rem; color: var(--text-muted);">
+                Lead response time: Under 2 minutes &bull; Syncs with: HubSpot, Salesforce, Zoho, Google Calendar
+              </div>
             </div>
-            <a href="solutions/ai-voice.html" class="solutions-item-link">
-              <span>Inspect Spec</span>
-              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            <a href="solutions/ai-sales.html" class="solutions-item-link">
+              <span>View System Details &rarr;</span>
             </a>
           </article>
 
@@ -572,174 +255,233 @@
           <article class="solutions-editorial-item">
             <span class="solutions-item-num">04</span>
             <div class="solutions-item-body">
-              <h3 class="solutions-item-title">Internal SOP &amp; RAG Knowledge Engine</h3>
+              <h3 class="solutions-item-title">Document Intelligence &amp; Invoicing</h3>
               <p class="solutions-item-scope">
-                Centralizes internal documentation, standard operating procedures, and technical schemas so your operations team retrieves verified answers and policies in seconds.
+                Reads inbound vendor invoices, supplier statements, and purchase orders. Extracts line items, verifies tax calculations, flags discrepancies, and posts structured records to QuickBooks or Xero without manual data entry.
               </p>
-            </div>
-            <a href="solutions/ai-knowledge.html" class="solutions-item-link">
-              <span>Inspect Spec</span>
-              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-            </a>
-          </article>
-
-          <!-- Item 05 -->
-          <article class="solutions-editorial-item">
-            <span class="solutions-item-num">05</span>
-            <div class="solutions-item-body">
-              <h3 class="solutions-item-title">Document Intelligence &amp; Invoice OCR</h3>
-              <p class="solutions-item-scope">
-                Extracts structured line items from supplier invoices, receipts, and vendor PDFs with 99.4% accuracy, syncing verified records directly into QuickBooks and accounting ledgers.
-              </p>
+              <div class="solutions-item-meta" style="margin-top: var(--space-2); font-size: 0.8125rem; color: var(--text-muted);">
+                Extraction accuracy: High precision with human sign-off on payment authorizations
+              </div>
             </div>
             <a href="solutions/document-intelligence.html" class="solutions-item-link">
-              <span>Inspect Spec</span>
-              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-            </a>
-          </article>
-
-          <!-- Item 06 -->
-          <article class="solutions-editorial-item">
-            <span class="solutions-item-num">06</span>
-            <div class="solutions-item-body">
-              <h3 class="solutions-item-title">Multi-Agent Operations Pipelines</h3>
-              <p class="solutions-item-scope">
-                Connects your databases, CRM, ERP, and messaging channels into self-monitoring autonomous workflows that execute repetitive data pipelines without human manual entry.
-              </p>
-            </div>
-            <a href="solutions/ai-automation.html" class="solutions-item-link">
-              <span>Inspect Spec</span>
-              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              <span>View System Details &rarr;</span>
             </a>
           </article>
         </div>
 
         <div class="solutions-footer-action reveal-on-scroll" style="margin-top: var(--space-8); text-align: left;">
           <a href="solutions.html" class="editorial-link">
-            <span>Explore Complete Solutions Index &amp; Specifications</span>
-            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            <span>Explore all six system architectures &rarr;</span>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 03: HOW WE WORK (The Simple 3-Step Client Journey) -->
-    <section class="section section-contrast-dark" aria-labelledby="process-heading">
+    <!-- SECTION 2: HOW WE WORK (4 Chronological Phases) -->
+    <section class="section section-contrast-dark" id="how-we-work" aria-labelledby="process-heading">
       <div class="container">
         <div class="section-header reveal-on-scroll">
-          <span class="eyebrow">03 // Simple 3-Step Process</span>
+          <span class="eyebrow">02 // Structured Delivery</span>
           <h2 id="process-heading" class="section-title">
-            From operational bottlenecks to live systems in 14 days.
+            How we build your system in four clear phases.
           </h2>
           <p class="section-subtitle">
-            Zero disruption to your daily operations. We build around the software and team you already have.
+            We build around the software and team you already have with zero operational downtime, transparent fixed scoping, and a 30-day post-launch warranty on every project.
           </p>
         </div>
 
-        <!-- 3-Step Journey Track -->
+        <!-- 4-Step Chronological Track -->
         <div class="process-journey-track reveal-on-scroll" style="margin-bottom: 48px;">
           <div class="process-journey-step">
             <span class="process-journey-num">01</span>
-            <div class="process-journey-title">The 15-Minute Bottleneck Audit</div>
+            <div class="process-journey-title">Operations Audit</div>
             <div class="process-journey-desc">
-              We audit your daily operations, calculate exactly where hours and revenue are leaking, and pinpoint the 1–3 highest-ROI automations to build first.
+              Week 1: We audit your daily operations, calculate exactly where manual hours leak, and define the exact scope, tools, and human review rules.
             </div>
           </div>
 
           <div class="process-journey-step">
             <span class="process-journey-num">02</span>
-            <div class="process-journey-title">Rapid 7–14 Day Integration</div>
+            <div class="process-journey-title">Working Prototype</div>
             <div class="process-journey-desc">
-              We architect, test, and integrate your custom AI systems directly into WhatsApp, HubSpot, Gmail, Slack, QuickBooks, or your CRM with zero operational downtime.
+              Week 2: We build a working prototype connected to test data. You test the conversational tone and workflow routing before anything touches live customers.
             </div>
           </div>
 
           <div class="process-journey-step">
             <span class="process-journey-num">03</span>
-            <div class="process-journey-title">Autonomous Execution &amp; Continuous Growth</div>
+            <div class="process-journey-title">Production Integration</div>
             <div class="process-journey-desc">
-              Your automations run 24/7 with strict human safety guardrails. Under our managed retainer, we monitor telemetry, prevent model drift, and continuously optimize performance.
+              Weeks 3–4: We connect the automation directly into your WhatsApp, CRM, phone line, or accounting software with strict human escalation rules.
+            </div>
+          </div>
+
+          <div class="process-journey-step">
+            <span class="process-journey-num">04</span>
+            <div class="process-journey-title">Launch &amp; 30-Day Warranty</div>
+            <div class="process-journey-desc">
+              We train your staff, launch the system, and monitor all operations daily with 30 days of included post-launch support and tuning.
             </div>
           </div>
         </div>
 
-        <div style="text-align: center;" class="reveal-on-scroll">
+        <div style="text-align: left;" class="reveal-on-scroll">
           <a href="process.html" class="editorial-link">
-            <span>View Our Full 8-Stage Engineering Methodology</span>
-            <i class="fa-solid fa-arrow-right"></i>
+            <span>Read our full engineering and testing methodology &rarr;</span>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 5: TRANSPARENT ENGAGEMENT PACKAGES (Snapshot) -->
-    <section class="section section-secondary" aria-labelledby="pricing-heading">
+    <!-- SECTION 3: WHO WE HELP (Clear Operational Businesses) -->
+    <section class="section section-secondary" id="who-we-help" aria-labelledby="industries-heading">
       <div class="container">
         <div class="section-header reveal-on-scroll">
-          <span class="eyebrow">04 // Transparent Engagements</span>
-          <h2 id="pricing-heading" class="section-title">Predictable, fixed-scope packages designed for rapid ROI.</h2>
+          <span class="eyebrow">03 // Who We Help</span>
+          <h2 id="industries-heading" class="section-title">
+            Built for businesses with daily operational volume.
+          </h2>
           <p class="section-subtitle">
-            Clear deliverables, rapid delivery, and transparent retainers. No open-ended hourly billing or bloated timelines.
+            Whether you operate multiple clinic locations, manage wholesale inventory, or handle hundreds of customer inquiries each week, we automate routine coordination.
           </p>
         </div>
 
-        <div class="pricing-matrix-strip reveal-on-scroll">
-          <!-- Tier 1: Starter Sprint -->
-          <div class="pricing-matrix-row">
-            <div>
-              <div class="pricing-tier-name">Starter Sprint</div>
-              <div class="pricing-tier-scope">Quick Wins &bull; 3–7 Days Delivery</div>
+        <div class="solutions-editorial-list reveal-on-scroll">
+          <article class="solutions-editorial-item">
+            <span class="solutions-item-num">01</span>
+            <div class="solutions-item-body">
+              <h3 class="solutions-item-title">Clinics &amp; Healthcare Practices</h3>
+              <p class="solutions-item-scope">
+                Patient appointment booking, rescheduling, cancellation management, and post-visit routine FAQs handled 24/7 across phone and WhatsApp without front desk overload.
+              </p>
             </div>
-            <div class="pricing-tier-body">
-              <strong>1 Core AI Bot or Workflow Automation:</strong> Inbound WhatsApp FAQ bot, intelligent lead capture to CRM auto-responder, or automated meeting recap pipeline. Includes CRM setup and staff handoff.
+          </article>
+
+          <article class="solutions-editorial-item">
+            <span class="solutions-item-num">02</span>
+            <div class="solutions-item-body">
+              <h3 class="solutions-item-title">Wholesale &amp; Distribution</h3>
+              <p class="solutions-item-scope">
+                Inbound supplier invoice line-item extraction, purchase order verification, payment status updates, and catalog stock inquiries automated across ERP and email.
+              </p>
             </div>
-            <div>
-              <span class="tier-badge tier-badge-green">RAPID FIRST WIN</span>
+          </article>
+
+          <article class="solutions-editorial-item">
+            <span class="solutions-item-num">03</span>
+            <div class="solutions-item-body">
+              <h3 class="solutions-item-title">Professional &amp; Financial Services</h3>
+              <p class="solutions-item-scope">
+                Rapid inbound lead screening, conflict checks, calendar discovery bookings, and verified document retrieval across internal company knowledge repositories.
+              </p>
             </div>
-            <div>
-              <a href="contact.html?plan=starter" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.875rem;">Get Started</a>
+          </article>
+
+          <article class="solutions-editorial-item">
+            <span class="solutions-item-num">04</span>
+            <div class="solutions-item-body">
+              <h3 class="solutions-item-title">Field Services &amp; Trade Contractors</h3>
+              <p class="solutions-item-scope">
+                First-ring telephone answering for customer dispatch, emergency job triaging, quote intake, and calendar scheduling while your crews are in the field.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: WHERE HUMAN JUDGMENT STAYS IN CHARGE -->
+    <section class="section section-contrast-dark" id="guardrails" aria-labelledby="guardrails-heading">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="eyebrow">04 // Safety &amp; Data Ethics</span>
+          <h2 id="guardrails-heading" class="section-title">
+            Where automation ends and human judgment begins.
+          </h2>
+          <p class="section-subtitle">
+            We believe AI systems should handle repetitive tasks, not make uncontrolled decisions on critical business operations.
+          </p>
+        </div>
+
+        <div class="process-journey-track reveal-on-scroll" style="margin-bottom: 48px;">
+          <div class="process-journey-step">
+            <span class="process-journey-num">01</span>
+            <div class="process-journey-title">Strict Confidence Thresholds</div>
+            <div class="process-journey-desc">
+              If an inquiry falls outside approved company policies or confidence scores drop, the system never guesses. It routes the conversation to a human team member with full context.
             </div>
           </div>
 
-          <!-- Tier 2: Growth System -->
-          <div class="pricing-matrix-row is-featured">
-            <div>
-              <div class="pricing-tier-name">Growth System</div>
-              <div class="pricing-tier-scope">Core Transformation &bull; 1–2 Weeks Delivery</div>
-            </div>
-            <div class="pricing-tier-body">
-              <strong>Full Multi-Channel Operations System:</strong> 24/7 AI Customer Support (WhatsApp + Web + Email) with CRM sync, 60-second automated lead qualification &amp; calendar booking, plus human escalation.
-            </div>
-            <div>
-              <span class="tier-badge tier-badge-blue">MOST POPULAR</span>
-            </div>
-            <div>
-              <a href="contact.html?plan=growth" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.875rem;">Start a Project</a>
+          <div class="process-journey-step">
+            <span class="process-journey-num">02</span>
+            <div class="process-journey-title">Isolated Open-Source Models</div>
+            <div class="process-journey-desc">
+              We deploy vetted open-source models inside private, isolated environments. Your customer records and company data are never used to train public foundation models.
             </div>
           </div>
 
-          <!-- Tier 3: Scale Operations -->
-          <div class="pricing-matrix-row">
-            <div>
-              <div class="pricing-tier-name">Scale Operations</div>
-              <div class="pricing-tier-scope">Full Autonomous Systems &bull; 3–4 Weeks</div>
-            </div>
-            <div class="pricing-tier-body">
-              <strong>Custom Autonomous Infrastructure:</strong> Multi-agent autonomous operations, 24/7 Voice AI Phone Receptionist, Company SOP RAG Knowledge Engine, and automated invoice processing with 24/7 monitoring.
-            </div>
-            <div>
-              <span class="tier-badge tier-badge-purple">ENTERPRISE ENGINE</span>
-            </div>
-            <div>
-              <a href="contact.html?plan=scale" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.875rem;">Discuss Scale</a>
+          <div class="process-journey-step">
+            <span class="process-journey-num">03</span>
+            <div class="process-journey-title">Complete Client Control</div>
+            <div class="process-journey-desc">
+              You receive administrative access to all running systems, workflows, API credentials, and logs. We manage maintenance, but you own and control your operational data.
             </div>
           </div>
         </div>
 
-        <div class="pricing-footer-link reveal-on-scroll">
-          <a href="pricing.html" class="editorial-link">
-            <span>View Full Pricing, SOW Terms &amp; Retainer Packages</span>
-            <i class="fa-solid fa-arrow-right"></i>
+        <div style="text-align: left;" class="reveal-on-scroll">
+          <a href="security.html" class="editorial-link">
+            <span>Read our complete security and data isolation policy &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: QUESTIONS BUSINESS OWNERS ASK -->
+    <section class="section section-secondary" id="faq-preview" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="eyebrow">05 // Clear Answers</span>
+          <h2 id="faq-heading" class="section-title">
+            Questions business owners ask before starting.
+          </h2>
+          <p class="section-subtitle">
+            Clear, honest answers on delivery timelines, pricing models, and ongoing maintenance.
+          </p>
+        </div>
+
+        <div class="editorial-accordion reveal-on-scroll" style="margin-top: 32px;">
+          <div class="editorial-faq-item is-open">
+            <div class="editorial-faq-trigger" style="cursor: default;">
+              <span>How long does a typical build take?</span>
+            </div>
+            <div class="editorial-faq-body" style="display: block;">
+              A single-workflow system (such as WhatsApp support, voice call answering, or lead routing) takes 2 to 4 weeks from audit to launch. Multi-system enterprise deployments take 4 to 8 weeks.
+            </div>
+          </div>
+
+          <div class="editorial-faq-item is-open">
+            <div class="editorial-faq-trigger" style="cursor: default;">
+              <span>How does pricing work for Indian and international clients?</span>
+            </div>
+            <div class="editorial-faq-body" style="display: block;">
+              Every engagement is scoped with a transparent, fixed build fee plus an optional monthly maintenance retainer. We scope in Rupees (₹ INR) for Indian businesses and US Dollars ($ USD) for global businesses.
+            </div>
+          </div>
+
+          <div class="editorial-faq-item is-open">
+            <div class="editorial-faq-trigger" style="cursor: default;">
+              <span>Do we need to replace any of our existing software?</span>
+            </div>
+            <div class="editorial-faq-body" style="display: block;">
+              No. We build directly around your existing tools, including WhatsApp Business, Twilio, HubSpot, Salesforce, Zoho, Google Workspace, QuickBooks, or custom internal databases.
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: var(--space-8); text-align: left;" class="reveal-on-scroll">
+          <a href="faq.html" class="editorial-link">
+            <span>View all 8 answers in our complete buyer FAQ &rarr;</span>
           </a>
         </div>
       </div>
@@ -749,15 +491,18 @@
     <section class="section section-bright" aria-label="Start Project CTA">
       <div class="container">
         <div class="editorial-conversion-banner reveal-on-scroll">
-          <span class="eyebrow">Take Action</span>
-          <h2 class="editorial-conversion-title">What should your business stop doing manually?</h2>
+          <span class="eyebrow">Start a Project</span>
+          <h2 class="editorial-conversion-title">Discuss your operational bottleneck with an engineer.</h2>
           <p class="editorial-conversion-desc">
-            Tell us about your operations. We map repetitive bottlenecks and architect intelligent systems that scale your business.
+            Tell us what your team spends hours doing manually each day. We evaluate your workflow and tell you honestly if automation is the right investment.
           </p>
           <div class="hero-cta-group cta-group-left">
             <a href="contact.html" class="btn btn-primary">Start a Project</a>
-            <a href="process.html" class="btn btn-secondary">Review Our Process</a>
+            <a href="pricing.html" class="btn btn-secondary">Review Pricing &amp; Scope</a>
           </div>
+          <p style="margin-top: var(--space-4); font-size: 0.8125rem; color: var(--text-muted);">
+            We reply within one business day.
+          </p>
         </div>
       </div>
     </section>
@@ -794,7 +539,7 @@
             <li class="footer-link-item"><a href="solutions/ai-agents.html">Autonomous AI Agents</a></li>
             <li class="footer-link-item"><a href="solutions/ai-voice.html">Voice AI Telephony</a></li>
             <li class="footer-link-item"><a href="solutions/ai-customer-support.html">Customer Support</a></li>
-            <li class="footer-link-item"><a href="solutions/ai-knowledge.html">Knowledge Systems (RAG)</a></li>
+            <li class="footer-link-item"><a href="solutions/ai-knowledge.html">Knowledge Systems</a></li>
             <li class="footer-link-item"><a href="solutions/document-intelligence.html">Document Intelligence</a></li>
             <li class="footer-link-item"><a href="solutions.html">All Solutions &rarr;</a></li>
           </ul>
@@ -819,6 +564,8 @@
             <li class="footer-link-item"><a href="case-studies.html">Case Studies</a></li>
             <li class="footer-link-item"><a href="process.html">Our Process</a></li>
             <li class="footer-link-item"><a href="pricing.html">Pricing &amp; Scope</a></li>
+            <li class="footer-link-item"><a href="faq.html">FAQ</a></li>
+            <li class="footer-link-item"><a href="security.html">Security &amp; Privacy</a></li>
             <li class="footer-link-item"><a href="calculator.html">ROI Calculator</a></li>
             <li class="footer-link-item"><a href="about.html">About Us</a></li>
             <li class="footer-link-item"><a href="contact.html">Contact Us</a></li>
@@ -836,6 +583,8 @@
           <a href="privacy.html">Privacy</a>
           <a href="terms.html">Terms</a>
           <a href="cookies.html">Cookies</a>
+          <a href="security.html">Security</a>
+          <a href="faq.html">FAQ</a>
           <button type="button" id="open-cookie-preferences-btn" class="footer-cookie-settings-btn">Cookie Settings</button>
           <a href="calculator.html">Calculator</a>
           <a href="pricing.html">Pricing</a>
@@ -888,7 +637,7 @@
 
         <!-- Global Privacy Control (GPC) Notice -->
         <div id="consent-gpc-notice" class="consent-gpc-badge" hidden>
-          <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: -2px; margin-right: 6px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           <span>Global Privacy Control (GPC) signal detected: Non-essential tracking disabled.</span>
         </div>
 
@@ -957,7 +706,5 @@
   <!-- Core JavaScript Scripts -->
   <script src="js/nav.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/hero-network.js"></script>
-  <script src="js/orchestration.js"></script>
 </body>
 </html>

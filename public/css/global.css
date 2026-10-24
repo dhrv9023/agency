@@ -44,7 +44,6 @@
   line-gap-override: 0%;
 }
 
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
 @import url('./consent.css');
 @import url('./legal.css');
 
@@ -53,7 +52,7 @@
      1. COLOR TOKENS: WARM-NEUTRAL LIGHT MODE (Default)
      ------------------------------------------------------------------------ */
   --bg: #F3F3F0;
-  --surface: #FFFFFF;
+  --surface: #F8F8F6;
   --surface-raised: #EAEAE6;
   --surface-subtle: #F8F8F6;
 

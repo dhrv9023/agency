@@ -31,7 +31,7 @@
       "title": "AI Systems & Automation Architectures | VARAH SYSTEMS",
       "description": "Engineer deterministic AI workflows, autonomous agents, and systems integrations. Eliminate operational bottlenecks and scale operations predictably.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "VARAH SYSTEMS — Intelligent Systems That Scale Your Business",
+      "ogImageAlt": "VARAH SYSTEMS: Intelligent Systems That Scale Your Business",
       "robots": "index, follow",
       "index": true,
       "schemaType": "Organization",
@@ -44,13 +44,19 @@
       "title": "AI Solutions & Technical Architectures | VARAH SYSTEMS",
       "description": "Explore production-grade AI solutions for workflow automation, autonomous agents, voice telephony, and document intelligence. View technical architectures.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "VARAH SYSTEMS — AI Solutions & Technical Architectures",
+      "ogImageAlt": "VARAH SYSTEMS: AI Solutions & Technical Architectures",
       "robots": "index, follow",
       "index": true,
       "schemaType": "CollectionPage",
       "breadcrumbs": [
-        { "name": "Home", "path": "" },
-        { "name": "Solutions", "path": "solutions.html" }
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "Solutions",
+          "path": "solutions.html"
+        }
       ],
       "changefreq": "monthly",
       "priority": "0.9"
@@ -61,15 +67,24 @@
       "title": "Workflow Automation & Systems Integration | VARAH SYSTEMS",
       "description": "Connect existing business tools and eliminate repetitive workflows with deterministic AI automation and real-time event orchestration across CRM and ERP.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "Workflow Automation & Systems Integration — VARAH SYSTEMS",
+      "ogImageAlt": "Workflow Automation & Systems Integration: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "Service",
       "serviceType": "Workflow Automation",
       "breadcrumbs": [
-        { "name": "Home", "path": "" },
-        { "name": "Solutions", "path": "solutions.html" },
-        { "name": "Workflow Automation", "path": "solutions/ai-automation.html" }
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "Solutions",
+          "path": "solutions.html"
+        },
+        {
+          "name": "Workflow Automation",
+          "path": "solutions/ai-automation.html"
+        }
       ],
       "changefreq": "monthly",
       "priority": "0.8"
@@ -80,15 +95,24 @@
       "title": "Autonomous AI Agents & Reasoning Systems | VARAH SYSTEMS",
       "description": "Deploy goal-oriented AI agents capable of multi-step tool execution, data retrieval, and deterministic task completion with verified safety guardrails.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "Autonomous AI Agents & Reasoning Systems — VARAH SYSTEMS",
+      "ogImageAlt": "Autonomous AI Agents & Reasoning Systems: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "Service",
       "serviceType": "Autonomous AI Agents",
       "breadcrumbs": [
-        { "name": "Home", "path": "" },
-        { "name": "Solutions", "path": "solutions.html" },
-        { "name": "AI Agents", "path": "solutions/ai-agents.html" }
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "Solutions",
+          "path": "solutions.html"
+        },
+        {
+          "name": "AI Agents",
+          "path": "solutions/ai-agents.html"
+        }
       ],
       "changefreq": "monthly",
       "priority": "0.8"
@@ -99,15 +123,24 @@
       "title": "Conversational Voice AI & Telephony Agents | VARAH SYSTEMS",
       "description": "Deploy low-latency conversational voice agents for inbound dispatch, lead qualification, and customer support. Test our voice agent telephony architecture.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "Conversational Voice AI & Telephony Agents — VARAH SYSTEMS",
+      "ogImageAlt": "Conversational Voice AI & Telephony Agents: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "Service",
       "serviceType": "Voice AI Telephony",
       "breadcrumbs": [
-        { "name": "Home", "path": "" },
-        { "name": "Solutions", "path": "solutions.html" },
-        { "name": "Voice AI", "path": "solutions/ai-voice.html" }
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "Solutions",
+          "path": "solutions.html"
+        },
+        {
+          "name": "Voice AI",
+          "path": "solutions/ai-voice.html"
+        }
       ],
       "changefreq": "monthly",
       "priority": "0.8"
@@ -118,15 +151,24 @@
       "title": "Automated Customer Support & AI Triage | VARAH SYSTEMS",
       "description": "Resolve high-frequency inquiries deterministically and triage complex tickets to your support team via API sync. Review our support automation framework.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "Automated Customer Support & AI Triage — VARAH SYSTEMS",
+      "ogImageAlt": "Automated Customer Support & AI Triage: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "Service",
       "serviceType": "AI Customer Support",
       "breadcrumbs": [
-        { "name": "Home", "path": "" },
-        { "name": "Solutions", "path": "solutions.html" },
-        { "name": "Customer Support", "path": "solutions/ai-customer-support.html" }
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "Solutions",
+          "path": "solutions.html"
+        },
+        {
+          "name": "Customer Support",
+          "path": "solutions/ai-customer-support.html"
+        }
       ],
       "changefreq": "monthly",
       "priority": "0.8"
@@ -137,15 +179,24 @@
       "title": "Grounded Knowledge Systems & RAG Engines | VARAH SYSTEMS",
       "description": "Transform scattered documentation, SOPs, and internal databases into a citation-backed neural knowledge engine. Explore our grounded RAG architecture.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "Grounded Knowledge Systems & RAG Engines — VARAH SYSTEMS",
+      "ogImageAlt": "Grounded Knowledge Systems & RAG Engines: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "Service",
       "serviceType": "Grounded Knowledge Systems",
       "breadcrumbs": [
-        { "name": "Home", "path": "" },
-        { "name": "Solutions", "path": "solutions.html" },
-        { "name": "Knowledge Systems", "path": "solutions/ai-knowledge.html" }
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "Solutions",
+          "path": "solutions.html"
+        },
+        {
+          "name": "Knowledge Systems",
+          "path": "solutions/ai-knowledge.html"
+        }
       ],
       "changefreq": "monthly",
       "priority": "0.8"
@@ -156,15 +207,24 @@
       "title": "Document Intelligence & Data Extraction | VARAH SYSTEMS",
       "description": "Extract, parse, and validate complex invoices, contracts, and financial records into structured JSON schemas. Scope a document extraction deployment.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "Document Intelligence & Data Extraction — VARAH SYSTEMS",
+      "ogImageAlt": "Document Intelligence & Data Extraction: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "Service",
       "serviceType": "Document Intelligence",
       "breadcrumbs": [
-        { "name": "Home", "path": "" },
-        { "name": "Solutions", "path": "solutions.html" },
-        { "name": "Document Intelligence", "path": "solutions/document-intelligence.html" }
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "Solutions",
+          "path": "solutions.html"
+        },
+        {
+          "name": "Document Intelligence",
+          "path": "solutions/document-intelligence.html"
+        }
       ],
       "changefreq": "monthly",
       "priority": "0.8"
@@ -175,15 +235,24 @@
       "title": "Inbound AI Sales & Pipeline Automation | VARAH SYSTEMS",
       "description": "Accelerate deal cycles with instant lead qualification, automated prospect enrichment, and real-time CRM updates. Request a pipeline automation review.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "Inbound AI Sales & Pipeline Automation — VARAH SYSTEMS",
+      "ogImageAlt": "Inbound AI Sales & Pipeline Automation: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "Service",
       "serviceType": "AI Sales Systems",
       "breadcrumbs": [
-        { "name": "Home", "path": "" },
-        { "name": "Solutions", "path": "solutions.html" },
-        { "name": "AI Sales", "path": "solutions/ai-sales.html" }
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "Solutions",
+          "path": "solutions.html"
+        },
+        {
+          "name": "AI Sales",
+          "path": "solutions/ai-sales.html"
+        }
       ],
       "changefreq": "monthly",
       "priority": "0.8"
@@ -194,15 +263,24 @@
       "title": "Custom AI Software & Operational Tooling | VARAH SYSTEMS",
       "description": "Build bespoke internal software, automation middleware, and operational dashboards tailored to your workflows. Schedule a custom software consultation.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "Custom AI Software & Operational Tooling — VARAH SYSTEMS",
+      "ogImageAlt": "Custom AI Software & Operational Tooling: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "Service",
       "serviceType": "Custom AI Software",
       "breadcrumbs": [
-        { "name": "Home", "path": "" },
-        { "name": "Solutions", "path": "solutions.html" },
-        { "name": "Custom AI", "path": "solutions/custom-ai.html" }
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "Solutions",
+          "path": "solutions.html"
+        },
+        {
+          "name": "Custom AI",
+          "path": "solutions/custom-ai.html"
+        }
       ],
       "changefreq": "monthly",
       "priority": "0.8"
@@ -213,13 +291,19 @@
       "title": "Industry AI Systems & Automation Sector Solutions | VARAH",
       "description": "Discover tailored AI systems engineered for real estate, e-commerce, recruitment, manufacturing, and professional services. Explore sector solutions.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "Industry AI Systems & Automation Solutions — VARAH SYSTEMS",
+      "ogImageAlt": "Industry AI Systems & Automation Solutions: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "CollectionPage",
       "breadcrumbs": [
-        { "name": "Home", "path": "" },
-        { "name": "Industries", "path": "industries.html" }
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "Industries",
+          "path": "industries.html"
+        }
       ],
       "changefreq": "monthly",
       "priority": "0.9"
@@ -230,15 +314,24 @@
       "title": "Real Estate AI Automation & Lead Triage | VARAH SYSTEMS",
       "description": "Automate tenant inquiry response, property tour scheduling, lease data extraction, and maintenance work orders. View our real estate automation systems.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "Real Estate AI Automation & Lead Triage — VARAH SYSTEMS",
+      "ogImageAlt": "Real Estate AI Automation & Lead Triage: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "Service",
       "serviceType": "Real Estate AI Automation",
       "breadcrumbs": [
-        { "name": "Home", "path": "" },
-        { "name": "Industries", "path": "industries.html" },
-        { "name": "Real Estate", "path": "industries/real-estate.html" }
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "Industries",
+          "path": "industries.html"
+        },
+        {
+          "name": "Real Estate",
+          "path": "industries/real-estate.html"
+        }
       ],
       "changefreq": "monthly",
       "priority": "0.8"
@@ -249,15 +342,24 @@
       "title": "E-Commerce AI Automation & Operations | VARAH SYSTEMS",
       "description": "Streamline catalog management, order fulfillment notifications, automated returns, and multi-channel support. Discover e-commerce automation systems.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "E-Commerce AI Automation & Operations — VARAH SYSTEMS",
+      "ogImageAlt": "E-Commerce AI Automation & Operations: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "Service",
       "serviceType": "E-Commerce AI Systems",
       "breadcrumbs": [
-        { "name": "Home", "path": "" },
-        { "name": "Industries", "path": "industries.html" },
-        { "name": "E-Commerce", "path": "industries/ecommerce.html" }
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "Industries",
+          "path": "industries.html"
+        },
+        {
+          "name": "E-Commerce",
+          "path": "industries/ecommerce.html"
+        }
       ],
       "changefreq": "monthly",
       "priority": "0.8"
@@ -268,15 +370,24 @@
       "title": "Recruitment & Staffing AI Automation | VARAH SYSTEMS",
       "description": "Accelerate candidate placement with automated resume parsing, applicant scoring, and interview scheduling workflows. View our recruitment AI systems.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "Recruitment & Staffing AI Automation — VARAH SYSTEMS",
+      "ogImageAlt": "Recruitment & Staffing AI Automation: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "Service",
       "serviceType": "Recruitment AI Automation",
       "breadcrumbs": [
-        { "name": "Home", "path": "" },
-        { "name": "Industries", "path": "industries.html" },
-        { "name": "Recruitment", "path": "industries/recruitment.html" }
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "Industries",
+          "path": "industries.html"
+        },
+        {
+          "name": "Recruitment",
+          "path": "industries/recruitment.html"
+        }
       ],
       "changefreq": "monthly",
       "priority": "0.8"
@@ -287,15 +398,24 @@
       "title": "Marketing Agency AI Systems & Reporting | VARAH SYSTEMS",
       "description": "Automate client performance reporting, multi-channel ad budget alerts, and cross-platform content workflows. Explore agency operations automation.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "Marketing Agency AI Systems & Reporting — VARAH SYSTEMS",
+      "ogImageAlt": "Marketing Agency AI Systems & Reporting: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "Service",
       "serviceType": "Marketing Agency AI Systems",
       "breadcrumbs": [
-        { "name": "Home", "path": "" },
-        { "name": "Industries", "path": "industries.html" },
-        { "name": "Marketing", "path": "industries/marketing.html" }
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "Industries",
+          "path": "industries.html"
+        },
+        {
+          "name": "Marketing",
+          "path": "industries/marketing.html"
+        }
       ],
       "changefreq": "monthly",
       "priority": "0.8"
@@ -306,15 +426,24 @@
       "title": "Professional Services AI Document Systems | VARAH SYSTEMS",
       "description": "Automate document intake, engagement letter drafting, time capture, and compliance collation for professional firms. Scope professional AI automation.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "Professional Services AI Document Systems — VARAH SYSTEMS",
+      "ogImageAlt": "Professional Services AI Document Systems: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "Service",
       "serviceType": "Professional Services AI Systems",
       "breadcrumbs": [
-        { "name": "Home", "path": "" },
-        { "name": "Industries", "path": "industries.html" },
-        { "name": "Professional Services", "path": "industries/professional-services.html" }
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "Industries",
+          "path": "industries.html"
+        },
+        {
+          "name": "Professional Services",
+          "path": "industries/professional-services.html"
+        }
       ],
       "changefreq": "monthly",
       "priority": "0.8"
@@ -325,15 +454,24 @@
       "title": "Manufacturing & Supply Chain AI Systems | VARAH SYSTEMS",
       "description": "Automate vendor bill verification, inventory discrepancy alerts, and logistics coordination with ERP integrations. View supply chain automation systems.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "Manufacturing & Supply Chain AI Systems — VARAH SYSTEMS",
+      "ogImageAlt": "Manufacturing & Supply Chain AI Systems: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "Service",
       "serviceType": "Manufacturing AI Systems",
       "breadcrumbs": [
-        { "name": "Home", "path": "" },
-        { "name": "Industries", "path": "industries.html" },
-        { "name": "Manufacturing", "path": "industries/manufacturing.html" }
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "Industries",
+          "path": "industries.html"
+        },
+        {
+          "name": "Manufacturing",
+          "path": "industries/manufacturing.html"
+        }
       ],
       "changefreq": "monthly",
       "priority": "0.8"
@@ -344,13 +482,19 @@
       "title": "AI Engineering Case Studies & Benchmarks | VARAH SYSTEMS",
       "description": "Read architectural breakdowns and performance metrics from production deployments in lead triage, invoice parsing, and RAG. Review verified case studies.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "AI Engineering Case Studies & Benchmarks — VARAH SYSTEMS",
+      "ogImageAlt": "AI Engineering Case Studies & Benchmarks: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "CollectionPage",
       "breadcrumbs": [
-        { "name": "Home", "path": "" },
-        { "name": "Case Studies", "path": "case-studies.html" }
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "Case Studies",
+          "path": "case-studies.html"
+        }
       ],
       "changefreq": "monthly",
       "priority": "0.9"
@@ -361,14 +505,23 @@
       "title": "Autonomous Lead Qualification Case Study | VARAH SYSTEMS",
       "description": "Examine how an autonomous lead engine achieved 60-second follow-ups and recovered 22% of previously leaked leads. Read the full technical architecture.",
       "ogImage": "assets/og-lead-qualification.png",
-      "ogImageAlt": "Autonomous Inbound Lead Qualification Engine Case Study — VARAH SYSTEMS",
+      "ogImageAlt": "Autonomous Inbound Lead Qualification Engine Case Study: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "Article",
       "breadcrumbs": [
-        { "name": "Home", "path": "" },
-        { "name": "Case Studies", "path": "case-studies.html" },
-        { "name": "Lead Qualification", "path": "case-studies/lead-qualification.html" }
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "Case Studies",
+          "path": "case-studies.html"
+        },
+        {
+          "name": "Lead Qualification",
+          "path": "case-studies/lead-qualification.html"
+        }
       ],
       "changefreq": "monthly",
       "priority": "0.8"
@@ -379,14 +532,23 @@
       "title": "3-Way Invoice Reconciliation Case Study | VARAH SYSTEMS",
       "description": "Discover how automated cognitive invoice extraction processed 2,400+ monthly vendor bills with zero manual entry. Inspect the ERP reconciliation pipeline.",
       "ogImage": "assets/og-invoice-processing.png",
-      "ogImageAlt": "3-Way Invoice Reconciliation Case Study — VARAH SYSTEMS",
+      "ogImageAlt": "3-Way Invoice Reconciliation Case Study: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "Article",
       "breadcrumbs": [
-        { "name": "Home", "path": "" },
-        { "name": "Case Studies", "path": "case-studies.html" },
-        { "name": "Invoice Reconciliation", "path": "case-studies/invoice-processing.html" }
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "Case Studies",
+          "path": "case-studies.html"
+        },
+        {
+          "name": "Invoice Reconciliation",
+          "path": "case-studies/invoice-processing.html"
+        }
       ],
       "changefreq": "monthly",
       "priority": "0.8"
@@ -397,14 +559,23 @@
       "title": "Enterprise Grounded RAG Assistant Case Study | VARAH",
       "description": "Explore a citation-backed knowledge assistant connecting company SOPs and engineering codebases with zero hallucination. Read the complete RAG breakdown.",
       "ogImage": "assets/og-knowledge-assistant.png",
-      "ogImageAlt": "Enterprise Grounded Knowledge Assistant Case Study — VARAH SYSTEMS",
+      "ogImageAlt": "Enterprise Grounded Knowledge Assistant Case Study: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "Article",
       "breadcrumbs": [
-        { "name": "Home", "path": "" },
-        { "name": "Case Studies", "path": "case-studies.html" },
-        { "name": "Knowledge Assistant", "path": "case-studies/knowledge-assistant.html" }
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "Case Studies",
+          "path": "case-studies.html"
+        },
+        {
+          "name": "Knowledge Assistant",
+          "path": "case-studies/knowledge-assistant.html"
+        }
       ],
       "changefreq": "monthly",
       "priority": "0.8"
@@ -415,13 +586,19 @@
       "title": "Engineering Philosophy & Systems Team | VARAH SYSTEMS",
       "description": "Learn about our engineering-first approach to enterprise AI systems. We build durable automation pipelines designed for operational reliability and ROI.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "Engineering Philosophy & Systems Team — VARAH SYSTEMS",
+      "ogImageAlt": "Engineering Philosophy & Systems Team: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "AboutPage",
       "breadcrumbs": [
-        { "name": "Home", "path": "" },
-        { "name": "About Us", "path": "about.html" }
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "About Us",
+          "path": "about.html"
+        }
       ],
       "changefreq": "monthly",
       "priority": "0.8"
@@ -432,13 +609,19 @@
       "title": "Our 8-Stage Systems Delivery Process | VARAH SYSTEMS",
       "description": "Review our disciplined 8-stage delivery framework: Discover, Map, Design, Build, Test, Deploy, Optimize, and Scale. See how we deliver production systems.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "Our 8-Stage Systems Delivery Process — VARAH SYSTEMS",
+      "ogImageAlt": "Our 8-Stage Systems Delivery Process: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "WebPage",
       "breadcrumbs": [
-        { "name": "Home", "path": "" },
-        { "name": "Process", "path": "process.html" }
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "Process",
+          "path": "process.html"
+        }
       ],
       "changefreq": "monthly",
       "priority": "0.8"
@@ -449,13 +632,19 @@
       "title": "Transparent Pricing & Engagement Models | VARAH SYSTEMS",
       "description": "Explore transparent, scope-based investment tiers: Architectural Audits, Automation Sprints, Custom Systems, and Retainers. View our engagement models.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "Transparent Pricing & Engagement Models — VARAH SYSTEMS",
+      "ogImageAlt": "Transparent Pricing & Engagement Models: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "WebPage",
       "breadcrumbs": [
-        { "name": "Home", "path": "" },
-        { "name": "Pricing", "path": "pricing.html" }
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "Pricing",
+          "path": "pricing.html"
+        }
       ],
       "changefreq": "monthly",
       "priority": "0.8"
@@ -466,13 +655,19 @@
       "title": "Automation ROI & Labor Savings Calculator | VARAH SYSTEMS",
       "description": "Calculate annual hours lost to repetitive operational tasks and project financial returns from automated workflows. Estimate your automation ROI today.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "Automation ROI & Labor Savings Calculator — VARAH SYSTEMS",
+      "ogImageAlt": "Automation ROI & Labor Savings Calculator: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "WebPage",
       "breadcrumbs": [
-        { "name": "Home", "path": "" },
-        { "name": "Calculator", "path": "calculator.html" }
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "Calculator",
+          "path": "calculator.html"
+        }
       ],
       "changefreq": "monthly",
       "priority": "0.7"
@@ -483,13 +678,19 @@
       "title": "Start an Automation Project & Scoping Call | VARAH SYSTEMS",
       "description": "Submit your operational bottlenecks and system parameters. A systems architect will review your technical requirements within one business day.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "Start an Automation Project & Scoping Call — VARAH SYSTEMS",
+      "ogImageAlt": "Start an Automation Project & Scoping Call: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "ContactPage",
       "breadcrumbs": [
-        { "name": "Home", "path": "" },
-        { "name": "Contact", "path": "contact.html" }
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "Contact",
+          "path": "contact.html"
+        }
       ],
       "changefreq": "monthly",
       "priority": "0.9"
@@ -500,7 +701,7 @@
       "title": "Project Inquiry Confirmed | VARAH SYSTEMS",
       "description": "Thank you for submitting your project parameters. A systems architect is reviewing your workflow requirements and will respond within one business day.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "Project Inquiry Confirmed — VARAH SYSTEMS",
+      "ogImageAlt": "Project Inquiry Confirmed: VARAH SYSTEMS",
       "robots": "noindex, follow",
       "index": false,
       "schemaType": "WebPage",
@@ -513,7 +714,7 @@
       "title": "Page Not Located | VARAH SYSTEMS",
       "description": "The requested system route could not be found. Return to the homepage or explore our production solutions and documented engineering case studies.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "Page Not Located — VARAH SYSTEMS",
+      "ogImageAlt": "Page Not Located: VARAH SYSTEMS",
       "robots": "noindex, follow",
       "index": false,
       "schemaType": "WebPage",
@@ -526,7 +727,7 @@
       "title": "System Error Encountered | VARAH SYSTEMS",
       "description": "An unexpected server interruption occurred. Please retry your request, return to the homepage, or contact our engineering team directly.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "System Error Encountered — VARAH SYSTEMS",
+      "ogImageAlt": "System Error Encountered: VARAH SYSTEMS",
       "robots": "noindex, follow",
       "index": false,
       "schemaType": "WebPage",
@@ -539,7 +740,7 @@
       "title": "Operations & Strategy Portal | VARAH SYSTEMS",
       "description": "Internal administrative console for telemetry, lead management, and operations control.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "Operations & Strategy Portal — VARAH SYSTEMS",
+      "ogImageAlt": "Operations & Strategy Portal: VARAH SYSTEMS",
       "robots": "noindex, nofollow",
       "index": false,
       "schemaType": "WebPage",
@@ -552,7 +753,7 @@
       "title": "Brand Identity & Guidelines | VARAH SYSTEMS",
       "description": "Internal design system guidelines, color tokens, and vector brand assets for VARAH SYSTEMS.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "Brand Identity & Guidelines — VARAH SYSTEMS",
+      "ogImageAlt": "Brand Identity & Guidelines: VARAH SYSTEMS",
       "robots": "noindex, nofollow",
       "index": false,
       "schemaType": "WebPage",
@@ -565,7 +766,7 @@
       "title": "Privacy Policy & Data Processing Notice | VARAH SYSTEMS",
       "description": "Privacy policy for VARAH SYSTEMS. Details on personal data processing, anti-abuse security logs, sub-processors, retention periods, and visitor rights.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "Privacy Policy — VARAH SYSTEMS",
+      "ogImageAlt": "Privacy Policy: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "WebPage",
@@ -578,7 +779,7 @@
       "title": "Website Terms of Use & Service Conditions | VARAH SYSTEMS",
       "description": "Website terms and conditions for VARAH SYSTEMS. Governs site use, AI technology boundaries, intellectual property, disclaimers, and liability.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "Terms & Conditions — VARAH SYSTEMS",
+      "ogImageAlt": "Terms & Conditions: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "WebPage",
@@ -591,12 +792,58 @@
       "title": "Cookie & Browser Storage Compliance Policy | VARAH SYSTEMS",
       "description": "Cookie and browser storage policy for VARAH SYSTEMS. Complete inventory of functional client storage, security tokens, and consent preferences.",
       "ogImage": "assets/og-default.png",
-      "ogImageAlt": "Cookie & Storage Policy — VARAH SYSTEMS",
+      "ogImageAlt": "Cookie & Storage Policy: VARAH SYSTEMS",
       "robots": "index, follow",
       "index": true,
       "schemaType": "WebPage",
       "changefreq": "monthly",
       "priority": "0.5"
+    },
+    "/faq.html": {
+      "file": "faq.html",
+      "canonicalPath": "faq.html",
+      "title": "Frequently Asked Questions | VARAH SYSTEMS Platform",
+      "description": "Get clear, honest answers on project timelines, pricing models, data security, model integrations, and operational automation from the VARAH SYSTEMS team.",
+      "ogImage": "assets/og-default.png",
+      "ogImageAlt": "Frequently Asked Questions: VARAH SYSTEMS",
+      "robots": "index, follow",
+      "index": true,
+      "schemaType": "FAQPage",
+      "breadcrumbs": [
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "FAQ",
+          "path": "faq.html"
+        }
+      ],
+      "changefreq": "monthly",
+      "priority": "0.8"
+    },
+    "/security.html": {
+      "file": "security.html",
+      "canonicalPath": "security.html",
+      "title": "Security & Data Handling Practices | VARAH SYSTEMS",
+      "description": "Learn how VARAH SYSTEMS protects client confidentiality using open-source models, encrypted data storage, and strict zero-training privacy agreements.",
+      "ogImage": "assets/og-default.png",
+      "ogImageAlt": "Security & Data Handling Practices: VARAH SYSTEMS",
+      "robots": "index, follow",
+      "index": true,
+      "schemaType": "WebPage",
+      "breadcrumbs": [
+        {
+          "name": "Home",
+          "path": ""
+        },
+        {
+          "name": "Security",
+          "path": "security.html"
+        }
+      ],
+      "changefreq": "monthly",
+      "priority": "0.8"
     }
   }
 }
