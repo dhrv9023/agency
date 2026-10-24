@@ -191,7 +191,7 @@
           <ul>
             <li><strong>Identity &amp; Contact:</strong> Full name, professional work email address, company name, and company website URL.</li>
             <li><strong>Project Requirements:</strong> Operational bottleneck description, software stack and databases, primary service of interest, budget range, target implementation timeline, and preferred consultation meeting times.</li>
-            <li><strong>Attribution Context:</strong> Page of origin and referral source.</li>
+            <li><strong>Attribution Context (Consent Gated):</strong> If Performance &amp; Analytics consent is explicitly granted, we capture campaign parameters (UTM source, medium, campaign, term, content), referral origin (with query parameters and fragments stripped), and landing page. If consent has not been granted, attribution fields remain strictly null.</li>
           </ul>
           <p>
             <strong>Purpose:</strong> To evaluate your automation requirements, determine architectural feasibility, respond to your inquiry, and deliver technical consulting proposals within our stated response timeframe (one business day).
@@ -210,12 +210,15 @@
 
           <h3>C. Client-Side Browser Storage</h3>
           <p>
-            Our website uses browser local storage and session storage strictly for functional and security purposes:
+            Our website uses browser local storage and session storage strictly for functional, security, and consent-gated purposes:
           </p>
           <ul>
             <li><code>agency_theme</code> &amp; <code>varah_admin_theme</code> (LocalStorage): Stores your selected UI theme mode (light or dark) across page navigations.</li>
             <li><code>varah_consent_state</code> (LocalStorage): Records your consent preferences (Necessary, Analytics, Marketing) and timestamp for 180 days.</li>
             <li><code>varah_lead_submitted</code> (SessionStorage): Ephemeral flag to prevent direct unauthorized access to our confirmation page (<a href="thank-you.html">thank-you.html</a>). Automatically destroyed when you close the browser tab.</li>
+            <li><code>varah_first_touch_attribution</code> (SessionStorage): Ephemeral campaign attribution parameters captured strictly upon consent. Destroyed on tab close.</li>
+            <li><code>varah_lead_tracked</code> (SessionStorage): Prevents duplicate conversion event dispatches on page reloads. Destroyed on tab close.</li>
+            <li><code>varah_cta_dismissed</code> (SessionStorage): Remembers visitor dismissal of the mobile action bar during the active session. Destroyed on tab close.</li>
           </ul>
 
           <h2 id="section-4">4. Legal Bases for Processing</h2>
@@ -253,6 +256,13 @@
                   <td>San Francisco, CA, USA (Global Edge)</td>
                   <td>Client IP, HTTP headers, interaction telemetry during form focus</td>
                   <td><a href="https://www.cloudflare.com/cloudflare-customer-dpa/" target="_blank" rel="noopener noreferrer">Cloudflare DPA</a></td>
+                </tr>
+                <tr>
+                  <td><strong>Plausible Insights OÜ</strong></td>
+                  <td>Privacy-Friendly Aggregate Web Analytics (Consent Gated)</td>
+                  <td>Falkenstein, Germany, EU (Hetzner Online GmbH)</td>
+                  <td>Cookieless aggregate pageviews, referral domains, OS, screen size. Zero personal data, zero cookies, zero cross-device tracking.</td>
+                  <td><a href="https://plausible.io/dpa" target="_blank" rel="noopener noreferrer">Plausible DPA</a></td>
                 </tr>
                 <tr>
                   <td><strong>Slack Technologies LLC / Salesforce, Inc.</strong></td>
@@ -452,6 +462,19 @@
     </div>
   </footer>
 
+  <!-- Sticky Mobile Action Bar (Workstream 12) -->
+  <aside id="sticky-mobile-cta" class="sticky-mobile-cta" aria-label="Quick Action Bar">
+    <div class="sticky-mobile-cta-inner">
+      <a href="contact.html" class="btn btn-primary sticky-mobile-cta-btn" data-track-cta="Start a Project" data-track-location="sticky-cta">Start a Project</a>
+      <button type="button" id="sticky-cta-dismiss-btn" class="sticky-mobile-cta-dismiss" aria-label="Dismiss quick action bar" title="Dismiss quick action bar">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </aside>
+
   <!-- Cookie & Privacy Consent Banner (Workstream 10) -->
   <div id="consent-banner" class="consent-banner" role="region" aria-label="Privacy and Cookie Consent" hidden>
     <div class="consent-banner-inner">
@@ -541,6 +564,9 @@
 
   <!-- Consent Engine Script -->
   <script src="js/consent.js"></script>
+  <!-- Workstream 11: Privacy-Compliant Analytics (Consent Gated) -->
+  <script type="text/plain" data-consent="analytics" data-analytics-provider="plausible" data-domain="domain-pending.invalid" data-api-host="https://plausible.io" data-src="js/analytics.js"></script>
+  <script src="js/track.js"></script>
   <!-- FOOTER_END -->
 
   <script src="js/nav.js"></script>

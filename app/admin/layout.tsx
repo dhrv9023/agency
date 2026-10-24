@@ -18,7 +18,7 @@ export default async function AdminLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // Fetch session on server; fallback to default admin profile in development/preview
+  // Fetch session on server; fallback to default admin profile in development/preview only
   let session = null;
   try {
     session = await getSession();
@@ -26,7 +26,7 @@ export default async function AdminLayout({
     // Edge/SSR fallback
   }
 
-  const user = session?.user ?? DEFAULT_SUPER_ADMIN;
+  const user = session?.user ?? (process.env.NODE_ENV === 'production' ? null : DEFAULT_SUPER_ADMIN);
 
   return (
     <ThemeProvider>

@@ -197,6 +197,9 @@ model Lead {
   utmSource      String?
   utmMedium      String?
   utmCampaign    String?
+  utmTerm        String?
+  utmContent     String?
+  landingPath    String?
   convertedOnPage String?            // e.g. "/solutions/ai-voice" or "/contact.html"
   referrerUrl    String?
   preferredTimes String?

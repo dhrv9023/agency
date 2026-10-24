@@ -1,0 +1,145 @@
+{
+  "generatedAt": "2026-10-23T17:30:45.798Z",
+  "assets": {
+    "css/admin-portal.css": {
+      "hashedPath": "dist/css/admin-portal.ff92a72b.css",
+      "hash": "ff92a72b",
+      "rawBytes": 44888,
+      "minifiedBytes": 31624,
+      "gzipBytes": 5715,
+      "brotliBytes": 4980
+    },
+    "css/components.css": {
+      "hashedPath": "dist/css/components.8f87d2ef.css",
+      "hash": "8f87d2ef",
+      "rawBytes": 26334,
+      "minifiedBytes": 20236,
+      "gzipBytes": 4138,
+      "brotliBytes": 3534
+    },
+    "css/consent.css": {
+      "hashedPath": "dist/css/consent.58629c02.css",
+      "hash": "58629c02",
+      "rawBytes": 10236,
+      "minifiedBytes": 7285,
+      "gzipBytes": 1516,
+      "brotliBytes": 1261
+    },
+    "css/global.css": {
+      "hashedPath": "dist/css/global.aca6295a.css",
+      "hash": "aca6295a",
+      "rawBytes": 13637,
+      "minifiedBytes": 8199,
+      "gzipBytes": 2586,
+      "brotliBytes": 2205
+    },
+    "css/legal.css": {
+      "hashedPath": "dist/css/legal.437771be.css",
+      "hash": "437771be",
+      "rawBytes": 5879,
+      "minifiedBytes": 4218,
+      "gzipBytes": 1050,
+      "brotliBytes": 862
+    },
+    "css/navigation.css": {
+      "hashedPath": "dist/css/navigation.702fcfe3.css",
+      "hash": "702fcfe3",
+      "rawBytes": 10759,
+      "minifiedBytes": 8315,
+      "gzipBytes": 1851,
+      "brotliBytes": 1562
+    },
+    "css/sections.css": {
+      "hashedPath": "dist/css/sections.00147c7f.css",
+      "hash": "00147c7f",
+      "rawBytes": 44930,
+      "minifiedBytes": 34974,
+      "gzipBytes": 6982,
+      "brotliBytes": 6096
+    },
+    "js/analytics.js": {
+      "hashedPath": "dist/js/analytics.0340d337.js",
+      "hash": "0340d337",
+      "rawBytes": 2571,
+      "gzipBytes": 1042,
+      "brotliBytes": 806
+    },
+    "js/calculator.js": {
+      "hashedPath": "dist/js/calculator.a062d20e.js",
+      "hash": "a062d20e",
+      "rawBytes": 3602,
+      "gzipBytes": 1399,
+      "brotliBytes": 1152
+    },
+    "js/consent.js": {
+      "hashedPath": "dist/js/consent.996c406b.js",
+      "hash": "996c406b",
+      "rawBytes": 11903,
+      "gzipBytes": 3415,
+      "brotliBytes": 2835
+    },
+    "js/diagrams.js": {
+      "hashedPath": "dist/js/diagrams.40c344a5.js",
+      "hash": "40c344a5",
+      "rawBytes": 13264,
+      "gzipBytes": 4600,
+      "brotliBytes": 3643
+    },
+    "js/form.js": {
+      "hashedPath": "dist/js/form.aa0fe8c3.js",
+      "hash": "aa0fe8c3",
+      "rawBytes": 8817,
+      "gzipBytes": 2890,
+      "brotliBytes": 2341
+    },
+    "js/hero-network.js": {
+      "hashedPath": "dist/js/hero-network.c812f2ba.js",
+      "hash": "c812f2ba",
+      "rawBytes": 11706,
+      "gzipBytes": 3223,
+      "brotliBytes": 2775
+    },
+    "js/interactive.js": {
+      "hashedPath": "dist/js/interactive.976ea425.js",
+      "hash": "976ea425",
+      "rawBytes": 1060,
+      "gzipBytes": 508,
+      "brotliBytes": 413
+    },
+    "js/main.js": {
+      "hashedPath": "dist/js/main.6b186a64.js",
+      "hash": "6b186a64",
+      "rawBytes": 4016,
+      "gzipBytes": 1410,
+      "brotliBytes": 1157
+    },
+    "js/nav.js": {
+      "hashedPath": "dist/js/nav.2dc410c2.js",
+      "hash": "2dc410c2",
+      "rawBytes": 8283,
+      "gzipBytes": 2430,
+      "brotliBytes": 2033
+    },
+    "js/orchestration.js": {
+      "hashedPath": "dist/js/orchestration.ed978d92.js",
+      "hash": "ed978d92",
+      "rawBytes": 15217,
+      "gzipBytes": 4028,
+      "brotliBytes": 3423
+    },
+    "js/systems-index.js": {
+      "hashedPath": "dist/js/systems-index.e183c340.js",
+      "hash": "e183c340",
+      "rawBytes": 15133,
+      "gzipBytes": 4650,
+      "brotliBytes": 3820
+    },
+    "js/track.js": {
+      "hashedPath": "dist/js/track.052d252d.js",
+      "hash": "052d252d",
+      "rawBytes": 10652,
+      "gzipBytes": 3275,
+      "brotliBytes": 2762
+    }
+  }
+}

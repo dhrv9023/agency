@@ -12,6 +12,18 @@
     "We Fix Revenue Leaks With AI Automation",
     "Eliminating Operational Bottlenecks With Measurable Automation"
   ],
+  "analytics": {
+    "provider": "plausible",
+    "domain": "domain-pending.invalid",
+    "scriptSrc": "https://plausible.io/js/script.js",
+    "apiHost": "https://plausible.io",
+    "dataRegion": "EU",
+    "dpaUrl": "https://plausible.io/dpa"
+  },
+  "verification": {
+    "google": "",
+    "bing": ""
+  },
   "routes": {
     "/": {
       "file": "index.html",

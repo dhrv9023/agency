@@ -1,7 +1,18 @@
+const fs = require('fs');
+const path = require('path');
+
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
+
+// Load canonical security and cache headers from single source of truth
+const securityHeadersConfig = JSON.parse(
+  fs.readFileSync(path.join(__dirname, 'templates', 'security-headers.json'), 'utf8')
+);
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Ensure Next.js properly handles static assets and pages
   poweredByHeader: false,
   async rewrites() {
     return [
@@ -11,6 +22,9 @@ const nextConfig = {
       },
     ];
   },
+  async headers() {
+    return securityHeadersConfig.routeRules || [];
+  },
 };
 
-module.exports = nextConfig;
+module.exports = withBundleAnalyzer(nextConfig);

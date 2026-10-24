@@ -175,9 +175,51 @@ export async function POST(request: NextRequest) {
 
     const validData = validationResult.data;
 
+    // Consent-Gated Attribution Processing (Workstream 11)
+    // Attribution is strictly nulled if analytics consent is not granted
+    let utmSource: string | null = null;
+    let utmMedium: string | null = null;
+    let utmCampaign: string | null = null;
+    let utmTerm: string | null = null;
+    let utmContent: string | null = null;
+    let landingPath: string | null = null;
+    let referrerUrl: string | null = null;
+
+    if (validData.analyticsConsented) {
+      utmSource = validData.utmSource || null;
+      utmMedium = validData.utmMedium || null;
+      utmCampaign = validData.utmCampaign || null;
+      utmTerm = validData.utmTerm || null;
+      utmContent = validData.utmContent || null;
+      landingPath = validData.landingPath || null;
+
+      if (validData.referrerUrl) {
+        try {
+          const parsed = new URL(validData.referrerUrl);
+          // Strictly origin + pathname, stripping query parameters and fragment
+          referrerUrl = `${parsed.origin}${parsed.pathname}`.slice(0, 200);
+        } catch {
+          referrerUrl = null;
+        }
+      }
+    }
+
     // 6. Database Persistence via Prisma
+    const isProduction = process.env.NODE_ENV === 'production';
     let leadId = `lead_${Date.now().toString(36)}_${Math.random().toString(36).substring(2, 7)}`;
     let dbPersisted = false;
+
+    // In production, an unconfigured database must fail loudly (503 Service Unavailable)
+    if (isProduction && !isDatabaseConfigured()) {
+      console.error('[LEAD_DB_CRITICAL] DATABASE_URL is not configured in production environment.');
+      return NextResponse.json(
+        {
+          success: false,
+          error: 'Our inquiry intake service is temporarily unavailable due to a database configuration issue. Please email us directly.',
+        },
+        { status: 503, headers: corsHeaders }
+      );
+    }
 
     if (isDatabaseConfigured()) {
       try {
@@ -193,7 +235,13 @@ export async function POST(request: NextRequest) {
             preferredTimes: validData.preferredTimes || null,
             stage: 'NEW',
             priority: 'MEDIUM',
-            utmSource: validData.utmSource,
+            utmSource,
+            utmMedium,
+            utmCampaign,
+            utmTerm,
+            utmContent,
+            landingPath,
+            referrerUrl,
             convertedOnPage: validData.convertedOnPage,
             emailNotificationStatus: 'pending',
             slackNotificationStatus: 'pending',
@@ -203,7 +251,17 @@ export async function POST(request: NextRequest) {
         leadId = createdLead.id;
         dbPersisted = true;
       } catch (dbErr) {
-        console.warn('[LEAD_DB_OFFLINE] Lead persistence skipped:', (dbErr as Error).message);
+        console.error('[LEAD_DB_OFFLINE] Lead persistence error:', (dbErr as Error).message);
+        // In production, database persistence failures must fail loudly (500 Internal Server Error)
+        if (isProduction) {
+          return NextResponse.json(
+            {
+              success: false,
+              error: 'A database error occurred while saving your inquiry. Please try again or reach out to us directly.',
+            },
+            { status: 500, headers: corsHeaders }
+          );
+        }
       }
     }
 

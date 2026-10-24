@@ -17,6 +17,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     initNavigationDrawer();
     initHomepageLogoScroll();
+    initStickyMobileCta();
   });
 
   function initNavigationDrawer() {
@@ -222,5 +223,36 @@
         history.replaceState(null, '', window.location.pathname);
       });
     });
+  }
+
+  /**
+   * Workstream 12: Sticky Mobile CTA Controller
+   * Gated on sessionStorage['varah_cta_dismissed']
+   * 44x44 accessible tap target dismiss button
+   * Collapses reserved body padding on dismissal
+   */
+  function initStickyMobileCta() {
+    const ctaBar = document.getElementById('sticky-mobile-cta');
+    if (!ctaBar) return;
+
+    const dismissBtn = document.getElementById('sticky-cta-dismiss-btn');
+    const isDismissed = sessionStorage.getItem('varah_cta_dismissed') === 'true';
+    const isContactPage = window.location.pathname.endsWith('contact.html') || window.location.pathname.endsWith('thank-you.html');
+
+    if (isDismissed || isContactPage) {
+      ctaBar.classList.add('is-dismissed');
+      document.body.classList.remove('has-sticky-cta');
+      return;
+    }
+
+    document.body.classList.add('has-sticky-cta');
+
+    if (dismissBtn) {
+      dismissBtn.addEventListener('click', () => {
+        ctaBar.classList.add('is-dismissed');
+        document.body.classList.remove('has-sticky-cta');
+        sessionStorage.setItem('varah_cta_dismissed', 'true');
+      });
+    }
   }
 })();

@@ -114,13 +114,70 @@ export const contactFormSchema = z.object({
     .or(z.literal(''))
     .transform((val) => (val === '' ? undefined : val)),
 
-  // Tracking Attribution
+  // Tracking Attribution (Consent-Gated)
+  analyticsConsented: z.boolean().optional().default(false),
+
   utmSource: z
     .string()
     .trim()
-    .max(100)
+    .max(100, 'utm_source exceeds length limit')
+    .regex(/^[a-zA-Z0-9_\-\.\/ ]*$/, 'Invalid characters in utm_source')
     .optional()
-    .default('direct'),
+    .nullable()
+    .transform((val) => (val === '' ? null : val)),
+
+  utmMedium: z
+    .string()
+    .trim()
+    .max(100, 'utm_medium exceeds length limit')
+    .regex(/^[a-zA-Z0-9_\-\.\/ ]*$/, 'Invalid characters in utm_medium')
+    .optional()
+    .nullable()
+    .transform((val) => (val === '' ? null : val)),
+
+  utmCampaign: z
+    .string()
+    .trim()
+    .max(100, 'utm_campaign exceeds length limit')
+    .regex(/^[a-zA-Z0-9_\-\.\/ ]*$/, 'Invalid characters in utm_campaign')
+    .optional()
+    .nullable()
+    .transform((val) => (val === '' ? null : val)),
+
+  utmTerm: z
+    .string()
+    .trim()
+    .max(100, 'utm_term exceeds length limit')
+    .regex(/^[a-zA-Z0-9_\-\.\/ ]*$/, 'Invalid characters in utm_term')
+    .optional()
+    .nullable()
+    .transform((val) => (val === '' ? null : val)),
+
+  utmContent: z
+    .string()
+    .trim()
+    .max(100, 'utm_content exceeds length limit')
+    .regex(/^[a-zA-Z0-9_\-\.\/ ]*$/, 'Invalid characters in utm_content')
+    .optional()
+    .nullable()
+    .transform((val) => (val === '' ? null : val)),
+
+  landingPath: z
+    .string()
+    .trim()
+    .max(100, 'landingPath exceeds length limit')
+    .regex(/^[a-zA-Z0-9_\-\.\/ ]*$/, 'Invalid characters in landingPath')
+    .optional()
+    .nullable()
+    .transform((val) => (val === '' ? null : val)),
+
+  referrerUrl: z
+    .string()
+    .trim()
+    .max(200, 'referrerUrl exceeds length limit')
+    .optional()
+    .nullable()
+    .transform((val) => (val === '' ? null : val)),
 
   convertedOnPage: z
     .string()

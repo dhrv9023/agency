@@ -36,7 +36,20 @@ declare module '@prisma/client' {
     $executeRawUnsafe(query: string, ...values: unknown[]): Promise<number>;
 
     user: PrismaModelDelegate<
-      { id: string; email: string; name: string; role: UserRole; isActive: boolean; createdAt: Date; updatedAt: Date },
+      {
+        id: string;
+        email: string;
+        name: string;
+        passwordHash?: string | null;
+        avatarUrl?: string | null;
+        role: UserRole;
+        isActive: boolean;
+        twoFactorEnabled?: boolean;
+        twoFactorSecret?: string | null;
+        lastLoginAt?: Date | null;
+        createdAt: Date;
+        updatedAt: Date;
+      },
       Record<string, unknown>,
       Record<string, unknown>,
       { id?: string; email?: string }

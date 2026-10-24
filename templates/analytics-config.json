@@ -1,0 +1,11 @@
+{
+  "provider": "plausible",
+  "domain": "domain-pending.invalid",
+  "scriptSrc": "https://plausible.io/js/script.js",
+  "apiHost": "https://plausible.io",
+  "dataRegion": "EU (Hetzner, Falkenstein, Germany)",
+  "dpaUrl": "https://plausible.io/dpa",
+  "policyUrl": "https://plausible.io/data-policy",
+  "gatedCategory": "analytics",
+  "cacheTtlSeconds": 600
+}

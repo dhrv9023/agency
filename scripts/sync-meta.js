@@ -176,6 +176,17 @@ function generateMetaBlock(routeKey, routeData, filePath) {
     `  <link rel="manifest" href="${prefix}manifest.json">`
   ];
 
+  // Search Engine Verification Protocols (Google Search Console & Bing Webmaster)
+  // Injected exclusively on homepage root if non-empty tokens are configured
+  if (routeKey === '/' && config.verification) {
+    if (config.verification.google && config.verification.google.trim()) {
+      lines.push(`  <meta name="google-site-verification" content="${config.verification.google.trim()}">`);
+    }
+    if (config.verification.bing && config.verification.bing.trim()) {
+      lines.push(`  <meta name="msvalidate.01" content="${config.verification.bing.trim()}">`);
+    }
+  }
+
   if (jsonLdMarkup) {
     lines.push(``, `  <!-- Structured Data (JSON-LD) -->`, jsonLdMarkup);
   }

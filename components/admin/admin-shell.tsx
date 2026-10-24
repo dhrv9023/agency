@@ -15,7 +15,7 @@ import { useTheme } from './theme-provider';
 import type { AdminUser } from '@/types/admin';
 
 interface AdminShellProps {
-  user: AdminUser;
+  user: AdminUser | null;
   children: React.ReactNode;
 }
 
@@ -40,6 +40,24 @@ export function AdminShell({ user, children }: AdminShellProps) {
 
   if (isLoginPage) {
     return <main className="min-h-screen bg-[var(--admin-bg)] text-[var(--admin-text)]">{children}</main>;
+  }
+
+  if (!user) {
+    return (
+      <main className="min-h-screen bg-[var(--admin-bg)] text-[var(--admin-text)] flex items-center justify-center p-4">
+        <div className="text-center p-8 border border-white/10 rounded-xl bg-black/40 max-w-md">
+          <i className="fa-solid fa-lock text-3xl text-red-400 mb-4" />
+          <h2 className="text-lg font-semibold mb-2">Authentication Required</h2>
+          <p className="text-sm text-gray-400 mb-6">You must authenticate to access the agency operations console.</p>
+          <a
+            href="/admin/login"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-[#00f0ff] text-black font-semibold rounded-lg text-sm"
+          >
+            Go to Admin Login
+          </a>
+        </div>
+      </main>
+    );
   }
 
   return (

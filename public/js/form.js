@@ -139,9 +139,25 @@ document.addEventListener('DOMContentLoaded', () => {
       context: context || undefined,
       turnstileToken: currentTurnstileToken || undefined,
       website_hp: honeypot || undefined,
-      convertedOnPage: '/contact.html',
-      utmSource: new URLSearchParams(window.location.search).get('utm_source') || 'direct',
+      convertedOnPage: window.location.pathname || '/contact.html',
     };
+
+    // Attach attribution strictly if analytics consent was granted
+    const isConsented = Boolean(window.consent && typeof window.consent.get === 'function' && window.consent.get().analytics);
+    payload.analyticsConsented = isConsented;
+
+    if (isConsented && typeof window.getConsentedAttribution === 'function') {
+      const attr = window.getConsentedAttribution();
+      if (attr) {
+        payload.utmSource = attr.utmSource || undefined;
+        payload.utmMedium = attr.utmMedium || undefined;
+        payload.utmCampaign = attr.utmCampaign || undefined;
+        payload.utmTerm = attr.utmTerm || undefined;
+        payload.utmContent = attr.utmContent || undefined;
+        payload.referrerUrl = attr.referrerUrl || undefined;
+        payload.landingPath = attr.landingPath || undefined;
+      }
+    }
 
     try {
       const response = await fetch('/api/contact', {
@@ -165,14 +181,13 @@ document.addEventListener('DOMContentLoaded', () => {
       sessionStorage.setItem('varah_lead_company', company);
       sessionStorage.setItem('varah_lead_timestamp', Date.now().toString());
 
-      // Workstream 10 & 4 Hook: Trigger conversion tracking ONLY if analytics consent is granted
-      if (window.consent && typeof window.consent.get === 'function' && window.consent.get().analytics) {
-        if (typeof window.track === 'function') {
-          window.track('lead_submitted', {
-            serviceInterest: serviceInterest || 'General Inquiry',
-            budgetRange: budgetRange || 'Not specified',
-          });
-        }
+      // Workstream 10 & 11 Hook: Trigger conversion tracking ONLY if analytics consent is granted
+      if (isConsented && typeof window.track === 'function') {
+        window.track('lead_submitted', {
+          serviceInterest: projectType || 'General Inquiry',
+          budgetRange: budget || 'Not specified',
+        });
+        sessionStorage.setItem('varah_lead_tracked', 'true');
       }
 
       // Redirect immediately to canonical Thank-You page

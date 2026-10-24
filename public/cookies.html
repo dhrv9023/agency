@@ -245,6 +245,30 @@
                   <td>Session (deleted on tab close)</td>
                 </tr>
                 <tr>
+                  <td><code>varah_first_touch_attribution</code></td>
+                  <td>Stores campaign source (UTMs, landing page, external referrer) strictly after analytics consent is granted</td>
+                  <td>Performance &amp; Analytics (Consent Gated)</td>
+                  <td>VARAH SYSTEMS (First-Party)</td>
+                  <td><code>sessionStorage</code></td>
+                  <td>Session (deleted on tab close)</td>
+                </tr>
+                <tr>
+                  <td><code>varah_lead_tracked</code></td>
+                  <td>Deduplicates conversion event dispatches to prevent duplicate metrics on page reloads</td>
+                  <td>Performance &amp; Analytics (Consent Gated)</td>
+                  <td>VARAH SYSTEMS (First-Party)</td>
+                  <td><code>sessionStorage</code></td>
+                  <td>Session (deleted on tab close)</td>
+                </tr>
+                <tr>
+                  <td><code>varah_cta_dismissed</code></td>
+                  <td>Remembers if the visitor dismissed the sticky mobile action bar for the current session</td>
+                  <td>Functional (User Preference)</td>
+                  <td>VARAH SYSTEMS (First-Party)</td>
+                  <td><code>sessionStorage</code></td>
+                  <td>Session (deleted on tab close)</td>
+                </tr>
+                <tr>
                   <td><code>challenges.cloudflare.com</code></td>
                   <td>Evaluates browser risk signals and validates Turnstile anti-bot challenge response on form interaction</td>
                   <td>Strictly Necessary (Security)</td>
@@ -392,6 +416,19 @@
     </div>
   </footer>
 
+  <!-- Sticky Mobile Action Bar (Workstream 12) -->
+  <aside id="sticky-mobile-cta" class="sticky-mobile-cta" aria-label="Quick Action Bar">
+    <div class="sticky-mobile-cta-inner">
+      <a href="contact.html" class="btn btn-primary sticky-mobile-cta-btn" data-track-cta="Start a Project" data-track-location="sticky-cta">Start a Project</a>
+      <button type="button" id="sticky-cta-dismiss-btn" class="sticky-mobile-cta-dismiss" aria-label="Dismiss quick action bar" title="Dismiss quick action bar">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </aside>
+
   <!-- Cookie & Privacy Consent Banner (Workstream 10) -->
   <div id="consent-banner" class="consent-banner" role="region" aria-label="Privacy and Cookie Consent" hidden>
     <div class="consent-banner-inner">
@@ -481,6 +518,9 @@
 
   <!-- Consent Engine Script -->
   <script src="js/consent.js"></script>
+  <!-- Workstream 11: Privacy-Compliant Analytics (Consent Gated) -->
+  <script type="text/plain" data-consent="analytics" data-analytics-provider="plausible" data-domain="domain-pending.invalid" data-api-host="https://plausible.io" data-src="js/analytics.js"></script>
+  <script src="js/track.js"></script>
   <!-- FOOTER_END -->
 
   <script src="js/nav.js"></script>

@@ -27,9 +27,27 @@ export const DEFAULT_SUPER_ADMIN: AdminUser = {
 
 /**
  * Hash a plain password using Web Crypto PBKDF2 (SHA-256)
- * Generates a salt:hash string suitable for constant-time comparison
+/**
+ * Constant-time byte comparison to prevent timing attacks
  */
-export async function hashPassword(password: string): Promise<string> {
+function timingSafeEqualHex(aHex: string, bHex: string): boolean {
+  if (aHex.length !== bHex.length) return false;
+  const aBytes = aHex.match(/.{1,2}/g)?.map(b => parseInt(b, 16)) || [];
+  const bBytes = bHex.match(/.{1,2}/g)?.map(b => parseInt(b, 16)) || [];
+  if (aBytes.length !== bBytes.length) return false;
+
+  let diff = 0;
+  for (let i = 0; i < aBytes.length; i++) {
+    diff |= aBytes[i] ^ bBytes[i];
+  }
+  return diff === 0;
+}
+
+/**
+ * Hash a plain password using Web Crypto PBKDF2 (SHA-256)
+ * Upgraded to 600,000 iterations per OWASP guidance
+ */
+export async function hashPassword(password: string, iterations = 600000): Promise<string> {
   const enc = new TextEncoder();
   const salt = crypto.getRandomValues(new Uint8Array(16));
   const keyMaterial = await crypto.subtle.importKey(
@@ -44,7 +62,7 @@ export async function hashPassword(password: string): Promise<string> {
     {
       name: 'PBKDF2',
       salt,
-      iterations: 100000,
+      iterations,
       hash: 'SHA-256',
     },
     keyMaterial,
@@ -61,14 +79,18 @@ export async function hashPassword(password: string): Promise<string> {
     .map(b => b.toString(16).padStart(2, '0'))
     .join('');
 
-  return `${saltHex}:${hashHex}`;
+  return `${saltHex}:${hashHex}:${iterations}`;
 }
 
 /**
- * Verify a plain password against a stored salt:hash string
+ * Verify a plain password against a stored salt:hash string using constant-time comparison
  */
 export async function verifyPassword(password: string, storedHash: string): Promise<boolean> {
-  const [saltHex, expectedHash] = storedHash.split(':');
+  const parts = storedHash.split(':');
+  if (parts.length < 2) return false;
+  const saltHex = parts[0];
+  const expectedHash = parts[1];
+  const iterations = parts[2] ? parseInt(parts[2], 10) : 100000;
   if (!saltHex || !expectedHash) return false;
 
   const enc = new TextEncoder();
@@ -86,7 +108,7 @@ export async function verifyPassword(password: string, storedHash: string): Prom
     {
       name: 'PBKDF2',
       salt,
-      iterations: 100000,
+      iterations,
       hash: 'SHA-256',
     },
     keyMaterial,
@@ -100,7 +122,7 @@ export async function verifyPassword(password: string, storedHash: string): Prom
     .map(b => b.toString(16).padStart(2, '0'))
     .join('');
 
-  return actualHash === expectedHash;
+  return timingSafeEqualHex(actualHash, expectedHash);
 }
 
 /**
@@ -163,14 +185,20 @@ export async function createSession(user: AdminUser): Promise<void> {
   const payload = JSON.stringify({ user, exp });
   const signedToken = await signSessionToken(payload);
 
-  const cookieStore = await cookies();
-  cookieStore.set(SESSION_COOKIE_NAME, signedToken, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production' && Boolean(process.env.NEXT_PUBLIC_APP_URL?.startsWith('https')),
-    sameSite: 'lax',
-    path: '/',
-    maxAge: SESSION_MAX_AGE,
-  });
+  try {
+    const cookieStore = await cookies();
+    cookieStore.set(SESSION_COOKIE_NAME, signedToken, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production' && Boolean(process.env.NEXT_PUBLIC_APP_URL?.startsWith('https')),
+      sameSite: 'lax',
+      path: '/',
+      maxAge: SESSION_MAX_AGE,
+    });
+  } catch (err) {
+    if (process.env.NODE_ENV === 'production') {
+      throw err;
+    }
+  }
 }
 
 /**

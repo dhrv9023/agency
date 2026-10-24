@@ -25,6 +25,9 @@ const META_FILE = path.join(ROOT_DIR, 'templates', 'meta.json');
 const metaConfig = JSON.parse(fs.readFileSync(META_FILE, 'utf8'));
 const CONTACT_EMAIL = metaConfig.contactEmail || 'contact@domain-pending.invalid';
 const PRIVACY_EMAIL = metaConfig.privacyEmail || 'privacy@domain-pending.invalid';
+const analyticsConfig = metaConfig.analytics || {};
+const ANALYTICS_DOMAIN = analyticsConfig.domain || 'domain-pending.invalid';
+const ANALYTICS_API_HOST = analyticsConfig.apiHost || 'https://plausible.io';
 
 // 5 Approved Top-Level Nav Items
 const NAV_ITEMS = [
@@ -254,6 +257,19 @@ function generateFooterMarkup(filePath) {
     </div>
   </footer>
 
+  <!-- Sticky Mobile Action Bar (Workstream 12) -->
+  <aside id="sticky-mobile-cta" class="sticky-mobile-cta" aria-label="Quick Action Bar">
+    <div class="sticky-mobile-cta-inner">
+      <a href="${prefix}contact.html" class="btn btn-primary sticky-mobile-cta-btn" data-track-cta="Start a Project" data-track-location="sticky-cta">Start a Project</a>
+      <button type="button" id="sticky-cta-dismiss-btn" class="sticky-mobile-cta-dismiss" aria-label="Dismiss quick action bar" title="Dismiss quick action bar">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </aside>
+
   <!-- Cookie & Privacy Consent Banner (Workstream 10) -->
   <div id="consent-banner" class="consent-banner" role="region" aria-label="Privacy and Cookie Consent" hidden>
     <div class="consent-banner-inner">
@@ -343,6 +359,9 @@ function generateFooterMarkup(filePath) {
 
   <!-- Consent Engine Script -->
   <script src="${prefix}js/consent.js"></script>
+  <!-- Workstream 11: Privacy-Compliant Analytics (Consent Gated) -->
+  <script type="text/plain" data-consent="analytics" data-analytics-provider="plausible" data-domain="${ANALYTICS_DOMAIN}" data-api-host="${ANALYTICS_API_HOST}" data-src="${prefix}js/analytics.js"></script>
+  <script src="${prefix}js/track.js"></script>
   ${MARKERS.footerEnd}`;
 }
 
